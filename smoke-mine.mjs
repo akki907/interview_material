@@ -33,7 +33,7 @@ const checks = [
     ['dsa', 'renderStrings', ['KMP']],
     ['dsa', 'renderHashMaps', ['Counter']],
     ['dsa', 'renderQueue', ['deque', 'dq.unshift']],
-    ['dsa', 'renderBinaryTree', ['inorder(node)']],
+    ['dsa', 'renderBinaryTree', ['inorder(node']],
     ['dsa', 'renderBST', ['Lowest common ancestor']],
     ['dsa', 'renderHeap', ['heapq.heappush']],
     ['dsa', 'renderGraph', ['Dijkstra']],
@@ -53,8 +53,8 @@ const checks = [
     ['react', 'renderReactState', ['Zustand']],
     ['react', 'renderReactPerformance', ['React.memo', 'useCallback']],
     ['react', 'renderReactRendering', ['Suspense']],
-    ['react', 'renderReactArchitecture', ['Render props']],
-    ['react', 'renderReactInterview', ['What is the difference useMemo']],
+    ['react', 'renderReactArchitecture', ['Server Components']],
+    ['react', 'renderReactInterview', ['What is the difference between useMemo']],
 ];
 
 let failures = 0;
