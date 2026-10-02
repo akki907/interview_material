@@ -15,7 +15,12 @@ import type { ContentBlock } from "./lib/types";
 import "./content";
 
 /** Topics rendered by dedicated pages rather than the content registry. */
-const STANDALONE_ROUTES = new Set(["dashboard", "todos", "interview", "flashcards"]);
+const STANDALONE_ROUTES = new Set([
+    "dashboard",
+    "todos",
+    "interview",
+    "flashcards",
+]);
 
 /**
  * Mermaid's diagram headers. Kept as a list because mermaid supports many
@@ -105,7 +110,8 @@ for (const id of TOPIC_IDS) {
             case "diagram":
                 totalDiagrams++;
                 check(
-                    typeof block.source === "string" && block.source.trim().length > 0,
+                    typeof block.source === "string" &&
+                        block.source.trim().length > 0,
                     `${id}: diagram has mermaid source`,
                 );
                 check(
@@ -117,7 +123,10 @@ for (const id of TOPIC_IDS) {
                 totalQa += block.items.length;
                 check(block.items.length > 0, `${id}: qa block has items`);
                 for (const item of block.items) {
-                    check(!!item.q && !!item.a, `${id}: qa item has a question and answer`);
+                    check(
+                        !!item.q && !!item.a,
+                        `${id}: qa item has a question and answer`,
+                    );
                 }
                 break;
             case "table":

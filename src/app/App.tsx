@@ -1,11 +1,11 @@
-// src/app/App.tsx — router + application shell
+// src/app/App.tsx — route table and topic completion toolbar
 import { Suspense, lazy } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { Sidebar } from "./Sidebar";
-import { Header } from "./Header";
-import { useThemeSync } from "./theme";
-import { useStore } from "../lib/store";
+import { AppShell } from "./AppShell";
 import { TOPIC_IDS } from "../lib/data";
+import { idFromPath, isStandaloneRoute } from "../lib/routes";
+import { useStore } from "../lib/store";
+import { cn } from "../lib/utils";
 import { Spinner } from "../components/ui/spinner";
 
 const Dashboard = lazy(() =>
@@ -32,79 +32,55 @@ function Loading() {
     );
 }
 
-export function App() {
-    const { theme, toggle } = useThemeSync();
-    const checked = useStore((s) => s.checked);
+/** Marks a study topic complete; only meaningful on /topic/:id routes. */
+function CompleteToggle({ topicId }: { topicId: string }) {
+    const done = useStore((s) => !!s.checked[topicId]);
     const toggleCheck = useStore((s) => s.toggleCheck);
-    const location = useLocation();
-
-    const topicId = location.pathname.replace(/^\/topic\//, "");
-    const isTopic =
-        topicId !== location.pathname && TOPIC_IDS.includes(topicId);
-    const done = isTopic ? !!checked[topicId] : false;
 
     return (
-        <div className="flex h-screen overflow-hidden bg-paper text-ink">
-            <Sidebar />
+        <button
+            type="button"
+            onClick={() => toggleCheck(topicId)}
+            aria-pressed={done}
+            className={cn(
+                "inline-flex cursor-pointer items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors",
+                done
+                    ? "border-c1i bg-c1 text-c1i"
+                    : "border-rule bg-surface text-muted hover:bg-neutral",
+            )}
+        >
+            {done ? "✓ Completed" : "Mark complete"}
+        </button>
+    );
+}
 
-            <div className="flex min-w-0 flex-1 flex-col">
-                <Header theme={theme} onToggleTheme={toggle} />
+export function App() {
+    const location = useLocation();
+    const topicId = idFromPath(location.pathname);
+    const isTopic =
+        location.pathname.startsWith("/topic/") &&
+        !isStandaloneRoute(topicId) &&
+        TOPIC_IDS.includes(topicId);
 
-                <main className="min-h-0 flex-1 overflow-y-auto">
-                    <div className="mx-auto w-full max-w-5xl px-5 py-7 sm:px-8 lg:px-10">
-                        {isTopic && (
-                            <div className="mb-5">
-                                <button
-                                    type="button"
-                                    onClick={() => toggleCheck(topicId)}
-                                    className={
-                                        "inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors cursor-pointer " +
-                                        (done
-                                            ? "border-c1i bg-c1 text-c1i"
-                                            : "border-rule bg-surface text-muted hover:bg-neutral")
-                                    }
-                                >
-                                    {done ? "✓ Completed" : "Mark complete"}
-                                </button>
-                            </div>
-                        )}
+    return (
+        <AppShell>
+            {isTopic && (
+                <div className="mb-5">
+                    <CompleteToggle topicId={topicId} />
+                </div>
+            )}
 
-                        <Suspense fallback={<Loading />}>
-                            <Routes>
-                                <Route
-                                    path="/"
-                                    element={
-                                        <Navigate to="/dashboard" replace />
-                                    }
-                                />
-                                <Route
-                                    path="/dashboard"
-                                    element={<Dashboard />}
-                                />
-                                <Route path="/todos" element={<Todos />} />
-                                <Route
-                                    path="/flashcards"
-                                    element={<Flashcards />}
-                                />
-                                <Route
-                                    path="/interview"
-                                    element={<Interview />}
-                                />
-                                <Route
-                                    path="/topic/:id"
-                                    element={<TopicPage />}
-                                />
-                                <Route
-                                    path="*"
-                                    element={
-                                        <Navigate to="/dashboard" replace />
-                                    }
-                                />
-                            </Routes>
-                        </Suspense>
-                    </div>
-                </main>
-            </div>
-        </div>
+            <Suspense fallback={<Loading />}>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/todos" element={<Todos />} />
+                    <Route path="/flashcards" element={<Flashcards />} />
+                    <Route path="/interview" element={<Interview />} />
+                    <Route path="/topic/:id" element={<TopicPage />} />
+                    <Route path="*" element={<Navigate to="/dashboard" replace />} />
+                </Routes>
+            </Suspense>
+        </AppShell>
     );
 }

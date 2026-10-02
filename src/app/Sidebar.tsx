@@ -1,16 +1,12 @@
 // src/app/Sidebar.tsx — topic navigation with per-group progress
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon, RocketIcon } from "lucide-react";
 import { NAV } from "../lib/data";
+import { hrefFor } from "../lib/routes";
 import { useStore } from "../lib/store";
 import { cn } from "../lib/utils";
-
-function hrefFor(id: string) {
-    return ["dashboard", "todos", "interview", "flashcards"].includes(id)
-        ? `/${id}`
-        : `/topic/${id}`;
-}
+import { Progress } from "../components/ui/progress";
 
 function NavGroup({ group }: { group: (typeof NAV)[number] }) {
     const [open, setOpen] = useState(true);
@@ -48,7 +44,7 @@ function NavGroup({ group }: { group: (typeof NAV)[number] }) {
                 type="button"
                 onClick={() => setOpen((o) => !o)}
                 aria-expanded={open}
-                className="flex w-full items-center justify-between gap-2 rounded-md px-3 py-2 text-left text-sm font-semibold text-ink transition-colors hover:bg-neutral cursor-pointer"
+                className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-2 text-left text-sm font-semibold text-ink transition-colors hover:bg-neutral"
             >
                 <span className="flex items-center gap-2">
                     <ChevronRightIcon
@@ -103,20 +99,46 @@ function NavGroup({ group }: { group: (typeof NAV)[number] }) {
     );
 }
 
-export function Sidebar() {
+/**
+ * Navigation body, shared by the desktop rail and the mobile Sheet so the two
+ * can never drift apart.
+ */
+export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
+    const checked = useStore((s) => s.checked);
+    const topicIds = NAV.flatMap((g) => g.children?.map((c) => c.id) ?? []);
+    const done = topicIds.filter((id) => checked[id]).length;
+    const pct = topicIds.length ? Math.round((done / topicIds.length) * 100) : 0;
+
     return (
-        <aside className="hidden w-sidebar shrink-0 flex-col overflow-y-auto border-r border-rule bg-surface lg:flex">
+        <>
             <div className="border-b border-rule px-4 py-4">
-                <p className="font-serif text-base font-bold">
-                    🚀 Interview OS
+                <p className="flex items-center gap-2 font-serif text-base font-bold">
+                    <RocketIcon className="size-4" />
+                    Interview OS
                 </p>
-                <p className="text-[11px] text-muted">Senior AI Engineer</p>
+                <div className="mt-2 flex items-center gap-2">
+                    <Progress value={pct} tone="ai" className="h-1.5 flex-1" />
+                    <span className="text-[11px] whitespace-nowrap text-muted">
+                        {done}/{topicIds.length}
+                    </span>
+                </div>
             </div>
-            <nav className="flex-1 px-2 py-3">
+
+            {/* Close the mobile sheet after a link is chosen. */}
+            <nav className="flex-1 overflow-y-auto px-2 py-3" onClick={onNavigate}>
                 {NAV.map((group) => (
                     <NavGroup key={group.id} group={group} />
                 ))}
             </nav>
+        </>
+    );
+}
+
+/** Desktop sidebar rail. Hidden below `lg`, where the Sheet takes over. */
+export function Sidebar() {
+    return (
+        <aside className="hidden w-sidebar shrink-0 flex-col overflow-y-auto border-r border-rule bg-surface lg:flex">
+            <SidebarNav />
         </aside>
     );
 }
