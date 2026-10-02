@@ -31,16 +31,17 @@ async function state() {
 await page.goto(BASE, { waitUntil: "networkidle" });
 await page.waitForTimeout(500);
 
-const hrefs = await page.$$eval("aside a", (as) =>
-    as
-        .map((a) => a.getAttribute("href"))
-        .filter((h) => h && h.startsWith("/topic/")),
+const hrefs = await page.$$eval(
+    '[data-slot="sidebar"] a[href^="/topic/"]',
+    (as) => as.map((a) => a.getAttribute("href")),
 );
 
 for (const href of hrefs) {
     seen.length = 0;
     try {
-        await page.click(`aside a[href="${href}"]`, { timeout: 4000 });
+        await page.click(`[data-slot="sidebar"] a[href="${href}"]`, {
+            timeout: 4000,
+        });
     } catch {
         console.log(`!! sidebar link gone, cannot click ${href}`);
         break;

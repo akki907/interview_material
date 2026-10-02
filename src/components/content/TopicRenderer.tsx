@@ -1,5 +1,6 @@
 // src/components/content/TopicRenderer.tsx — renders a TopicContent block list
 import type { ContentBlock } from "../../lib/types";
+import { motion } from "motion/react";
 import { cn, difficultyStars } from "../../lib/utils";
 import { RichText } from "./RichText";
 import { Diagram } from "./Diagram";
@@ -328,7 +329,20 @@ export function TopicRenderer({ blocks }: { blocks: ContentBlock[] }) {
     return (
         <div>
             {blocks.map((block, i) => (
-                <Block key={i} block={block} />
+                <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.3,
+                        // Cap the stagger: a topic can hold 20+ blocks and an
+                        // uncapped delay makes the tail feel unresponsive.
+                        delay: Math.min(i, 8) * 0.04,
+                        ease: [0.4, 0, 0.2, 1],
+                    }}
+                >
+                    <Block block={block} />
+                </motion.div>
             ))}
         </div>
     );

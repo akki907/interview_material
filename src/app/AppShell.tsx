@@ -1,28 +1,20 @@
-// src/app/AppShell.tsx — layout chrome: sidebar, mobile sheet, header, scroll rail
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+// src/app/AppShell.tsx — layout chrome: sidebar, header, scroll rail
+import { useCallback, useEffect, useRef } from "react";
+import { motion } from "motion/react";
+import { AppSidebar } from "./Sidebar";
 import { Header } from "./Header";
-import { Sidebar, SidebarNav } from "./Sidebar";
 import { useThemeSync } from "./theme";
 import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-} from "../components/ui/sheet";
+    SidebarInset,
+    SidebarProvider,
+    SidebarTrigger,
+} from "../components/ui/sidebar";
 
-export function AppShell({ children }: { children: React.ReactNode }) {
+function ShellInner({ children }: { children: React.ReactNode }) {
     const { theme, toggle } = useThemeSync();
-    const [navOpen, setNavOpen] = useState(false);
-    const location = useLocation();
 
     const scrollRef = useRef<HTMLElement>(null);
     const railRef = useRef<HTMLDivElement>(null);
-
-    // Close the mobile sheet on navigation, since the link click alone is not
-    // enough — router state changes without a click event on some paths.
-    useEffect(() => setNavOpen(false), [location.pathname]);
 
     /**
      * Reading progress is written straight to the rail's width via a ref rather
@@ -42,7 +34,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         const el = scrollRef.current;
         if (!el) return;
         el.addEventListener("scroll", syncProgress, { passive: true });
-        // Content renders after mount, so measure once the first paint settles.
         const raf = requestAnimationFrame(syncProgress);
         return () => {
             el.removeEventListener("scroll", syncProgress);
@@ -50,36 +41,33 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         };
     }, [syncProgress, children]);
 
+    // A new route starts at the top rather than inheriting the previous
+    // scroll offset, which would otherwise open short pages mid-air.
+    useEffect(() => {
+        scrollRef.current?.scrollTo({ top: 0 });
+    }, [children]);
+
     return (
-        <div className="flex h-screen overflow-hidden bg-paper text-ink">
-            <Sidebar />
+        <SidebarProvider className="h-svh overflow-hidden">
+            <AppSidebar />
 
-            <Sheet open={navOpen} onOpenChange={setNavOpen}>
-                <SheetContent side="left" className="w-sidebar p-0">
-                    <SheetHeader className="sr-only">
-                        <SheetTitle>Navigation</SheetTitle>
-                        <SheetDescription>
-                            Browse interview preparation topics
-                        </SheetDescription>
-                    </SheetHeader>
-                    <SidebarNav onNavigate={() => setNavOpen(false)} />
-                </SheetContent>
-            </Sheet>
-
-            <div className="flex min-w-0 flex-1 flex-col">
+            <SidebarInset className="min-h-0">
                 <Header
                     theme={theme}
                     onToggleTheme={toggle}
-                    onOpenNav={() => setNavOpen(true)}
+                    sidebarTrigger={<SidebarTrigger />}
                 />
 
-                <main
-                    ref={scrollRef}
-                    className="min-h-0 flex-1 overflow-y-auto"
-                >
-                    <div className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-8 sm:py-8 lg:px-10">
+                <main ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto">
+                    <motion.div
+                        key="content"
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+                        className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-8 sm:py-8 lg:px-10"
+                    >
                         {children}
-                    </div>
+                    </motion.div>
                 </main>
 
                 <div className="h-0.5 shrink-0 bg-rule/40" aria-hidden>
@@ -88,7 +76,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                         className="h-full bg-focus transition-[width] duration-100"
                     />
                 </div>
-            </div>
-        </div>
+            </SidebarInset>
+        </SidebarProvider>
     );
+}
+
+export function AppShell({ children }: { children: React.ReactNode }) {
+    return <ShellInner>{children}</ShellInner>;
 }
