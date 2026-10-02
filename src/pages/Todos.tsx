@@ -1,5 +1,6 @@
 // src/pages/Todos.tsx
 import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../lib/store';
 import type { TodoCategory, TodoPriority } from '../lib/types';
@@ -37,7 +38,7 @@ export function Todos() {
     );
     const done = todos.filter(t => t.completed).length;
 
-    const submit = (e: React.FormEvent) => {
+    const submit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const t = title.trim();
         if (!t) return;
