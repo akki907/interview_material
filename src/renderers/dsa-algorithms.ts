@@ -613,7 +613,7 @@ flowchart LR
         </ul>
     `));
 
-    section.appendChild(card('⏱️ Complexity, and What Actually Bounds It', ['Variant', 'Time', 'Notes'] as unknown as Node, [
+    section.appendChild(tableCard('⏱️ Complexity, and What Actually Bounds It', ['Variant', 'Time', 'Notes'], [
         ['All subsets / combinations, no constraint', 'O(2<sup>n</sup>) leaves, O(2<sup>n</sup>) nodes total', 'Unavoidable: the output itself is 2<sup>n</sup> solutions'],
         ['Permutations', 'O(n &times; n!)', 'Swap-based generation avoids re-copying at each level'],
         ['Subsets with duplicates', 'O(2<sup>n</sup>) worst case', 'Skipping equal values at the same depth collapses duplicates; degrades on all-identical input without that skip'],
@@ -621,7 +621,7 @@ flowchart LR
         ['Memoized decision problem', 'O(states &times; choices)', 'Replaces exponential time with an exponential <em>state space</em> that is usually far smaller than the tree'],
         ['Enumerating paths (no memo)', 'exponential output, no improvement possible', 'If the caller needs every path, DP cannot help'],
         ['Space', 'O(depth) for the path, plus O(solutions) if you collect them', 'An unbounded result set is the real limit — 8-queens has 92, 12-queens has 14200, 14-queens has 365596'],
-    ] as unknown as Parameters<typeof card>[2]));
+    ]));
 
     section.appendChild(card('🔥 Real-World Usage', `
         <ul>

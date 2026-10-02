@@ -1,6 +1,9 @@
 // src/renderers/index.ts — Renderer registry
 import { renderDashboard } from './dashboard';
-import { renderSlidingWindow, renderTwoPointers, renderArrays, renderStrings, renderHashMaps, renderStack, renderQueue, renderLinkedList, renderBinaryTree, renderBST, renderHeap, renderGraph, renderBacktracking, renderDP, renderGreedy } from './dsa';
+import { renderStrings, renderHashMaps, renderBinaryTree, renderBST, renderDP, renderGreedy } from './dsa';
+import { renderSlidingWindow, renderTwoPointers, renderArrays } from './dsa-fundamentals';
+import { renderStack, renderQueue, renderLinkedList } from './dsa-structures';
+import { renderHeap, renderGraph, renderBacktracking } from './dsa-algorithms';
 import { renderReactFundamentals, renderReactHooks, renderReactState, renderReactPerformance, renderReactRendering, renderReactArchitecture, renderReactInterview } from './react';
 import { renderPyFundamentals, renderPyDecorators, renderPyAsyncio, renderPyConcurrency, renderPyGIL, renderPyOOP, renderPyIterators, renderPyFunctions, renderPyFastAPI, renderPyInterview } from './python';
 import { renderAILLM, renderAIEmbeddings, renderAIVectorDB, renderAIRAG, renderAIAdvancedRAG, renderAIRAGEval, renderAIAgents, renderAIToolCalling, renderAIAgentMemory, renderAIMultiAgent, renderAIOrchestration, renderAISystemDesign } from './ai';
