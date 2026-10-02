@@ -1,5 +1,5 @@
 // src/content/registry.ts — topic content lookup
-import type { TopicContent } from '../lib/types';
+import type { TopicContent } from "../lib/types";
 
 const registry = new Map<string, TopicContent>();
 
