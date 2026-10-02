@@ -2,6 +2,7 @@
 import { h, toast, escHtml } from '../utils';
 import { Store, TodoItem, TodoCategory, TodoPriority } from '../store';
 import { NAV } from '../data';
+import { card, diagram, callout } from '../components';
 
 const CATEGORY_META: Record<TodoCategory, { label: string; icon: string; cls: string }> = {
     dsa: { label: 'DSA', icon: '🧠', cls: 'c1' },
@@ -57,6 +58,38 @@ export function renderTodos(container: HTMLElement): void {
     // ── Metrics Bar ──────────────────────────────────────────
     const metricsBar = h('div', { className: 'todos-metrics-bar' });
     section.appendChild(metricsBar);
+
+    // ── How the plan is meant to be worked ────────────────────
+    section.appendChild(card('🔀 A plan that survives a bad week', `
+<p>A study list fails when it is organized by <em>topic</em> instead of by <em>blocker</em>.
+Sorting by topic produces fifty items with no order, and the list dies the first week you miss a
+day. Every item here should be phrased so that finishing it changes what you can do next —
+that is what makes it worth resuming.</p>
+<p>The loop below is deliberately short. One pass should end with the topic page marked complete,
+which is what feeds the progress bars on the dashboard and the checkmarks in the sidebar.</p>
+    `, { bookmark: false })).appendChild(
+        diagram(`
+flowchart TD
+    A[Pick the highest-priority<br/>blocker, not a topic] --> B[Read the mental model<br/>and the diagram]
+    B --> C[Attempt one problem<br/>before looking at the solution]
+    C -->{Did you derive it?}
+    C -->|Read the solution<br/>without trying| D[Requeue for tomorrow —<br/>counting it as not done]
+    D --> A
+    C -->|Yes| E[Compare against the<br/>annotated solution]
+    E --> F[Mark the topic<br/>complete]
+    F --> G{Any high-priority<br/>items left?}
+    G -->|Yes| A
+    G -->|No| H[Clear the backlog,<br/>then raise the bar]
+`, 'Attempt before reading — a solution you read but did not derive is not a solved problem')
+    );
+
+    section.appendChild(h('div', { style: 'margin:0 0 20px;' },
+        callout('c4', `
+<p><b>Link goals to topics, not to hours.</b> "Study for two hours" has no completion test and
+always feels equally unfinished. "Derive the invariant for the sliding window without looking,
+then mark the topic complete" either happened or it did not — which is the only property that
+makes a list worth maintaining.</p>`, 'Write items with a completion test')
+    ));
 
     // ── Quick Controls & Filters ─────────────────────────────
     const controlsWrap = h('div', { className: 'todos-controls-wrap' });
@@ -496,7 +529,7 @@ export function renderTodos(container: HTMLElement): void {
             metaRow.innerHTML = `
                 <span class="tag ${cat.cls}">${cat.icon} ${cat.label}</span>
                 <span class="tag ${prio.cls}">${prio.icon} ${prio.label}</span>
-                ${todo.dueDate ? `<span class="tag tag-due">📅 ${todo.dueDate}</span>` : ''}
+                ${todo.dueDate ? `<span class="tag tag-due">📅 ${escHtml(todo.dueDate)}</span>` : ''}
             `;
             body.appendChild(metaRow);
 

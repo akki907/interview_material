@@ -2,6 +2,7 @@
 import '../styles.css';
 import { buildNav, navigateTo } from './nav';
 import { initSearch } from './search';
+import { initTheme } from './theme';
 import { toast } from './utils';
 
 // Expose for legacy inline handlers in rendered HTML
@@ -35,6 +36,7 @@ codeModal.querySelector('.modal-backdrop')!.addEventListener('click', () => code
 
 // Init
 document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
     buildNav();
     initSearch();
     navigateTo('dashboard');

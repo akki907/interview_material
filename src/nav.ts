@@ -2,8 +2,10 @@
 import { NAV } from './data';
 import { RENDERERS } from './renderers/index';
 import { Store } from './store';
-import { topicToolbar } from './components';
+import { topicToolbar, resetCardSlugs } from './components';
 import { renderMermaid } from './mermaid';
+import { buildToc, destroyToc } from './toc';
+import { h } from './utils';
 
 function findNavChild(id: string): string | null {
     for (const group of NAV) {
@@ -19,25 +21,30 @@ export function syncNavChecked(topicId: string): void {
 
 export function buildNav(): void {
     const nav = document.getElementById('sidebar-nav')!;
-    let html = '';
+    const frag = document.createDocumentFragment();
     NAV.forEach(group => {
         if (group.children) {
-            html += `<div class="nav-group">
-                <div class="nav-item nav-group-header" data-group="${group.id}">
-                    <span>${group.label.split(' ').slice(1).join(' ')}</span>
-                    <span class="nav-arrow">▸</span>
-                </div>`;
-            html += `<div class="nav-children expanded" data-children="${group.id}">`;
+            const wrapper = h('div', { className: 'nav-group' });
+            const header = h('div', { className: 'nav-item nav-group-header', 'data-group': group.id });
+            header.appendChild(h('span', {}, group.label.split(' ').slice(1).join(' ')));
+            header.appendChild(h('span', { className: 'nav-arrow' }, '▸'));
+            wrapper.appendChild(header);
+
+            const children = h('div', { className: 'nav-children expanded', 'data-children': group.id });
             group.children.forEach(child => {
                 const checked = Store.isChecked(child.id);
-                html += `<div class="nav-sub ${checked ? 'checked' : ''}" data-id="${child.id}">${child.label}</div>`;
+                children.appendChild(h('div', {
+                    className: 'nav-sub' + (checked ? ' checked' : ''),
+                    'data-id': child.id,
+                }, child.label));
             });
-            html += '</div></div>';
+            wrapper.appendChild(children);
+            frag.appendChild(wrapper);
         } else {
-            html += `<div class="nav-item" data-id="${group.id}">${group.label}</div>`;
+            frag.appendChild(h('div', { className: 'nav-item', 'data-id': group.id }, group.label));
         }
     });
-    nav.innerHTML = html;
+    nav.replaceChildren(frag);
 
     nav.querySelectorAll<HTMLElement>('.nav-item, .nav-sub').forEach(el => {
         el.addEventListener('click', () => {
@@ -55,6 +62,8 @@ export function buildNav(): void {
 }
 
 export function navigateTo(id: string): void {
+    destroyToc();
+    resetCardSlugs();
     document.querySelectorAll('.nav-item, .nav-sub').forEach(el => el.classList.remove('active'));
     const el = document.querySelector(`[data-id="${id}"]`);
     if (el) el.classList.add('active');
@@ -75,6 +84,7 @@ export function navigateTo(id: string): void {
                 const page = content.querySelector('.page-enter');
                 if (page) page.insertBefore(topicToolbar(id), page.firstChild);
             }
+            buildToc(content);
         } else {
             content.innerHTML = '<div class="card"><h2>Page not found</h2><p>The requested topic does not exist yet.</p></div>';
         }

@@ -1,5 +1,5 @@
 // src/renderers/dashboard.ts
-import { h } from '../utils';
+import { h, escHtml } from '../utils';
 import { Store } from '../store';
 import { PROGRESS, STATS, WEAK_AREAS, RECENTLY_STUDIED } from '../data';
 import { progressBar } from '../components';
@@ -63,7 +63,7 @@ export function renderDashboard(container: HTMLElement): void {
                     <button class="todo-check-btn ${t.completed ? 'checked' : ''}" title="Mark complete">${t.completed ? '✓' : ''}</button>
                     <div class="dash-todo-text">
                         <span class="tag tag-${t.category === 'dsa' ? 'blue' : t.category === 'react' ? 'cyan' : t.category === 'ai' ? 'purple' : 'gray'}" style="font-size:0.7rem;padding:2px 6px;">${t.category.toUpperCase()}</span>
-                        <span style="font-size:0.85rem;margin-left:6px;">${t.title}</span>
+                        <span style="font-size:0.85rem;margin-left:6px;">${escHtml(t.title)}</span>
                     </div>
                     <span style="font-size:0.8rem;color:var(--muted);">${prioEmoji}</span>
                 `;
