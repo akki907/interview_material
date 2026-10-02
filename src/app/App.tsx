@@ -72,13 +72,19 @@ export function App() {
 
             <Suspense fallback={<Loading />}>
                 <Routes>
-                    <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                    <Route
+                        path="/"
+                        element={<Navigate to="/dashboard" replace />}
+                    />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/todos" element={<Todos />} />
                     <Route path="/flashcards" element={<Flashcards />} />
                     <Route path="/interview" element={<Interview />} />
                     <Route path="/topic/:id" element={<TopicPage />} />
-                    <Route path="*" element={<Navigate to="/dashboard" replace />} />
+                    <Route
+                        path="*"
+                        element={<Navigate to="/dashboard" replace />}
+                    />
                 </Routes>
             </Suspense>
         </AppShell>

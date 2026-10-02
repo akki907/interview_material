@@ -1,6 +1,8 @@
 // src/components/content/Diagram.tsx — mermaid, themed and lazily loaded
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import type { ReactNode } from "react";
 import type mermaidApi from "mermaid";
+import { svgToReact } from "./htmlToReact";
 
 type MermaidApi = typeof mermaidApi;
 
@@ -15,9 +17,8 @@ function loadMermaid(): Promise<MermaidApi> {
 function token(name: string, fallback: string): string {
     if (typeof getComputedStyle !== "function") return fallback;
     return (
-        getComputedStyle(document.documentElement)
-            .getPropertyValue(name)
-            .trim() || fallback
+        getComputedStyle(document.documentElement).getPropertyValue(name).trim() ||
+        fallback
     );
 }
 
@@ -42,15 +43,6 @@ function themeVariables(dark: boolean) {
 
 let initializedFor: string | null = null;
 
-let parser: DOMParser | null = null;
-
-function parseNodes(html: string): Node[] {
-    parser ??= new DOMParser();
-    return Array.from(
-        parser.parseFromString(html, "text/html").body.childNodes,
-    );
-}
-
 async function getMermaid(dark: boolean): Promise<MermaidApi> {
     const mermaid = await loadMermaid();
     // Mermaid bakes theme colors into the SVG at render time, so it must be
@@ -71,6 +63,14 @@ async function getMermaid(dark: boolean): Promise<MermaidApi> {
     return mermaid;
 }
 
+/**
+ * Mermaid output is held in state and rendered as React children.
+ *
+ * Injecting it into a ref'd div caused the same
+ * `removeChild` NotFoundError as RichText did: React did not know the injected
+ * SVG belonged to it. The diagram id must stay stable across renders or mermaid
+ * regenerates the whole graph.
+ */
 export function Diagram({
     source,
     caption,
@@ -78,14 +78,13 @@ export function Diagram({
     source: string;
     caption?: string;
 }) {
-    const hostRef = useRef<HTMLDivElement>(null);
-    const idRef = useRef(`mmd-${Math.random().toString(36).slice(2, 10)}`);
+    const [svg, setSvg] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         let cancelled = false;
-        const host = hostRef.current;
-        if (!host) return;
+        setSvg(null);
+        setError(null);
 
         const dark =
             document.documentElement.getAttribute("data-theme") === "dark";
@@ -94,49 +93,56 @@ export function Diagram({
             try {
                 const mermaid = await getMermaid(dark);
                 if (cancelled) return;
-                // Parse first so a syntax error renders inline instead of
+                // Parse first so a syntax error renders inline rather than
                 // replacing the page with mermaid's thrown Error object.
                 await mermaid.parse(source);
                 if (cancelled) return;
-                const { svg } = await mermaid.render(idRef.current, source);
+                const { svg: out } = await mermaid.render(
+                    `mmd-${Math.random().toString(36).slice(2, 10)}`,
+                    source,
+                );
                 if (cancelled) return;
-                // Parse the SVG rather than assigning innerHTML: same result,
-                // without the raw HTML sink.
-                host.replaceChildren(...parseNodes(svg));
-                setError(null);
+                setSvg(out);
             } catch (err) {
                 if (cancelled) return;
-                host.replaceChildren();
-                setError(err instanceof Error ? err.message : "invalid syntax");
+                setError(
+                    err instanceof Error ? err.message : "invalid syntax",
+                );
             }
         })();
 
         return () => {
             cancelled = true;
-            host.replaceChildren();
         };
     }, [source]);
 
+    let content: ReactNode;
+    if (error) {
+        content = (
+            <div className="mx-4 mb-4 rounded-md bg-warn px-3 py-2 text-xs text-c3i">
+                <p className="font-semibold">Diagram could not be rendered</p>
+                <pre className="mt-1 overflow-x-auto whitespace-pre-wrap">
+                    {error}
+                </pre>
+            </div>
+        );
+    } else if (svg) {
+        content = (
+            <div className="flex justify-center overflow-x-auto px-4 py-5">
+                {svgToReact(svg)}
+            </div>
+        );
+    } else {
+        content = (
+            <div className="px-4 py-5">
+                <div className="h-24 w-full animate-pulse rounded-md bg-neutral" />
+            </div>
+        );
+    }
+
     return (
         <figure className="my-5 overflow-hidden rounded-card border border-rule bg-surface shadow-soft">
-            <div
-                ref={hostRef}
-                className="flex justify-center overflow-x-auto px-4 py-5"
-            >
-                {!error && !hostRef.current?.childElementCount && (
-                    <div className="h-24 w-full animate-pulse rounded-md bg-neutral" />
-                )}
-            </div>
-            {error && (
-                <div className="mx-4 mb-4 rounded-md bg-warn px-3 py-2 text-xs text-c3i">
-                    <p className="font-semibold">
-                        Diagram could not be rendered
-                    </p>
-                    <pre className="mt-1 overflow-x-auto whitespace-pre-wrap">
-                        {error}
-                    </pre>
-                </div>
-            )}
+            {content}
             {caption && (
                 <figcaption className="border-t border-rule px-4 py-2.5 text-center text-xs text-muted">
                     {caption}

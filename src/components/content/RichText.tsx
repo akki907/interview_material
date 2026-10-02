@@ -1,34 +1,18 @@
 // src/components/content/RichText.tsx
 //
-// Topic bodies are authored as HTML strings in this repo's content modules.
-// They are rendered by parsing into a detached document and moving the nodes
-// in — never through dangerouslySetInnerHTML — so nothing can execute and
-// user-supplied values stay inert unless explicitly escaped upstream.
-import { useEffect, useRef } from "react";
+// Renders trusted, author-authored HTML strings from src/content/*.
+//
+// This used to render an empty <div> and inject parsed nodes into it from an
+// effect. React believed that div had no children, so the next reconciliation
+// tried to remove nodes it did not own and threw
+//   NotFoundError: Failed to execute 'removeChild' on 'Node'
+// which unmounted the whole app on every route change. Content is now converted
+// to React elements up front so React owns every node.
+import { useMemo } from "react";
+import { htmlToReact } from "./htmlToReact";
 
-let parser: DOMParser | null = null;
-
-function parse(html: string): Node[] {
-    parser ??= new DOMParser();
-    return Array.from(
-        parser.parseFromString(html, "text/html").body.childNodes,
-    );
-}
-
-export function RichText({
-    html,
-    className,
-}: {
-    html: string;
-    className?: string;
-}) {
-    const ref = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        el.replaceChildren(...parse(html));
-    }, [html]);
-
-    return <div ref={ref} className={className ?? "rich"} />;
+export function RichText({ html, className }: { html: string; className?: string }) {
+    // Parsing is pure and keyed by the input, so it must not rerun per render.
+    const nodes = useMemo(() => htmlToReact(html, "rt"), [html]);
+    return <div className={className ?? "rich"}>{nodes}</div>;
 }

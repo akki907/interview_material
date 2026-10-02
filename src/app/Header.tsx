@@ -1,12 +1,7 @@
 // src/app/Header.tsx — breadcrumb, search, theme toggle, mobile nav trigger
 import { useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-    MenuIcon,
-    MoonIcon,
-    SearchIcon,
-    SunIcon,
-} from "lucide-react";
+import { MenuIcon, MoonIcon, SearchIcon, SunIcon } from "lucide-react";
 import { TOPIC_LABELS } from "../lib/data";
 import { NAV_INDEX, hrefFor, idFromPath } from "../lib/routes";
 import { Button } from "../components/ui/button";
@@ -68,7 +63,8 @@ export function Header({
                         onChange={(e) => setQuery(e.target.value)}
                         onKeyDown={(e) => {
                             if (e.key === "Escape") setQuery("");
-                            if (e.key === "Enter" && results[0]) go(results[0].id);
+                            if (e.key === "Enter" && results[0])
+                                go(results[0].id);
                         }}
                         placeholder="Search topics…"
                         aria-label="Search topics"

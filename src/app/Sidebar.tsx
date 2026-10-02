@@ -107,7 +107,9 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
     const checked = useStore((s) => s.checked);
     const topicIds = NAV.flatMap((g) => g.children?.map((c) => c.id) ?? []);
     const done = topicIds.filter((id) => checked[id]).length;
-    const pct = topicIds.length ? Math.round((done / topicIds.length) * 100) : 0;
+    const pct = topicIds.length
+        ? Math.round((done / topicIds.length) * 100)
+        : 0;
 
     return (
         <>
@@ -125,7 +127,10 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
             </div>
 
             {/* Close the mobile sheet after a link is chosen. */}
-            <nav className="flex-1 overflow-y-auto px-2 py-3" onClick={onNavigate}>
+            <nav
+                className="flex-1 overflow-y-auto px-2 py-3"
+                onClick={onNavigate}
+            >
                 {NAV.map((group) => (
                     <NavGroup key={group.id} group={group} />
                 ))}

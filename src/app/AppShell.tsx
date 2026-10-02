@@ -73,16 +73,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                     onOpenNav={() => setNavOpen(true)}
                 />
 
-                <main ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto">
+                <main
+                    ref={scrollRef}
+                    className="min-h-0 flex-1 overflow-y-auto"
+                >
                     <div className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-8 sm:py-8 lg:px-10">
                         {children}
                     </div>
                 </main>
 
-                <div
-                    className="h-0.5 shrink-0 bg-rule/40"
-                    aria-hidden
-                >
+                <div className="h-0.5 shrink-0 bg-rule/40" aria-hidden>
                     <div
                         ref={railRef}
                         className="h-full bg-focus transition-[width] duration-100"

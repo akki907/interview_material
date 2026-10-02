@@ -29,7 +29,11 @@ function PrevNext({ id }: { id: string }) {
             className="mt-10 flex items-stretch justify-between gap-3 border-t border-rule pt-6"
         >
             {prev ? (
-                <Button variant="outline" asChild className="max-w-45 justify-start">
+                <Button
+                    variant="outline"
+                    asChild
+                    className="max-w-45 justify-start"
+                >
                     <Link to={hrefFor(prev)}>
                         <ArrowLeftIcon className="size-4 shrink-0" />
                         <span className="truncate">{TOPIC_LABELS[prev]}</span>
@@ -44,7 +48,11 @@ function PrevNext({ id }: { id: string }) {
             </span>
 
             {next ? (
-                <Button variant="outline" asChild className="max-w-45 justify-end">
+                <Button
+                    variant="outline"
+                    asChild
+                    className="max-w-45 justify-end"
+                >
                     <Link to={hrefFor(next)}>
                         <span className="truncate">{TOPIC_LABELS[next]}</span>
                         <ArrowRightIcon className="size-4 shrink-0" />
