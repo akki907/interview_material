@@ -1,52 +1,58 @@
 // src/renderers/todos.ts — Study Todos & Checklist renderer
-import { h, toast, escHtml } from '../utils';
-import { Store, TodoItem, TodoCategory, TodoPriority } from '../store';
-import { NAV } from '../data';
-import { card, diagram, callout } from '../components';
+import { h, toast, escHtml } from "../utils";
+import { Store, TodoItem, TodoCategory, TodoPriority } from "../store";
+import { NAV } from "../data";
+import { card, diagram, callout } from "../components";
 
-const CATEGORY_META: Record<TodoCategory, { label: string; icon: string; cls: string }> = {
-    dsa: { label: 'DSA', icon: '🧠', cls: 'c1' },
-    react: { label: 'React', icon: '⚛️', cls: 'c4' },
-    python: { label: 'Python', icon: '🐍', cls: 'c5' },
-    ai: { label: 'AI Engineering', icon: '🤖', cls: 'c2' },
-    systemDesign: { label: 'System Design', icon: '🏗️', cls: 'c0' },
-    general: { label: 'General', icon: '🎯', cls: 'c3' },
+const CATEGORY_META: Record<
+    TodoCategory,
+    { label: string; icon: string; cls: string }
+> = {
+    dsa: { label: "DSA", icon: "🧠", cls: "c1" },
+    react: { label: "React", icon: "⚛️", cls: "c4" },
+    python: { label: "Python", icon: "🐍", cls: "c5" },
+    ai: { label: "AI Engineering", icon: "🤖", cls: "c2" },
+    systemDesign: { label: "System Design", icon: "🏗️", cls: "c0" },
+    general: { label: "General", icon: "🎯", cls: "c3" },
 };
 
-const PRIORITY_META: Record<TodoPriority, { label: string; icon: string; cls: string }> = {
-    high: { label: 'High', icon: '🔥', cls: 'priority-high' },
-    medium: { label: 'Medium', icon: '⚡', cls: 'priority-medium' },
-    low: { label: 'Low', icon: '☕', cls: 'priority-low' },
+const PRIORITY_META: Record<
+    TodoPriority,
+    { label: string; icon: string; cls: string }
+> = {
+    high: { label: "High", icon: "🔥", cls: "priority-high" },
+    medium: { label: "Medium", icon: "⚡", cls: "priority-medium" },
+    low: { label: "Low", icon: "☕", cls: "priority-low" },
 };
 
 export function renderTodos(container: HTMLElement): void {
-    const section = h('div', { className: 'page-enter todos-view' });
+    const section = h("div", { className: "page-enter todos-view" });
 
     // Local view state
-    let filterStatus: 'all' | 'active' | 'completed' = 'all';
-    let filterCategory: 'all' | TodoCategory = 'all';
-    let filterPriority: 'all' | TodoPriority = 'all';
-    let searchQuery = '';
+    let filterStatus: "all" | "active" | "completed" = "all";
+    let filterCategory: "all" | TodoCategory = "all";
+    let filterPriority: "all" | TodoPriority = "all";
+    let searchQuery = "";
     let isAddFormOpen = false;
     let editingTodoId: string | null = null;
 
     // Build selectable topics list from NAV
     const topicOptions: Array<{ id: string; label: string }> = [];
-    NAV.forEach(group => {
+    NAV.forEach((group) => {
         if (group.children) {
-            group.children.forEach(child => {
+            group.children.forEach((child) => {
                 topicOptions.push({
                     id: child.id,
-                    label: `${group.label.split(' ')[0]} ${child.label}`,
+                    label: `${group.label.split(" ")[0]} ${child.label}`,
                 });
             });
-        } else if (group.id !== 'todos' && group.id !== 'dashboard') {
+        } else if (group.id !== "todos" && group.id !== "dashboard") {
             topicOptions.push({ id: group.id, label: group.label });
         }
     });
 
     // ── Header ───────────────────────────────────────────────
-    const header = h('div', { className: 'todos-header' });
+    const header = h("div", { className: "todos-header" });
     header.innerHTML = `
         <div class="todos-title-wrap">
             <h2>✅ Study Plan & Action Items</h2>
@@ -56,19 +62,28 @@ export function renderTodos(container: HTMLElement): void {
     section.appendChild(header);
 
     // ── Metrics Bar ──────────────────────────────────────────
-    const metricsBar = h('div', { className: 'todos-metrics-bar' });
+    const metricsBar = h("div", { className: "todos-metrics-bar" });
     section.appendChild(metricsBar);
 
     // ── How the plan is meant to be worked ────────────────────
-    section.appendChild(card('🔀 A plan that survives a bad week', `
+    section
+        .appendChild(
+            card(
+                "🔀 A plan that survives a bad week",
+                `
 <p>A study list fails when it is organized by <em>topic</em> instead of by <em>blocker</em>.
 Sorting by topic produces fifty items with no order, and the list dies the first week you miss a
 day. Every item here should be phrased so that finishing it changes what you can do next —
 that is what makes it worth resuming.</p>
 <p>The loop below is deliberately short. One pass should end with the topic page marked complete,
 which is what feeds the progress bars on the dashboard and the checkmarks in the sidebar.</p>
-    `, { bookmark: false })).appendChild(
-        diagram(`
+    `,
+                { bookmark: false },
+            ),
+        )
+        .appendChild(
+            diagram(
+                `
 flowchart TD
     A[Pick the highest-priority<br/>blocker, not a topic] --> B[Read the mental model<br/>and the diagram]
     B --> C[Attempt one problem<br/>before looking at the solution]
@@ -80,34 +95,46 @@ flowchart TD
     F --> G{Any high-priority<br/>items left?}
     G -->|Yes| A
     G -->|No| H[Clear the backlog,<br/>then raise the bar]
-`, 'Attempt before reading — a solution you read but did not derive is not a solved problem')
-    );
+`,
+                "Attempt before reading — a solution you read but did not derive is not a solved problem",
+            ),
+        );
 
-    section.appendChild(h('div', { style: 'margin:0 0 20px;' },
-        callout('c4', `
+    section.appendChild(
+        h(
+            "div",
+            { style: "margin:0 0 20px;" },
+            callout(
+                "c4",
+                `
 <p><b>Link goals to topics, not to hours.</b> "Study for two hours" has no completion test and
 always feels equally unfinished. "Derive the invariant for the sliding window without looking,
 then mark the topic complete" either happened or it did not — which is the only property that
-makes a list worth maintaining.</p>`, 'Write items with a completion test')
-    ));
+makes a list worth maintaining.</p>`,
+                "Write items with a completion test",
+            ),
+        ),
+    );
 
     // ── Quick Controls & Filters ─────────────────────────────
-    const controlsWrap = h('div', { className: 'todos-controls-wrap' });
+    const controlsWrap = h("div", { className: "todos-controls-wrap" });
     section.appendChild(controlsWrap);
 
     // ── Add / Edit Form Card (collapsible) ─────────────────────
-    const formCard = h('div', { className: 'card todos-form-card hidden' });
+    const formCard = h("div", { className: "card todos-form-card hidden" });
     section.appendChild(formCard);
 
     // ── Todo Items Container ─────────────────────────────────
-    const listContainer = h('div', { className: 'todos-list-container' });
+    const listContainer = h("div", { className: "todos-list-container" });
     section.appendChild(listContainer);
 
     function updateMetrics(todos: TodoItem[]): void {
         const total = todos.length;
-        const completed = todos.filter(t => t.completed).length;
+        const completed = todos.filter((t) => t.completed).length;
         const active = total - completed;
-        const highPriorityActive = todos.filter(t => !t.completed && t.priority === 'high').length;
+        const highPriorityActive = todos.filter(
+            (t) => !t.completed && t.priority === "high",
+        ).length;
         const pct = total === 0 ? 0 : Math.round((completed / total) * 100);
 
         metricsBar.innerHTML = `
@@ -140,18 +167,18 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
     }
 
     function renderControls(todos: TodoItem[]): void {
-        controlsWrap.innerHTML = '';
+        controlsWrap.innerHTML = "";
 
         const total = todos.length;
-        const active = todos.filter(t => !t.completed).length;
+        const active = todos.filter((t) => !t.completed).length;
         const completed = total - active;
 
         // Top row: Add button + Search input + Bulk action button
-        const topRow = h('div', { className: 'todos-top-row' });
+        const topRow = h("div", { className: "todos-top-row" });
 
-        const addBtn = h('button', {
-            className: 'btn btn-primary',
-            innerHTML: isAddFormOpen ? '✕ Close Form' : '➕ Add Study Goal',
+        const addBtn = h("button", {
+            className: "btn btn-primary",
+            innerHTML: isAddFormOpen ? "✕ Close Form" : "➕ Add Study Goal",
             onClick: () => {
                 isAddFormOpen = !isAddFormOpen;
                 editingTodoId = null;
@@ -161,29 +188,35 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
         });
         topRow.appendChild(addBtn);
 
-        const searchBox = h('div', { className: 'todos-search-box' });
+        const searchBox = h("div", { className: "todos-search-box" });
         searchBox.innerHTML = `
             <input type="text" class="todos-search-input" placeholder="Search study tasks..." value="${escHtml(searchQuery)}" />
         `;
-        const searchInput = searchBox.querySelector('input')!;
-        searchInput.addEventListener('input', () => {
+        const searchInput = searchBox.querySelector("input")!;
+        searchInput.addEventListener("input", () => {
             searchQuery = searchInput.value;
             renderList();
         });
         topRow.appendChild(searchBox);
 
-        const actionsDropdownWrap = h('div', { className: 'todos-actions-wrap' });
-        const bulkBtn = h('button', {
-            className: 'btn btn-secondary',
-            textContent: '⚡ Quick Presets & Actions ▾',
+        const actionsDropdownWrap = h("div", {
+            className: "todos-actions-wrap",
+        });
+        const bulkBtn = h("button", {
+            className: "btn btn-secondary",
+            textContent: "⚡ Quick Presets & Actions ▾",
             onClick: () => {
-                const menu = actionsDropdownWrap.querySelector('.todos-dropdown-menu');
-                menu?.classList.toggle('hidden');
+                const menu = actionsDropdownWrap.querySelector(
+                    ".todos-dropdown-menu",
+                );
+                menu?.classList.toggle("hidden");
             },
         });
         actionsDropdownWrap.appendChild(bulkBtn);
 
-        const dropdownMenu = h('div', { className: 'todos-dropdown-menu hidden card' });
+        const dropdownMenu = h("div", {
+            className: "todos-dropdown-menu hidden card",
+        });
         dropdownMenu.innerHTML = `
             <button class="dropdown-item" id="act-mark-all">✓ Mark all complete</button>
             <button class="dropdown-item" id="act-clear-done">🗑️ Clear completed</button>
@@ -192,87 +225,107 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
             <button class="dropdown-item" id="act-reset-defaults">↺ Reset to recommended tasks</button>
         `;
 
-        dropdownMenu.querySelector('#act-mark-all')!.addEventListener('click', () => {
-            const all = Store.getTodos();
-            all.forEach(t => { t.completed = true; });
-            Store.saveTodos(all);
-            toast('All tasks marked complete!', 'success');
-            refresh();
-        });
-
-        dropdownMenu.querySelector('#act-clear-done')!.addEventListener('click', () => {
-            const removed = Store.clearCompletedTodos();
-            toast(`Cleared ${removed} completed task(s)`, 'info');
-            refresh();
-        });
-
-        dropdownMenu.querySelector('#act-add-preset-rag')!.addEventListener('click', () => {
-            Store.addTodo({
-                title: 'Evaluate RAG retrieval with RAGAS (faithfulness, answer relevance)',
-                category: 'ai',
-                priority: 'high',
-                completed: false,
-                linkedTopicId: 'ai-rag-eval',
-                notes: 'Test grounding score with synthetic test dataset.',
-            });
-            Store.addTodo({
-                title: 'Review Agent Memory patterns: working memory vs episodic vector memory',
-                category: 'ai',
-                priority: 'medium',
-                completed: false,
-                linkedTopicId: 'ai-agent-memory',
-                notes: 'Understand short-term context window compaction vs long-term storage.',
-            });
-            toast('Added RAG & Agent study tasks!', 'success');
-            refresh();
-        });
-
-        dropdownMenu.querySelector('#act-add-preset-dsa')!.addEventListener('click', () => {
-            Store.addTodo({
-                title: 'Solve Two Pointers: Trapping Rain Water',
-                category: 'dsa',
-                priority: 'high',
-                completed: false,
-                linkedTopicId: 'dsa-two-pointers',
-                notes: 'Maintain left_max and right_max in O(1) space.',
-            });
-            Store.addTodo({
-                title: 'Implement Monotonic Stack for Daily Temperatures',
-                category: 'dsa',
-                priority: 'medium',
-                completed: false,
-                linkedTopicId: 'dsa-stack',
-                notes: 'Store indices of descending temperatures.',
-            });
-            toast('Added DSA interview sprint tasks!', 'success');
-            refresh();
-        });
-
-        dropdownMenu.querySelector('#act-reset-defaults')!.addEventListener('click', () => {
-            if (confirm('Reset todos to the curated default interview tasks?')) {
-                Store.resetTodos();
-                toast('Reset to default study plan', 'info');
+        dropdownMenu
+            .querySelector("#act-mark-all")!
+            .addEventListener("click", () => {
+                const all = Store.getTodos();
+                all.forEach((t) => {
+                    t.completed = true;
+                });
+                Store.saveTodos(all);
+                toast("All tasks marked complete!", "success");
                 refresh();
-            }
-        });
+            });
+
+        dropdownMenu
+            .querySelector("#act-clear-done")!
+            .addEventListener("click", () => {
+                const removed = Store.clearCompletedTodos();
+                toast(`Cleared ${removed} completed task(s)`, "info");
+                refresh();
+            });
+
+        dropdownMenu
+            .querySelector("#act-add-preset-rag")!
+            .addEventListener("click", () => {
+                Store.addTodo({
+                    title: "Evaluate RAG retrieval with RAGAS (faithfulness, answer relevance)",
+                    category: "ai",
+                    priority: "high",
+                    completed: false,
+                    linkedTopicId: "ai-rag-eval",
+                    notes: "Test grounding score with synthetic test dataset.",
+                });
+                Store.addTodo({
+                    title: "Review Agent Memory patterns: working memory vs episodic vector memory",
+                    category: "ai",
+                    priority: "medium",
+                    completed: false,
+                    linkedTopicId: "ai-agent-memory",
+                    notes: "Understand short-term context window compaction vs long-term storage.",
+                });
+                toast("Added RAG & Agent study tasks!", "success");
+                refresh();
+            });
+
+        dropdownMenu
+            .querySelector("#act-add-preset-dsa")!
+            .addEventListener("click", () => {
+                Store.addTodo({
+                    title: "Solve Two Pointers: Trapping Rain Water",
+                    category: "dsa",
+                    priority: "high",
+                    completed: false,
+                    linkedTopicId: "dsa-two-pointers",
+                    notes: "Maintain left_max and right_max in O(1) space.",
+                });
+                Store.addTodo({
+                    title: "Implement Monotonic Stack for Daily Temperatures",
+                    category: "dsa",
+                    priority: "medium",
+                    completed: false,
+                    linkedTopicId: "dsa-stack",
+                    notes: "Store indices of descending temperatures.",
+                });
+                toast("Added DSA interview sprint tasks!", "success");
+                refresh();
+            });
+
+        dropdownMenu
+            .querySelector("#act-reset-defaults")!
+            .addEventListener("click", () => {
+                if (
+                    confirm(
+                        "Reset todos to the curated default interview tasks?",
+                    )
+                ) {
+                    Store.resetTodos();
+                    toast("Reset to default study plan", "info");
+                    refresh();
+                }
+            });
 
         actionsDropdownWrap.appendChild(dropdownMenu);
         topRow.appendChild(actionsDropdownWrap);
         controlsWrap.appendChild(topRow);
 
         // Filter pills row
-        const filterRow = h('div', { className: 'todos-filters-row' });
+        const filterRow = h("div", { className: "todos-filters-row" });
 
         // Status Tabs
-        const statusTabs = h('div', { className: 'todos-status-tabs' });
-        const statuses: Array<{ key: 'all' | 'active' | 'completed'; label: string; count: number }> = [
-            { key: 'all', label: 'All', count: total },
-            { key: 'active', label: 'Active', count: active },
-            { key: 'completed', label: 'Done', count: completed },
+        const statusTabs = h("div", { className: "todos-status-tabs" });
+        const statuses: Array<{
+            key: "all" | "active" | "completed";
+            label: string;
+            count: number;
+        }> = [
+            { key: "all", label: "All", count: total },
+            { key: "active", label: "Active", count: active },
+            { key: "completed", label: "Done", count: completed },
         ];
-        statuses.forEach(s => {
-            const btn = h('button', {
-                className: `tab ${filterStatus === s.key ? 'active' : ''}`,
+        statuses.forEach((s) => {
+            const btn = h("button", {
+                className: `tab ${filterStatus === s.key ? "active" : ""}`,
                 textContent: `${s.label} (${s.count})`,
                 onClick: () => {
                     filterStatus = s.key;
@@ -285,37 +338,41 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
         filterRow.appendChild(statusTabs);
 
         // Category filter chips
-        const catSelect = h('select', {
-            className: 'todos-select',
+        const catSelect = h("select", {
+            className: "todos-select",
             onChange: (e) => {
-                filterCategory = (e.target as HTMLSelectElement).value as 'all' | TodoCategory;
+                filterCategory = (e.target as HTMLSelectElement).value as
+                    | "all"
+                    | TodoCategory;
                 renderList();
             },
         });
         catSelect.innerHTML = `
-            <option value="all" ${filterCategory === 'all' ? 'selected' : ''}>All Categories</option>
-            <option value="dsa" ${filterCategory === 'dsa' ? 'selected' : ''}>🧠 DSA</option>
-            <option value="react" ${filterCategory === 'react' ? 'selected' : ''}>⚛️ React</option>
-            <option value="python" ${filterCategory === 'python' ? 'selected' : ''}>🐍 Python</option>
-            <option value="ai" ${filterCategory === 'ai' ? 'selected' : ''}>🤖 AI Engineering</option>
-            <option value="systemDesign" ${filterCategory === 'systemDesign' ? 'selected' : ''}>🏗️ System Design</option>
-            <option value="general" ${filterCategory === 'general' ? 'selected' : ''}>🎯 General</option>
+            <option value="all" ${filterCategory === "all" ? "selected" : ""}>All Categories</option>
+            <option value="dsa" ${filterCategory === "dsa" ? "selected" : ""}>🧠 DSA</option>
+            <option value="react" ${filterCategory === "react" ? "selected" : ""}>⚛️ React</option>
+            <option value="python" ${filterCategory === "python" ? "selected" : ""}>🐍 Python</option>
+            <option value="ai" ${filterCategory === "ai" ? "selected" : ""}>🤖 AI Engineering</option>
+            <option value="systemDesign" ${filterCategory === "systemDesign" ? "selected" : ""}>🏗️ System Design</option>
+            <option value="general" ${filterCategory === "general" ? "selected" : ""}>🎯 General</option>
         `;
         filterRow.appendChild(catSelect);
 
         // Priority filter
-        const prioSelect = h('select', {
-            className: 'todos-select',
+        const prioSelect = h("select", {
+            className: "todos-select",
             onChange: (e) => {
-                filterPriority = (e.target as HTMLSelectElement).value as 'all' | TodoPriority;
+                filterPriority = (e.target as HTMLSelectElement).value as
+                    | "all"
+                    | TodoPriority;
                 renderList();
             },
         });
         prioSelect.innerHTML = `
-            <option value="all" ${filterPriority === 'all' ? 'selected' : ''}>All Priorities</option>
-            <option value="high" ${filterPriority === 'high' ? 'selected' : ''}>🔥 High Priority</option>
-            <option value="medium" ${filterPriority === 'medium' ? 'selected' : ''}>⚡ Medium Priority</option>
-            <option value="low" ${filterPriority === 'low' ? 'selected' : ''}>☕ Low Priority</option>
+            <option value="all" ${filterPriority === "all" ? "selected" : ""}>All Priorities</option>
+            <option value="high" ${filterPriority === "high" ? "selected" : ""}>🔥 High Priority</option>
+            <option value="medium" ${filterPriority === "medium" ? "selected" : ""}>⚡ Medium Priority</option>
+            <option value="low" ${filterPriority === "low" ? "selected" : ""}>☕ Low Priority</option>
         `;
         filterRow.appendChild(prioSelect);
 
@@ -324,25 +381,27 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
 
     function renderForm(): void {
         if (!isAddFormOpen) {
-            formCard.classList.add('hidden');
-            formCard.innerHTML = '';
+            formCard.classList.add("hidden");
+            formCard.innerHTML = "";
             return;
         }
 
-        formCard.classList.remove('hidden');
-        const editingTodo = editingTodoId ? Store.getTodos().find(t => t.id === editingTodoId) : null;
+        formCard.classList.remove("hidden");
+        const editingTodo = editingTodoId
+            ? Store.getTodos().find((t) => t.id === editingTodoId)
+            : null;
 
         const isEditing = !!editingTodo;
-        const initialTitle = editingTodo ? editingTodo.title : '';
-        const initialCat = editingTodo ? editingTodo.category : 'dsa';
-        const initialPrio = editingTodo ? editingTodo.priority : 'high';
-        const initialTopic = editingTodo ? (editingTodo.linkedTopicId || '') : '';
-        const initialDue = editingTodo ? (editingTodo.dueDate || '') : '';
-        const initialNotes = editingTodo ? (editingTodo.notes || '') : '';
+        const initialTitle = editingTodo ? editingTodo.title : "";
+        const initialCat = editingTodo ? editingTodo.category : "dsa";
+        const initialPrio = editingTodo ? editingTodo.priority : "high";
+        const initialTopic = editingTodo ? editingTodo.linkedTopicId || "" : "";
+        const initialDue = editingTodo ? editingTodo.dueDate || "" : "";
+        const initialNotes = editingTodo ? editingTodo.notes || "" : "";
 
         formCard.innerHTML = `
             <div class="card-header">
-                <h3>${isEditing ? '✏️ Edit Study Task' : '➕ New Study Task'}</h3>
+                <h3>${isEditing ? "✏️ Edit Study Task" : "➕ New Study Task"}</h3>
                 <button class="icon-btn" id="close-form-btn">✕</button>
             </div>
             <form id="todo-form" class="todos-form-body">
@@ -356,20 +415,20 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
                     <div class="form-group">
                         <label>Category</label>
                         <select id="todo-cat-input" class="todos-select">
-                            <option value="dsa" ${initialCat === 'dsa' ? 'selected' : ''}>🧠 DSA</option>
-                            <option value="react" ${initialCat === 'react' ? 'selected' : ''}>⚛️ React</option>
-                            <option value="python" ${initialCat === 'python' ? 'selected' : ''}>🐍 Python</option>
-                            <option value="ai" ${initialCat === 'ai' ? 'selected' : ''}>🤖 AI Engineering</option>
-                            <option value="systemDesign" ${initialCat === 'systemDesign' ? 'selected' : ''}>🏗️ System Design</option>
-                            <option value="general" ${initialCat === 'general' ? 'selected' : ''}>🎯 General</option>
+                            <option value="dsa" ${initialCat === "dsa" ? "selected" : ""}>🧠 DSA</option>
+                            <option value="react" ${initialCat === "react" ? "selected" : ""}>⚛️ React</option>
+                            <option value="python" ${initialCat === "python" ? "selected" : ""}>🐍 Python</option>
+                            <option value="ai" ${initialCat === "ai" ? "selected" : ""}>🤖 AI Engineering</option>
+                            <option value="systemDesign" ${initialCat === "systemDesign" ? "selected" : ""}>🏗️ System Design</option>
+                            <option value="general" ${initialCat === "general" ? "selected" : ""}>🎯 General</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Priority</label>
                         <select id="todo-prio-input" class="todos-select">
-                            <option value="high" ${initialPrio === 'high' ? 'selected' : ''}>🔥 High</option>
-                            <option value="medium" ${initialPrio === 'medium' ? 'selected' : ''}>⚡ Medium</option>
-                            <option value="low" ${initialPrio === 'low' ? 'selected' : ''}>☕ Low</option>
+                            <option value="high" ${initialPrio === "high" ? "selected" : ""}>🔥 High</option>
+                            <option value="medium" ${initialPrio === "medium" ? "selected" : ""}>⚡ Medium</option>
+                            <option value="low" ${initialPrio === "low" ? "selected" : ""}>☕ Low</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -381,7 +440,7 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
                     <label>Link to Topic (Optional — enables 1-click jump to study material)</label>
                     <select id="todo-topic-input" class="todos-select">
                         <option value="">-- None (General task) --</option>
-                        ${topicOptions.map(t => `<option value="${t.id}" ${initialTopic === t.id ? 'selected' : ''}>${escHtml(t.label)}</option>`).join('')}
+                        ${topicOptions.map((t) => `<option value="${t.id}" ${initialTopic === t.id ? "selected" : ""}>${escHtml(t.label)}</option>`).join("")}
                     </select>
                 </div>
                 <div class="form-group">
@@ -390,41 +449,70 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
                               placeholder="Key edge cases, interview traps, complexity goals...">${escHtml(initialNotes)}</textarea>
                 </div>
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">${isEditing ? 'Save Changes' : 'Create Task'}</button>
+                    <button type="submit" class="btn btn-primary">${isEditing ? "Save Changes" : "Create Task"}</button>
                     <button type="button" class="btn btn-ghost" id="cancel-form-btn">Cancel</button>
                 </div>
             </form>
         `;
 
-        formCard.querySelector('#close-form-btn')!.addEventListener('click', () => {
-            isAddFormOpen = false;
-            editingTodoId = null;
-            renderForm();
-            renderControls(Store.getTodos());
-        });
+        formCard
+            .querySelector("#close-form-btn")!
+            .addEventListener("click", () => {
+                isAddFormOpen = false;
+                editingTodoId = null;
+                renderForm();
+                renderControls(Store.getTodos());
+            });
 
-        formCard.querySelector('#cancel-form-btn')!.addEventListener('click', () => {
-            isAddFormOpen = false;
-            editingTodoId = null;
-            renderForm();
-            renderControls(Store.getTodos());
-        });
+        formCard
+            .querySelector("#cancel-form-btn")!
+            .addEventListener("click", () => {
+                isAddFormOpen = false;
+                editingTodoId = null;
+                renderForm();
+                renderControls(Store.getTodos());
+            });
 
-        const form = formCard.querySelector('#todo-form') as HTMLFormElement;
-        form.addEventListener('submit', (e) => {
+        const form = formCard.querySelector("#todo-form") as HTMLFormElement;
+        form.addEventListener("submit", (e) => {
             e.preventDefault();
-            const title = (formCard.querySelector('#todo-title-input') as HTMLInputElement).value.trim();
+            const title = (
+                formCard.querySelector("#todo-title-input") as HTMLInputElement
+            ).value.trim();
             if (!title) return;
 
-            const category = (formCard.querySelector('#todo-cat-input') as HTMLSelectElement).value as TodoCategory;
-            const priority = (formCard.querySelector('#todo-prio-input') as HTMLSelectElement).value as TodoPriority;
-            const dueDate = (formCard.querySelector('#todo-due-input') as HTMLInputElement).value || undefined;
-            const linkedTopicId = (formCard.querySelector('#todo-topic-input') as HTMLSelectElement).value || undefined;
-            const notes = (formCard.querySelector('#todo-notes-input') as HTMLTextAreaElement).value.trim() || undefined;
+            const category = (
+                formCard.querySelector("#todo-cat-input") as HTMLSelectElement
+            ).value as TodoCategory;
+            const priority = (
+                formCard.querySelector("#todo-prio-input") as HTMLSelectElement
+            ).value as TodoPriority;
+            const dueDate =
+                (formCard.querySelector("#todo-due-input") as HTMLInputElement)
+                    .value || undefined;
+            const linkedTopicId =
+                (
+                    formCard.querySelector(
+                        "#todo-topic-input",
+                    ) as HTMLSelectElement
+                ).value || undefined;
+            const notes =
+                (
+                    formCard.querySelector(
+                        "#todo-notes-input",
+                    ) as HTMLTextAreaElement
+                ).value.trim() || undefined;
 
             if (isEditing && editingTodoId) {
-                Store.updateTodo(editingTodoId, { title, category, priority, dueDate, linkedTopicId, notes });
-                toast('Task updated successfully', 'success');
+                Store.updateTodo(editingTodoId, {
+                    title,
+                    category,
+                    priority,
+                    dueDate,
+                    linkedTopicId,
+                    notes,
+                });
+                toast("Task updated successfully", "success");
             } else {
                 Store.addTodo({
                     title,
@@ -435,7 +523,7 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
                     notes,
                     completed: false,
                 });
-                toast('Study goal added!', 'success');
+                toast("Study goal added!", "success");
             }
 
             isAddFormOpen = false;
@@ -445,31 +533,37 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
 
         // Focus title input
         setTimeout(() => {
-            (formCard.querySelector('#todo-title-input') as HTMLInputElement)?.focus();
+            (
+                formCard.querySelector("#todo-title-input") as HTMLInputElement
+            )?.focus();
         }, 50);
     }
 
     function renderList(): void {
-        listContainer.innerHTML = '';
+        listContainer.innerHTML = "";
         const allTodos = Store.getTodos();
 
         // Filter
-        const filtered = allTodos.filter(t => {
-            if (filterStatus === 'active' && t.completed) return false;
-            if (filterStatus === 'completed' && !t.completed) return false;
-            if (filterCategory !== 'all' && t.category !== filterCategory) return false;
-            if (filterPriority !== 'all' && t.priority !== filterPriority) return false;
+        const filtered = allTodos.filter((t) => {
+            if (filterStatus === "active" && t.completed) return false;
+            if (filterStatus === "completed" && !t.completed) return false;
+            if (filterCategory !== "all" && t.category !== filterCategory)
+                return false;
+            if (filterPriority !== "all" && t.priority !== filterPriority)
+                return false;
             if (searchQuery) {
                 const q = searchQuery.toLowerCase();
                 const matchTitle = t.title.toLowerCase().includes(q);
-                const matchNotes = t.notes ? t.notes.toLowerCase().includes(q) : false;
+                const matchNotes = t.notes
+                    ? t.notes.toLowerCase().includes(q)
+                    : false;
                 if (!matchTitle && !matchNotes) return false;
             }
             return true;
         });
 
         if (filtered.length === 0) {
-            const empty = h('div', { className: 'card todos-empty-card' });
+            const empty = h("div", { className: "card todos-empty-card" });
             if (allTodos.length === 0) {
                 empty.innerHTML = `
                     <div class="empty-icon">🎉</div>
@@ -477,11 +571,13 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
                     <p style="color:var(--text-muted);margin:8px 0 16px;">Add study goals or load our recommended interview prep checklist.</p>
                     <button class="btn btn-primary" id="btn-load-defaults">Load Recommended Checklist</button>
                 `;
-                empty.querySelector('#btn-load-defaults')!.addEventListener('click', () => {
-                    Store.resetTodos();
-                    toast('Loaded recommended checklist!', 'success');
-                    refresh();
-                });
+                empty
+                    .querySelector("#btn-load-defaults")!
+                    .addEventListener("click", () => {
+                        Store.resetTodos();
+                        toast("Loaded recommended checklist!", "success");
+                        refresh();
+                    });
             } else {
                 empty.innerHTML = `
                     <div class="empty-icon">🔍</div>
@@ -489,71 +585,78 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
                     <p style="color:var(--text-muted);margin:8px 0 16px;">Try adjusting your status, category, or search filters.</p>
                     <button class="btn btn-secondary" id="btn-reset-filters">Clear Filters</button>
                 `;
-                empty.querySelector('#btn-reset-filters')!.addEventListener('click', () => {
-                    filterStatus = 'all';
-                    filterCategory = 'all';
-                    filterPriority = 'all';
-                    searchQuery = '';
-                    refresh();
-                });
+                empty
+                    .querySelector("#btn-reset-filters")!
+                    .addEventListener("click", () => {
+                        filterStatus = "all";
+                        filterCategory = "all";
+                        filterPriority = "all";
+                        searchQuery = "";
+                        refresh();
+                    });
             }
             listContainer.appendChild(empty);
             return;
         }
 
-        filtered.forEach(todo => {
+        filtered.forEach((todo) => {
             const cat = CATEGORY_META[todo.category] || CATEGORY_META.general;
             const prio = PRIORITY_META[todo.priority] || PRIORITY_META.medium;
 
-            const item = h('div', {
-                className: `todo-item-card card ${todo.completed ? 'completed' : ''}`,
+            const item = h("div", {
+                className: `todo-item-card card ${todo.completed ? "completed" : ""}`,
             });
 
             // Checkbox
-            const checkbox = h('button', {
-                className: `todo-check-btn ${todo.completed ? 'checked' : ''}`,
-                title: todo.completed ? 'Mark incomplete' : 'Mark complete',
-                innerHTML: todo.completed ? '✓' : '',
+            const checkbox = h("button", {
+                className: `todo-check-btn ${todo.completed ? "checked" : ""}`,
+                title: todo.completed ? "Mark incomplete" : "Mark complete",
+                innerHTML: todo.completed ? "✓" : "",
                 onClick: (e) => {
                     e.stopPropagation();
                     const state = Store.toggleTodo(todo.id);
-                    toast(state ? 'Completed: ' + todo.title : 'Re-opened: ' + todo.title, 'info');
+                    toast(
+                        state
+                            ? "Completed: " + todo.title
+                            : "Re-opened: " + todo.title,
+                        "info",
+                    );
                     refresh();
                 },
             });
 
             // Main body
-            const body = h('div', { className: 'todo-main-body' });
+            const body = h("div", { className: "todo-main-body" });
 
-            const metaRow = h('div', { className: 'todo-meta-row' });
+            const metaRow = h("div", { className: "todo-meta-row" });
             metaRow.innerHTML = `
                 <span class="tag ${cat.cls}">${cat.icon} ${cat.label}</span>
                 <span class="tag ${prio.cls}">${prio.icon} ${prio.label}</span>
-                ${todo.dueDate ? `<span class="tag tag-due">📅 ${escHtml(todo.dueDate)}</span>` : ''}
+                ${todo.dueDate ? `<span class="tag tag-due">📅 ${escHtml(todo.dueDate)}</span>` : ""}
             `;
             body.appendChild(metaRow);
 
-            const titleEl = h('div', {
-                className: `todo-title ${todo.completed ? 'strike' : ''}`,
+            const titleEl = h("div", {
+                className: `todo-title ${todo.completed ? "strike" : ""}`,
                 textContent: todo.title,
             });
             body.appendChild(titleEl);
 
             if (todo.notes) {
-                const notesEl = h('div', {
-                    className: 'todo-notes',
+                const notesEl = h("div", {
+                    className: "todo-notes",
                     innerHTML: `<strong>Note:</strong> ${escHtml(todo.notes)}`,
                 });
                 body.appendChild(notesEl);
             }
 
             // Action row
-            const actions = h('div', { className: 'todo-actions-row' });
+            const actions = h("div", { className: "todo-actions-row" });
 
             if (todo.linkedTopicId) {
-                const linkBtn = h('button', {
-                    className: 'btn btn-sm btn-link-topic',
-                    innerHTML: '📖 Study Topic →',
+                const linkBtn = h("button", {
+                    className: "btn btn-sm btn-link-topic",
+                    innerHTML: "📖 Study Topic →",
                     onClick: (e) => {
                         e.stopPropagation();
                         window.navigateTo(todo.linkedTopicId!);
@@ -562,28 +665,31 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
                 actions.appendChild(linkBtn);
             }
 
-            const editBtn = h('button', {
-                className: 'icon-btn todo-action-btn',
-                title: 'Edit Task',
-                textContent: '✏️',
+            const editBtn = h("button", {
+                className: "icon-btn todo-action-btn",
+                title: "Edit Task",
+                textContent: "✏️",
                 onClick: (e) => {
                     e.stopPropagation();
                     editingTodoId = todo.id;
                     isAddFormOpen = true;
                     renderForm();
-                    formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    formCard.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                    });
                 },
             });
             actions.appendChild(editBtn);
 
-            const deleteBtn = h('button', {
-                className: 'icon-btn todo-action-btn',
-                title: 'Delete Task',
-                textContent: '🗑️',
+            const deleteBtn = h("button", {
+                className: "icon-btn todo-action-btn",
+                title: "Delete Task",
+                textContent: "🗑️",
                 onClick: (e) => {
                     e.stopPropagation();
                     Store.deleteTodo(todo.id);
-                    toast('Task removed', 'info');
+                    toast("Task removed", "info");
                     refresh();
                 },
             });
@@ -610,7 +716,7 @@ makes a list worth maintaining.</p>`, 'Write items with a completion test')
 
     // Listen for storage changes from other components (e.g. Dashboard)
     const onTodosChanged = () => refresh();
-    document.addEventListener('todos-changed', onTodosChanged);
+    document.addEventListener("todos-changed", onTodosChanged);
 
     container.appendChild(section);
 }

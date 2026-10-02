@@ -1,0 +1,19 @@
+{
+  "id": "b8e9af6ae",
+  "name": "npm install React stack",
+  "command": "cd /Users/akashkumar/workspace/personal/interview_prep && rm -rf node_modules && npm install 2>&1 | tail -5 && npm install react react-dom react-router-dom zustand clsx tailwind-merge class-variance-authority lucide-react @radix-ui/react-slot @radix-ui/react-tabs @radix-ui/react-collapsible @radix-ui/react-dialog @radix-ui/react-tooltip @radix-ui/react-progress @radix-ui/react-separator @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-label @radix-ui/react-switch 2>&1 | tail -8 && npm install -D @vitejs/plugin-react @types/react @types/react-dom tailwindcss @tailwindcss/vite 2>&1 | tail -8 && echo \"=== INSTALL COMPLETE ===\" && node -e \"const p=require('./package.json');console.log(JSON.stringify({deps:Object.keys(p.dependencies).length,dev:Object.keys(p.devDependencies).length}))\"",
+  "description": "Reinstall deps with npm and add React/Tailwind/shadcn stack",
+  "status": "completed",
+  "outputPath": ".pi/tasks/session-49025-49025/b8e9af6ae.output",
+  "cwd": "/Users/akashkumar/workspace/personal/interview_prep",
+  "startTime": 1790963668154,
+  "endTime": 1790963694245,
+  "exitCode": 0,
+  "signal": null,
+  "pid": 83361,
+  "bytesWritten": 1419,
+  "isAgent": false,
+  "notified": true,
+  "notifyOnCompletion": true,
+  "triggerOnCompletion": true
+}

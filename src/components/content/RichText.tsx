@@ -4,16 +4,24 @@
 // They are rendered by parsing into a detached document and moving the nodes
 // in — never through dangerouslySetInnerHTML — so nothing can execute and
 // user-supplied values stay inert unless explicitly escaped upstream.
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 let parser: DOMParser | null = null;
 
 function parse(html: string): Node[] {
     parser ??= new DOMParser();
-    return Array.from(parser.parseFromString(html, 'text/html').body.childNodes);
+    return Array.from(
+        parser.parseFromString(html, "text/html").body.childNodes,
+    );
 }
 
-export function RichText({ html, className }: { html: string; className?: string }) {
+export function RichText({
+    html,
+    className,
+}: {
+    html: string;
+    className?: string;
+}) {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -22,5 +30,5 @@ export function RichText({ html, className }: { html: string; className?: string
         el.replaceChildren(...parse(html));
     }, [html]);
 
-    return <div ref={ref} className={className ?? 'rich'} />;
+    return <div ref={ref} className={className ?? "rich"} />;
 }

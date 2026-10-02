@@ -3,8 +3,14 @@
 export type Progress = Record<string, number>;
 export type CheckedMap = Record<string, boolean>;
 
-export type TodoCategory = 'dsa' | 'react' | 'python' | 'ai' | 'systemDesign' | 'general';
-export type TodoPriority = 'high' | 'medium' | 'low';
+export type TodoCategory =
+    | "dsa"
+    | "react"
+    | "python"
+    | "ai"
+    | "systemDesign"
+    | "general";
+export type TodoPriority = "high" | "medium" | "low";
 
 export interface TodoItem {
     id: string;
@@ -48,24 +54,33 @@ export interface Stats {
 // from these small blocks, so pages stay declarative without hand-writing
 // markup as JSX.
 
-export type Tone = 'info' | 'good' | 'warn' | 'c0' | 'c1' | 'c2' | 'c3' | 'c4' | 'c5';
+export type Tone =
+    | "info"
+    | "good"
+    | "warn"
+    | "c0"
+    | "c1"
+    | "c2"
+    | "c3"
+    | "c4"
+    | "c5";
 
 export interface CalloutBlock {
-    kind: 'callout';
+    kind: "callout";
     tone?: Tone;
     title?: string;
     html: string;
 }
 
 export interface DiagramBlock {
-    kind: 'diagram';
+    kind: "diagram";
     /** Raw mermaid source. */
     source: string;
     caption?: string;
 }
 
 export interface CardBlock {
-    kind: 'card';
+    kind: "card";
     title: string;
     html?: string;
     /** Bookmark scope; defaults to the title. */
@@ -86,42 +101,44 @@ export interface QAItem {
 }
 
 export interface QABlock {
-    kind: 'qa';
+    kind: "qa";
     title?: string;
     items: QAItem[];
 }
 
 export interface CollapsibleBlock {
-    kind: 'collapsible';
+    kind: "collapsible";
     title: string;
     html: string;
     open?: boolean;
 }
 
 export interface TableBlock {
-    kind: 'table';
+    kind: "table";
     title?: string;
     headers: string[];
     rows: string[][];
 }
 
 export interface ChipsBlock {
-    kind: 'chips';
-    items: Array<[label: string, value: string, tone?: 'good' | 'warn' | 'info']>;
+    kind: "chips";
+    items: Array<
+        [label: string, value: string, tone?: "good" | "warn" | "info"]
+    >;
 }
 
 export interface DefListBlock {
-    kind: 'deflist';
+    kind: "deflist";
     pairs: Array<[term: string, definition: string]>;
 }
 
 export interface TabsBlock {
-    kind: 'tabs';
+    kind: "tabs";
     tabs: Array<{ label: string; html: string }>;
 }
 
 export interface CodeBlock {
-    kind: 'code';
+    kind: "code";
     title?: string;
     language: string;
     code: string;
@@ -130,7 +147,7 @@ export interface CodeBlock {
 }
 
 export interface PipelineBlock {
-    kind: 'pipeline';
+    kind: "pipeline";
     stages: Array<{ name: string; desc: string }>;
 }
 
