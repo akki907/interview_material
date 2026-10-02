@@ -23,6 +23,17 @@ export interface EvaluationResult {
     provider?: string;
 }
 
+/** Question words too generic to signal domain knowledge when mined for
+ *  keywords. Only used as a fallback for topics with no curated list. */
+const STOP_WORDS = new Set([
+    'what', 'when', 'where', 'which', 'would', 'could', 'should', 'does',
+    'explain', 'describe', 'given', 'using', 'with', 'that', 'this', 'have',
+    'from', 'into', 'about', 'their', 'there', 'they', 'them', 'then',
+    'than', 'were', 'been', 'being', 'also', 'just', 'like', 'make', 'made',
+    'over', 'under', 'after', 'before', 'between', 'because', 'however',
+    'design', 'system', 'approach', 'question', 'answer',
+]);
+
 const TOPIC_KEYWORD_MAP: Record<string, string[]> = {
     AI: ['chunking', 'embedding', 'vector', 'retrieval', 'rerank', 'rag', 'context', 'latency', 'token', 'relevance', 'hallucination', 'dense', 'sparse', 'bm25'],
     DSA: ['time complexity', 'space complexity', 'prefix', 'pointer', 'window', 'hash', 'invariant', 'binary', 'heap', 'stack', 'queue', 'recursion', 'dynamic programming', 'memoization'],
@@ -43,7 +54,14 @@ export function evaluateHeuristic(question: string, answerText: string, topic: s
 
     // 1. Technical Accuracy & Depth (max 25)
     let techScore = 12;
-    const topicKeywords = TOPIC_KEYWORD_MAP[topic] || [];
+    // Topics without a curated keyword list fall back to the significant terms
+    // of the question itself, instead of assuming a neutral hit rate.
+    const questionTerms = question
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .split(/\s+/)
+        .filter(w => w.length > 3 && !STOP_WORDS.has(w));
+    const topicKeywords = TOPIC_KEYWORD_MAP[topic] || questionTerms;
     const matchedKeywords = topicKeywords.filter(k => lower.includes(k));
     const keywordRatio = topicKeywords.length > 0 ? matchedKeywords.length / topicKeywords.length : 0.5;
     techScore += Math.round(keywordRatio * 10);
@@ -52,7 +70,9 @@ export function evaluateHeuristic(question: string, answerText: string, topic: s
 
     const techFeedback = matchedKeywords.length >= 3
         ? `Strong domain terminology utilized (${matchedKeywords.slice(0, 4).join(', ')}). Answer reflects hands-on production awareness.`
-        : `Covers foundational principles, but needs more specific architectural/algorithmic depth (${topicKeywords.slice(0, 3).join(', ')}).`;
+        : TOPIC_KEYWORD_MAP[topic]
+            ? `Covers foundational principles, but needs more specific architectural/algorithmic depth (${topicKeywords.slice(0, 3).join(', ')}).`
+            : 'Covers foundational principles, but needs more terminology drawn directly from the question.';
 
     // 2. Edge Cases & Reliability (max 25)
     const edgeCaseTerms = ['edge case', 'null', 'empty', 'boundary', 'overflow', 'timeout', 'failure', 'retry', 'fallback', 'collision', 'race condition', 'stale', 'concurrency', 'error handling'];
@@ -126,12 +146,12 @@ export function evaluateHeuristic(question: string, answerText: string, topic: s
         },
         strengths,
         improvements,
-        modelAnswer: generateModelAnswerHint(question, topic),
+        modelAnswer: generateModelAnswerHint(topic),
         isLiveAI: false,
     };
 }
 
-function generateModelAnswerHint(question: string, topic: string): string {
+function generateModelAnswerHint(topic: string): string {
     if (topic === 'AI') {
         return 'Ideal response structure:\n1. Ingestion & Chunking: Recursive chunking (512 tokens with 50-token overlap) + metadata preservation.\n2. Hybrid Retrieval: Dense embeddings (e.g. text-embedding-3-small) + BM25 sparse search with Reciprocal Rank Fusion (RRF).\n3. Reranking: Cross-encoder (Cohere Rerank / BGE) on top-50 down to top-5.\n4. Scalability & Latency: HNSW vector indexing, Redis caching for hot queries, async embedding pipelines.\n5. Evaluation: RAGAS metrics (Faithfulness, Answer Relevance, Context Precision).';
     }

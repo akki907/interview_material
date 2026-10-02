@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+/* Dark mode is driven by a data attribute so it can be toggled at runtime
+   without a class on <html> and without duplicating every utility. */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* ─────────────────────────────────────────────
+   DESIGN TOKENS
+   Raw values live on :root / [data-theme=dark]; `@theme inline` maps them to
+   utilities so a single variable swap re-themes the whole app.
+   ───────────────────────────────────────────── */
+:root {
+    --paper: #f4f6fb;
+    --surface: #ffffff;
+    --ink: #151d35;
+    --muted: #56617c;
+    --rule: #d5dbe8;
+    --focus: #2b3fe0;
+
+    /* Section tokens: one bg/fg pair per topic group. */
+    --c0: #e2e7f1; --c0i: #33405e; /* overview / recap   */
+    --c1: #c6ebd8; --c1i: #0c5b3b; /* foundations        */
+    --c2: #dad3fb; --c2i: #3a2a9c; /* training & context */
+    --c3: #f8d3db; --c3i: #8b1d39; /* limitations        */
+    --c4: #cde4fb; --c4i: #0e4c8c; /* prompting          */
+    --c5: #f7eaae; --c5i: #674f00; /* output & safety    */
+
+    --code-bg: #101828;
+    --info-bg: #e4edfa;
+    --good-bg: #ddf3e8;
+    --warn-bg: #fbe3e8;
+    --neutral-bg: #eef1f8;
+    --danger: #b42318;
+    --success: #0c5b3b;
+
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: "Avenir Next", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Liberation Mono", monospace;
+
+    --shadow-sm: 0 1px 2px rgb(21 29 53 / 0.05);
+    --shadow-md: 0 8px 24px rgb(21 29 53 / 0.12);
+    --shadow-lg: 0 20px 48px rgb(21 29 53 / 0.16);
+
+    --header-h: 3.5rem;
+    --sidebar-w: 16.25rem;
+    --toc-w: 13rem;
+}
+
+[data-theme="dark"] {
+    --paper: #0e1424;
+    --surface: #171e33;
+    --ink: #e7ebf6;
+    --muted: #94a0bc;
+    --rule: #293252;
+    --focus: #8492ff;
+
+    --c0: #222b45; --c0i: #afbbd6;
+    --c1: #123528; --c1i: #7edab1;
+    --c2: #26204a; --c2i: #b7a9f6;
+    --c3: #3a1b27; --c3i: #f7a6b8;
+    --c4: #11304e; --c4i: #88c3f1;
+    --c5: #392f12; --c5i: #edd37b;
+
+    --code-bg: #0a0f1d;
+    --info-bg: #1b2a45;
+    --good-bg: #123528;
+    --warn-bg: #3a1b27;
+    --neutral-bg: #1e2740;
+    --danger: #f97066;
+    --success: #7edab1;
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 8px 24px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 20px 48px rgb(0 0 0 / 0.6);
+}
+
+@theme inline {
+    --color-paper: var(--paper);
+    --color-surface: var(--surface);
+    --color-ink: var(--ink);
+    --color-muted: var(--muted);
+    --color-rule: var(--rule);
+    --color-focus: var(--focus);
+
+    --color-c0: var(--c0);
+    --color-c0i: var(--c0i);
+    --color-c1: var(--c1);
+    --color-c1i: var(--c1i);
+    --color-c2: var(--c2);
+    --color-c2i: var(--c2i);
+    --color-c3: var(--c3);
+    --color-c3i: var(--c3i);
+    --color-c4: var(--c4);
+    --color-c4i: var(--c4i);
+    --color-c5: var(--c5);
+    --color-c5i: var(--c5i);
+
+    --color-code: var(--code-bg);
+    --color-info: var(--info-bg);
+    --color-good: var(--good-bg);
+    --color-warn: var(--warn-bg);
+    --color-neutral: var(--neutral-bg);
+    --color-danger: var(--danger);
+    --color-success: var(--success);
+
+    --font-sans: var(--sans);
+    --font-serif: var(--serif);
+    --font-mono: var(--mono);
+
+    --shadow-soft: var(--shadow-sm);
+    --shadow-raised: var(--shadow-md);
+    --shadow-float: var(--shadow-lg);
+
+    --radius-card: 0.625rem;
+
+    --spacing-header: var(--header-h);
+    --spacing-sidebar: var(--sidebar-w);
+    --spacing-toc: var(--toc-w);
+}
+
+@layer base {
+    * {
+        border-color: var(--rule);
+    }
+
+    html,
+    body,
+    #root {
+        height: 100%;
+    }
+
+    body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        -webkit-font-smoothing: antialiased;
+        overflow: hidden;
+    }
+
+    /* Keyboard focus stays visible everywhere, but only for keyboard users. */
+    :focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+    }
+
+    ::selection {
+        background: var(--c2);
+        color: var(--c2i);
+    }
+
+    /* Scrollbars that follow the theme instead of staying bright grey. */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--rule) transparent;
+    }
+}
+
+/* ─────────────────────────────────────────────
+   RICH CONTENT
+   Topic bodies are authored HTML strings, so they need typographic styling
+   that utility classes cannot reach.
+   ───────────────────────────────────────────── */
+@layer components {
+    .rich > *:first-child { margin-top: 0; }
+    .rich > *:last-child { margin-bottom: 0; }
+    .rich p { margin: 0.7rem 0; line-height: 1.7; color: var(--ink); }
+    .rich strong, .rich b { font-weight: 700; }
+    .rich em { font-style: italic; }
+    .rich a { color: var(--focus); text-decoration: underline; text-underline-offset: 2px; }
+
+    .rich ul, .rich ol { margin: 0.7rem 0; padding-left: 1.35rem; }
+    .rich ul { list-style: disc; }
+    .rich ol { list-style: decimal; }
+    .rich li { margin: 0.3rem 0; line-height: 1.65; }
+    .rich li::marker { color: var(--muted); }
+
+    .rich code {
+        font-family: var(--mono);
+        font-size: 0.85em;
+        background: var(--neutral-bg);
+        border: 1px solid var(--rule);
+        border-radius: 0.25rem;
+        padding: 0.1em 0.35em;
+    }
+
+    .rich pre {
+        margin: 1rem 0;
+        background: var(--code-bg);
+        border-radius: 0.5rem;
+        padding: 1rem 1.1rem;
+        overflow-x: auto;
+        font-size: 0.82rem;
+        line-height: 1.6;
+    }
+    .rich pre code {
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: inherit;
+        color: #e6edf7;
+    }
+
+    .rich blockquote {
+        margin: 1rem 0;
+        padding: 0.5rem 0 0.5rem 1rem;
+        border-left: 3px solid var(--focus);
+        color: var(--muted);
+        font-style: italic;
+    }
+
+    .rich h3, .rich h4 { margin: 1.25rem 0 0.5rem; font-weight: 700; }
+    .rich h3 { font-size: 1.05rem; }
+    .rich h4 { font-size: 0.95rem; }
+    .rich hr { margin: 1.5rem 0; border-color: var(--rule); }
+
+    .rich table {
+        width: 100%;
+        margin: 1rem 0;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+    }
+    .rich th, .rich td {
+        border: 1px solid var(--rule);
+        padding: 0.5rem 0.7rem;
+        text-align: left;
+        vertical-align: top;
+        line-height: 1.5;
+    }
+    .rich th { background: var(--c0); color: var(--c0i); font-weight: 700; }
+
+    /* Wrap wide media so a diagram or image can never force a horizontal
+       scrollbar on the page. */
+    .rich img, .rich svg, .rich video { max-width: 100%; height: auto; }
+}
+
+@layer utilities {
+    /* Consistent vertical rhythm between page sections. */
+    .stack-section > * + * { margin-top: 1.25rem; }
+
+    .scrollbar-none { scrollbar-width: none; }
+    .scrollbar-none::-webkit-scrollbar { display: none; }
+}
+
+/* Mermaid emits SVG with hardcoded colors, so its own container is themed. */
+.mermaid svg { max-width: 100%; height: auto; }
+.mermaid-invalid {
+    border-radius: 0.5rem;
+    background: var(--warn-bg);
+    padding: 0.75rem 1rem;
+}

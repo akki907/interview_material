@@ -1,4 +1,6 @@
 import { defineConfig, loadEnv, type Plugin } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 import { evaluateHeuristic } from './src/ai/evaluate';
 
@@ -68,7 +70,7 @@ Return a JSON object in this exact format:
                                         result = { ...parsed, isLiveAI: true, provider: 'AI Gateway (Live)' };
                                     }
                                 } catch {
-                                    // Fallback to heuristic evaluator on network/API failure
+                                    // Fall back to the heuristic evaluator on network/API failure.
                                 }
                             }
 
@@ -94,38 +96,41 @@ Return a JSON object in this exact format:
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, process.cwd(), '');
+    const r = (p: string) => path.resolve(__dirname, p);
 
     return {
         root: '.',
         envDir: '.',
-        plugins: [interviewAiPlugin(env)],
+        plugins: [react(), tailwindcss(), interviewAiPlugin(env)],
         resolve: {
             alias: {
-                '@': path.resolve(__dirname, './src'),
-                '@components': path.resolve(__dirname, './src/components.ts'),
-                '@utils': path.resolve(__dirname, './src/utils.ts'),
-                '@store': path.resolve(__dirname, './src/store.ts'),
-                '@data': path.resolve(__dirname, './src/data.ts'),
-                '@nav': path.resolve(__dirname, './src/nav.ts'),
-                '@renderers': path.resolve(__dirname, './src/renderers'),
+                '@': r('./src'),
+                '@lib': r('./src/lib'),
+                '@ui': r('./src/components/ui'),
+                '@content': r('./src/content'),
+                '@pages': r('./src/pages'),
             },
         },
-        server: {
-            port: 5173,
-        },
+        server: { port: 5173 },
         build: {
             outDir: 'dist',
             cssCodeSplit: true,
             rollupOptions: {
                 output: {
-                    manualChunks: {
-                        'vendor': ['ai'],
+                    // Rollup 4 requires the function form; splitting mermaid's
+                    // layout engine out keeps it cached across topic navigations.
+                    manualChunks(id) {
+                        if (!id.includes('node_modules')) return undefined;
+                        if (/[\\/]node_modules[\\/](mermaid|cytoscape|elk|dagre|d3-|khroma|katex|@braintree)[\\/]/.test(id)) {
+                            return 'mermaid';
+                        }
+                        if (/[\\/]node_modules[\\/](react|react-dom|react-router|scheduler|zustand)[\\/]/.test(id)) {
+                            return 'react';
+                        }
+                        return 'vendor';
                     },
                 },
             },
-        },
-        css: {
-            postcss: {},
         },
     };
 });
