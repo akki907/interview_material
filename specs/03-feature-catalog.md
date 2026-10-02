@@ -248,6 +248,23 @@ Renderers: `dsa-arrays` … `dsa-greedy`
 
 ---
 
+## F-TODO — Study Todos & Action Items
+
+### F-TODO-001 Study todos & checklist tracker
+**Status:** ✅ Done
+
+| AC | Criterion |
+|----|-----------|
+| AC1 | Full study todos view at `todos` route with metrics bar and readiness progress |
+| AC2 | Add, edit, toggle, and delete study tasks with priorities and categories |
+| AC3 | Filter tasks by status (All/Active/Done), category, priority, and text search |
+| AC4 | Tasks can link directly to topic pages with 1-click "Study Topic" navigation |
+| AC5 | Persistence via `Store.getTodos()`, `Store.saveTodos()`, `Store.addTodo()`, `Store.toggleTodo()` |
+| AC6 | Dashboard integration: "Priority Study Goals" card with inline completion checkboxes |
+| AC7 | Global search integration (⌘K indexes active study todos) |
+
+---
+
 ## F-FLASH — Flashcards
 
 ### F-FLASH-001 Category filter

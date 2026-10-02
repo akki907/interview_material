@@ -10,6 +10,7 @@ import { renderAILLM, renderAIEmbeddings, renderAIVectorDB, renderAIRAG, renderA
 import { renderSDScalability, renderSDLoadBalancing, renderSDCaching, renderSDDatabases, renderSDReplication, renderSDSharding, renderSDQueues, renderSDEventDriven, renderSDMicroservices, renderSDAPI, renderSDDistributed, renderSDRealWorld } from './systemDesign';
 import { renderInterview } from './interview';
 import { renderFlashcards } from './flashcards';
+import { renderTodos } from './todos';
 
 /** A topic page: fills `container` with its content. */
 export type Renderer = (container: HTMLElement) => void;
@@ -74,4 +75,5 @@ export const RENDERERS: Record<string, Renderer> = {
     'sd-realworld': renderSDRealWorld,
     interview: renderInterview,
     flashcards: renderFlashcards,
+    todos: renderTodos,
 };

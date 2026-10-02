@@ -25,9 +25,10 @@ Phase 0 — Baseline stabilization (current)
 
 **Goal:** Deepen topic quality and study workflows.
 
-| Priority | Task | Feature IDs |
-|----------|------|-------------|
-| P1 | Mermaid diagrams on topic pages (lazy-loaded, theme-matched) | F-TOPIC-007 |
+| Priority | Task | Feature IDs | Status |
+|----------|------|-------------|--------|
+| P1 | Study Todos & checklist tracker with topic linking | F-TODO-001 | ✅ Done |
+| P1 | Mermaid diagrams on topic pages (lazy-loaded, theme-matched) | F-TOPIC-007 | ⬜ |
 | P1 | Syntax highlighting (highlight.js CDN or bundle) | F-TOPIC-006 |
 | P1 | Interview mode: answer textarea (no AI yet) | F-INT-003 |
 | P1 | Progress edit UI on dashboard | F-STORE-002 |

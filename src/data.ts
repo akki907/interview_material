@@ -1,34 +1,10 @@
 // src/data.ts — All static data
-import type { Progress } from './store';
-
-/** Sidebar entry: a top-level page, or a group owning `children` topics. */
-export interface NavEntry {
-    id: string;
-    label: string;
-    children?: NavEntry[];
-}
-
-export interface Flashcard {
-    cat: string;
-    front: string;
-    back: string;
-}
-
-export interface InterviewQuestion {
-    topic: string;
-    question: string;
-    hint: string;
-}
-
-export interface Stats {
-    problemsSolved: number;
-    topicsCompleted: number;
-    streak: number;
-    learningHours: number;
-}
+import type { Progress, NavEntry, Flashcard, InterviewQuestion, Stats, TodoItem } from './types';
+export type { NavEntry, Flashcard, InterviewQuestion, Stats, TodoItem };
 
 export const NAV: NavEntry[] = [
     { id: 'dashboard', label: '📊 Dashboard' },
+    { id: 'todos', label: '✅ Study Todos' },
     { id: 'dsa', label: '🧠 Data Structures & Algorithms', children: [
         { id: 'dsa-arrays', label: 'Arrays' },
         { id: 'dsa-strings', label: 'Strings' },
@@ -129,3 +105,95 @@ export const INTERVIEW_QUESTIONS: InterviewQuestion[] = [
     { topic: 'React', question: 'How would you optimize a large list rendering in React?', hint: 'Consider virtualization, React.memo, useMemo, and key strategy.' },
     { topic: 'Python', question: 'How would you design a concurrent web scraper?', hint: 'Consider asyncio, aiohttp, rate limiting, retries, and data pipeline.' },
 ];
+
+export const DEFAULT_TODOS: TodoItem[] = [
+    {
+        id: 'todo-1',
+        title: 'Master Sliding Window: solve Minimum Window Substring',
+        category: 'dsa',
+        priority: 'high',
+        completed: false,
+        createdAt: 1727800000000,
+        dueDate: '2026-10-05',
+        linkedTopicId: 'dsa-sliding-window',
+        notes: 'Pay attention to character frequency maps and window expansion vs shrinking condition.',
+    },
+    {
+        id: 'todo-2',
+        title: 'Review React 19 reconciliation and server/client state boundary',
+        category: 'react',
+        priority: 'high',
+        completed: false,
+        createdAt: 1727801000000,
+        dueDate: '2026-10-06',
+        linkedTopicId: 'react-fundamentals',
+        notes: 'Understand why server state (TanStack Query) should not be mixed with local client state.',
+    },
+    {
+        id: 'todo-3',
+        title: 'Implement Hybrid RAG with Dense + BM25 Sparse and Reciprocal Rank Fusion',
+        category: 'ai',
+        priority: 'high',
+        completed: false,
+        createdAt: 1727802000000,
+        dueDate: '2026-10-07',
+        linkedTopicId: 'ai-advanced-rag',
+        notes: 'Focus on chunk overlap, reranking latency, and hit-rate / MRR metrics.',
+    },
+    {
+        id: 'todo-4',
+        title: 'System Design: Design distributed rate limiter with sliding window counter',
+        category: 'systemDesign',
+        priority: 'high',
+        completed: true,
+        createdAt: 1727700000000,
+        dueDate: '2026-10-03',
+        linkedTopicId: 'sd-caching',
+        notes: 'Compare Redis token bucket vs sliding window log memory tradeoffs under high throughput.',
+    },
+    {
+        id: 'todo-5',
+        title: 'Python AsyncIO: trace event loop execution and coroutine task cancellation',
+        category: 'python',
+        priority: 'medium',
+        completed: false,
+        createdAt: 1727803000000,
+        dueDate: '2026-10-08',
+        linkedTopicId: 'py-asyncio',
+        notes: 'Key interview trap: what happens to pending tasks when asyncio.gather has return_exceptions=False?',
+    },
+    {
+        id: 'todo-6',
+        title: 'Study CAP Theorem vs PACELC Theorem for distributed databases',
+        category: 'systemDesign',
+        priority: 'medium',
+        completed: true,
+        createdAt: 1727600000000,
+        dueDate: '2026-10-02',
+        linkedTopicId: 'sd-distributed',
+        notes: 'PACELC: If Partitioned (Availability vs Consistency), Else (Latency vs Consistency).',
+    },
+    {
+        id: 'todo-7',
+        title: 'Complete 45-minute timed mock interview under interview mode',
+        category: 'general',
+        priority: 'medium',
+        completed: false,
+        createdAt: 1727804000000,
+        dueDate: '2026-10-09',
+        linkedTopicId: 'interview',
+        notes: 'Speak out loud while typing, outline clarifying questions before jumping into code.',
+    },
+    {
+        id: 'todo-8',
+        title: 'Review System Design flashcards deck for 100% recall',
+        category: 'general',
+        priority: 'low',
+        completed: false,
+        createdAt: 1727805000000,
+        dueDate: '2026-10-10',
+        linkedTopicId: 'flashcards',
+        notes: 'Aim for 100% recall on caching strategies and database sharding patterns.',
+    },
+];
+

@@ -1,6 +1,7 @@
 // src/search.ts — Global search
 import { NAV, INTERVIEW_QUESTIONS } from './data';
 import { navigateTo } from './nav';
+import { Store } from './store';
 
 interface Searchable {
     id: string;
@@ -25,7 +26,13 @@ export function initSearch(): void {
     input.addEventListener('input', () => {
         const q = input.value.toLowerCase().trim();
         if (q.length < 2) { results.classList.add('hidden'); return; }
-        const matches = searchable.filter(s => s.title.toLowerCase().includes(q));
+        const currentSearchable = [...searchable];
+        try {
+            Store.getTodos().forEach(t => {
+                currentSearchable.push({ id: 'todos', title: `[Todo] ${t.title}`, cat: 'Todos' });
+            });
+        } catch { /* ignore if store unavailable */ }
+        const matches = currentSearchable.filter(s => s.title.toLowerCase().includes(q));
         if (matches.length === 0) {
             results.innerHTML = '<div class="search-result-item"><span style="color:var(--text-muted)">No results</span></div>';
         } else {
