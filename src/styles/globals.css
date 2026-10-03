@@ -241,6 +241,13 @@
     .scrollbar-none::-webkit-scrollbar { display: none; }
 }
 
+/* Sweeps the gradient behind animated gradient text. Referenced as
+   animate-[gradient-pan_var(--dur)_linear_infinite]. */
+@keyframes gradient-pan {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
 /* Mermaid emits SVG with hardcoded colors, so its own container is themed. */
 .mermaid svg { max-width: 100%; height: auto; }
 .mermaid-invalid {

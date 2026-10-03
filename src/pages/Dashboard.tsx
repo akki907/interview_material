@@ -13,6 +13,7 @@ import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { PageHeader } from "../components/app/PageHeader";
 import { StatTiles } from "../components/app/StatTiles";
+import { GridPattern } from "../components/animated/GridPattern";
 
 const AREAS = [
     { key: "dsa", label: "DSA", tone: "dsa" as const },
@@ -50,7 +51,8 @@ export function Dashboard() {
         .slice(0, 4);
 
     return (
-        <div>
+        <div className="relative">
+            <GridPattern className="-mx-4 -mt-6 h-48 sm:-mx-8 lg:-mx-10" />
             <PageHeader
                 title="Your Engineering Journey"
                 intro="Track your progress across all areas"

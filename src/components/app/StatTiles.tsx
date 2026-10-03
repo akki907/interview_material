@@ -4,6 +4,7 @@
 // counters, and the chip block in topic content, which were three separate
 // implementations of the same shape.
 import { Card, CardContent } from "../ui/card";
+import { Spotlight } from "../animated/Spotlight";
 import { cn } from "../../lib/utils";
 
 export interface StatTile {
@@ -32,21 +33,23 @@ export function StatTiles({
     return (
         <div className={cn("grid gap-3", cols, className)}>
             {tiles.map((t) => (
-                <Card key={t.label}>
-                    <CardContent>
-                        <p
-                            className={cn(
-                                "font-serif text-2xl font-bold",
-                                t.tone ?? "text-ink",
-                            )}
-                        >
-                            {t.value}
-                        </p>
-                        <p className="mt-0.5 text-[11px] tracking-wider text-muted uppercase">
-                            {t.label}
-                        </p>
-                    </CardContent>
-                </Card>
+                <Spotlight key={t.label} className="rounded-card">
+                        <Card className="h-full transition-transform duration-200 hover:-translate-y-0.5">
+                                <CardContent>
+                                        <p
+                                                className={cn(
+                                                        "font-serif text-2xl font-bold tabular-nums",
+                                                        t.tone ?? "text-ink",
+                                                )}
+                                        >
+                                                {t.value}
+                                        </p>
+                                        <p className="mt-0.5 text-[11px] tracking-wider text-muted uppercase">
+                                                {t.label}
+                                        </p>
+                                </CardContent>
+                        </Card>
+                </Spotlight>
             ))}
         </div>
     );

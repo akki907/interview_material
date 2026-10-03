@@ -4,6 +4,7 @@
 // heading and paragraph markup with only the wording (and occasionally the
 // measure) differing.
 import { cn } from "../../lib/utils";
+import { GradientText } from "../animated/GradientText";
 
 export function PageHeader({
         title,
@@ -17,7 +18,7 @@ export function PageHeader({
         return (
                 <header className={cn("mb-6", className)}>
                         <h1 className="font-serif mb-1 text-2xl font-bold tracking-tight sm:text-3xl">
-                                {title}
+                                <GradientText>{title}</GradientText>
                         </h1>
                         {intro && (
                                 <p className="max-w-3xl leading-relaxed text-muted">
