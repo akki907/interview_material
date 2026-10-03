@@ -12,12 +12,7 @@ export function MovingBorder({
     className,
     duration = 4,
     /** Gradient stops for the travelling light. */
-    colors = [
-        "var(--focus)",
-        "var(--c2i)",
-        "var(--c4i)",
-        "var(--focus)",
-    ],
+    colors = ["var(--focus)", "var(--c2i)", "var(--c4i)", "var(--focus)"],
 }: {
     children: React.ReactNode;
     className?: string;

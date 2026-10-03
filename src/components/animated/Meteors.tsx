@@ -13,7 +13,13 @@ interface Meteor {
     duration: number;
 }
 
-export function Meteors({ count = 12, className }: { count?: number; className?: string }) {
+export function Meteors({
+    count = 12,
+    className,
+}: {
+    count?: number;
+    className?: string;
+}) {
     // Deterministic per-mount layout: Math.random in render would reshuffle on
     // every re-render and read as flickering.
     const meteors = useMemo<Meteor[]>(() => {
@@ -37,7 +43,10 @@ export function Meteors({ count = 12, className }: { count?: number; className?:
     return (
         <div
             aria-hidden
-            className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}
+            className={cn(
+                "pointer-events-none absolute inset-0 overflow-hidden",
+                className,
+            )}
         >
             {meteors.map((m, i) => (
                 <span
@@ -49,7 +58,8 @@ export function Meteors({ count = 12, className }: { count?: number; className?:
                             left: `${m.left}%`,
                             "--mdur": `${m.duration}s`,
                             animationDelay: `${m.delay}s`,
-                            boxShadow: "0 0 0 1px color-mix(in oklab, var(--focus) 40%, transparent)",
+                            boxShadow:
+                                "0 0 0 1px color-mix(in oklab, var(--focus) 40%, transparent)",
                         } as React.CSSProperties
                     }
                 >

@@ -40,29 +40,28 @@ export function StatTiles({
                                 >
                                         <Card className="h-full transition-transform duration-200 hover:-translate-y-0.5">
                                                 <CardContent>
-<p
-                                                                        className={cn(
-                                                                                "font-serif text-2xl font-bold tabular-nums",
-                                                                                t.tone ??
-                                                                                        "text-ink",
-                                                                        )}
-                                                                >
-                                                                        {/* Plain numbers count up on
+                                                        <p
+                                                                className={cn(
+                                                                        "font-serif text-2xl font-bold tabular-nums",
+                                                                        t.tone ??
+                                                                                "text-ink",
+                                                                )}
+                                                        >
+                                                                {/* Plain numbers count up on
                                                                             scroll; composed values
                                                                             (e.g. "18 🔥") render
                                                                             as-is. */}
-                                                                        {typeof t.value ===
-                                                                        "number" ? (
-                                                                                <CountUp
-                                                                                        value={
-                                                                                                t
-                                                                                                        .value as number
-                                                                                        }
-                                                                                />
-                                                                        ) : (
-                                                                                t.value
-                                                                        )}
-                                                                </p>
+                                                                {typeof t.value ===
+                                                                "number" ? (
+                                                                        <CountUp
+                                                                                value={
+                                                                                        t.value as number
+                                                                                }
+                                                                        />
+                                                                ) : (
+                                                                        t.value
+                                                                )}
+                                                        </p>
                                                         <p className="mt-0.5 text-[11px] tracking-wider text-muted uppercase">
                                                                 {t.label}
                                                         </p>

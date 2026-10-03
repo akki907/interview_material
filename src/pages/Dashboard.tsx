@@ -92,61 +92,61 @@ export function Dashboard() {
             <MovingBorder className="mb-8">
                 <Card>
                     <CardContent>
-                    {top.length === 0 ? (
-                        <div className="flex items-center justify-between">
-                            <p className="text-sm text-muted">
-                                🎉 All study goals completed!
-                            </p>
-                            <Button
-                                variant="primary"
-                                size="sm"
-                                onClick={() => navigate("/todos")}
-                            >
-                                Manage Goals
-                            </Button>
-                        </div>
-                    ) : (
-                        <>
-                            <ul className="flex flex-col gap-1.5">
-                                {top.map((t) => (
-                                    <li
-                                        key={t.id}
-                                        className="flex items-center gap-2"
-                                    >
-                                        <button
-                                            type="button"
-                                            aria-label="Mark complete"
-                                            onClick={() => toggleTodo(t.id)}
-                                            className="flex size-5 shrink-0 items-center justify-center rounded border border-rule text-xs transition-colors hover:border-focus cursor-pointer"
-                                        >
-                                            ✓
-                                        </button>
-                                        <Badge
-                                            variant="neutral"
-                                            className="shrink-0"
-                                        >
-                                            {t.category.toUpperCase()}
-                                        </Badge>
-                                        <span className="truncate text-sm">
-                                            {t.title}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                            <div className="mt-4 flex items-center justify-between border-t border-rule pt-3">
-                                <span className="text-xs text-muted">
-                                    {active.length} goal(s) remaining
-                                </span>
+                        {top.length === 0 ? (
+                            <div className="flex items-center justify-between">
+                                <p className="text-sm text-muted">
+                                    🎉 All study goals completed!
+                                </p>
                                 <Button
                                     variant="primary"
                                     size="sm"
                                     onClick={() => navigate("/todos")}
                                 >
-                                    View & Manage →
+                                    Manage Goals
                                 </Button>
                             </div>
-                        </>
-                    )}
+                        ) : (
+                            <>
+                                <ul className="flex flex-col gap-1.5">
+                                    {top.map((t) => (
+                                        <li
+                                            key={t.id}
+                                            className="flex items-center gap-2"
+                                        >
+                                            <button
+                                                type="button"
+                                                aria-label="Mark complete"
+                                                onClick={() => toggleTodo(t.id)}
+                                                className="flex size-5 shrink-0 items-center justify-center rounded border border-rule text-xs transition-colors hover:border-focus cursor-pointer"
+                                            >
+                                                ✓
+                                            </button>
+                                            <Badge
+                                                variant="neutral"
+                                                className="shrink-0"
+                                            >
+                                                {t.category.toUpperCase()}
+                                            </Badge>
+                                            <span className="truncate text-sm">
+                                                {t.title}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <div className="mt-4 flex items-center justify-between border-t border-rule pt-3">
+                                    <span className="text-xs text-muted">
+                                        {active.length} goal(s) remaining
+                                    </span>
+                                    <Button
+                                        variant="primary"
+                                        size="sm"
+                                        onClick={() => navigate("/todos")}
+                                    >
+                                        View & Manage →
+                                    </Button>
+                                </div>
+                            </>
+                        )}
                     </CardContent>
                 </Card>
             </MovingBorder>
