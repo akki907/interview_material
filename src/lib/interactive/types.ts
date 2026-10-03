@@ -9,7 +9,7 @@
 /** Highlight state for a single cell in the row of values. */
 export type CellState =
     | "idle"
-    | "a" // first element of the current pair
+    | "a" // first element of the current pair / the element being processed
     | "b" // second element of the current pair
     | "ok" // part of the answer
     | "active" // the element being processed right now
@@ -20,10 +20,15 @@ export interface InteractiveStep {
     marks?: Record<number, CellState>;
     /** Announced through the aria-live region, so write it as a sentence. */
     narration: string;
+    /** Tints the narration: green for a hit, red for a dead end. */
+    tone?: "good" | "bad";
     /** Optional side panel, e.g. a live `value -> index` map. */
     panel?: { label: string; rows: string[]; hits?: number[] };
-    /** Bottom stats row, e.g. counters and complexity. */
-    stats?: Array<{ label: string; value: string }>;
+    /**
+     * Bottom stats row. `{ value, label }` renders as "value label"; a bare
+     * `{ label }` renders as a plain sentence.
+     */
+    stats?: Array<{ label: string; value?: string }>;
     /** True when this step produces the answer. */
     found?: boolean;
 }
@@ -46,6 +51,7 @@ export const MAX_VALUES = 12;
 export function parseValues(raw: string): number[] {
     return raw
         .split(/[ ,]+/)
+        .filter((chunk) => chunk !== "")
         .map((chunk) => Number(chunk))
         .filter((n) => Number.isFinite(n))
         .slice(0, MAX_VALUES);

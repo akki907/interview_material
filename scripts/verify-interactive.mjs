@@ -29,7 +29,8 @@ const viz = () =>
     page
         .locator('[data-slot="card"]')
         .filter({ hasText: "Two Sum, step by step" });
-const status = () => viz().locator('[role="status"][aria-live="polite"]').first();
+const status = () =>
+    viz().locator('[role="status"][aria-live="polite"]').first();
 const btn = (name) => viz().getByRole("button", { name, exact: true });
 const tab = (name) => page.getByRole("tab", { name, exact: true });
 
@@ -65,7 +66,11 @@ check(
 
 const figures = await page.locator("main figure").count();
 const broken = await page.locator("text=Diagram could not be rendered").count();
-check("topic still renders its 2 diagrams", figures >= 2 && broken === 0, `${figures} figures, ${broken} broken`);
+check(
+    "topic still renders its 2 diagrams",
+    figures >= 2 && broken === 0,
+    `${figures} figures, ${broken} broken`,
+);
 
 // ── Try it ──────────────────────────────────────────────────────
 check("aria-live region present", (await status().count()) > 0);
@@ -75,20 +80,27 @@ check(
     `${await page.getByRole("tab").count()} tabs`,
 );
 
-await btn("Reset").click();
-await page.getByRole("button", { name: /^Number 2 at index 0$/ }).click();
-await page.getByRole("button", { name: /^Number 7 at index 1$/ }).click();
+await page.getByRole("button", { name: "index 0, value 2" }).click();
+await page.getByRole("button", { name: "index 1, value 7" }).click();
 await page.waitForTimeout(150);
 check(
     "try-it reports the running sum and verdict",
-    (await status().innerText()).includes("2 + 7 = 9"),
+    (await status().innerText()).includes("2 + 7 = 9. Correct, the answer is [0, 1]"),
+    (await status().innerText()),
 );
 
-await page.getByRole("button", { name: /^Number 11 at index 2$/ }).click();
+// A wrong pair is called out in red; tapping again unselects.
+await page.getByRole("button", { name: "index 2, value 11" }).click();
+await page.waitForTimeout(150);
+check(
+    "tapping a third cell starts a new selection",
+    (await status().innerText()).includes("Choose 1 more number"),
+);
+await page.getByRole("button", { name: "index 2, value 11" }).click();
 await page.waitForTimeout(150);
 check(
     "tapping a selected cell deselects it",
-    !(await status().innerText()).includes("11"),
+    (await status().innerText()).includes("Choose 2 more numbers"),
 );
 
 await btn("Show the answer").click();
@@ -96,8 +108,7 @@ await page.waitForTimeout(200);
 const answerText = await viz().innerText();
 check(
     "show the answer reveals the pair",
-    answerText.includes("indices [0, 1]"),
-    answerText.split("\n").find((l) => l.includes("add up to")) || "",
+    answerText.includes("The pair is at indices [0, 1]."),
 );
 
 // ── Brute force ─────────────────────────────────────────────────
@@ -118,9 +129,13 @@ check(
 
 await btn("Reset").click();
 await page.waitForTimeout(150);
-check("brute force reset restores step 1", (await bruteStatus.innerText()).includes("indices 0 and 1"));
+check(
+    "brute force reset restores step 1",
+    (await bruteStatus.innerText()).includes("index 0 and 1"),
+);
 
 check("back is disabled at step 1", await btn("Back").isDisabled());
+check("reset is disabled at step 1", await btn("Reset").isDisabled());
 
 // ── Hash map ────────────────────────────────────────────────────
 // The brute-force section left the six-number preset loaded; go back to the
@@ -135,7 +150,11 @@ check(
 );
 
 const hashLast = await runToEnd(hashStatus);
-check("hash map ends with the pair [0, 1]", hashLast.includes("[0, 1]"), hashLast.slice(0, 110));
+check(
+    "hash map ends with the pair [0, 1]",
+    hashLast.includes("[0, 1]"),
+    hashLast.slice(0, 110),
+);
 check("next step is disabled at the end", await btn("Next step").isDisabled());
 
 await btn("Reset").click();
@@ -147,7 +166,8 @@ const after = await hashStatus.innerText();
 check("auto-play advances", before !== after, after.slice(0, 70));
 check(
     "auto-play self-stops at the end",
-    (await btn("Pause").count()) === 0 && (await btn("Auto-play").count()) === 1,
+    (await btn("Pause").count()) === 0 &&
+        (await btn("Auto-play").count()) === 1,
 );
 
 await btn("Reset").click();
@@ -156,7 +176,10 @@ await page.waitForTimeout(150);
 const step2 = await hashStatus.innerText();
 await btn("Back").click();
 await page.waitForTimeout(150);
-check("back returns to the previous step", (await hashStatus.innerText()) !== step2);
+check(
+    "back returns to the previous step",
+    (await hashStatus.innerText()) !== step2,
+);
 
 // ── Presets & edge cases ────────────────────────────────────────
 async function presetRun(preset, tabName) {
@@ -168,7 +191,11 @@ async function presetRun(preset, tabName) {
 }
 
 const dup = await presetRun("3, 3 → 6", "Hash map");
-check("duplicate 3,3 → 6 returns [0, 1] (no self-pair)", dup.includes("[0, 1]"), dup.slice(0, 110));
+check(
+    "duplicate 3,3 → 6 returns [0, 1] (no self-pair)",
+    dup.includes("[0, 1]"),
+    dup.slice(0, 110),
+);
 
 const dupBrute = await presetRun("3, 3 → 6", "Brute force");
 check("duplicate 3,3 → 6 also works brute force", dupBrute.includes("[0, 1]"));
@@ -182,17 +209,45 @@ const noSol = await presetRun("1, 5, 8 → 99", "Hash map").catch(async () => {
     await page.waitForTimeout(250);
     return runToEnd(status());
 });
-check("no-solution run says no pair exists", /no pair/i.test(noSol), noSol.slice(0, 120));
+check(
+    "no-solution run says no answer exists",
+    /no answer exists/i.test(noSol),
+    noSol.slice(0, 120),
+);
 
 const multi = await presetRun("1, 5, 8, 3, 9, 4 → 12", "Hash map");
-check("six-number preset solves", multi.includes("[") && /Return/.test(multi), multi.slice(0, 110));
+check(
+    "six-number preset solves",
+    /Answer: \[\d+, \d+\]/.test(multi),
+    multi.slice(0, 110),
+);
+
+// ── Mockup parity ───────────────────────────────────────────────
+check(
+    "cells carry index captions",
+    (await viz().locator("text=index 0").count()) >= 1,
+);
+check(
+    "hash-map tab labels the live map",
+    (await viz().locator("text=Map of numbers seen so far").count()) === 1,
+);
+await tab("Brute force").click();
+await page.waitForTimeout(250);
+check(
+    "brute-force tab shows its code snippet",
+    (await viz().locator("pre code", { hasText: "for j in range" }).count()) === 1,
+);
+check(
+    "stats line reports pairs checked + complexity",
+    (await viz().innerText()).includes("Worst case for"),
+);
 
 // ── Validation ──────────────────────────────────────────────────
 await page.getByLabel("Numbers").fill("7");
 await page.waitForTimeout(250);
 check(
     "single number shows inline validation, no stepper",
-    (await viz().locator("text=Enter at least two numbers").count()) > 0 &&
+    (await viz().locator("text=at least two numbers and a target").count()) > 0 &&
         (await btn("Next step").count()) === 0,
 );
 
@@ -201,21 +256,25 @@ await page.getByLabel("Target").fill("");
 await page.waitForTimeout(250);
 check(
     "empty target shows inline validation",
-    (await viz().locator("text=Enter a numeric target").count()) > 0,
+    (await viz().locator("text=at least two numbers and a target").count()) > 0,
 );
 
 await page.getByLabel("Target").fill("9");
 await page.waitForTimeout(250);
 check(
     "recovers once the inputs are valid again",
-    (await viz().locator("text=Enter a").count()) === 0 &&
+    (await viz().locator("text=at least two numbers").count()) === 0 &&
         (await page.getByRole("tab").count()) === 3,
 );
 
 // ── Theme toggle ────────────────────────────────────────────────
 for (const want of ["dark", "light"]) {
     const toggle = page.getByRole("button", { name: "Toggle dark mode" });
-    if ((await page.evaluate(() => document.documentElement.getAttribute("data-theme"))) !== want) {
+    if (
+        (await page.evaluate(() =>
+            document.documentElement.getAttribute("data-theme"),
+        )) !== want
+    ) {
         await toggle.click();
         await page.waitForTimeout(400);
     }
@@ -254,11 +313,17 @@ for (const href of hrefs.filter(Boolean)) {
     );
     if (chars < 100 || errors.length > 0) bad.push(`${href} (${chars} chars)`);
 }
-check(`all ${hrefs.length} sidebar topics render cleanly`, bad.length === 0, bad.join("; "));
+check(
+    `all ${hrefs.length} sidebar topics render cleanly`,
+    bad.length === 0,
+    bad.join("; "),
+);
 
 process.stdout.write(
     errors.length
-        ? `\n✗ ${errors.length} console/page errors:\n` + errors.slice(0, 10).join("\n") + "\n"
+        ? `\n✗ ${errors.length} console/page errors:\n` +
+              errors.slice(0, 10).join("\n") +
+              "\n"
         : "\n✓ no console or page errors\n",
 );
 

@@ -1,11 +1,50 @@
 // src/lib/interactive/twoSum.ts — pure step builders for Two Sum
 import type { InteractiveStep, StepBuilder } from "./types";
 
-function statRows(checked: number, time: string, space: string) {
+const BRUTE_CODE =
+    `for i in range(len(nums)):
+    for j in range(i + 1, len(nums)):
+        if nums[i] + nums[j] == target:
+            return [i, j]`;
+
+const HASH_CODE =
+    `seen = {}
+for i, x in enumerate(nums):
+    need = target - x
+    if need in seen:
+        return [seen[need], i]
+    seen[x] = i`;
+
+export const CODE: Record<string, string> = {
+    "two-sum:brute": BRUTE_CODE,
+    "two-sum:hash": HASH_CODE,
+};
+
+interface StatMode {
+    /** "pairs checked" | "numbers visited" */
+    counter: string;
+    /** per-element worst case, e.g. "6 pairs" | "4 lookups" */
+    worst: (n: number) => string;
+    complexity: string;
+}
+
+const BRUTE_STATS: StatMode = {
+    counter: "pairs checked",
+    worst: (n) => `${(n * (n - 1)) / 2} pairs`,
+    complexity: "Time O(n²), space O(1)",
+};
+
+const HASH_STATS: StatMode = {
+    counter: "numbers visited",
+    worst: (n) => `${n} lookups`,
+    complexity: "Time O(n), space O(n)",
+};
+
+function statRows(count: number, n: number, mode: StatMode) {
     return [
-        { label: time === "O(n)" ? "numbers visited" : "pairs checked", value: String(checked) },
-        { label: "Time", value: time },
-        { label: "Space", value: space },
+        { value: String(count), label: `${mode.counter}:` },
+        { label: `Worst case for ${n} numbers: ${mode.worst(n)}` },
+        { label: mode.complexity },
     ];
 }
 
@@ -19,16 +58,16 @@ export const bruteForce: StepBuilder = ({ values, target }) => {
             checked++;
             const sum = values[i] + values[j];
             const hit = sum === target;
-            let verdict = `— too big. Move the left pointer forward.`;
-            if (hit) {
-                verdict = `— that equals the target, so the answer is [${i}, ${j}].`;
-            } else if (sum < target) {
-                verdict = `— too small. Move the right pointer forward.`;
-            }
             steps.push({
                 marks: hit ? { [i]: "ok", [j]: "ok" } : { [i]: "a", [j]: "b" },
-                narration: `Try indices ${i} and ${j}: ${values[i]} + ${values[j]} = ${sum} ${verdict}`,
-                stats: statRows(checked, "O(n²)", "O(1)"),
+                narration:
+                    `Add the numbers at index ${i} and ${j}: ` +
+                    `${values[i]} + ${values[j]} = ${sum}. ` +
+                    (hit
+                        ? `That equals ${target}. Answer: [${i}, ${j}].`
+                        : `Not ${target}. Try the next pair.`),
+                tone: hit ? "good" : undefined,
+                stats: statRows(checked, values.length, BRUTE_STATS),
                 found: hit,
             });
             if (hit) break outer;
@@ -38,8 +77,9 @@ export const bruteForce: StepBuilder = ({ values, target }) => {
     if (steps.every((s) => !s.found)) {
         steps.push({
             marks: {},
-            narration: `Every pair has been checked and none of them add up to ${target}. No answer exists.`,
-            stats: statRows(checked, "O(n²)", "O(1)"),
+            narration: `Not ${target}. That was the last pair, so no answer exists.`,
+            tone: "bad",
+            stats: statRows(checked, values.length, BRUTE_STATS),
             found: false,
         });
     }
@@ -55,6 +95,7 @@ export const hashMap: StepBuilder = ({ values, target }) => {
     const steps: InteractiveStep[] = [];
     const seen = new Map<number, number>();
     let visited = 0;
+    const label = "Map of numbers seen so far (value → index)";
 
     for (let i = 0; i < values.length; i++) {
         const x = values[i];
@@ -66,9 +107,17 @@ export const hashMap: StepBuilder = ({ values, target }) => {
         if (hitIdx !== undefined) {
             steps.push({
                 marks: { [i]: "ok", [hitIdx]: "ok" },
-                narration: `i = ${i}, x = ${x}. The complement ${target} − ${x} = ${need} is already in the map at index ${hitIdx}. Return [${hitIdx}, ${i}].`,
-                panel: { label: "value → index", rows, hits: [] },
-                stats: statRows(visited, "O(n)", "O(n)"),
+                narration:
+                    `Look at ${x}. The partner it needs is ${target} − ${x} = ${need}. ` +
+                    `${need} is already in the map at index ${hitIdx}. Answer: [${hitIdx}, ${i}].`,
+                tone: "good",
+                panel: {
+                    label,
+                    rows,
+                    // Light up the chip that answered the query.
+                    hits: [rows.findIndex((r) => r.startsWith(`${need} `))],
+                },
+                stats: statRows(visited, values.length, HASH_STATS),
                 found: true,
             });
             return steps;
@@ -76,13 +125,15 @@ export const hashMap: StepBuilder = ({ values, target }) => {
 
         rows.push(`${x} → ${i}`);
         steps.push({
-            marks: { [i]: "active" },
+            marks: { [i]: "a" },
             narration:
-                seen.size === 0
-                    ? `i = ${i}, x = ${x}. We need ${need}. The map is empty, so there is no hit. Remember ${x} → ${i}.`
-                    : `i = ${i}, x = ${x}. We need ${need}, which the map does not have yet. Remember ${x} → ${i}.`,
-            panel: { label: "value → index", rows, hits: [rows.length - 1] },
-            stats: statRows(visited, "O(n)", "O(n)"),
+                `Look at ${x}. The partner it needs is ${target} − ${x} = ${need}. ` +
+                (seen.size === 0
+                    ? `${need} is not in the map yet, because the map is empty. `
+                    : `${need} is not in the map yet. `) +
+                `Save ${x} → index ${i} and move on.`,
+            panel: { label, rows, hits: [rows.length - 1] },
+            stats: statRows(visited, values.length, HASH_STATS),
         });
         // Insert *after* the lookup — otherwise x could match itself.
         seen.set(x, i);
@@ -90,10 +141,19 @@ export const hashMap: StepBuilder = ({ values, target }) => {
 
     steps.push({
         marks: {},
-        narration: `The array is exhausted and no pair adds up to ${target}. No answer exists.`,
-        panel: { label: "value → index", rows: [...seen].map(([v, idx]) => `${v} → ${idx}`) },
-        stats: statRows(visited, "O(n)", "O(n)"),
+        narration: `The array has ended and ${need0(values, target)} was never found: no answer exists.`,
+        tone: "bad",
+        panel: {
+            label,
+            rows: [...seen].map(([v, idx]) => `${v} → ${idx}`),
+        },
+        stats: statRows(visited, values.length, HASH_STATS),
         found: false,
     });
     return steps;
 };
+
+/** The complement of the last number examined — what the run ended looking for. */
+function need0(values: number[], target: number): number {
+    return target - values[values.length - 1];
+}

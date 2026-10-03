@@ -3,30 +3,23 @@
 // Algorithm-agnostic: it renders whatever `builder` returns and owns the
 // step/auto-play state. Nothing here knows what Two Sum is.
 import { useEffect, useMemo, useState } from "react";
-import { motion } from "motion/react";
-import { Badge } from "../../ui/badge";
 import { Button } from "../../ui/button";
+import { Cells } from "./Cells";
 import { cn } from "../../../lib/utils";
 import type { CellState, StepBuilder } from "../../../lib/interactive/types";
-
-const CELL_STYLES: Record<CellState, string> = {
-    idle: "border-rule bg-surface text-ink",
-    a: "border-c4i bg-c4 text-c4i",
-    b: "border-c3i bg-c3 text-c3i",
-    ok: "border-success bg-good text-ink",
-    active: "border-focus bg-focus text-white",
-    range: "border-c1i bg-c1 text-c1i",
-};
 
 export function Stepper({
     values,
     target,
     builder,
+    code,
     autoPlayMs = 950,
 }: {
     values: number[];
     target: number;
     builder: StepBuilder;
+    /** Optional snippet shown under the controls, as the reference does. */
+    code?: string;
     autoPlayMs?: number;
 }) {
     const steps = useMemo(
@@ -50,94 +43,72 @@ export function Stepper({
             setPlaying(false);
             return;
         }
-        const timer = setTimeout(() => setIndex((i) => Math.min(i + 1, last)), autoPlayMs);
+        const timer = setTimeout(
+            () => setIndex((i) => Math.min(i + 1, last)),
+            autoPlayMs,
+        );
         return () => clearTimeout(timer);
     }, [playing, index, last, autoPlayMs]);
 
     if (steps.length === 0) return null;
 
     const step = steps[Math.min(index, last)];
+    const atEnd = index >= last;
 
     return (
-        <div className="rounded-lg border border-rule bg-neutral/50 p-4">
-            {/* The row of numbers. */}
-            <div className="flex flex-wrap gap-2">
-                {values.map((v, i) => {
-                    const state: CellState = step.marks?.[i] ?? "idle";
-                    return (
-                        <motion.div
-                            key={i}
-                            layout
-                            animate={
-                                state === "active" ? { scale: [1, 1.08, 1] } : { scale: 1 }
-                            }
-                            transition={{ duration: 0.25 }}
-                            className={cn(
-                                "flex size-11 items-center justify-center rounded-md border font-mono text-sm font-bold",
-                                CELL_STYLES[state],
-                            )}
-                        >
-                            {v}
-                        </motion.div>
-                    );
-                })}
-            </div>
+        <div>
+            <Cells
+                values={values}
+                stateOf={(i): CellState => step.marks?.[i] ?? "idle"}
+            />
 
             {/* Narration is the accessible live region. */}
             <p
                 role="status"
                 aria-live="polite"
-                className="mt-4 min-h-10 text-sm leading-relaxed text-ink"
+                className={cn(
+                    "mt-3 min-h-[3.2em] text-[1.05rem] leading-relaxed text-ink",
+                    step.tone === "good" && "font-semibold text-c1i",
+                    step.tone === "bad" && "font-semibold text-c3i",
+                )}
             >
                 {step.narration}
             </p>
 
             {/* Optional live data structure, e.g. the running value -> index map. */}
             {step.panel && (
-                <div className="mt-3">
-                    <p className="mb-1.5 text-[10px] font-bold tracking-wider text-muted uppercase">
-                        {step.panel.label}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
+                <div className="mt-1">
+                    <p className="mb-1 text-[13px] text-muted">{step.panel.label}</p>
+                    <div className="flex min-h-9 flex-wrap items-center gap-1.5">
                         {step.panel.rows.length === 0 && (
-                            <span className="text-xs text-muted">(empty)</span>
+                            <span className="text-[15px] text-muted">empty</span>
                         )}
                         {step.panel.rows.map((row, i) => {
                             const hit = step.panel?.hits?.includes(i) ?? false;
                             return (
-                                <Badge
+                                <span
                                     key={`${row}-${i}`}
-                                    variant={hit ? "c1" : "neutral"}
-                                    className="font-mono"
+                                    className={cn(
+                                        "rounded-lg border px-2 py-0.5 font-mono text-[0.95rem]",
+                                        hit
+                                            ? "border-c1i bg-c1 text-c1i"
+                                            : "border-rule bg-neutral text-ink",
+                                    )}
                                 >
                                     {row}
-                                </Badge>
+                                </span>
                             );
                         })}
                     </div>
                 </div>
             )}
 
-            {step.stats && step.stats.length > 0 && (
-                <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1">
-                    {step.stats.map((s) => (
-                        <div key={s.label}>
-                            <span className="text-[10px] tracking-wider text-muted uppercase">
-                                {s.label}{" "}
-                            </span>
-                            <span className="font-mono text-sm font-bold text-ink">
-                                {s.value}
-                            </span>
-                        </div>
-                    ))}
-                </div>
-            )}
-
             {/* Controls. */}
-            <div className="mt-4 flex flex-wrap items-center gap-2">
+            <div className="mt-3.5 flex flex-wrap items-center gap-2">
                 <Button
                     variant="ghost"
                     size="sm"
+                    disabled={index === 0}
                     onClick={() => {
                         setIndex(0);
                         setPlaying(false);
@@ -156,7 +127,7 @@ export function Stepper({
                 <Button
                     variant="primary"
                     size="sm"
-                    disabled={index >= last}
+                    disabled={atEnd}
                     onClick={() => setIndex((i) => Math.min(i + 1, last))}
                 >
                     Next step
@@ -164,8 +135,11 @@ export function Stepper({
                 <Button
                     variant="subtle"
                     size="sm"
-                    disabled={index >= last && !playing}
-                    onClick={() => setPlaying((p) => !p)}
+                    onClick={() => {
+                        // Pressing auto-play at the end restarts from the top.
+                        if (atEnd) setIndex(0);
+                        setPlaying((p) => !p);
+                    }}
                 >
                     {playing ? "Pause" : "Auto-play"}
                 </Button>
@@ -173,6 +147,27 @@ export function Stepper({
                     step {index + 1} / {steps.length}
                 </span>
             </div>
+
+            {step.stats && step.stats.length > 0 && (
+                <div className="mt-2.5 flex flex-wrap gap-x-5 gap-y-1 text-[0.9rem] text-muted">
+                    {step.stats.map((s, i) => (
+                        <span key={i}>
+                            {s.value !== undefined && (
+                                <span className="font-mono font-semibold text-ink">
+                                    {s.value}{" "}
+                                </span>
+                            )}
+                            {s.label}
+                        </span>
+                    ))}
+                </div>
+            )}
+
+            {code && (
+                <pre className="mt-3 overflow-x-auto rounded-xl bg-code p-3 text-[0.85rem] leading-relaxed text-[#e6edf7]">
+                    <code>{code}</code>
+                </pre>
+            )}
         </div>
     );
 }

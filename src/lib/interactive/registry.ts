@@ -11,10 +11,10 @@ import type { StepBuilder } from "./types";
  * component itself, since answering by hand is problem-specific.
  */
 export const STEP_BUILDERS: Record<string, StepBuilder> = {
-    "two-sum:brute": bruteForce,
-    "two-sum:hash": hashMap,
+   "two-sum:brute": bruteForce,
+   "two-sum:hash": hashMap,
 };
 
 export function getStepBuilder(key: string): StepBuilder | undefined {
-    return STEP_BUILDERS[key];
+   return STEP_BUILDERS[key];
 }

@@ -1,0 +1,16 @@
+{
+  "id": "b1462af2b",
+  "name": "Dev server",
+  "command": "cd /Users/akashkumar/workspace/personal/interview_prep && npx vite --port 5200 --strictPort",
+  "description": "Start the Vite dev server on port 5200 so the visualizer can be viewed",
+  "status": "running",
+  "outputPath": ".pi/tasks/session-49025-49025/b1462af2b.output",
+  "cwd": "/Users/akashkumar/workspace/personal/interview_prep",
+  "startTime": 1791055102606,
+  "pid": 35318,
+  "bytesWritten": 0,
+  "isAgent": false,
+  "notified": false,
+  "notifyOnCompletion": true,
+  "triggerOnCompletion": true
+}
