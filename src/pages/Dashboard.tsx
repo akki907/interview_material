@@ -113,14 +113,16 @@ export function Dashboard() {
                                             key={t.id}
                                             className="flex items-center gap-2"
                                         >
-                                            <button
-                                                type="button"
+                                            <Button
+                                                variant="outline"
+                                                size="icon"
                                                 aria-label="Mark complete"
+                                                aria-pressed={t.completed}
                                                 onClick={() => toggleTodo(t.id)}
-                                                className="flex size-5 shrink-0 items-center justify-center rounded border border-rule text-xs transition-colors hover:border-focus cursor-pointer"
+                                                className="size-5 shrink-0 rounded border text-xs"
                                             >
                                                 ✓
-                                            </button>
+                                            </Button>
                                             <Badge
                                                 variant="neutral"
                                                 className="shrink-0"

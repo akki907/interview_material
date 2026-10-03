@@ -6,12 +6,21 @@ import { RichText } from "./RichText";
 import { Diagram } from "./Diagram";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger,
 } from "../ui/collapsible";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "../ui/table";
 import { useStore } from "../../lib/store";
 
 function Callout({
@@ -59,17 +68,19 @@ function BookmarkToggle({ id }: { id: string }) {
     const on = bookmarks.includes(id);
 
     return (
-        <button
-            type="button"
+        <Button
+            variant="ghost"
+            size="icon"
             aria-label={on ? "Remove bookmark" : "Bookmark section"}
+            aria-pressed={on}
             onClick={() => toggleBookmark(id)}
             className={cn(
-                "rounded p-1 text-lg leading-none transition-colors hover:bg-neutral cursor-pointer",
+                "size-auto p-1 text-lg leading-none",
                 on ? "text-orange" : "text-rule hover:text-muted",
             )}
         >
             {on ? "★" : "☆"}
-        </button>
+        </Button>
     );
 }
 
@@ -183,35 +194,29 @@ function Block({ block }: { block: ContentBlock }) {
                             <CardTitle>{block.title}</CardTitle>
                         </CardHeader>
                     )}
-                    <CardContent className="overflow-x-auto">
-                        <table className="w-full border-collapse text-sm">
-                            <thead>
-                                <tr>
+                    <CardContent>
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
                                     {block.headers.map((hd) => (
-                                        <th
-                                            key={hd}
-                                            className="border border-rule bg-c0 px-3 py-2 text-left text-c0i"
-                                        >
+                                        <TableHead key={hd}>
                                             <RichText html={hd} />
-                                        </th>
+                                        </TableHead>
                                     ))}
-                                </tr>
-                            </thead>
-                            <tbody>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
                                 {block.rows.map((row, ri) => (
-                                    <tr key={ri}>
+                                    <TableRow key={ri}>
                                         {row.map((cell, ci) => (
-                                            <td
-                                                key={ci}
-                                                className="border border-rule px-3 py-2 align-top"
-                                            >
+                                            <TableCell key={ci}>
                                                 <RichText html={cell} />
-                                            </td>
+                                            </TableCell>
                                         ))}
-                                    </tr>
+                                    </TableRow>
                                 ))}
-                            </tbody>
-                        </table>
+                            </TableBody>
+                        </Table>
                     </CardContent>
                 </Card>
             );

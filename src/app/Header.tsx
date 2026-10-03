@@ -81,10 +81,10 @@ export function Header({
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: i * 0.02 }}
                                     >
-                                        <button
-                                            type="button"
+                                        <Button
+                                            variant="ghost"
                                             onClick={() => go(r.id)}
-                                            className="flex w-full cursor-pointer flex-col items-start px-3 py-2 text-left transition-colors hover:bg-neutral"
+                                            className="h-auto w-full flex-col items-start px-3 py-2 text-left"
                                         >
                                             <span className="text-sm">
                                                 {r.label}
@@ -92,7 +92,7 @@ export function Header({
                                             <span className="text-[11px] text-muted">
                                                 {r.group}
                                             </span>
-                                        </button>
+                                        </Button>
                                     </motion.li>
                                 ))}
                             </motion.ul>

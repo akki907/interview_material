@@ -11,6 +11,7 @@ import {
     CardTitle,
 } from "../components/ui/card";
 import { Button } from "../components/ui/button";
+import { cn } from "../lib/utils";
 import { Badge } from "../components/ui/badge";
 import { Input } from "../components/ui/input";
 import { Diagram } from "../components/content/Diagram";
@@ -182,19 +183,21 @@ export function Todos() {
                     <li key={t.id}>
                         <Card>
                             <CardContent className="flex items-start gap-3">
-                                <button
-                                    type="button"
+                                <Button
+                                    variant="outline"
+                                    size="icon"
                                     aria-label="Toggle complete"
+                                    aria-pressed={t.completed}
                                     onClick={() => toggleTodo(t.id)}
-                                    className={
-                                        "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded border text-xs transition-colors cursor-pointer " +
-                                        (t.completed
+                                    className={cn(
+                                        "mt-0.5 size-5 shrink-0 rounded border text-xs",
+                                        t.completed
                                             ? "border-c1i bg-c1 text-c1i"
-                                            : "border-rule hover:border-focus")
-                                    }
+                                            : "border-rule hover:border-focus",
+                                    )}
                                 >
                                     {t.completed ? "✓" : ""}
-                                </button>
+                                </Button>
                                 <div className="min-w-0 flex-1">
                                     <p
                                         className={

@@ -6,6 +6,7 @@
 import { Card, CardContent } from "../ui/card";
 import { Spotlight } from "../animated/Spotlight";
 import { CountUp } from "../animated/CountUp";
+import { WobbleCard } from "../animated/WobbleCard";
 import { cn } from "../../lib/utils";
 
 export interface StatTile {
@@ -34,12 +35,10 @@ export function StatTiles({
         return (
                 <div className={cn("grid gap-3", cols, className)}>
                         {tiles.map((t) => (
-                                <Spotlight
-                                        key={t.label}
-                                        className="rounded-card"
-                                >
-                                        <Card className="h-full transition-transform duration-200 hover:-translate-y-0.5">
-                                                <CardContent>
+                                <WobbleCard key={t.label} intensity={6}>
+                                        <Spotlight className="h-full rounded-card">
+                                                <Card className="h-full">
+                                                        <CardContent>
                                                         <p
                                                                 className={cn(
                                                                         "font-serif text-2xl font-bold tabular-nums",
@@ -63,11 +62,12 @@ export function StatTiles({
                                                                 )}
                                                         </p>
                                                         <p className="mt-0.5 text-[11px] tracking-wider text-muted uppercase">
-                                                                {t.label}
-                                                        </p>
-                                                </CardContent>
-                                        </Card>
-                                </Spotlight>
+                                                                        {t.label}
+                                                                </p>
+                                                        </CardContent>
+                                                </Card>
+                                        </Spotlight>
+                                </WobbleCard>
                         ))}
                 </div>
         );

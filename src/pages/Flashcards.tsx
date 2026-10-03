@@ -10,6 +10,7 @@ import {
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
 import { Diagram } from "../components/content/Diagram";
+import { DotPattern } from "../components/animated/DotPattern";
 import { PageHeader } from "../components/app/PageHeader";
 
 export function Flashcards() {
@@ -31,8 +32,9 @@ export function Flashcards() {
         setFlipped(false);
     };
 
-    return (
-        <div>
+return (
+        <div className="relative">
+            <DotPattern className="-mx-4 -mt-6 h-40 opacity-50 sm:-mx-8 lg:-mx-10" />
             <PageHeader
                 title="📇 Flashcards"
                 intro="Fast recall drills for definitions, invariants, and complexity classes — the facts you should not have to think about during an interview."
@@ -97,10 +99,10 @@ export function Flashcards() {
                         </Badge>
                     </CardHeader>
                     <CardContent>
-                        <button
-                            type="button"
+                        <Button
+                            variant="outline"
                             onClick={() => setFlipped((f) => !f)}
-                            className="flex min-h-40 w-full cursor-pointer items-center justify-center rounded-md border border-rule bg-neutral p-6 text-center transition-colors hover:border-focus"
+                            className="h-auto min-h-40 w-full justify-center rounded-md bg-neutral p-6 text-center hover:border-focus"
                         >
                             {flipped ? (
                                 <span className="text-base leading-relaxed">
@@ -111,7 +113,7 @@ export function Flashcards() {
                                     {current.front}
                                 </span>
                             )}
-                        </button>
+                        </Button>
                         <div className="mt-4 flex items-center justify-between">
                             <Button
                                 size="sm"

@@ -6,6 +6,7 @@ import { TOPIC_IDS } from "../lib/data";
 import { idFromPath, isStandaloneRoute } from "../lib/routes";
 import { useStore } from "../lib/store";
 import { cn } from "../lib/utils";
+import { Button } from "../components/ui/button";
 import { Spinner } from "../components/ui/spinner";
 
 const Dashboard = lazy(() =>
@@ -38,19 +39,20 @@ function CompleteToggle({ topicId }: { topicId: string }) {
     const toggleCheck = useStore((s) => s.toggleCheck);
 
     return (
-        <button
-            type="button"
+        <Button
+            variant="outline"
+            size="sm"
             onClick={() => toggleCheck(topicId)}
             aria-pressed={done}
             className={cn(
-                "inline-flex cursor-pointer items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors",
+                "gap-1.5 text-xs font-semibold",
                 done
                     ? "border-c1i bg-c1 text-c1i"
                     : "border-rule bg-surface text-muted hover:bg-neutral",
             )}
         >
             {done ? "✓ Completed" : "Mark complete"}
-        </button>
+        </Button>
     );
 }
 

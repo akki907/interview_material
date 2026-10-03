@@ -7,6 +7,7 @@ import { NAV } from "../lib/data";
 import { hrefFor } from "../lib/routes";
 import { useStore } from "../lib/store";
 import { cn } from "../lib/utils";
+import { Button } from "../components/ui/button";
 import {
     Sidebar as SidebarPrimitive,
     SidebarContent,
@@ -47,11 +48,12 @@ function NavGroup({ group }: { group: (typeof NAV)[number] }) {
 
     return (
         <SidebarGroup>
-            <button
-                type="button"
+            <Button
+                variant="ghost"
+                size="sm"
                 onClick={() => setOpen((o) => !o)}
                 aria-expanded={open}
-                className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-2 py-1.5 text-left text-xs font-semibold tracking-wider text-muted uppercase transition-colors hover:bg-neutral hover:text-ink"
+                className="h-auto w-full justify-between gap-2 px-2 py-1.5 text-left text-xs font-semibold tracking-wider text-muted uppercase hover:bg-neutral hover:text-ink"
             >
                 <span className="flex min-w-0 items-center gap-1.5">
                     <motion.span
@@ -71,7 +73,7 @@ function NavGroup({ group }: { group: (typeof NAV)[number] }) {
                 >
                     {done}/{children.length}
                 </span>
-            </button>
+            </Button>
 
             <AnimatePresence initial={false}>
                 {open && (
