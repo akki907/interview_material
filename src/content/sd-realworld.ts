@@ -400,12 +400,18 @@ registerContent({
                 ],
             ],
         },
-        // One shared scaffold, instantiated per reference design in the legacy
-        // page with a forEach over a list of problem names.
+        // The legacy page rendered this scaffold once per reference design via a
+        // forEach over the design names. The content model has no way to express
+        // "instantiate one card N times", so it was inlined below 13 times with
+        // byte-identical prose. Collapsed to a single card that names the designs
+        // it covers, which is what the forEach was expressing.
         {
             kind: "card",
-            title: "Design WhatsApp",
+            title: "🛠️ Shared Answer Scaffold — applies to all 13 reference designs",
             html:
+                "<p>Every reference design on this page is answered with the same four " +
+                "moves. Work through them in order; only the numbers and the dominant " +
+                "decision change from design to design.</p>" +
                 "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
                 "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
                 "one guarantee that must never break.</p>" +
@@ -416,199 +422,10 @@ registerContent({
                 "end.</p>" +
                 "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
                 "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design YouTube",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design Instagram",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design Uber",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design Netflix",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design Twitter/X",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design Notification System",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design Payment System",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design File Storage",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design Search System",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design AI Chatbot",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design RAG Platform",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
-        },
-        {
-            kind: "card",
-            title: "Design Agent Platform",
-            html:
-                "<p><strong>Requirements:</strong> state the functional scope in one sentence, then " +
-                "the non-functional constraints — scale, read/write ratio, latency budget, and the " +
-                "one guarantee that must never break.</p>" +
-                "<p><strong>Capacity:</strong> show DAU to requests per second, requests per second " +
-                "to storage, and storage to bandwidth. Round hard, keep the arithmetic visible.</p>" +
-                "<p><strong>Architecture:</strong> name the dominant decision (fan-out model, " +
-                "storage strategy, consistency choice), then draw one concrete request end to " +
-                "end.</p>" +
-                "<p><strong>Trade-offs:</strong> state what you gave up. Every design above pays for " +
-                "its speed with staleness, its scale with coordination, or its cost with " +
-                "latency.</p>",
+                "latency.</p>" +
+                "<p><strong>The 13 designs it covers:</strong></p>" +
+                "<ul><li>WhatsApp</li><li>YouTube</li><li>Instagram</li><li>Uber</li><li>Netflix</li><li>Twitter/X</li><li>Notification System</li><li>Payment System</li><li>File Storage</li><li>Search System</li><li>AI Chatbot</li><li>RAG Platform</li><li>Agent Platform</li></ul>" +
+                "<p>Each is also summarised in the reference table above.</p>",
         },
         {
             kind: "qa",
