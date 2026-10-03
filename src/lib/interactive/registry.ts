@@ -9,12 +9,12 @@ import type { VisualizerSpec } from "./spec";
 
 /** Keys are `<algo>:<tier>`. Two Sum has three tiers; "try" is hand-written. */
 export const STEP_BUILDERS: Record<string, StepBuilder> = {
-    "two-sum:brute": bruteForce,
-    "two-sum:hash": hashMap,
+   "two-sum:brute": bruteForce,
+   "two-sum:hash": hashMap,
 };
 
 export function getStepBuilder(key: string): StepBuilder | undefined {
-    return STEP_BUILDERS[key];
+   return STEP_BUILDERS[key];
 }
 
 import { slidingWindow } from "./visualizers/slidingWindow";
@@ -33,18 +33,18 @@ import { shardingRebalance } from "./visualizers/sharding";
  * hand-written "Try it" pane, so `InteractiveBlockView` special-cases it.
  */
 export const VISUALIZERS: Record<string, VisualizerSpec> = {
-    "sliding-window": slidingWindow,
-    "two-pointers": twoPointers,
-    graph: graphBfs,
-    heap: heapTopK,
-    "binary-tree": binaryTreeBst,
-    stack: stackDelimiters,
-    dp: dpClimbStairs,
-    arrays: arrayPartition,
-    backtracking: backtrackingMaze,
-    sharding: shardingRebalance,
+   "sliding-window": slidingWindow,
+   "two-pointers": twoPointers,
+   graph: graphBfs,
+   heap: heapTopK,
+   "binary-tree": binaryTreeBst,
+   stack: stackDelimiters,
+   dp: dpClimbStairs,
+   arrays: arrayPartition,
+   backtracking: backtrackingMaze,
+   sharding: shardingRebalance,
 };
 
 export function getVisualizer(algo: string): VisualizerSpec | undefined {
-    return VISUALIZERS[algo];
+   return VISUALIZERS[algo];
 }

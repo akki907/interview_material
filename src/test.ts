@@ -147,7 +147,8 @@ for (const id of TOPIC_IDS) {
                     `${id}: interactive block names an algo`,
                 );
                 check(
-                    block.algo === "two-sum" || getVisualizer(block.algo) !== undefined,
+                    block.algo === "two-sum" ||
+                        getVisualizer(block.algo) !== undefined,
                     `${id}: interactive algo "${block.algo}" is registered`,
                 );
                 break;

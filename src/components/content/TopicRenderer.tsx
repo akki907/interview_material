@@ -306,28 +306,31 @@ function Block({ block }: { block: ContentBlock }) {
             );
 
         case "interactive": {
-                // Registry-keyed: adding an algorithm means adding a spec, not
-                // touching this switch. Two Sum keeps a hand-written try-it pane.
-                const spec = getVisualizer(block.algo);
-                if (spec) {
-                    return (
-                        <Interactive
-                            spec={spec}
-                            title={block.title}
-                            html={block.html}
-                            defaults={block.defaults?.fields}
-                        />
-                    );
-                }
-                if (block.algo !== "two-sum") return null;
-                return <TwoSum title={block.title} html={block.html} />;
+            // Registry-keyed: adding an algorithm means adding a spec, not
+            // touching this switch. Two Sum keeps a hand-written try-it pane.
+            const spec = getVisualizer(block.algo);
+            if (spec) {
+                return (
+                    <Interactive
+                        spec={spec}
+                        title={block.title}
+                        html={block.html}
+                        defaults={block.defaults?.fields}
+                    />
+                );
             }
+            if (block.algo !== "two-sum") return null;
+            return <TwoSum title={block.title} html={block.html} />;
+        }
 
         case "pipeline":
             return (
                 <div className="my-5 flex flex-wrap items-stretch gap-1.5">
                     {block.stages.map((s, i) => (
-                        <div key={`${s.name}-${i}`} className="flex items-center gap-1.5">
+                        <div
+                            key={`${s.name}-${i}`}
+                            className="flex items-center gap-1.5"
+                        >
                             <div className="min-w-32 flex-1 rounded-md border border-rule bg-neutral px-3 py-2">
                                 <div className="flex items-center gap-1.5">
                                     <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-c2 text-[10px] font-bold text-c2i">

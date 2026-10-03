@@ -1,4 +1,3 @@
-// src/pages/Dashboard.tsx
 import { useNavigate } from "react-router-dom";
 import { PROGRESS, RECENTLY_STUDIED, STATS, WEAK_AREAS } from "../lib/data";
 import { useStore } from "../lib/store";
@@ -16,6 +15,7 @@ import { StatTiles } from "../components/app/StatTiles";
 import { GridPattern } from "../components/animated/GridPattern";
 import { Meteors } from "../components/animated/Meteors";
 import { MovingBorder } from "../components/animated/MovingBorder";
+import { HeroSection } from "../components/hero/HeroSection";
 
 const AREAS = [
     { key: "dsa", label: "DSA", tone: "dsa" as const },
@@ -47,21 +47,19 @@ export function Dashboard() {
     const top = [...active]
         .sort(
             (a, b) =>
-                ({ high: 3, medium: 2, low: 1 })[b.priority] -
-                { high: 3, medium: 2, low: 1 }[a.priority],
+                ({ high: 3, medium: 2, low: 1 } as const)[b.priority] -
+                ({ high: 3, medium: 2, low: 1 } as const)[a.priority],
         )
         .slice(0, 4);
 
     return (
         <div className="relative">
-            <GridPattern className="-mx-4 -mt-6 h-48 sm:-mx-8 lg:-mx-10" />
-            <Meteors
-                count={10}
-                className="-mx-4 -mt-6 h-48 sm:-mx-8 lg:-mx-10 opacity-60"
-            />
-            <PageHeader
+            {/* Replace GridPattern and Meteors with HeroSection at the top */}
+            <HeroSection
                 title="Your Engineering Journey"
-                intro="Track your progress across all areas"
+                subtitle="Track your progress across all areas with our comprehensive dashboard"
+                hasAnimations={true}
+                animationType="dots"
             />
 
             <StatTiles tiles={STAT_TILES} className="mb-8" />

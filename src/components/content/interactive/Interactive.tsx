@@ -85,11 +85,15 @@ export function Interactive({
                                 <Input
                                     id={`viz-${spec.algo}-${field.id}`}
                                     inputMode={
-                                        field.kind === "number" ? "numeric" : undefined
+                                        field.kind === "number"
+                                            ? "numeric"
+                                            : undefined
                                     }
                                     value={fields[field.id] ?? ""}
                                     placeholder={field.placeholder}
-                                    onChange={(e) => setField(field.id, e.target.value)}
+                                    onChange={(e) =>
+                                        setField(field.id, e.target.value)
+                                    }
                                 />
                             </div>
                         ))}
@@ -105,7 +109,11 @@ export function Interactive({
                                     key={preset.label}
                                     variant="outline"
                                     size="sm"
-                                    onClick={() => setFields(initialFields(spec, preset.fields))}
+                                    onClick={() =>
+                                        setFields(
+                                            initialFields(spec, preset.fields),
+                                        )
+                                    }
                                 >
                                     {preset.label}
                                 </Button>
@@ -131,12 +139,18 @@ export function Interactive({
                         <TabsContent key={tier.id} value={tier.id}>
                             {invalid === null ? (
                                 <div>
-                                    <p className="mb-2 text-ink">{tier.blurb}</p>
+                                    <p className="mb-2 text-ink">
+                                        {tier.blurb}
+                                    </p>
                                     <Stepper
                                         values={[]}
                                         target={0}
                                         code={tier.code}
-                                        builder={() => tier.build(fields) as InteractiveStep[]}
+                                        builder={() =>
+                                            tier.build(
+                                                fields,
+                                            ) as InteractiveStep[]
+                                        }
                                     />
                                 </div>
                             ) : (

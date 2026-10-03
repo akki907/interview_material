@@ -51,14 +51,20 @@ function countThenRewrite(source: number[], pivot: number): InteractiveStep[] {
         else if (side === "above") above++;
         else equal++;
         steps.push({
-            marks: { [i]: side === "below" ? "ok" : side === "above" ? "b" : "a" },
+            marks: {
+                [i]: side === "below" ? "ok" : side === "above" ? "b" : "a",
+            },
             narration:
                 `Look at ${v} at index ${i}. It is ${side} the pivot ${pivot}, so it counts towards ` +
                 `the ${side} total.`,
             tone: side === "equal" ? "good" : undefined,
             panel: {
                 label: "Tally so far",
-                rows: [`below ${pivot}: ${below}`, `equal ${pivot}: ${equal}`, `above ${pivot}: ${above}`],
+                rows: [
+                    `below ${pivot}: ${below}`,
+                    `equal ${pivot}: ${equal}`,
+                    `above ${pivot}: ${above}`,
+                ],
             },
             stats: [
                 { value: String(i + 1), label: "values counted:" },
@@ -82,7 +88,11 @@ function countThenRewrite(source: number[], pivot: number): InteractiveStep[] {
                 `The array is being rewritten in place — no extra array, but every write costs a move.`,
             panel: {
                 label: "Tally",
-                rows: [`below ${pivot}: ${below}`, `equal ${pivot}: ${equal}`, `above ${pivot}: ${above}`],
+                rows: [
+                    `below ${pivot}: ${below}`,
+                    `equal ${pivot}: ${equal}`,
+                    `above ${pivot}: ${above}`,
+                ],
             },
             stats: [
                 { value: String(i + 1), label: "positions filled:" },
@@ -95,7 +105,10 @@ function countThenRewrite(source: number[], pivot: number): InteractiveStep[] {
         marks: settledMarks(a, pivot),
         narration: `Two passes are done: ${verdict(a, pivot)}`,
         tone: "good",
-        stats: [{ value: "2", label: "passes:" }, { label: "Time O(n), space O(1)" }],
+        stats: [
+            { value: "2", label: "passes:" },
+            { label: "Time O(n), space O(1)" },
+        ],
         found: true,
     });
     return steps;
@@ -114,7 +127,11 @@ function dutchFlag(source: number[], pivot: number): InteractiveStep[] {
         if (v < pivot) {
             [a[lo], a[mid]] = [a[mid], a[lo]];
             steps.push({
-                marks: { ...partitionMarks(a, lo, mid, hi), [mid]: "range", [lo]: "a" },
+                marks: {
+                    ...partitionMarks(a, lo, mid, hi),
+                    [mid]: "range",
+                    [lo]: "a",
+                },
                 narration:
                     `${v} at mid (${mid}) is below ${pivot}, so swap it with the front of the unknown region ` +
                     `at ${lo}. Everything up to ${lo} is now settled.`,
@@ -130,7 +147,11 @@ function dutchFlag(source: number[], pivot: number): InteractiveStep[] {
         } else if (v > pivot) {
             [a[mid], a[hi]] = [a[hi], a[mid]];
             steps.push({
-                marks: { ...partitionMarks(a, lo, mid, hi), [mid]: "range", [hi]: "a" },
+                marks: {
+                    ...partitionMarks(a, lo, mid, hi),
+                    [mid]: "range",
+                    [hi]: "a",
+                },
                 narration:
                     `${v} at mid (${mid}) is above ${pivot}, so swap it with the back of the unknown region at ` +
                     `${hi}. That value was never inspected, so mid stays put and looks at it again.`,
@@ -200,18 +221,22 @@ export const arrayPartition: VisualizerSpec = {
         },
     ],
     presets: [
-        { label: "2,0,1,2,0,1,2 → 1", fields: { nums: "2, 0, 1, 2, 0, 1, 2", pivot: "1" } },
-        { label: "3,1,4,1,5 → 3", fields: { nums: "3, 1, 4, 1, 5", pivot: "3" } },
+        {
+            label: "2,0,1,2,0,1,2 → 1",
+            fields: { nums: "2, 0, 1, 2, 0, 1, 2", pivot: "1" },
+        },
+        {
+            label: "3,1,4,1,5 → 3",
+            fields: { nums: "3, 1, 4, 1, 5", pivot: "3" },
+        },
         { label: "9,7,8,1 → 5", fields: { nums: "9, 7, 8, 1", pivot: "5" } },
     ],
     tiers: [
         {
             id: "counting",
             label: "Count then rewrite",
-            blurb:
-                "Tally how many values sit on each side of the pivot, then overwrite the array in that order. Simple, and it touches every element twice.",
-            code:
-                `below = sum(x < pivot for x in a)
+            blurb: "Tally how many values sit on each side of the pivot, then overwrite the array in that order. Simple, and it touches every element twice.",
+            code: `below = sum(x < pivot for x in a)
 equal = sum(x == pivot for x in a)
 a = [x for x in a if x < pivot] \\
   + [x for x in a if x == pivot] \\
@@ -225,10 +250,8 @@ a = [x for x in a if x < pivot] \\
         {
             id: "dutch",
             label: "Three-way partition",
-            blurb:
-                "One pass, three pointers. Every element is classified as it is read, and the unknown region only ever shrinks.",
-            code:
-                `lo = mid = 0
+            blurb: "One pass, three pointers. Every element is classified as it is read, and the unknown region only ever shrinks.",
+            code: `lo = mid = 0
 hi = len(a) - 1
 while mid <= hi:
     if a[mid] < pivot:
@@ -245,8 +268,10 @@ while mid <= hi:
         },
     ],
     invalid: (f) => {
-        if (nums(f.nums).length < 2) return "Enter at least two numbers to step through.";
-        if (int(f.pivot) === null) return "Enter a numeric pivot to step through.";
+        if (nums(f.nums).length < 2)
+            return "Enter at least two numbers to step through.";
+        if (int(f.pivot) === null)
+            return "Enter a numeric pivot to step through.";
         return null;
     },
 };

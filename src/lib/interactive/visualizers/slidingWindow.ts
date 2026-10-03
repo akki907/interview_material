@@ -90,7 +90,12 @@ function onePassWindow(s: string[]): InteractiveStep[] {
 
         const rows = [...lastSeen].map(([ch, i]) => `${ch} → ${i}`);
         steps.push({
-            marks: windowMarks(left, right, right, repeats ? previous : undefined),
+            marks: windowMarks(
+                left,
+                right,
+                right,
+                repeats ? previous : undefined,
+            ),
             narration: repeats
                 ? `Look at '${c}' at index ${right}. It last appeared at index ${previous}, inside the window — jump the left edge to ${left} and drop ${previous + 1 - left + 1} character(s) at once.`
                 : `Look at '${c}' at index ${right}. It is not in the window, so the window grows to '${s.slice(left, right + 1).join("")}' (length ${right + 1 - left}).`,
@@ -98,7 +103,9 @@ function onePassWindow(s: string[]): InteractiveStep[] {
             panel: {
                 label: "Last index seen (character → index)",
                 rows,
-                hits: repeats ? [rows.findIndex((r) => r.startsWith(`${c} `))] : [],
+                hits: repeats
+                    ? [rows.findIndex((r) => r.startsWith(`${c} `))]
+                    : [],
             },
             stats: [
                 { value: String(right + 1), label: "characters read:" },
@@ -156,10 +163,8 @@ export const slidingWindow: VisualizerSpec = {
         {
             id: "brute",
             label: "Brute force",
-            blurb:
-                "Expand a window from every starting index and stop at the first repeat. Correct, but it re-reads the same characters over and over.",
-            code:
-                `for i in range(len(s)):
+            blurb: "Expand a window from every starting index and stop at the first repeat. Correct, but it re-reads the same characters over and over.",
+            code: `for i in range(len(s)):
     seen = set()
     for j in range(i, len(s)):
         if s[j] in seen:
@@ -171,10 +176,8 @@ export const slidingWindow: VisualizerSpec = {
         {
             id: "window",
             label: "Sliding window",
-            blurb:
-                "One pass. Remember where each character last appeared, and jump the left edge straight past the repeat.",
-            code:
-                `last = {}
+            blurb: "One pass. Remember where each character last appeared, and jump the left edge straight past the repeat.",
+            code: `last = {}
 left = 0
 for right, ch in enumerate(s):
     if ch in last and last[ch] >= left:
@@ -185,5 +188,7 @@ for right, ch in enumerate(s):
         },
     ],
     invalid: (f) =>
-        chars(f.text).length < 2 ? "Enter at least two characters to step through." : null,
+        chars(f.text).length < 2
+            ? "Enter at least two characters to step through."
+            : null,
 };

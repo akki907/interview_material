@@ -93,10 +93,7 @@ function TryIt({ values, target }: { values: number[]; target: number }) {
                 Pick two numbers whose sum is {target}. Tap a number to select
                 it, tap again to unselect.
             </p>
-            <Cells
-                cells={cellsFromValues(values, stateOf)}
-                onPick={toggle}
-            />
+            <Cells cells={cellsFromValues(values, stateOf)} onPick={toggle} />
             <p
                 role="status"
                 aria-live="polite"

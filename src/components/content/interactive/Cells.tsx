@@ -46,7 +46,11 @@ export function Cells({
     return (
         <div
             className={cn("flex flex-wrap gap-2", cols && "grid")}
-            style={cols ? { gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` } : undefined}
+            style={
+                cols
+                    ? { gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }
+                    : undefined
+            }
         >
             {cells.map((cell, i) => {
                 if (cell.text === "") {

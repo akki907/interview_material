@@ -1,0 +1,1869 @@
+npm notice run interview-os@1.0.0 npx
+npm notice run 'vite' --port 5200 --strictPort
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - `__dirname` (vite.config.ts:133:43). Use `import.meta.dirname` instead
+  - import "./src/ai/evaluate" without a file extension (vite.config.ts:5:35). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+12:48:23 AM [vite] (client) Re-optimizing dependencies because lockfile has changed
+
+  VITE v8.3.2  ready in 200 ms
+
+  ➜  Local:   http://localhost:5200/
+  ➜  Network: use --host to expose
+12:50:56 AM [vite] (client) page reload index.html
+12:51:02 AM [vite] (client) page reload index.html
+12:53:27 AM [vite] (client) [console.error] Encountered two children with the same key, `Render`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+12:54:02 AM [vite] (client) [console.error] Encountered two children with the same key, `Cache`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+12:55:13 AM [vite] (client) [console.error] Encountered two children with the same key, `Render`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+12:55:15 AM [vite] (client) [console.error] Encountered two children with the same key, `Cache`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+12:55:35 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/TwoSum.tsx
+12:56:10 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/TwoSum.tsx
+12:56:10 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/TwoSum.tsx
+12:56:20 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/TwoSum.tsx
+12:56:20 AM [vite] Internal server error: Failed to resolve import "./visualizers/slidingWindow" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:20:30
+  13 |  	return STEP_BUILDERS[key];
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+     |                                 ^
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 1)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+12:56:20 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/slidingWindow" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:20:30
+  13 |  	return STEP_BUILDERS[key];
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+     |                                 ^
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+12:56:20 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/interactive/TwoSum.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:56:47 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx
+12:56:47 AM [vite] Internal server error: Failed to resolve import "./visualizers/slidingWindow" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:20:30
+  13 |  	return STEP_BUILDERS[key];
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+     |                                 ^
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 1)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+12:56:47 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/slidingWindow" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:20:30
+  13 |  	return STEP_BUILDERS[key];
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+     |                                 ^
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+12:56:47 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/interactive/TwoSum.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:56:47 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx
+12:56:47 AM [vite] Internal server error: Failed to resolve import "./visualizers/slidingWindow" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:20:30
+  13 |  	return STEP_BUILDERS[key];
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+     |                                 ^
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 1)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+12:56:47 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/slidingWindow" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:20:30
+  13 |  	return STEP_BUILDERS[key];
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+     |                                 ^
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+12:56:47 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/interactive/TwoSum.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:56:56 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx
+12:56:56 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/twoPointers" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:21:28
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+     |                               ^
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+12:56:56 AM [vite] (client) Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mIdentifier `slidingWindow` has already been declared
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/interactive/visualizers/slidingWindow.ts:75:10 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m 75 │[0m [38;5;249mf[0m[38;5;249mu[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0mslidingWindow[38;5;249m([0m[38;5;249ms[0m[38;5;249m:[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249mg[0m[38;5;249m[[0m[38;5;249m][0m[38;5;249m)[0m[38;5;249m:[0m[38;5;249m [0m[38;5;249mI[0m[38;5;249mn[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mv[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mp[0m[38;5;249m[[0m[38;5;249m][0m[38;5;249m [0m[38;5;249m{[0m
+ [38;5;240m    │[0m          ──────┬──────  
+ [38;5;240m    │[0m                ╰──────── `slidingWindow` has already been declared here
+ [38;5;240m    │[0m 
+ [38;5;246m158 │[0m [38;5;249me[0m[38;5;249mx[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mslidingWindow[38;5;249m:[0m[38;5;249m [0m[38;5;249mV[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249ma[0m[38;5;249ml[0m[38;5;249mi[0m[38;5;249mz[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249mS[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m{[0m
+ [38;5;240m    │[0m              ──────┬──────  
+ [38;5;240m    │[0m                    ╰──────── It can not be redeclared here
+[38;5;246m─────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/visualizers/slidingWindow.ts
+12:56:56 AM [vite] Internal server error: Failed to resolve import "./visualizers/twoPointers" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:21:28
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+     |                               ^
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:56:56 AM [vite] (client) Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mIdentifier `slidingWindow` has already been declared
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/interactive/visualizers/slidingWindow.ts:75:10 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m 75 │[0m [38;5;249mf[0m[38;5;249mu[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0mslidingWindow[38;5;249m([0m[38;5;249ms[0m[38;5;249m:[0m[38;5;249m [0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249mg[0m[38;5;249m[[0m[38;5;249m][0m[38;5;249m)[0m[38;5;249m:[0m[38;5;249m [0m[38;5;249mI[0m[38;5;249mn[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mv[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mp[0m[38;5;249m[[0m[38;5;249m][0m[38;5;249m [0m[38;5;249m{[0m
+ [38;5;240m    │[0m          ──────┬──────  
+ [38;5;240m    │[0m                ╰──────── `slidingWindow` has already been declared here
+ [38;5;240m    │[0m 
+ [38;5;246m158 │[0m [38;5;249me[0m[38;5;249mx[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mslidingWindow[38;5;249m:[0m[38;5;249m [0m[38;5;249mV[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249mu[0m[38;5;249ma[0m[38;5;249ml[0m[38;5;249mi[0m[38;5;249mz[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249mS[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m{[0m
+ [38;5;240m    │[0m              ──────┬──────  
+ [38;5;240m    │[0m                    ╰──────── It can not be redeclared here
+[38;5;246m─────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/visualizers/slidingWindow.ts
+12:56:56 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/interactive/TwoSum.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:58:20 AM [vite] (client) hmr update /src/styles/globals.css
+12:58:43 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/Cells.tsx
+12:58:43 AM [vite] (client) hmr invalidate /src/components/content/interactive/Cells.tsx Could not Fast Refresh (new export)
+12:58:43 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx
+12:58:43 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/twoPointers" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:21:28
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+     |                               ^
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+12:58:43 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/interactive/TwoSum.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:58:44 AM [vite] (client) [Unhandled error] TypeError: Cannot read properties of undefined (reading 'map')
+ > Cells src/components/content/interactive/Cells.tsx:47:19
+    45 |              style={cols ? { gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` } : undefined}
+    46 |          >
+    47 |              {cells.map((cell, i) => {
+       |                     ^
+    48 |                  if (cell.text === "") {
+    49 |                      // Pad cells keep a grid rectangular without drawing anything.
+ > Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:28571:19
+ > renderWithHooks node_modules/react-dom/cjs/react-dom-client.development.js:8030:21
+ > updateFunctionComponent node_modules/react-dom/cjs/react-dom-client.development.js:10569:18
+ > beginWork node_modules/react-dom/cjs/react-dom-client.development.js:12205:17
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19176:21
+ > workLoopSync node_modules/react-dom/cjs/react-dom-client.development.js:19004:40
+ > renderRootSync node_modules/react-dom/cjs/react-dom-client.development.js:18985:10
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18094:34
+ > performSyncWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:20680:6
+ > flushSyncWorkAcrossRoots_impl node_modules/react-dom/cjs/react-dom-client.development.js:20522:20
+ > flushSyncWork$1 node_modules/react-dom/cjs/react-dom-client.development.js:18439:11
+ > scheduleRefresh node_modules/react-dom/cjs/react-dom-client.development.js:113:8
+ > S.scheduleRefresh chrome-extension:/fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:79881
+ > ../../../../../@react-refresh:228:17
+ > performReactRefresh ../../../../../@react-refresh:217:26
+ > ../../../../../@react-refresh:604:3
+
+12:58:44 AM [vite] (client) [console.warn] An error occurred in the <Cells> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:58:56 AM [vite] (client) page reload src/lib/interactive/types.ts
+12:58:56 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/Cells.tsx
+12:58:56 AM [vite] (client) hmr invalidate /src/components/content/interactive/Cells.tsx Could not Fast Refresh ("cellsFromValues" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+12:58:56 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx
+12:58:56 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/interactive/TwoSum.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:58:56 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/twoPointers" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:21:28
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+     |                               ^
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+12:58:57 AM [vite] Internal server error: Failed to resolve import "./visualizers/twoPointers" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:21:28
+  14 |  }
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+     |                               ^
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:58:58 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055736308
+
+12:58:58 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:11 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx
+12:59:11 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+12:59:11 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:12 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055751005
+
+12:59:12 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:14 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/Stepper.tsx
+12:59:14 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+12:59:14 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:15 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055754093
+
+12:59:15 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:25 AM [vite] (client) page reload src/lib/interactive/visualizers/twoPointers.ts
+12:59:25 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:26 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx
+12:59:26 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+12:59:26 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:27 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055766116
+
+12:59:27 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:31 AM [vite] (client) page reload src/lib/interactive/visualizers/twoPointers.ts
+12:59:31 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:31 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055766116
+
+12:59:31 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:35 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx
+12:59:35 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+12:59:35 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:36 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055775347
+
+12:59:36 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:43 AM [vite] (client) hmr update /src/styles/globals.css
+12:59:43 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/TwoSum.tsx
+12:59:43 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+12:59:43 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:44 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055783133
+
+12:59:44 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:50 AM [vite] (client) hmr update /src/styles/globals.css
+12:59:51 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:51 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055783133
+
+12:59:51 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:51 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+12:59:51 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+12:59:51 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:52 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055791380
+
+12:59:52 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:54 AM [vite] (client) page reload src/lib/interactive/visualizers/binaryTree.ts
+12:59:55 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:56 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055791380
+
+12:59:56 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:56 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+12:59:56 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+12:59:56 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:57 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055796742
+
+12:59:57 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+12:59:57 AM [vite] (client) hmr update /src/styles/globals.css
+12:59:58 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:59:59 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055796742
+
+12:59:59 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:00:01 AM [vite] (client) hmr update /src/styles/globals.css
+1:00:01 AM [vite] (client) page reload src/lib/interactive/visualizers/binaryTree.ts
+1:00:02 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:00:02 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055796742
+
+1:00:02 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:00:06 AM [vite] (client) hmr update /src/styles/globals.css
+1:00:06 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:00:06 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:00:07 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055806152
+
+1:00:07 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:00:13 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:00:13 AM [vite] Internal server error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:00:14 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055813710
+
+1:00:14 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:00:22 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:00:23 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+1:00:23 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+1:00:23 AM [vite] Internal server error: Failed to resolve import "./visualizers/graph" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:22:25
+  15 |  import { slidingWindow } from "./visualizers/slidingWindow";
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+     |                            ^
+  18 |  import { heapTopK } from "./visualizers/heap";
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:00:24 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055822935
+
+1:00:24 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:00:25 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:00:25 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/sharding" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:29:34
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+     |                                     ^
+  25 |  /**
+  26 |  * Every declarative visualizer. Two Sum is deliberately absent: it carries a
+1:00:25 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/sharding" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:29:34
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+     |                                     ^
+  25 |  /**
+  26 |  * Every declarative visualizer. Two Sum is deliberately absent: it carries a
+1:00:25 AM [vite] Internal server error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:00:26 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055825373
+
+1:00:26 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:00:41 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:00:41 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+1:00:41 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+1:00:41 AM [vite] Internal server error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:00:42 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055841772
+
+1:00:42 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:00:48 AM [vite] (client) page reload src/lib/interactive/visualizers/dp.ts
+1:00:49 AM [vite] Internal server error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:00:50 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055841772
+
+1:00:50 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:00:53 AM [vite] (client) page reload src/lib/interactive/visualizers/graph.ts
+1:00:54 AM [vite] Internal server error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:00:55 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055841772
+
+1:00:55 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:01:00 AM [vite] (client) page reload src/lib/interactive/visualizers/binaryTree.ts
+1:01:01 AM [vite] (client) hmr update /src/styles/globals.css
+1:01:01 AM [vite] Internal server error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:01:02 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055841772
+
+1:01:02 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:01:06 AM [vite] (client) hmr update /src/styles/globals.css
+1:01:06 AM [vite] Internal server error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:01:07 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055841772
+
+1:01:07 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:01:26 AM [vite] (client) page reload src/lib/interactive/visualizers/binaryTree.ts
+1:01:27 AM [vite] Internal server error: Failed to resolve import "./visualizers/heap" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:23:25
+  16 |  import { twoPointers } from "./visualizers/twoPointers";
+  17 |  import { graphBfs } from "./visualizers/graph";
+  18 |  import { heapTopK } from "./visualizers/heap";
+     |                            ^
+  19 |  import { binaryTreeBst } from "./visualizers/binaryTree";
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:01:28 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055841772
+
+1:01:28 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:01:38 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:01:38 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:01:38 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:01:38 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:01:38 AM [vite] (client) page reload src/lib/interactive/visualizers/heap.ts
+1:01:39 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055898209
+
+1:01:39 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:01:39 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:01:39 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:01:39 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/backtracking" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:28:33
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+     |                                    ^
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+  25 |  /**
+1:01:39 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/backtracking" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:28:33
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+     |                                    ^
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+  25 |  /**
+1:01:39 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:01:40 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055899787
+
+1:01:40 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:01:57 AM [vite] (client) page reload src/lib/interactive/visualizers/heap.ts
+1:01:58 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:01:58 AM [vite] (client) page reload src/lib/interactive/visualizers/dp.ts
+1:01:58 AM [vite] (client) page reload src/lib/interactive/visualizers/stack.ts
+1:01:59 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055899787
+
+1:01:59 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:01:59 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:02:00 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055899787
+
+1:02:00 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:02:01 AM [vite] (client) page reload src/lib/interactive/visualizers/heap.ts
+1:02:01 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:02:02 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055899787
+
+1:02:02 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:02:04 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:02:04 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/backtracking" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:28:33
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+     |                                    ^
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+  25 |  /**
+1:02:04 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/backtracking" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:28:33
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+     |                                    ^
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+  25 |  /**
+1:02:05 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:02:05 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055924850
+
+1:02:05 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:02:11 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:02:11 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:02:11 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:02:11 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:02:12 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055931412
+
+1:02:12 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:02:16 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:02:16 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:02:16 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:02:16 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:02:17 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055936503
+
+1:02:17 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:02:20 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:02:20 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:02:20 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:02:20 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:02:21 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055940373
+
+1:02:21 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:02:31 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:02:31 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:02:31 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:02:32 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:02:32 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055951868
+
+1:02:32 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:02:37 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:02:38 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:02:38 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:02:38 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:02:38 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055957950
+
+1:02:38 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:02:43 AM [vite] (client) page reload src/lib/interactive/visualizers/binaryTree.ts
+1:02:43 AM [vite] (client) page reload src/lib/interactive/visualizers/dp.ts
+1:02:43 AM [vite] (client) page reload src/lib/interactive/visualizers/stack.ts
+1:02:44 AM [vite] Internal server error: Failed to resolve import "./visualizers/backtracking" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:28:33
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+     |                                    ^
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+  25 |  /**
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:02:45 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055957950
+
+1:02:45 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:03:05 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:03:06 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:03:06 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:03:06 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:03:07 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055985929
+
+1:03:07 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:03:09 AM [vite] (client) page reload src/lib/interactive/visualizers/twoPointers.ts
+1:03:09 AM [vite] (client) page reload src/lib/interactive/visualizers/heap.ts
+1:03:09 AM [vite] (client) page reload src/lib/interactive/visualizers/graph.ts
+1:03:10 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:03:11 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055985929
+
+1:03:11 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:03:15 AM [vite] (client) page reload src/lib/interactive/visualizers/backtracking.ts
+1:03:16 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:03:17 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791055985929
+
+1:03:17 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:03:59 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:03:59 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:03:59 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:03:59 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:04:00 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791056039639
+
+1:04:00 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:04:24 AM [vite] (client) page reload src/lib/interactive/visualizers/backtracking.ts
+1:04:25 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:04:26 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791056039639
+
+1:04:26 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:04:45 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:04:45 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:04:45 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:04:45 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:04:46 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791056085686
+
+1:04:46 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:04:58 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:04:59 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:04:59 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:04:59 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:05:00 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791056098971
+
+1:05:00 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:05:06 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:05:07 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:05:07 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:05:07 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:05:08 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791056106980
+
+1:05:08 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:05:21 AM [vite] (client) page reload src/lib/interactive/visualizers/sharding.ts
+1:05:22 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:05:23 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791056106980
+
+1:05:23 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:05:29 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:05:29 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:05:29 AM [vite] (client) Pre-transform error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+1:05:29 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:05:30 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791056129209
+
+1:05:30 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:05:57 AM [vite] (client) page reload src/lib/interactive/visualizers/backtracking.ts
+1:05:57 AM [vite] (client) page reload src/lib/interactive/visualizers/sharding.ts
+1:05:58 AM [vite] Internal server error: Failed to resolve import "./visualizers/arrays" from "src/lib/interactive/registry.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/interactive/registry.ts:27:31
+  20 |  import { stackDelimiters } from "./visualizers/stack";
+  21 |  import { dpClimbStairs } from "./visualizers/dp";
+  22 |  import { arrayPartition } from "./visualizers/arrays";
+     |                                  ^
+  23 |  import { backtrackingMaze } from "./visualizers/backtracking";
+  24 |  import { shardingRebalance } from "./visualizers/sharding";
+      at TransformPluginContext._formatLog (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8766:39)
+      at TransformPluginContext.error (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8763:14)
+      at normalizeUrl (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26423:18)
+      at async file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26493:30
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:26459:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:14)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:05:59 AM [vite] (client) [Unhandled error] TypeError: Failed to fetch dynamically imported module: http://localhost:5200/src/pages/TopicPage.tsx?t=1791056129209
+
+1:05:59 AM [vite] (client) [console.warn] An error occurred in one of your React components.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:06:42 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:06:54 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:07:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:07:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:07:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:07:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:07:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:07:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:07:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:07:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:07:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:07:33 AM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+1:13:09 AM [vite] (client) [console.error] Encountered two children with the same key, `Render`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+1:13:44 AM [vite] (client) [console.error] Encountered two children with the same key, `Cache`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+1:14:08 AM [vite] (client) [console.error] Encountered two children with the same key, `Render`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+1:14:10 AM [vite] (client) [console.error] Encountered two children with the same key, `Cache`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+1:14:18 AM [vite] (client) [console.error] Encountered two children with the same key, `Render`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+1:14:20 AM [vite] (client) [console.error] Encountered two children with the same key, `Cache`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+1:14:42 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+1:17:09 AM [vite] (client) hmr update /src/styles/globals.css
+1:17:09 AM [vite] (client) page reload src/lib/interactive/types.ts
+1:17:09 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:17:10 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx
+1:17:10 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+1:17:10 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/TwoSum.tsx
+1:17:10 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/Cells.tsx
+1:17:10 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/Stepper.tsx
+1:17:10 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/Interactive.tsx
+1:17:10 AM [vite] (client) hmr update /src/styles/globals.css
+1:17:10 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+1:17:11 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+1:17:11 AM [vite] (client) hmr update /src/styles/globals.css

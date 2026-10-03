@@ -57,7 +57,8 @@ export function Stepper({
 
     // A step either draws its own canvas (grids, trees) or highlights the
     // plain array it was built from.
-    const cells = step.cells ??
+    const cells =
+        step.cells ??
         cellsFromValues(values, (i): CellState => step.marks?.[i] ?? "idle");
 
     return (
