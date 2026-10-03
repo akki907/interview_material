@@ -12,6 +12,7 @@ import { Badge } from "../components/ui/badge";
 import { Textarea } from "../components/ui/textarea";
 import { Diagram } from "../components/content/Diagram";
 import { pad } from "../lib/utils";
+import { PageHeader } from "../components/app/PageHeader";
 
 interface Verdict {
     score: number;
@@ -99,13 +100,10 @@ export function Interview() {
 
     return (
         <div>
-            <h1 className="font-serif mb-1 text-3xl font-bold tracking-tight">
-                🎯 Mock Interview Practice
-            </h1>
-            <p className="mb-6 max-w-3xl text-muted">
-                Simulate a 30-minute senior technical interview. Receive rubric
-                scoring, edge case analysis, and actionable feedback.
-            </p>
+            <PageHeader
+                title="🎯 Mock Interview Practice"
+                intro="Simulate a 30-minute senior technical interview. Receive rubric scoring, edge case analysis, and actionable feedback."
+            />
 
             <Card className="mb-5">
                 <CardHeader>

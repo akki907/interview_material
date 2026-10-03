@@ -56,7 +56,8 @@ export function Header({
                         onChange={(e) => setQuery(e.target.value)}
                         onKeyDown={(e) => {
                             if (e.key === "Escape") setQuery("");
-                            if (e.key === "Enter" && results[0]) go(results[0].id);
+                            if (e.key === "Enter" && results[0])
+                                go(results[0].id);
                         }}
                         placeholder="Search topics…"
                         aria-label="Search topics"
@@ -110,7 +111,11 @@ export function Header({
                         key={theme}
                         initial={{ rotate: -60, opacity: 0, scale: 0.8 }}
                         animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                        transition={{ type: "spring", stiffness: 320, damping: 20 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 320,
+                            damping: 20,
+                        }}
                         className="flex"
                     >
                         {theme === "dark" ? <SunIcon /> : <MoonIcon />}

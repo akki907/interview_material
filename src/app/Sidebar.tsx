@@ -138,7 +138,11 @@ export function AppSidebar() {
                     <motion.span
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 260,
+                            damping: 18,
+                        }}
                     >
                         <RocketIcon className="size-4 text-c2i" />
                     </motion.span>
@@ -146,7 +150,9 @@ export function AppSidebar() {
                         <p className="truncate font-serif text-sm font-bold">
                             Interview OS
                         </p>
-                        <p className="text-[11px] text-muted">Senior AI Engineer</p>
+                        <p className="text-[11px] text-muted">
+                            Senior AI Engineer
+                        </p>
                     </div>
                 </div>
             </SidebarHeader>

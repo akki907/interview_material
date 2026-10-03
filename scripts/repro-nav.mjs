@@ -22,7 +22,8 @@ async function state() {
         return {
             hasMain: !!main,
             text: (main?.innerText || "").trim().length,
-            rootChildren: document.getElementById("root")?.childElementCount ?? 0,
+            rootChildren:
+                document.getElementById("root")?.childElementCount ?? 0,
         };
     });
     return s;
@@ -54,7 +55,10 @@ for (const href of hrefs) {
     );
     if (!ok) {
         console.log("\n>>> FIRST FAILING ROUTE:", href);
-        console.log(">>> captured errors:\n" + (seen.join("\n\n") || "  (none captured)"));
+        console.log(
+            ">>> captured errors:\n" +
+                (seen.join("\n\n") || "  (none captured)"),
+        );
         break;
     }
 }

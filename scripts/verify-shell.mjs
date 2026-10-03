@@ -46,7 +46,11 @@ const report = await page.evaluate(() => {
     };
 });
 
-console.log("sidebar rendered:      ", report.sidebar, `(width ${report.sidebarWidth}px)`);
+console.log(
+    "sidebar rendered:      ",
+    report.sidebar,
+    `(width ${report.sidebarWidth}px)`,
+);
 console.log("SidebarTrigger present:", report.trigger);
 console.log("SidebarInset present:  ", report.inset);
 console.log("sidebar groups:        ", report.groups);
@@ -67,7 +71,9 @@ if (groupBtn) {
         '[data-slot="sidebar-menu-sub"]',
         (n) => n.length,
     );
-    console.log(`group toggle: submenus ${before} -> ${after} (animated collapse)`);
+    console.log(
+        `group toggle: submenus ${before} -> ${after} (animated collapse)`,
+    );
 }
 
 // Mobile: the sidebar should collapse behind the trigger.
@@ -80,5 +86,8 @@ const mobile = await page.evaluate(() => ({
 console.log("mobile sidebar hidden: ", !mobile.sidebarVisible);
 console.log("mobile trigger shown:  ", mobile.triggerVisible);
 
-console.log("\nerrors:", errors.length ? errors.slice(0, 5).join("\n") : "(none)");
+console.log(
+    "\nerrors:",
+    errors.length ? errors.slice(0, 5).join("\n") : "(none)",
+);
 await browser.close();

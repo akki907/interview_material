@@ -11,6 +11,8 @@ import {
 import { Progress } from "../components/ui/progress";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
+import { PageHeader } from "../components/app/PageHeader";
+import { StatTiles } from "../components/app/StatTiles";
 
 const AREAS = [
     { key: "dsa", label: "DSA", tone: "dsa" as const },
@@ -21,14 +23,10 @@ const AREAS = [
 ];
 
 const STAT_TILES = [
-    {
-        label: "Problems Solved",
-        value: STATS.problemsSolved,
-        cls: "text-focus",
-    },
-    { label: "Topics Done", value: STATS.topicsCompleted, cls: "text-c1i" },
-    { label: "Current Streak", value: `${STATS.streak} 🔥`, cls: "text-c3i" },
-    { label: "Learning Hours", value: STATS.learningHours, cls: "text-c5i" },
+    { label: "Problems Solved", value: STATS.problemsSolved, tone: "text-focus" },
+    { label: "Topics Done", value: STATS.topicsCompleted, tone: "text-c1i" },
+    { label: "Current Streak", value: `${STATS.streak} 🔥`, tone: "text-c3i" },
+    { label: "Learning Hours", value: STATS.learningHours, tone: "text-c5i" },
 ];
 
 export function Dashboard() {
@@ -49,29 +47,12 @@ export function Dashboard() {
 
     return (
         <div>
-            <h1 className="font-serif mb-1 text-3xl font-bold tracking-tight">
-                Your Engineering Journey
-            </h1>
-            <p className="mb-6 text-muted">
-                Track your progress across all areas
-            </p>
+            <PageHeader
+                title="Your Engineering Journey"
+                intro="Track your progress across all areas"
+            />
 
-            <div className="mb-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
-                {STAT_TILES.map((s) => (
-                    <Card key={s.label}>
-                        <CardContent>
-                            <p
-                                className={`font-serif text-3xl font-bold ${s.cls}`}
-                            >
-                                {s.value}
-                            </p>
-                            <p className="mt-0.5 text-[11px] tracking-wider text-muted uppercase">
-                                {s.label}
-                            </p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
+            <StatTiles tiles={STAT_TILES} className="mb-8" />
 
             <h2 className="mb-3 text-sm font-semibold">Progress by Topic</h2>
             <Card className="mb-8">

@@ -68,8 +68,8 @@ function SidebarProvider({
     );
 
     const toggleSidebar = React.useCallback(() => {
-        if (isMobile) setOpenMobile(o => !o);
-        else setOpen(o => !o);
+        if (isMobile) setOpenMobile((o) => !o);
+        else setOpen((o) => !o);
     }, [isMobile, setOpen]);
 
     // Cmd/Ctrl+B toggles the sidebar, matching the shadcn convention.
@@ -111,10 +111,7 @@ function SidebarProvider({
                         ...style,
                     } as React.CSSProperties
                 }
-                className={cn(
-                    "flex min-h-svh w-full text-ink",
-                    className,
-                )}
+                className={cn("flex min-h-svh w-full text-ink", className)}
                 {...props}
             >
                 {children}
@@ -173,7 +170,9 @@ function Sidebar({
                             Displays the mobile sidebar.
                         </SheetDescription>
                     </SheetHeader>
-                    <div className="flex h-full w-full flex-col">{children}</div>
+                    <div className="flex h-full w-full flex-col">
+                        {children}
+                    </div>
                 </SheetContent>
             </Sheet>
         );
@@ -236,7 +235,10 @@ function SidebarFooter({ className, ...props }: React.ComponentProps<"div">) {
     return (
         <div
             data-slot="sidebar-footer"
-            className={cn("flex flex-col gap-2 border-t border-rule p-3", className)}
+            className={cn(
+                "flex flex-col gap-2 border-t border-rule p-3",
+                className,
+            )}
             {...props}
         />
     );
@@ -324,7 +326,10 @@ function SidebarMenuButton({
             ...props,
             "data-slot": "sidebar-menu-button",
             "data-active": isActive,
-            className: cn(classes, (render.props as { className?: string }).className),
+            className: cn(
+                classes,
+                (render.props as { className?: string }).className,
+            ),
         } as React.HTMLAttributes<HTMLElement>);
     }
 
@@ -360,17 +365,17 @@ function SidebarMenuSubItem({
     render?: React.ReactElement;
     isActive?: boolean;
 }) {
-    const classes = cn(
-        "group/menu-sub-item relative",
-        className,
-    );
+    const classes = cn("group/menu-sub-item relative", className);
 
     if (render) {
         return React.cloneElement(render, {
             ...props,
             "data-slot": "sidebar-menu-sub-item",
             "data-active": isActive,
-            className: cn(classes, (render.props as { className?: string }).className),
+            className: cn(
+                classes,
+                (render.props as { className?: string }).className,
+            ),
         } as React.HTMLAttributes<HTMLElement>);
     }
 
@@ -384,7 +389,10 @@ function SidebarMenuSubItem({
     );
 }
 
-function SidebarMenuBadge({ className, ...props }: React.ComponentProps<"div">) {
+function SidebarMenuBadge({
+    className,
+    ...props
+}: React.ComponentProps<"div">) {
     return (
         <div
             data-slot="sidebar-menu-badge"

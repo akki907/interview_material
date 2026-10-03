@@ -17,8 +17,9 @@ function loadMermaid(): Promise<MermaidApi> {
 function token(name: string, fallback: string): string {
     if (typeof getComputedStyle !== "function") return fallback;
     return (
-        getComputedStyle(document.documentElement).getPropertyValue(name).trim() ||
-        fallback
+        getComputedStyle(document.documentElement)
+            .getPropertyValue(name)
+            .trim() || fallback
     );
 }
 
@@ -105,9 +106,7 @@ export function Diagram({
                 setSvg(out);
             } catch (err) {
                 if (cancelled) return;
-                setError(
-                    err instanceof Error ? err.message : "invalid syntax",
-                );
+                setError(err instanceof Error ? err.message : "invalid syntax");
             }
         })();
 

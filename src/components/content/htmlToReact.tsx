@@ -99,8 +99,20 @@ function convert(node: Node, path: string): ReactNode {
 
     // Void elements must not receive children or React warns.
     const VOID = new Set([
-        "area", "base", "br", "col", "embed", "hr", "img", "input",
-        "link", "meta", "param", "source", "track", "wbr",
+        "area",
+        "base",
+        "br",
+        "col",
+        "embed",
+        "hr",
+        "img",
+        "input",
+        "link",
+        "meta",
+        "param",
+        "source",
+        "track",
+        "wbr",
     ]);
     if (VOID.has(tag)) return createElement(tag, props);
 

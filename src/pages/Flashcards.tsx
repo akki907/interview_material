@@ -10,6 +10,7 @@ import {
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
 import { Diagram } from "../components/content/Diagram";
+import { PageHeader } from "../components/app/PageHeader";
 
 export function Flashcards() {
     const cats = useMemo(
@@ -32,14 +33,10 @@ export function Flashcards() {
 
     return (
         <div>
-            <h1 className="font-serif mb-1 text-3xl font-bold tracking-tight">
-                📇 Flashcards
-            </h1>
-            <p className="mb-6 max-w-3xl text-muted">
-                Fast recall drills for definitions, invariants, and complexity
-                classes — the facts you should not have to think about during an
-                interview.
-            </p>
+            <PageHeader
+                title="📇 Flashcards"
+                intro="Fast recall drills for definitions, invariants, and complexity classes — the facts you should not have to think about during an interview."
+            />
 
             <Card className="mb-5">
                 <CardHeader>

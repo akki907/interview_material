@@ -10,6 +10,7 @@ import type { TopicContent } from "../lib/types";
 import { TopicRenderer } from "../components/content/TopicRenderer";
 import { PageSkeleton } from "../components/ui/skeleton";
 import { Button } from "../components/ui/button";
+import { PageHeader } from "../components/app/PageHeader";
 
 /** Ordered ids of the navigable study topics, for prev/next paging. */
 const PAGED_IDS = TOPIC_IDS.filter((id) => !isStandaloneRoute(id));
@@ -101,9 +102,7 @@ export function TopicPage() {
 
     return (
         <article>
-            <h1 className="font-serif mb-1 text-2xl font-bold tracking-tight sm:text-3xl">
-                {title}
-            </h1>
+            <PageHeader title={title} />
 
             {status === "loading" && (
                 <div className="mt-6">

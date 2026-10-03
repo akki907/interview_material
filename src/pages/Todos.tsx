@@ -14,6 +14,8 @@ import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
 import { Input } from "../components/ui/input";
 import { Diagram } from "../components/content/Diagram";
+import { PageHeader } from "../components/app/PageHeader";
+import { StatTiles } from "../components/app/StatTiles";
 
 const CATEGORIES: Array<[TodoCategory, string]> = [
     ["dsa", "🧠 DSA"],
@@ -58,34 +60,24 @@ export function Todos() {
 
     return (
         <div>
-            <h1 className="font-serif mb-1 text-3xl font-bold tracking-tight">
-                ✅ Study Plan & Action Items
-            </h1>
-            <p className="mb-6 max-w-2xl text-muted">
-                Track targeted interview preparation milestones across
-                algorithms, system design, and AI engineering.
-            </p>
+            <PageHeader
+                title="✅ Study Plan & Action Items"
+                intro="Track targeted interview preparation milestones across algorithms, system design, and AI engineering."
+            />
 
-            <div className="mb-6 grid grid-cols-3 gap-3">
-                {[
-                    ["Total Goals", todos.length, ""],
-                    ["Completed", done, "text-c1i"],
-                    ["Remaining", todos.length - done, "text-c3i"],
-                ].map(([label, value, cls]) => (
-                    <Card key={label as string}>
-                        <CardContent>
-                            <p
-                                className={`font-serif text-2xl font-bold ${cls}`}
-                            >
-                                {value}
-                            </p>
-                            <p className="text-[11px] tracking-wider text-muted uppercase">
-                                {label}
-                            </p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
+            <StatTiles
+                className="mb-6"
+                columns={3}
+                tiles={[
+                    { label: "Total Goals", value: todos.length },
+                    { label: "Completed", value: done, tone: "text-c1i" },
+                    {
+                        label: "Remaining",
+                        value: todos.length - done,
+                        tone: "text-c3i",
+                    },
+                ]}
+            />
 
             <Card className="mb-5">
                 <CardHeader>

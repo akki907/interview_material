@@ -58,7 +58,10 @@ function ShellInner({ children }: { children: React.ReactNode }) {
                     sidebarTrigger={<SidebarTrigger />}
                 />
 
-                <main ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto">
+                <main
+                    ref={scrollRef}
+                    className="min-h-0 flex-1 overflow-y-auto"
+                >
                     <motion.div
                         key="content"
                         initial={{ opacity: 0, y: 8 }}

@@ -11,7 +11,13 @@
 import { useMemo } from "react";
 import { htmlToReact } from "./htmlToReact";
 
-export function RichText({ html, className }: { html: string; className?: string }) {
+export function RichText({
+    html,
+    className,
+}: {
+    html: string;
+    className?: string;
+}) {
     // Parsing is pure and keyed by the input, so it must not rerun per render.
     const nodes = useMemo(() => htmlToReact(html, "rt"), [html]);
     return <div className={className ?? "rich"}>{nodes}</div>;
