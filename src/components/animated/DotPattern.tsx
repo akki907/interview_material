@@ -21,13 +21,16 @@ export function DotPattern({
 }) {
     const ref = React.useRef<HTMLDivElement>(null);
 
-    const onMove = React.useCallback((e: React.PointerEvent<HTMLDivElement>) => {
-        const el = ref.current;
-        if (!el) return;
-        const r = el.getBoundingClientRect();
-        el.style.setProperty("--dot-x", `${e.clientX - r.left}px`);
-        el.style.setProperty("--dot-y", `${e.clientY - r.top}px`);
-    }, []);
+    const onMove = React.useCallback(
+        (e: React.PointerEvent<HTMLDivElement>) => {
+            const el = ref.current;
+            if (!el) return;
+            const r = el.getBoundingClientRect();
+            el.style.setProperty("--dot-x", `${e.clientX - r.left}px`);
+            el.style.setProperty("--dot-y", `${e.clientY - r.top}px`);
+        },
+        [],
+    );
 
     return (
         <div
@@ -48,11 +51,13 @@ export function DotPattern({
             />
             <div
                 className="absolute inset-0"
-                style={{
-                    background:
-                        "radial-gradient(260px circle at var(--dot-x) var(--dot-y), color-mix(in oklab, var(--dot-glow) 22%, transparent), transparent 70%)",
-                    "--dot-glow": glow,
-                } as React.CSSProperties}
+                style={
+                    {
+                        background:
+                            "radial-gradient(260px circle at var(--dot-x) var(--dot-y), color-mix(in oklab, var(--dot-glow) 22%, transparent), transparent 70%)",
+                        "--dot-glow": glow,
+                    } as React.CSSProperties
+                }
             />
         </div>
     );

@@ -32,7 +32,7 @@ export function Flashcards() {
         setFlipped(false);
     };
 
-return (
+    return (
         <div className="relative">
             <DotPattern className="-mx-4 -mt-6 h-40 opacity-50 sm:-mx-8 lg:-mx-10" />
             <PageHeader

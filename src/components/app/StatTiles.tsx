@@ -39,30 +39,32 @@ export function StatTiles({
                                         <Spotlight className="h-full rounded-card">
                                                 <Card className="h-full">
                                                         <CardContent>
-                                                        <p
-                                                                className={cn(
-                                                                        "font-serif text-2xl font-bold tabular-nums",
-                                                                        t.tone ??
-                                                                                "text-ink",
-                                                                )}
-                                                        >
-                                                                {/* Plain numbers count up on
+                                                                <p
+                                                                        className={cn(
+                                                                                "font-serif text-2xl font-bold tabular-nums",
+                                                                                t.tone ??
+                                                                                        "text-ink",
+                                                                        )}
+                                                                >
+                                                                        {/* Plain numbers count up on
                                                                             scroll; composed values
                                                                             (e.g. "18 🔥") render
                                                                             as-is. */}
-                                                                {typeof t.value ===
-                                                                "number" ? (
-                                                                        <CountUp
-                                                                                value={
-                                                                                        t.value as number
-                                                                                }
-                                                                        />
-                                                                ) : (
-                                                                        t.value
-                                                                )}
-                                                        </p>
-                                                        <p className="mt-0.5 text-[11px] tracking-wider text-muted uppercase">
-                                                                        {t.label}
+                                                                        {typeof t.value ===
+                                                                        "number" ? (
+                                                                                <CountUp
+                                                                                        value={
+                                                                                                t.value as number
+                                                                                        }
+                                                                                />
+                                                                        ) : (
+                                                                                t.value
+                                                                        )}
+                                                                </p>
+                                                                <p className="mt-0.5 text-[11px] tracking-wider text-muted uppercase">
+                                                                        {
+                                                                                t.label
+                                                                        }
                                                                 </p>
                                                         </CardContent>
                                                 </Card>
