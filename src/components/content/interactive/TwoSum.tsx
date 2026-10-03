@@ -12,11 +12,11 @@ import { Input } from "../../ui/input";
 import { Label } from "../../ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
 import { RichText } from "../RichText";
-import { Cells } from "./Cells";
+import { Cells, cellsFromValues } from "./Cells";
 import { Stepper } from "./Stepper";
 import { getStepBuilder } from "../../../lib/interactive/registry";
 import { CODE } from "../../../lib/interactive/twoSum";
-import { parseTarget, parseValues } from "../../../lib/interactive/types";
+import { int, nums } from "../../../lib/interactive/parse";
 import type { CellState } from "../../../lib/interactive/types";
 
 const DEFAULT_PRESETS: Array<[string, number]> = [
@@ -62,7 +62,11 @@ function TryIt({ values, target }: { values: number[]; target: number }) {
     function toggle(i: number) {
         setShow(false);
         setSel((p) =>
-            p.includes(i) ? p.filter((x) => x !== i) : p.length < 2 ? [...p, i] : [i],
+            p.includes(i)
+                ? p.filter((x) => x !== i)
+                : p.length < 2
+                  ? [...p, i]
+                  : [i],
         );
     }
 
@@ -89,7 +93,10 @@ function TryIt({ values, target }: { values: number[]; target: number }) {
                 Pick two numbers whose sum is {target}. Tap a number to select
                 it, tap again to unselect.
             </p>
-            <Cells values={values} stateOf={stateOf} onPick={toggle} />
+            <Cells
+                cells={cellsFromValues(values, stateOf)}
+                onPick={toggle}
+            />
             <p
                 role="status"
                 aria-live="polite"
@@ -121,13 +128,18 @@ function TryIt({ values, target }: { values: number[]; target: number }) {
                 >
                     Clear
                 </Button>
-                <Button variant="primary" size="sm" onClick={() => setShow(true)}>
+                <Button
+                    variant="primary"
+                    size="sm"
+                    onClick={() => setShow(true)}
+                >
                     Show the answer
                 </Button>
             </div>
             <p className="mt-3 text-[0.9rem] text-muted">
                 Notice how you did it: you probably saw a number and looked for
-                its partner. That is exactly what the hash map approach automates.
+                its partner. That is exactly what the hash map approach
+                automates.
             </p>
         </div>
     );
@@ -149,8 +161,8 @@ export function TwoSum({
     const [inputText, setInputText] = useState(defaultInput);
     const [targetText, setTargetText] = useState(String(defaultTarget));
 
-    const values = useMemo(() => parseValues(inputText), [inputText]);
-    const target = parseTarget(targetText);
+    const values = useMemo(() => nums(inputText), [inputText]);
+    const target = int(targetText);
     const valid = values.length >= 2 && target !== null;
     const presetList = presets ?? DEFAULT_PRESETS;
 
@@ -158,7 +170,9 @@ export function TwoSum({
         const key = `two-sum:${id}`;
         return (
             <div>
-                <p className="mb-2 text-ink">{TABS.find((t) => t.id === id)!.blurb}</p>
+                <p className="mb-2 text-ink">
+                    {TABS.find((t) => t.id === id)!.blurb}
+                </p>
                 <Stepper
                     values={values}
                     target={target!}
@@ -216,7 +230,9 @@ export function TwoSum({
                         </div>
                     </div>
                     <div className="mt-3 flex flex-wrap items-center gap-2">
-                        <span className="text-[0.85rem] text-muted">Examples:</span>
+                        <span className="text-[0.85rem] text-muted">
+                            Examples:
+                        </span>
                         {presetList.map(([pInput, pTarget]) => (
                             <Button
                                 key={pInput + pTarget}

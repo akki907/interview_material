@@ -70,6 +70,12 @@ registerContent({
                 "sharding.</p>",
         },
         {
+            kind: "interactive",
+            algo: "sharding",
+            html:
+                `Add a node to the cluster and watch where the keys land. Modulo moves almost everything; a hash ring moves only one slice.`,
+        },
+        {
             kind: "diagram",
             caption:
                 "Virtual nodes smooth the ring so the load is even even with a handful of machines",

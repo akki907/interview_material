@@ -163,6 +163,12 @@ flowchart TD
             ],
         },
         {
+            kind: "interactive",
+            algo: "stack",
+            html:
+                `Push, pop, and catch the mismatch the moment it happens — then try the count-only shortcut on a string that fools it.`,
+        },
+        {
             kind: "code",
             title: "💻 Implementation: annotated",
             language: "javascript",

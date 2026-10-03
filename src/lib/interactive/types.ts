@@ -18,6 +18,13 @@ export type CellState =
 export interface InteractiveStep {
     /** Per-index cell highlight. Missing index = "idle". */
     marks?: Record<number, CellState>;
+    /**
+     * Explicit cell row, for problems that are not a single array (DP tables,
+     * mazes, trees). When present it replaces `marks` entirely.
+     */
+    cells?: StepCell[];
+    /** Columns for `cells`; omitted means auto-flow. */
+    cols?: number;
     /** Announced through the aria-live region, so write it as a sentence. */
     narration: string;
     /** Tints the narration: green for a hit, red for a dead end. */
@@ -38,27 +45,13 @@ export interface InteractiveInput {
     target: number;
 }
 
+/** One rendered cell when a step draws its own canvas. */
+export interface StepCell {
+    text: string;
+    state: CellState;
+    /** Show the `index N` caption under the cell (default true). */
+    showIndices?: boolean;
+}
+
 /** Pure: same input always produces the same steps. */
 export type StepBuilder = (input: InteractiveInput) => InteractiveStep[];
-
-/** Cap on how many numbers a visualizer will accept, to keep the row on screen. */
-export const MAX_VALUES = 12;
-
-/**
- * Mirrors the visualizer's own parsing: split on commas/spaces, coerce with
- * Number(), drop anything non-finite, cap the length.
- */
-export function parseValues(raw: string): number[] {
-    return raw
-        .split(/[ ,]+/)
-        .filter((chunk) => chunk !== "")
-        .map((chunk) => Number(chunk))
-        .filter((n) => Number.isFinite(n))
-        .slice(0, MAX_VALUES);
-}
-
-export function parseTarget(raw: string): number | null {
-    if (raw.trim().length === 0) return null;
-    const n = Number(raw);
-    return Number.isFinite(n) ? n : null;
-}

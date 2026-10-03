@@ -125,6 +125,12 @@ flowchart TD
     `,
         },
         {
+            kind: "interactive",
+            algo: "graph",
+            html:
+                `Walk the maze two ways. BFS measures distance layer by layer; DFS runs as far as it can and backtracks — and that is why it can miss the shortest route.`,
+        },
+        {
             kind: "code",
             title: "💻 Implementation",
             language: "python",

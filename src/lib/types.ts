@@ -153,16 +153,14 @@ export interface PipelineBlock {
 
 export interface InteractiveBlock {
     kind: "interactive";
-    /** Registry key. "two-sum" in this pass; see lib/interactive/registry.ts. */
+    /** Registry key: "two-sum" or any key in lib/interactive/registry.ts. */
     algo: string;
     title?: string;
     /** Optional intro paragraph above the controls. */
     html?: string;
     defaults?: {
-        /** Comma/space separated numbers, e.g. "2, 7, 11, 15". */
-        input?: string;
-        target?: number;
-        presets?: Array<[input: string, target: number]>;
+        /** Field values keyed by field id, overriding the spec defaults. */
+        fields?: Record<string, string>;
     };
 }
 

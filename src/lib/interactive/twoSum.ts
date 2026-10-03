@@ -1,14 +1,12 @@
 // src/lib/interactive/twoSum.ts — pure step builders for Two Sum
 import type { InteractiveStep, StepBuilder } from "./types";
 
-const BRUTE_CODE =
-    `for i in range(len(nums)):
+const BRUTE_CODE = `for i in range(len(nums)):
     for j in range(i + 1, len(nums)):
         if nums[i] + nums[j] == target:
             return [i, j]`;
 
-const HASH_CODE =
-    `seen = {}
+const HASH_CODE = `seen = {}
 for i, x in enumerate(nums):
     need = target - x
     if need in seen:

@@ -4,7 +4,7 @@
 // step/auto-play state. Nothing here knows what Two Sum is.
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "../../ui/button";
-import { Cells } from "./Cells";
+import { Cells, cellsFromValues } from "./Cells";
 import { cn } from "../../../lib/utils";
 import type { CellState, StepBuilder } from "../../../lib/interactive/types";
 
@@ -55,12 +55,14 @@ export function Stepper({
     const step = steps[Math.min(index, last)];
     const atEnd = index >= last;
 
+    // A step either draws its own canvas (grids, trees) or highlights the
+    // plain array it was built from.
+    const cells = step.cells ??
+        cellsFromValues(values, (i): CellState => step.marks?.[i] ?? "idle");
+
     return (
         <div>
-            <Cells
-                values={values}
-                stateOf={(i): CellState => step.marks?.[i] ?? "idle"}
-            />
+            <Cells cells={cells} cols={step.cols} />
 
             {/* Narration is the accessible live region. */}
             <p
@@ -78,10 +80,14 @@ export function Stepper({
             {/* Optional live data structure, e.g. the running value -> index map. */}
             {step.panel && (
                 <div className="mt-1">
-                    <p className="mb-1 text-[13px] text-muted">{step.panel.label}</p>
+                    <p className="mb-1 text-[13px] text-muted">
+                        {step.panel.label}
+                    </p>
                     <div className="flex min-h-9 flex-wrap items-center gap-1.5">
                         {step.panel.rows.length === 0 && (
-                            <span className="text-[15px] text-muted">empty</span>
+                            <span className="text-[15px] text-muted">
+                                empty
+                            </span>
                         )}
                         {step.panel.rows.map((row, i) => {
                             const hit = step.panel?.hits?.includes(i) ?? false;

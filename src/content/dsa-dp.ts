@@ -54,6 +54,12 @@ nodes and n edges. That picture is the whole pitch: identify the nodes, then dec
 whether to DFS them (memo) or iterate in topological order (table).</p>`,
         },
         {
+            kind: "interactive",
+            algo: "dp",
+            html:
+                `Fill the same table twice: once by expanding a call tree, once cell by cell. The second one runs in linear time.`,
+        },
+        {
             kind: "diagram",
             caption:
                 "The recursive tree collapses into a DAG the moment you cache by state",

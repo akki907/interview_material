@@ -113,6 +113,12 @@ flowchart TD
             html: "Prefix sum (range queries), Kadane's algorithm (max subarray), Dutch National Flag (sort 0/1/2), in-place dedupe with a slow cursor, cycle-rotate in three reversals, and the difference array for range updates in O(1) per update.",
         },
         {
+            kind: "interactive",
+            algo: "arrays",
+            html:
+                `Sort the array around a pivot with two strategies and count the work each one does.`,
+        },
+        {
             kind: "code",
             title: "💻 Code Example",
             language: "javascript",

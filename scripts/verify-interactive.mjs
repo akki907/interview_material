@@ -85,8 +85,10 @@ await page.getByRole("button", { name: "index 1, value 7" }).click();
 await page.waitForTimeout(150);
 check(
     "try-it reports the running sum and verdict",
-    (await status().innerText()).includes("2 + 7 = 9. Correct, the answer is [0, 1]"),
-    (await status().innerText()),
+    (await status().innerText()).includes(
+        "2 + 7 = 9. Correct, the answer is [0, 1]",
+    ),
+    await status().innerText(),
 );
 
 // A wrong pair is called out in red; tapping again unselects.
@@ -235,7 +237,8 @@ await tab("Brute force").click();
 await page.waitForTimeout(250);
 check(
     "brute-force tab shows its code snippet",
-    (await viz().locator("pre code", { hasText: "for j in range" }).count()) === 1,
+    (await viz().locator("pre code", { hasText: "for j in range" }).count()) ===
+        1,
 );
 check(
     "stats line reports pairs checked + complexity",
@@ -247,8 +250,8 @@ await page.getByLabel("Numbers").fill("7");
 await page.waitForTimeout(250);
 check(
     "single number shows inline validation, no stepper",
-    (await viz().locator("text=at least two numbers and a target").count()) > 0 &&
-        (await btn("Next step").count()) === 0,
+    (await viz().locator("text=at least two numbers and a target").count()) >
+        0 && (await btn("Next step").count()) === 0,
 );
 
 await page.getByLabel("Numbers").fill("2, 7, 11, 15");

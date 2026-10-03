@@ -61,6 +61,12 @@ flowchart TD
 `,
         },
         {
+            kind: "interactive",
+            algo: "binary-tree",
+            html:
+                `Insert each value into a BST and watch where it lands, then walk the tree in-order and see the sorted result fall out.`,
+        },
+        {
             kind: "code",
             title: "💻 Code Example",
             language: "python",

@@ -52,18 +52,16 @@ registerContent({
     Shrink --> Empty: window became empty
     Record --> Expand`,
         },
-        // The legacy page animated the window over [2,1,5,1,3,2] with a step
-        // control. That interactivity is not expressible as content data; the
-        // same trace is described by the "trace it for me" Q&A entry below.
+        // The legacy page animated the window with a step controller. That is
+        // expressible now: the visualizer below walks the same trace, one step
+        // at a time, with the window bounds drawn on the array.
         {
-            kind: "callout",
-            tone: "c4",
-            title: "Animated trace (was interactive)",
+            kind: "interactive",
+            algo: "sliding-window",
             html:
-                "<p>The legacy page stepped an animated window over <code>[2, 1, 5, 1, 3, 2]</code> with target " +
-                "<code>7</code>, showing the sum at each <code>[left, right]</code> position. The step " +
-                "controller itself is gone; the equivalent reasoning is walked through in the Q&A entry " +
-                '"Longest substring without repeating characters — trace it for me" below.</p>',
+                "<p>Move the window yourself and watch the left edge jump straight past a repeat. " +
+                "Change the string, then compare the expand-from-every-start loop against the one-pass " +
+                "sliding window.</p>",
         },
         {
             kind: "card",

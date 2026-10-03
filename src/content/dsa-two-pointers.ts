@@ -48,6 +48,12 @@ flowchart TD
 `,
         },
         {
+            kind: "interactive",
+            algo: "two-pointers",
+            html:
+                `Squeeze from both ends and watch the area grow. The proof lives in which pointer you are allowed to move.`,
+        },
+        {
             kind: "code",
             title: "💻 Code Example",
             language: "python",

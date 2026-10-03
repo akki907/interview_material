@@ -80,6 +80,12 @@ flowchart TD
     `,
         },
         {
+            kind: "interactive",
+            algo: "backtracking",
+            html:
+                `Walk the maze with DFS and watch the path get popped off when it hits a wall. Backtracking is the pop.`,
+        },
+        {
             kind: "code",
             title: "💻 Implementation",
             language: "python",

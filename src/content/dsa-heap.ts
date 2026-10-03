@@ -119,6 +119,12 @@ flowchart TD
     `,
         },
         {
+            kind: "interactive",
+            algo: "heap",
+            html:
+                `Watch a heap assemble itself, then hand back the k smallest values. The array is the heap — the indices are the structure.`,
+        },
+        {
             kind: "code",
             title: "💻 Implementation",
             language: "python",

@@ -10,6 +10,7 @@
  */
 import { NAV, TOPIC_IDS } from "./lib/data";
 import { getContent } from "./content/registry";
+import { getVisualizer } from "./lib/interactive/registry";
 import type { ContentBlock } from "./lib/types";
 // Side-effecting import: registers every topic with the registry.
 import "./content";
@@ -144,6 +145,10 @@ for (const id of TOPIC_IDS) {
                 check(
                     typeof block.algo === "string" && block.algo.length > 0,
                     `${id}: interactive block names an algo`,
+                );
+                check(
+                    block.algo === "two-sum" || getVisualizer(block.algo) !== undefined,
+                    `${id}: interactive algo "${block.algo}" is registered`,
                 );
                 break;
         }

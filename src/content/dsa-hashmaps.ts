@@ -50,16 +50,6 @@ flowchart TD
             html: `<p>Find the two indices whose values add up to the target. Change the
 numbers, load a preset, then run the brute-force loop and the one-pass hash map
 side by side.</p>`,
-            defaults: {
-                input: "2, 7, 11, 15",
-                target: 9,
-                presets: [
-                    ["2, 7, 11, 15", 9],
-                    ["3, 2, 4", 6],
-                    ["3, 3", 6],
-                    ["1, 5, 8, 3, 9, 4", 12],
-                ],
-            },
         },
         {
             kind: "code",
