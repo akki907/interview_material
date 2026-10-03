@@ -23,7 +23,11 @@ const AREAS = [
 ];
 
 const STAT_TILES = [
-    { label: "Problems Solved", value: STATS.problemsSolved, tone: "text-focus" },
+    {
+        label: "Problems Solved",
+        value: STATS.problemsSolved,
+        tone: "text-focus",
+    },
     { label: "Topics Done", value: STATS.topicsCompleted, tone: "text-c1i" },
     { label: "Current Streak", value: `${STATS.streak} 🔥`, tone: "text-c3i" },
     { label: "Learning Hours", value: STATS.learningHours, tone: "text-c5i" },

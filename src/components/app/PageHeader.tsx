@@ -6,22 +6,24 @@
 import { cn } from "../../lib/utils";
 
 export function PageHeader({
-    title,
-    intro,
-    className,
+        title,
+        intro,
+        className,
 }: {
-    title: string;
-    intro?: string;
-    className?: string;
+        title: string;
+        intro?: string;
+        className?: string;
 }) {
-    return (
-        <header className={cn("mb-6", className)}>
-            <h1 className="font-serif mb-1 text-2xl font-bold tracking-tight sm:text-3xl">
-                {title}
-            </h1>
-            {intro && (
-                <p className="max-w-3xl leading-relaxed text-muted">{intro}</p>
-            )}
-        </header>
-    );
+        return (
+                <header className={cn("mb-6", className)}>
+                        <h1 className="font-serif mb-1 text-2xl font-bold tracking-tight sm:text-3xl">
+                                {title}
+                        </h1>
+                        {intro && (
+                                <p className="max-w-3xl leading-relaxed text-muted">
+                                        {intro}
+                                </p>
+                        )}
+                </header>
+        );
 }

@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import type mermaidApi from "mermaid";
-import { svgToReact } from "./htmlToReact";
 
 type MermaidApi = typeof mermaidApi;
 
@@ -65,12 +64,18 @@ async function getMermaid(dark: boolean): Promise<MermaidApi> {
 }
 
 /**
- * Mermaid output is held in state and rendered as React children.
+ * Mermaid output is injected with dangerouslySetInnerHTML.
  *
- * Injecting it into a ref'd div caused the same
- * `removeChild` NotFoundError as RichText did: React did not know the injected
- * SVG belonged to it. The diagram id must stay stable across renders or mermaid
- * regenerates the whole graph.
+ * The obvious alternative — parsing the SVG and rebuilding it as React
+ * elements — is what this component used to do, and it broke the diagrams:
+ * SVG attributes need camelCase (marker-end -> markerEnd), mermaid's output is
+ * not always well-formed XML so DOMParser yields a parsererror, and its
+ * <style> block collided across renders. dangerouslySetInnerHTML is React's
+ * supported path for trusted markup: it treats the SVG as one opaque unit, so
+ * reconciliation stays consistent and mermaid's own markup survives intact.
+ *
+ * Safe here because `source` is authored in this repo's content modules and
+ * mermaid runs with securityLevel "strict"; no user input reaches it.
  */
 export function Diagram({
     source,
@@ -127,9 +132,10 @@ export function Diagram({
         );
     } else if (svg) {
         content = (
-            <div className="flex justify-center overflow-x-auto px-4 py-5">
-                {svgToReact(svg)}
-            </div>
+            <div
+                className="flex justify-center overflow-x-auto px-4 py-5"
+                dangerouslySetInnerHTML={{ __html: svg }}
+            />
         );
     } else {
         content = (
