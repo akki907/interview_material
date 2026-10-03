@@ -17,13 +17,16 @@ export function GridPattern({
 }) {
     const ref = React.useRef<HTMLDivElement>(null);
 
-    const onMove = React.useCallback((e: React.PointerEvent<HTMLDivElement>) => {
-        const el = ref.current;
-        if (!el) return;
-        const rect = el.getBoundingClientRect();
-        el.style.setProperty("--grid-x", `${e.clientX - rect.left}px`);
-        el.style.setProperty("--grid-y", `${e.clientY - rect.top}px`);
-    }, []);
+    const onMove = React.useCallback(
+        (e: React.PointerEvent<HTMLDivElement>) => {
+            const el = ref.current;
+            if (!el) return;
+            const rect = el.getBoundingClientRect();
+            el.style.setProperty("--grid-x", `${e.clientX - rect.left}px`);
+            el.style.setProperty("--grid-y", `${e.clientY - rect.top}px`);
+        },
+        [],
+    );
 
     return (
         <div
@@ -44,11 +47,13 @@ export function GridPattern({
             />
             <div
                 className="absolute inset-0"
-                style={{
-                    background:
-                        "radial-gradient(340px circle at var(--grid-x, 50%) var(--grid-y, 0%), color-mix(in oklab, var(--grid-glow) 18%, transparent), transparent 70%)",
-                    "--grid-glow": glowColor,
-                } as React.CSSProperties}
+                style={
+                    {
+                        background:
+                            "radial-gradient(340px circle at var(--grid-x, 50%) var(--grid-y, 0%), color-mix(in oklab, var(--grid-glow) 18%, transparent), transparent 70%)",
+                        "--grid-glow": glowColor,
+                    } as React.CSSProperties
+                }
             />
             {/* Fades the grid out toward the edges so it never competes with text. */}
             <div className="absolute inset-0 bg-gradient-to-b from-paper/40 via-transparent to-paper" />

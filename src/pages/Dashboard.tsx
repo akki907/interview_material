@@ -14,6 +14,8 @@ import { Button } from "../components/ui/button";
 import { PageHeader } from "../components/app/PageHeader";
 import { StatTiles } from "../components/app/StatTiles";
 import { GridPattern } from "../components/animated/GridPattern";
+import { Meteors } from "../components/animated/Meteors";
+import { MovingBorder } from "../components/animated/MovingBorder";
 
 const AREAS = [
     { key: "dsa", label: "DSA", tone: "dsa" as const },
@@ -53,6 +55,10 @@ export function Dashboard() {
     return (
         <div className="relative">
             <GridPattern className="-mx-4 -mt-6 h-48 sm:-mx-8 lg:-mx-10" />
+            <Meteors
+                count={10}
+                className="-mx-4 -mt-6 h-48 sm:-mx-8 lg:-mx-10 opacity-60"
+            />
             <PageHeader
                 title="Your Engineering Journey"
                 intro="Track your progress across all areas"
@@ -83,8 +89,9 @@ export function Dashboard() {
             <h2 className="mb-3 text-sm font-semibold">
                 🎯 Priority Study Goals
             </h2>
-            <Card className="mb-8">
-                <CardContent>
+            <MovingBorder className="mb-8">
+                <Card>
+                    <CardContent>
                     {top.length === 0 ? (
                         <div className="flex items-center justify-between">
                             <p className="text-sm text-muted">
@@ -140,8 +147,9 @@ export function Dashboard() {
                             </div>
                         </>
                     )}
-                </CardContent>
-            </Card>
+                    </CardContent>
+                </Card>
+            </MovingBorder>
 
             <div className="grid gap-4 lg:grid-cols-2">
                 <Card>

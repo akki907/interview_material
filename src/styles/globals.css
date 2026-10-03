@@ -248,6 +248,33 @@
     100% { background-position: 200% 50%; }
 }
 
+/* Drives the travelling conic-gradient border on MovingBorder. */
+@keyframes spin-around {
+    0% { --moving-angle: 0deg; }
+    100% { --moving-angle: 360deg; }
+}
+
+/* Falling streak for Meteors. */
+@keyframes meteor-fall {
+    0% {
+        transform: rotate(215deg) translate3d(0, 0, 0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    100% {
+        transform: rotate(215deg) translate3d(-420px, 460px, 0);
+        opacity: 0;
+    }
+}
+
+/* conic-gradient angles are not interpolable unless the custom property is
+   registered, which is what makes @keyframes above able to animate them. */
+@property --moving-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 /* Mermaid emits SVG with hardcoded colors, so its own container is themed. */
 .mermaid svg { max-width: 100%; height: auto; }
 .mermaid-invalid {

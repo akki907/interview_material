@@ -7,24 +7,20 @@ import { cn } from "../../lib/utils";
 import { GradientText } from "../animated/GradientText";
 
 export function PageHeader({
-        title,
-        intro,
-        className,
+  title,
+  intro,
+  className,
 }: {
-        title: string;
-        intro?: string;
-        className?: string;
+  title: string;
+  intro?: string;
+  className?: string;
 }) {
-        return (
-                <header className={cn("mb-6", className)}>
-                        <h1 className="font-serif mb-1 text-2xl font-bold tracking-tight sm:text-3xl">
-                                <GradientText>{title}</GradientText>
-                        </h1>
-                        {intro && (
-                                <p className="max-w-3xl leading-relaxed text-muted">
-                                        {intro}
-                                </p>
-                        )}
-                </header>
-        );
+  return (
+    <header className={cn("mb-6", className)}>
+      <h1 className="font-serif mb-1 text-2xl font-bold tracking-tight sm:text-3xl">
+        <GradientText>{title}</GradientText>
+      </h1>
+      {intro && <p className="max-w-3xl leading-relaxed text-muted">{intro}</p>}
+    </header>
+  );
 }
