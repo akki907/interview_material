@@ -151,6 +151,21 @@ export interface PipelineBlock {
     stages: Array<{ name: string; desc: string }>;
 }
 
+export interface InteractiveBlock {
+    kind: "interactive";
+    /** Registry key. "two-sum" in this pass; see lib/interactive/registry.ts. */
+    algo: string;
+    title?: string;
+    /** Optional intro paragraph above the controls. */
+    html?: string;
+    defaults?: {
+        /** Comma/space separated numbers, e.g. "2, 7, 11, 15". */
+        input?: string;
+        target?: number;
+        presets?: Array<[input: string, target: number]>;
+    };
+}
+
 export type ContentBlock =
     | CalloutBlock
     | DiagramBlock
@@ -162,7 +177,8 @@ export type ContentBlock =
     | DefListBlock
     | TabsBlock
     | CodeBlock
-    | PipelineBlock;
+    | PipelineBlock
+    | InteractiveBlock;
 
 export interface TopicContent {
     /** Nav id, e.g. "dsa-sliding-window". */

@@ -78,6 +78,7 @@ const VALID_KINDS = new Set([
     "tabs",
     "code",
     "pipeline",
+    "interactive",
 ]);
 
 let totalBlocks = 0;
@@ -138,6 +139,12 @@ for (const id of TOPIC_IDS) {
                 break;
             case "pipeline":
                 check(block.stages.length > 0, `${id}: pipeline has stages`);
+                break;
+            case "interactive":
+                check(
+                    typeof block.algo === "string" && block.algo.length > 0,
+                    `${id}: interactive block names an algo`,
+                );
                 break;
         }
     }

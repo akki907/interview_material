@@ -22,6 +22,7 @@ import {
     TableRow,
 } from "../ui/table";
 import { useStore } from "../../lib/store";
+import { TwoSum } from "./interactive/TwoSum";
 
 function Callout({
     tone = "info",
@@ -300,6 +301,20 @@ function Block({ block }: { block: ContentBlock }) {
                         )}
                     </CardContent>
                 </Card>
+            );
+
+        case "interactive":
+            // Registry-keyed: adding an algorithm means adding a builder, not
+            // touching this switch.
+            if (block.algo !== "two-sum") return null;
+            return (
+                <TwoSum
+                    title={block.title}
+                    html={block.html}
+                    defaultInput={block.defaults?.input}
+                    defaultTarget={block.defaults?.target}
+                    presets={block.defaults?.presets}
+                />
             );
 
         case "pipeline":
