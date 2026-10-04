@@ -216,7 +216,7 @@ function byCounting(s: string[]): InteractiveStep[] {
 
 export const stackDelimiters: VisualizerSpec = {
     algo: "stack",
-    title: "▶️ Matching delimiters, step by step",
+    title: "Matching delimiters, step by step",
     fields: [
         {
             id: "text",

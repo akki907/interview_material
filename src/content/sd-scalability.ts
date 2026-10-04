@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p><strong>Scale up (vertical):</strong> buy a bigger machine — more cores, more RAM, " +
                 "faster disk. <strong>Scale out (horizontal):</strong> add more machines behind a load " +
@@ -25,7 +25,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔀 Two Ways to Grow",
+            title: "Two Ways to Grow",
             html:
                 "<p>Both paths give you more capacity. They differ in what breaks when you push on " +
                 "them.</p>",
@@ -45,7 +45,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚧 Why Stateful Apps Block Scale-Out",
+            title: "Why Stateful Apps Block Scale-Out",
             html:
                 "<p>In-memory session, in-process counter, uploaded file on local disk: all three pin a " +
                 "user to one node. Autoscaling then behaves perversely — adding capacity does nothing " +
@@ -63,7 +63,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Back-of-Envelope Capacity Math",
+            title: "Back-of-Envelope Capacity Math",
             headers: ["Quantity", "How we get there", "Number"],
             rows: [
                 [
@@ -111,7 +111,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧾 Availability and the Error Budget",
+            title: "Availability and the Error Budget",
             html:
                 "<p>An availability target is really a budget for how many requests may fail. 99.9% " +
                 "sounds excellent until you convert it: at a peak of 14,000 RPS, three nines lets you " +
@@ -132,7 +132,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚖️ Vertical vs Horizontal Side by Side",
+            title: "Vertical vs Horizontal Side by Side",
             headers: ["Dimension", "Scale up", "Scale out"],
             rows: [
                 [
@@ -174,7 +174,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔍 Little's Law, the workhorse of every estimate",
+            title: "Little's Law, the workhorse of every estimate",
             html:
                 "<p><strong>L = &lambda; &times; W</strong> — the number of things concurrently in the " +
                 "system equals the arrival rate multiplied by how long each thing takes. Every capacity " +

@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>Memory is not one thing. It is at least three stores with completely different lifetimes,\n" +
                 "access patterns, and consistency requirements, and most agent failures come from using the wrong\n" +
@@ -32,7 +32,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🗂️ The three tiers and the write path",
+            title: "The three tiers and the write path",
             html:
                 "<p>Follow the two write paths, because they are the part people design badly. The dashed arrow is\n" +
                 "the compaction step, and it is the difference between an agent that works on turn 40 and one that\n" +
@@ -60,7 +60,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🗃️ The data model",
+            title: "The data model",
             html:
                 "<p>Keep the three tiers in separate tables with separate retention rules, not in one\n" +
                 "<code>memories</code> table with a <code>type</code> column. The write semantics, the update\n" +
@@ -107,7 +107,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧪 Worked example: a preference that must survive",
+            title: "Worked example: a preference that must survive",
             html:
                 "<p>Turn 1: <em>\"I always deploy on Fridays afternoon — please don't schedule anything after 3pm.\"</em>\n" +
                 "Turn 40 (four sessions later): <em>\"Book the retro for next Thursday.\"</em></p>\n" +
@@ -126,7 +126,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: writes that converge",
+            title: "Implementation: writes that converge",
             html:
                 "<pre><code class=\"language-javascript\">// 1. an explicit, narrow extractor. the model may SUGGEST\n" +
                 "//    candidates, but a deterministic rule decides what is written\n" +
@@ -163,7 +163,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚙️ Choosing a store per tier",
+            title: "Choosing a store per tier",
             headers: ["Tier","Store","Why","Retention"],
             rows: [
                 ["Working","the context window, plus a resumable scratchpad on disk","it must be handed to the model verbatim; a database round trip per turn is pure latency","for the task only"],
@@ -175,7 +175,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency",
+            title: "Cost and latency",
             headers: ["Quantity","Rule","Note"],
             rows: [
                 ["Working memory","the dominant token cost, and it grows with every turn","compact aggressively; this is the biggest lever"],
@@ -189,7 +189,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to build agent memory",
+            title: "When NOT to build agent memory",
             html:
                 "<ul>\n" +
                 "<li><strong>The task is short.</strong> A single-session workflow gains nothing from memory and pays\n" +
@@ -207,7 +207,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Append-only memory.</strong> Re-extraction creates duplicates, duplicates create\n" +
@@ -260,7 +260,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>Make memory user-visible from day one.</strong> A \"what I know about you\" screen with\n" +

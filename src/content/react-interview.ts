@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🗺️ A 45-minute map",
+            title: "A 45-minute map",
             html: `
 <p>Interviewers usually walk this path. Lead with the mental model, then drop into the
 diagram they ask for. Do not start with library names.</p>`,

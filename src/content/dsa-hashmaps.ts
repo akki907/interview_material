@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: `
 <p>A hash map turns a key into an array index in expected O(1). You pay with extra memory
 and with the requirement that keys are hashable and that <code>hash</code> agrees with
@@ -20,7 +20,7 @@ into a list (or a tree, in Java 8+), and a lookup becomes O(n).</p>`,
         },
         {
             kind: "card",
-            title: "🔧 Lookup path",
+            title: "Lookup path",
             html: `
 <p>Every get/set does this. The only interesting interview variants are "what if two keys
 land in the same slot" and "when do we grow".</p>`,
@@ -46,14 +46,14 @@ flowchart TD
         {
             kind: "interactive",
             algo: "two-sum",
-            title: "▶️ Two Sum, step by step",
+            title: "Two Sum, step by step",
             html: `<p>Find the two indices whose values add up to the target. Change the
 numbers, load a preset, then run the brute-force loop and the one-pass hash map
 side by side.</p>`,
         },
         {
             kind: "code",
-            title: "💻 Code Example",
+            title: "Code Example",
             language: "python",
             code: `from collections import Counter, defaultdict
 
@@ -73,7 +73,7 @@ for w in words:
         },
         {
             kind: "card",
-            title: "🎯 Two-sum invariant",
+            title: "Two-sum invariant",
             html: `
 <p>After processing index <code>i</code>, <code>seen</code> maps every earlier value to its
 index. If <code>target - nums[i]</code> is in <code>seen</code>, a pair exists. You never
@@ -92,7 +92,7 @@ flowchart LR
         },
         {
             kind: "table",
-            title: "⏱️ Complexity",
+            title: "Complexity",
             headers: ["Operation", "Average", "Worst", "Notes"],
             rows: [
                 [
@@ -118,7 +118,7 @@ flowchart LR
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html: `
 <ul style="padding-left:20px;line-height:1.9;">
 <li>Using a mutable object as a key — Python raises; JS coerces objects to

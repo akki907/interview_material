@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧭 The Framework Every Question Uses",
+            title: "The Framework Every Question Uses",
             html:
                 "<p>Interviews are not about the diagram. They are about the <strong>order</strong> in " +
                 "which you reason, and the numbers you commit to along the way.</p>" +
@@ -35,7 +35,7 @@ registerContent({
         // ── URL shortener ───────────────────────────────────────────────
         {
             kind: "card",
-            title: "🔗 Design: URL Shortener",
+            title: "Design: URL Shortener",
             html:
                 "<p><strong>Requirements.</strong> Given a long URL, return a short one. Given the " +
                 "short one, redirect. Reads outnumber writes by 100&times;1, and every read is a 301 " +
@@ -66,7 +66,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Key Detail: 7 characters Are Enough",
+            title: "Key Detail: 7 characters Are Enough",
             html:
                 '<pre><code class="language-javascript">// base62 alphabet: 0-9, a-z, A-Z  =&gt;  62 symbols\n' +
                 "// 62^5 = 916M     too few\n" +
@@ -92,7 +92,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 URL Shortener Capacity",
+            title: "URL Shortener Capacity",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 ["New URLs per day", "given", "100M/day"],
@@ -136,7 +136,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ URL Shortener Failure Modes",
+            title: "URL Shortener Failure Modes",
             html:
                 "<ul>" +
                 "<li><strong>Counter hotspot</strong> — a single Redis key taking 11,600 writes/s. " +
@@ -156,7 +156,7 @@ registerContent({
         // ── News feed ───────────────────────────────────────────────────
         {
             kind: "card",
-            title: "📰 Design: News Feed",
+            title: "Design: News Feed",
             html:
                 "<p><strong>Requirements.</strong> Each user sees the newest posts from the accounts " +
                 "they follow, ordered by recency. Highly read, lightly written, and intensely " +
@@ -181,7 +181,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 News Feed Capacity",
+            title: "News Feed Capacity",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 ["Daily active users", "given", "5M"],
@@ -221,7 +221,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ News Feed Failure Modes",
+            title: "News Feed Failure Modes",
             html:
                 "<ul>" +
                 "<li><strong>Celebrity writes</strong> — one post to 10M followers is 10M writes. " +
@@ -239,7 +239,7 @@ registerContent({
         // ── Chat ────────────────────────────────────────────────────────
         {
             kind: "card",
-            title: "💬 Design: Chat (WhatsApp)",
+            title: "Design: Chat (WhatsApp)",
             html:
                 "<p><strong>Requirements.</strong> Deliver messages to recipients who may be offline, " +
                 "preserve per-conversation order, show delivery and read receipts, work on flaky " +
@@ -265,7 +265,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Chat Capacity",
+            title: "Chat Capacity",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 ["Daily active users", "given", "10M"],
@@ -306,7 +306,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Chat Failure Modes",
+            title: "Chat Failure Modes",
             html:
                 "<ul>" +
                 "<li><strong>Duplicate and reordered delivery</strong> — clients dedupe on " +
@@ -327,7 +327,7 @@ registerContent({
         // ── remaining reference designs ─────────────────────────────────
         {
             kind: "card",
-            title: "📚 The Other Reference Designs",
+            title: "The Other Reference Designs",
             html:
                 "<p>Each of these has one decision that dominates the rest of the design. Know the " +
                 "decision and the capacity anchor for each, and you can rebuild the architecture in " +
@@ -335,7 +335,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🗺️ Reference Designs at a Glance",
+            title: "Reference Designs at a Glance",
             headers: ["Design", "Dominant decision", "Capacity anchor"],
             rows: [
                 [
@@ -407,7 +407,7 @@ registerContent({
         // it covers, which is what the forEach was expressing.
         {
             kind: "card",
-            title: "🛠️ Shared Answer Scaffold — applies to all 13 reference designs",
+            title: "Shared Answer Scaffold — applies to all 13 reference designs",
             html: `
                 <p>Every reference design on this page is answered with the same four
                 moves. Work through them in order; only the numbers and the dominant

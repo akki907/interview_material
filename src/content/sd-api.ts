@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p>An API is a contract with an unknown number of clients, some of which you cannot " +
                 "upgrade. Design it as you would a database schema: versioned, additive, and boring " +
@@ -20,7 +20,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🧪 REST vs GraphQL vs gRPC",
+            title: "REST vs GraphQL vs gRPC",
             headers: ["", "REST", "GraphQL", "gRPC"],
             rows: [
                 [
@@ -70,7 +70,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🎛️ Choosing the Wire Format",
+            title: "Choosing the Wire Format",
             html:
                 "<p>Protocol choice is a caching decision first and a typing decision second. Anything " +
                 "a client might want to cache or a CDN must serve gets a URL-keyed, cacheable shape; " +
@@ -93,7 +93,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🛡️ Versioning, Rate Limiting, and Idempotency",
+            title: "Versioning, Rate Limiting, and Idempotency",
             html:
                 "<p>Three things every production API needs, and all three fail silently if omitted. " +
                 "Versioning lets clients migrate on their own schedule; rate limiting protects your " +
@@ -133,7 +133,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🏷️ Versioning Strategies",
+            title: "Versioning Strategies",
             headers: ["Strategy", "Shape", "Pros", "Cons"],
             rows: [
                 [
@@ -170,7 +170,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Code: token-bucket rate limiter and idempotency",
+            title: "Code: token-bucket rate limiter and idempotency",
             html:
                 '<pre><code class="language-javascript">// Token bucket: capacity = burst, refill = sustained rate.\n' +
                 "// More forgiving than a fixed window (which allows 2x the limit at the boundary).\n" +
@@ -222,7 +222,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "📄 Pagination, Errors, and Status Codes",
+            title: "Pagination, Errors, and Status Codes",
             html:
                 "<p><strong>Offset pagination</strong> (<code>?limit=50&amp;offset=1000</code>) is " +
                 "simple and breaks under concurrent writes: an insert at the front shifts every " +
@@ -238,7 +238,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Capacity Math",
+            title: "Capacity Math",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 [
@@ -285,7 +285,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Failure Modes and Pitfalls",
+            title: "Failure Modes and Pitfalls",
             html:
                 "<ul>" +
                 "<li><strong>Breaking changes shipped silently</strong> — removing a field, " +

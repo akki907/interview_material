@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🏗️ Architecture",
+            title: "Architecture",
             html:
                 "<p>A multi-agent system splits one prompt into several specialised contexts. The pitch is that\n" +
                 "smaller, focused contexts beat one huge one, and that different specialists want different tools\n" +
@@ -32,7 +32,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>Multi-agent is a <em>context-management</em> technique, not an intelligence technique. The\n" +
                 "argument is that an agent optimising a narrow objective over a narrow tool set makes better local\n" +
@@ -49,7 +49,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🕸️ Choosing a topology",
+            title: "Choosing a topology",
             html:
                 "<p>Follow the decision points. The dashed lines are the failure modes, and they are the reason\n" +
                 "multi-agent projects get rolled back: <b>swarm topologies have no termination guarantee and no\n" +
@@ -71,7 +71,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔁 One supervisor request, as a sequence",
+            title: "One supervisor request, as a sequence",
             html:
                 "<p>Notice the two review steps. The supervisor checks the deliverable before accepting it, and\n" +
                 "that check is the entire difference between a system that self-corrects and one that accumulates\n" +
@@ -103,7 +103,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧪 Worked example: same task, two architectures",
+            title: "Worked example: same task, two architectures",
             html:
                 "<p>Task: <em>\"Read these 12 incident reports, find the common cause, and draft a status update.\"</em></p>\n" +
                 "<table class=\"complexity-table\">\n" +
@@ -122,7 +122,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: typed handoff",
+            title: "Implementation: typed handoff",
             html:
                 "<pre><code class=\"language-javascript\">const FINDING = {\n" +
                 "  type: 'object',\n" +
@@ -160,7 +160,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency",
+            title: "Cost and latency",
             headers: ["Quantity","Rule","Note"],
             rows: [
                 ["Model calls","roughly proportional to the number of specialists plus coordination","a 3-agent system is commonly 2&ndash;4&times; a single agent"],
@@ -174,7 +174,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to go multi-agent",
+            title: "When NOT to go multi-agent",
             html:
                 "<ul>\n" +
                 "<li><strong>The single agent works.</strong> If a router plus a dozen tools gets you there, stop.\n" +
@@ -193,7 +193,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Free-form handoffs.</strong> Passing a paragraph between agents creates silent\n" +
@@ -247,7 +247,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>Ship the single-agent version first, always.</strong> It is the fallback, the\n" +

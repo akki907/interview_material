@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: `
 <p>A render is a calculation. A commit is a mutation. React 18+ can start a render, throw it
 away, and start another one before committing — that is concurrent rendering. Your components
@@ -19,7 +19,7 @@ siblings that are already ready.</p>`,
         },
         {
             kind: "card",
-            title: "⏱️ Render vs commit vs paint",
+            title: "Render vs commit vs paint",
             html: `
 <p>The browser cannot paint until the commit finishes. Concurrent rendering is React's way of
 doing the render work in slices so a high-priority event can jump the queue before commit.</p>`,
@@ -44,7 +44,7 @@ sequenceDiagram
         },
         {
             kind: "table",
-            title: "⚡ Concurrent features",
+            title: "Concurrent features",
             headers: ["API", "What it changes", "Use when"],
             rows: [
                 [
@@ -76,7 +76,7 @@ sequenceDiagram
         },
         {
             kind: "card",
-            title: "📦 Batching and transitions",
+            title: "Batching and transitions",
             html: `
 <p>Urgent updates keep the input in sync with the keystrokes. Transitional updates may be
 abandoned mid-render if another keystroke arrives. The user never sees a half-built list
@@ -99,7 +99,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Example",
+            title: "Example",
             language: "javascript",
             code: `function Search({ items }) {
     const [text, setText] = useState('');

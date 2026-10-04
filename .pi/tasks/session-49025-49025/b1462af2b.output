@@ -1867,3 +1867,1142 @@ Visit https://react.dev/link/error-boundaries to learn more about error boundari
 1:17:10 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
 1:17:11 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
 1:17:11 AM [vite] (client) hmr update /src/styles/globals.css
+1:26:20 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/card.tsx
+1:26:20 AM [vite] (client) hmr invalidate /src/components/ui/card.tsx Could not Fast Refresh (new export)
+1:26:20 AM [vite] (client) hmr update /src/components/content/TopicRenderer.tsx, /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Interactive.tsx
+1:26:35 AM [vite] (client) hmr update /src/styles/globals.css
+1:26:35 AM [vite] (client) hmr update /src/styles/globals.css
+1:26:35 AM [vite] (client) hmr update /src/styles/globals.css
+1:27:01 AM [vite] (client) hmr update /src/styles/globals.css
+1:27:22 AM [vite] (client) hmr update /src/styles/globals.css
+1:27:28 AM [vite] (client) hmr update /src/styles/globals.css
+1:27:52 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+1:28:02 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+1:28:05 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+1:28:09 AM [vite] (client) hmr update /src/styles/globals.css
+1:28:41 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/Diagram.tsx
+1:28:47 AM [vite] (client) hmr update /src/styles/globals.css
+1:28:56 AM [vite] (client) hmr update /src/styles/globals.css
+1:28:56 AM [vite] (client) hmr update /src/styles/globals.css
+1:29:37 AM [vite] (client) hmr update /src/styles/globals.css
+1:29:45 AM [vite] (client) hmr update /src/app/App.tsx, /src/styles/globals.css
+1:29:45 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/styles/globals.css
+1:34:48 AM [vite] (client) hmr update /src/styles/globals.css
+1:35:01 AM [vite] (client) hmr update /src/styles/globals.css
+1:35:10 AM [vite] (client) hmr update /src/styles/globals.css
+1:35:19 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/table.tsx
+1:35:32 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/app/PageHeader.tsx
+1:35:41 AM [vite] (client) hmr update /src/pages/TopicPage.tsx, /src/styles/globals.css
+1:35:51 AM [vite] (client) hmr update /src/pages/TopicPage.tsx, /src/styles/globals.css
+1:35:51 AM [vite] (client) hmr update /src/app/App.tsx, /src/styles/globals.css
+1:35:51 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/styles/globals.css
+1:36:02 AM [vite] (client) hmr update /src/app/App.tsx, /src/styles/globals.css
+1:36:26 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+1:37:15 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/styles/globals.css
+1:37:15 AM [vite] (client) hmr update /src/styles/globals.css
+1:37:33 AM [vite] (client) hmr update /src/pages/TopicPage.tsx, /src/styles/globals.css
+1:37:48 AM [vite] (client) hmr update /src/components/ui/button.tsx, /src/styles/globals.css
+1:37:48 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/badge.tsx
+1:37:48 AM [vite] (client) hmr invalidate /src/components/ui/button.tsx Could not Fast Refresh ("buttonVariants" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:37:48 AM [vite] (client) hmr update /src/components/ui/sidebar.tsx, /src/app/Header.tsx, /src/app/Sidebar.tsx, /src/components/content/TopicRenderer.tsx, /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx, /src/components/content/interactive/Cells.tsx, /src/components/content/interactive/Interactive.tsx, /src/components/app/CompleteToggle.tsx
+1:37:48 AM [vite] (client) hmr invalidate /src/components/ui/badge.tsx Could not Fast Refresh ("badgeVariants" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:37:48 AM [vite] (client) hmr update /src/components/content/TopicRenderer.tsx, /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Interactive.tsx
+1:37:48 AM [vite] (client) hmr invalidate /src/components/ui/sidebar.tsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:37:48 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx
+1:37:48 AM [vite] (client) hmr invalidate /src/components/content/interactive/Cells.tsx Could not Fast Refresh ("cellsFromValues" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:37:48 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx
+1:40:31 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+1:40:49 AM [vite] (client) hmr update /src/styles/globals.css
+1:40:49 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+1:42:53 AM [vite] (client) hmr update /src/styles/globals.css
+1:42:53 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+1:43:05 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/Diagram.tsx
+1:43:05 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+10:44:02 AM [vite] (client) hmr update /src/styles/globals.css
+10:44:07 AM [vite] (client) hmr update /src/components/ui/button.tsx, /src/styles/globals.css
+10:44:07 AM [vite] (client) hmr invalidate /src/components/ui/button.tsx Could not Fast Refresh ("buttonVariants" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+10:44:07 AM [vite] (client) hmr update /src/components/ui/sidebar.tsx, /src/app/Header.tsx, /src/app/Sidebar.tsx, /src/components/content/TopicRenderer.tsx, /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx, /src/components/content/interactive/Cells.tsx, /src/components/content/interactive/Interactive.tsx, /src/components/app/CompleteToggle.tsx, /src/pages/Dashboard.tsx
+10:44:07 AM [vite] (client) hmr invalidate /src/components/ui/sidebar.tsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+10:44:07 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx
+10:44:07 AM [vite] (client) hmr invalidate /src/components/content/interactive/Cells.tsx Could not Fast Refresh ("cellsFromValues" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+10:44:07 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx
+10:44:14 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/card.tsx
+10:44:15 AM [vite] (client) [Unhandled error] ReferenceError: Title is not defined
+ > CardTitle src/components/ui/card.tsx:58:9
+    56 |  }) {
+    57 |      return (
+    58 |          <Title
+       |           ^
+    59 |              as={level}
+    60 |              data-slot="card-title"
+ > Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:28571:19
+ > renderWithHooks node_modules/react-dom/cjs/react-dom-client.development.js:8030:21
+ > updateFunctionComponent node_modules/react-dom/cjs/react-dom-client.development.js:10569:18
+ > beginWork node_modules/react-dom/cjs/react-dom-client.development.js:12205:17
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19176:21
+ > workLoopSync node_modules/react-dom/cjs/react-dom-client.development.js:19004:40
+ > renderRootSync node_modules/react-dom/cjs/react-dom-client.development.js:18985:10
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18094:34
+ > performSyncWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:20680:6
+ > flushSyncWorkAcrossRoots_impl node_modules/react-dom/cjs/react-dom-client.development.js:20522:20
+ > flushSyncWork$1 node_modules/react-dom/cjs/react-dom-client.development.js:18439:11
+ > scheduleRefresh node_modules/react-dom/cjs/react-dom-client.development.js:113:8
+ > S.scheduleRefresh chrome-extension:/fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:79881
+ > ../../../../../@react-refresh:228:17
+ > performReactRefresh ../../../../../@react-refresh:217:26
+ > ../../../../../@react-refresh:604:3
+
+10:44:15 AM [vite] (client) [console.warn] An error occurred in the <CardTitle> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+10:44:24 AM [vite] (client) [Unhandled error] ReferenceError: Title is not defined
+ > CardTitle src/components/ui/card.tsx:58:9
+    56 |  }) {
+    57 |      return (
+    58 |          <Title
+       |           ^
+    59 |              as={level}
+    60 |              data-slot="card-title"
+ > Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:28571:19
+ > renderWithHooks node_modules/react-dom/cjs/react-dom-client.development.js:8030:21
+ > updateFunctionComponent node_modules/react-dom/cjs/react-dom-client.development.js:10569:18
+ > beginWork node_modules/react-dom/cjs/react-dom-client.development.js:12205:17
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19176:21
+ > workLoopSync node_modules/react-dom/cjs/react-dom-client.development.js:19004:40
+ > renderRootSync node_modules/react-dom/cjs/react-dom-client.development.js:18985:10
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18094:34
+
+10:44:24 AM [vite] (client) [console.warn] An error occurred in the <CardTitle> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+10:44:25 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/card.tsx
+10:44:29 AM [vite] (client) hmr update /src/pages/Dashboard.tsx, /src/styles/globals.css
+10:44:32 AM [vite] (client) hmr update /src/pages/Dashboard.tsx, /src/styles/globals.css
+10:44:41 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/sidebar.tsx
+10:44:41 AM [vite] (client) hmr invalidate /src/components/ui/sidebar.tsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+10:44:41 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx
+10:44:48 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/sidebar.tsx
+10:44:48 AM [vite] (client) hmr invalidate /src/components/ui/sidebar.tsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+10:44:48 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx
+10:44:51 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+10:44:58 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+10:45:05 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+10:45:10 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/Diagram.tsx
+10:45:13 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+10:59:33 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Header.tsx
+10:59:58 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Header.tsx
+11:00:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Header.tsx
+11:00:24 AM [vite] (client) [console.error] In HTML, <li> cannot be a descendant of <li>.
+This will cause a hydration error.
+
+  ...
+    <SidebarProvider className="h-svh over...">
+      <div data-slot="sidebar-wr..." style={{...}} className="flex min-h...">
+        <AppSidebar>
+        <SidebarInset className="min-h-0">
+          <div data-slot="sidebar-inset" className="relative f...">
+            <Header theme="light" onToggleTheme={function toggle} sidebarTrigger={<SidebarTrigger>}>
+              <header className="sticky top...">
+                <div>
+                <motion.div initial={{opacity:0,y:-4}} animate={{opacity:1,y:0}} transition={{duration:0.18}} ...>
+                  <div className="px-4 pb-2 ..." style={{opacity:0, ...}} ref={function}>
+                    <Breadcrumb>
+                      <nav aria-label="Breadcrumb">
+                        <BreadcrumbList className="text-[11px...">
+                          <ol data-slot="breadcrumb..." className="flex flex-...">
+                            <BreadcrumbItem>
+>                             <li data-slot="breadcrumb-item" className="inline-flex items-center gap-1.5">
+                                <span>
+                                <BreadcrumbSeparator>
+>                                 <li
+>                                   data-slot="breadcrumb-separator"
+>                                   role="presentation"
+>                                   aria-hidden="true"
+>                                   className={"[&>svg]:size-3.5"}
+>                                 >
+                            ...
+                ...
+            ...
+
+11:00:24 AM [vite] (client) [console.error] <li> cannot contain a nested <li>.
+See this log for the ancestor stack trace.
+11:00:32 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/styles/globals.css
+11:01:02 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+11:01:03 AM [vite] (client) dependency optimized: @radix-ui/react-scroll-area
+11:01:03 AM [vite] (client) optimized dependencies changed. reloading
+11:01:04 AM [vite] (client) [console.error] Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+11:01:04 AM [vite] (client) [console.error] Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+11:01:04 AM [vite] (client) [Unhandled error] TypeError: Cannot read properties of null (reading 'useState')
+ > exports.useState node_modules/react/cjs/react.development.js:1309:33
+ > ScrollArea node_modules/.vite/deps/@radix-ui_react-scroll-area.js?v=448deee9:41:51
+ > Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:28571:19
+ > renderWithHooks node_modules/react-dom/cjs/react-dom-client.development.js:8030:21
+ > updateForwardRef node_modules/react-dom/cjs/react-dom-client.development.js:10123:18
+ > beginWork node_modules/react-dom/cjs/react-dom-client.development.js:12536:17
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19176:21
+ > workLoopSync node_modules/react-dom/cjs/react-dom-client.development.js:19004:40
+ > renderRootSync node_modules/react-dom/cjs/react-dom-client.development.js:18985:10
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18094:34
+ > performSyncWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:20680:6
+ > flushSyncWorkAcrossRoots_impl node_modules/react-dom/cjs/react-dom-client.development.js:20522:20
+ > flushSyncWork$1 node_modules/react-dom/cjs/react-dom-client.development.js:18439:11
+ > scheduleRefresh node_modules/react-dom/cjs/react-dom-client.development.js:113:8
+ > S.scheduleRefresh chrome-extension:/fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:79881
+ > ../../../../../@react-refresh:228:17
+ > performReactRefresh ../../../../../@react-refresh:217:26
+ > ../../../../../@react-refresh:604:3
+
+11:01:04 AM [vite] (client) [console.warn] An error occurred in the <ForwardRef(ScrollArea)> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+11:01:05 AM [vite] (client) [console.error] In HTML, <li> cannot be a descendant of <li>.
+This will cause a hydration error.
+
+  ...
+    <SidebarProvider className="h-svh over...">
+      <div data-slot="sidebar-wr..." style={{...}} className="flex min-h...">
+        <AppSidebar>
+        <SidebarInset className="min-h-0">
+          <div data-slot="sidebar-inset" className="relative f...">
+            <Header theme="light" onToggleTheme={function toggle} sidebarTrigger={<SidebarTrigger>}>
+              <header className="sticky top...">
+                <div>
+                <motion.div initial={{opacity:0,y:-4}} animate={{opacity:1,y:0}} transition={{duration:0.18}} ...>
+                  <div className="px-4 pb-2 ..." style={{opacity:0, ...}} ref={function}>
+                    <Breadcrumb>
+                      <nav aria-label="Breadcrumb">
+                        <BreadcrumbList className="text-[11px...">
+                          <ol data-slot="breadcrumb..." className="flex flex-...">
+                            <BreadcrumbItem>
+>                             <li data-slot="breadcrumb-item" className="inline-flex items-center gap-1.5">
+                                <span>
+                                <BreadcrumbSeparator>
+>                                 <li
+>                                   data-slot="breadcrumb-separator"
+>                                   role="presentation"
+>                                   aria-hidden="true"
+>                                   className={"[&>svg]:size-3.5"}
+>                                 >
+                            ...
+                ...
+            ...
+
+11:01:05 AM [vite] (client) [console.error] <li> cannot contain a nested <li>.
+See this log for the ancestor stack trace.
+11:01:26 AM [vite] (client) hmr update /src/styles/globals.css
+11:01:33 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/hero/HeroSection.tsx
+11:01:43 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/hero/HeroSection.tsx
+11:02:06 AM [vite] (client) hmr update /src/pages/Dashboard.tsx, /src/styles/globals.css
+11:02:09 AM [vite] (client) [console.error] In HTML, <li> cannot be a descendant of <li>.
+This will cause a hydration error.
+
+  ...
+    <SidebarProvider className="h-svh over...">
+      <div data-slot="sidebar-wr..." style={{...}} className="flex min-h...">
+        <AppSidebar>
+        <SidebarInset className="min-h-0">
+          <div data-slot="sidebar-inset" className="relative f...">
+            <Header theme="light" onToggleTheme={function toggle} sidebarTrigger={<SidebarTrigger>}>
+              <header className="sticky top...">
+                <div>
+                <motion.div initial={{opacity:0,y:-4}} animate={{opacity:1,y:0}} transition={{duration:0.18}} ...>
+                  <div className="px-4 pb-2 ..." style={{opacity:0, ...}} ref={function}>
+                    <Breadcrumb>
+                      <nav aria-label="Breadcrumb">
+                        <BreadcrumbList className="text-[11px...">
+                          <ol data-slot="breadcrumb..." className="flex flex-...">
+                            <BreadcrumbItem>
+>                             <li data-slot="breadcrumb-item" className="inline-flex items-center gap-1.5">
+                                <span>
+                                <BreadcrumbSeparator>
+>                                 <li
+>                                   data-slot="breadcrumb-separator"
+>                                   role="presentation"
+>                                   aria-hidden="true"
+>                                   className={"[&>svg]:size-3.5"}
+>                                 >
+                            ...
+                ...
+            ...
+
+11:02:09 AM [vite] (client) [console.error] <li> cannot contain a nested <li>.
+See this log for the ancestor stack trace.
+11:02:15 AM [vite] (client) hmr update /src/pages/Dashboard.tsx, /src/styles/globals.css
+11:02:26 AM [vite] (client) hmr update /src/pages/Dashboard.tsx, /src/styles/globals.css
+11:02:51 AM [vite] (client) [console.error] In HTML, <li> cannot be a descendant of <li>.
+This will cause a hydration error.
+
+  ...
+    <SidebarProvider className="h-svh over...">
+      <div data-slot="sidebar-wr..." style={{...}} className="flex min-h...">
+        <AppSidebar>
+        <SidebarInset className="min-h-0">
+          <div data-slot="sidebar-inset" className="relative f...">
+            <Header theme="light" onToggleTheme={function toggle} sidebarTrigger={<SidebarTrigger>}>
+              <header className="sticky top...">
+                <div>
+                <motion.div initial={{opacity:0,y:-4}} animate={{opacity:1,y:0}} transition={{duration:0.18}} ...>
+                  <div className="px-4 pb-2 ..." style={{opacity:0, ...}} ref={function}>
+                    <Breadcrumb>
+                      <nav aria-label="Breadcrumb">
+                        <BreadcrumbList className="text-[11px...">
+                          <ol data-slot="breadcrumb..." className="flex flex-...">
+                            <BreadcrumbItem>
+>                             <li data-slot="breadcrumb-item" className="inline-flex items-center gap-1.5">
+                                <span>
+                                <BreadcrumbSeparator>
+>                                 <li
+>                                   data-slot="breadcrumb-separator"
+>                                   role="presentation"
+>                                   aria-hidden="true"
+>                                   className={"[&>svg]:size-3.5"}
+>                                 >
+                            ...
+                ...
+            ...
+
+11:02:51 AM [vite] (client) [console.error] <li> cannot contain a nested <li>.
+See this log for the ancestor stack trace.
+11:05:37 AM [vite] (client) [console.error] In HTML, <li> cannot be a descendant of <li>.
+This will cause a hydration error.
+
+  ...
+    <SidebarProvider className="h-svh over...">
+      <div data-slot="sidebar-wr..." style={{...}} className="flex min-h...">
+        <AppSidebar>
+        <SidebarInset className="min-h-0">
+          <div data-slot="sidebar-inset" className="relative f...">
+            <Header theme="light" onToggleTheme={function toggle} sidebarTrigger={<SidebarTrigger>}>
+              <header className="sticky top...">
+                <div>
+                <motion.div initial={{opacity:0,y:-4}} animate={{opacity:1,y:0}} transition={{duration:0.18}} ...>
+                  <div className="px-4 pb-2 ..." style={{opacity:0, ...}} ref={function}>
+                    <Breadcrumb>
+                      <nav aria-label="Breadcrumb">
+                        <BreadcrumbList className="text-[11px...">
+                          <ol data-slot="breadcrumb..." className="flex flex-...">
+                            <BreadcrumbItem>
+>                             <li data-slot="breadcrumb-item" className="inline-flex items-center gap-1.5">
+                                <span>
+                                <BreadcrumbSeparator>
+>                                 <li
+>                                   data-slot="breadcrumb-separator"
+>                                   role="presentation"
+>                                   aria-hidden="true"
+>                                   className={"[&>svg]:size-3.5"}
+>                                 >
+                            ...
+                ...
+            ...
+
+11:05:37 AM [vite] (client) [console.error] <li> cannot contain a nested <li>.
+See this log for the ancestor stack trace.
+11:07:17 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Header.tsx
+11:07:17 AM [vite] Internal server error: Transform failed with 3 errors:
+
+[31m[PARSE_ERROR] [0mIdentifier `useEffect` has already been declared
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/app/Header.tsx:2:20 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m2 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mF[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mg[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mt[0m[38;5;249m,[0m[38;5;249m [0museEffect[38;5;249m,[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mM[0m[38;5;249me[0m[38;5;249mm[0m[38;5;249mo[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m                    ────┬────  
+ [38;5;240m  │[0m                        ╰────── `useEffect` has already been declared here
+ [38;5;246m3 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0museEffect[38;5;249m,[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mM[0m[38;5;249me[0m[38;5;249mm[0m[38;5;249mo[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m          ────┬────  
+ [38;5;240m  │[0m              ╰────── It can not be redeclared here
+[38;5;246m───╯[0m
+
+[31m[PARSE_ERROR] [0mIdentifier `useMemo` has already been declared
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/app/Header.tsx:2:31 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m2 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mF[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mg[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mt[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mE[0m[38;5;249mf[0m[38;5;249mf[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m,[0m[38;5;249m [0museMemo[38;5;249m,[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m                               ───┬───  
+ [38;5;240m  │[0m                                  ╰───── `useMemo` has already been declared here
+ [38;5;246m3 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mE[0m[38;5;249mf[0m[38;5;249mf[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m,[0m[38;5;249m [0museMemo[38;5;249m,[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m                     ───┬───  
+ [38;5;240m  │[0m                        ╰───── It can not be redeclared here
+[38;5;246m───╯[0m
+
+[31m[PARSE_ERROR] [0mIdentifier `useState` has already been declared
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/app/Header.tsx:2:40 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m2 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mF[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mg[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mt[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mE[0m[38;5;249mf[0m[38;5;249mf[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mM[0m[38;5;249me[0m[38;5;249mm[0m[38;5;249mo[0m[38;5;249m,[0m[38;5;249m [0museState[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m                                        ────┬───  
+ [38;5;240m  │[0m                                            ╰───── `useState` has already been declared here
+ [38;5;246m3 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mE[0m[38;5;249mf[0m[38;5;249mf[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mM[0m[38;5;249me[0m[38;5;249mm[0m[38;5;249mo[0m[38;5;249m,[0m[38;5;249m [0museState[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m                              ────┬───  
+ [38;5;240m  │[0m                                  ╰───── It can not be redeclared here
+[38;5;246m───╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/app/Header.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+11:07:17 AM [vite] (client) [console.error] [vite] Failed to reload /src/app/Header.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:07:21 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Header.tsx
+11:10:52 AM [vite] (client) hmr update /src/pages/TopicPage.tsx, /src/styles/globals.css
+11:15:14 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/styles/globals.css
+11:15:14 AM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mExpected `}` but found `EOF`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/app/AppShell.tsx:147:3 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m 17 │[0m [38;5;249mf[0m[38;5;249mu[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249mS[0m[38;5;249mh[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249ml[0m[38;5;249mI[0m[38;5;249mn[0m[38;5;249mn[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249m([0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mh[0m[38;5;249mi[0m[38;5;249ml[0m[38;5;249md[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m:[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mh[0m[38;5;249mi[0m[38;5;249ml[0m[38;5;249md[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m:[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m.[0m[38;5;249mR[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mN[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m)[0m[38;5;249m [0m{
+ [38;5;240m    │[0m                                                                  ┬  
+ [38;5;240m    │[0m                                                                  ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m147 │[0m [38;5;249m}[0m
+ [38;5;240m    │[0m   │ 
+ [38;5;240m    │[0m   ╰─ `}` expected
+[38;5;246m─────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/app/AppShell.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+11:15:14 AM [vite] (client) [console.error] [vite] Failed to reload /src/app/AppShell.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:15:26 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/styles/globals.css
+11:16:44 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/styles/globals.css
+11:16:44 AM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mAdjacent JSX elements must be wrapped in an enclosing tag.
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/app/AppShell.tsx:95:13 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m95 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m<[38;5;249mA[0m[38;5;249mp[0m[38;5;249mp[0m[38;5;249mS[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mb[0m[38;5;249ma[0m[38;5;249mr[0m[38;5;249m [0m[38;5;249m/[0m[38;5;249m>[0m
+ [38;5;240m   │[0m             ┬  
+ [38;5;240m   │[0m             ╰── 
+ [38;5;240m   │[0m 
+ [38;5;240m   │[0m [38;5;115mHelp[0m: Did you want a JSX fragment `<>...</>`?
+[38;5;246m────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/app/AppShell.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+11:16:44 AM [vite] (client) [console.error] [vite] Failed to reload /src/app/AppShell.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:16:54 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/styles/globals.css
+11:23:43 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/RichText.tsx
+11:23:47 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/RichText.tsx
+11:23:58 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+11:24:34 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+11:24:49 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+11:24:49 AM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/content/TopicRenderer.tsx:577:14 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m577 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m}[0m)[38;5;249m,[0m
+ [38;5;240m    │[0m              ┬  
+ [38;5;240m    │[0m              ╰── 
+[38;5;246m─────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/content/TopicRenderer.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+11:24:49 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/TopicRenderer.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:25:02 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+11:25:21 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/RichText.tsx
+11:25:21 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+11:25:26 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/CodeBlock.tsx
+11:25:26 AM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/content/CodeBlock.tsx:27:2 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m27 │[0m [38;5;249m}[0m:[38;5;249m [0m[38;5;249m{[0m
+ [38;5;240m   │[0m  ┬  
+ [38;5;240m   │[0m  ╰── 
+[38;5;246m────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/content/CodeBlock.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+11:25:26 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/CodeBlock.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:25:36 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/CodeBlock.tsx
+11:25:41 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/CodeBlock.tsx
+11:26:05 AM [vite] (client) hmr update /src/pages/Flashcards.tsx, /src/styles/globals.css
+11:26:18 AM [vite] (client) hmr update /src/pages/Flashcards.tsx, /src/styles/globals.css
+11:26:26 AM [vite] (client) hmr update /src/pages/Flashcards.tsx, /src/styles/globals.css
+11:26:44 AM [vite] (client) hmr update /src/pages/Flashcards.tsx, /src/styles/globals.css
+11:27:07 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+11:27:12 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+11:30:06 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+11:33:48 AM [vite] (client) hmr update /src/styles/globals.css
+11:34:50 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/RichText.tsx
+11:39:16 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+11:39:23 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+11:39:32 AM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/sidebar.tsx
+11:39:32 AM [vite] (client) hmr invalidate /src/components/ui/sidebar.tsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:39:32 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx
+11:41:49 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+11:42:26 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx, /src/components/content/TopicRenderer.tsx, /src/components/app/CompleteToggle.tsx, /src/pages/Dashboard.tsx, /src/pages/Todos.tsx, /src/app/Header.tsx, /src/pages/TopicPage.tsx, /src/pages/Flashcards.tsx, /src/styles/globals.css
+11:42:39 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+11:42:43 AM [vite] (client) hmr update /src/styles/globals.css
+11:43:37 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx, /src/components/content/TopicRenderer.tsx, /src/components/app/CompleteToggle.tsx, /src/pages/Dashboard.tsx, /src/pages/Todos.tsx, /src/styles/globals.css
+11:43:37 AM [vite] (client) Pre-transform error: Transform failed with 2 errors:
+
+[31m[PARSE_ERROR] [0mIdentifier expected. 'import' is a reserved word that cannot be used here.
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:1 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m9 │[0m import[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m ───┬──  
+ [38;5;240m  │[0m    ╰──── 
+[38;5;246m───╯[0m
+
+[31m[PARSE_ERROR] [0mExpected `,` or `}` but found `type`
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:8 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m4 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m{
+ [38;5;240m  │[0m             ┬  
+ [38;5;240m  │[0m             ╰── Opened here
+ [38;5;240m  │[0m 
+ [38;5;246m9 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mtype[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m        ──┬─  
+ [38;5;240m  │[0m          ╰─── `,` or `}` expected
+[38;5;246m───╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/store.ts
+11:43:37 AM [vite] (client) Pre-transform error: Transform failed with 2 errors:
+
+[31m[PARSE_ERROR] [0mIdentifier expected. 'import' is a reserved word that cannot be used here.
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:1 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m9 │[0m import[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m ───┬──  
+ [38;5;240m  │[0m    ╰──── 
+[38;5;246m───╯[0m
+
+[31m[PARSE_ERROR] [0mExpected `,` or `}` but found `type`
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:8 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m4 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m{
+ [38;5;240m  │[0m             ┬  
+ [38;5;240m  │[0m             ╰── Opened here
+ [38;5;240m  │[0m 
+ [38;5;246m9 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mtype[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m        ──┬─  
+ [38;5;240m  │[0m          ╰─── `,` or `}` expected
+[38;5;246m───╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/store.ts
+11:43:37 AM [vite] (client) Pre-transform error: Transform failed with 2 errors:
+
+[31m[PARSE_ERROR] [0mIdentifier expected. 'import' is a reserved word that cannot be used here.
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:1 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m9 │[0m import[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m ───┬──  
+ [38;5;240m  │[0m    ╰──── 
+[38;5;246m───╯[0m
+
+[31m[PARSE_ERROR] [0mExpected `,` or `}` but found `type`
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:8 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m4 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m{
+ [38;5;240m  │[0m             ┬  
+ [38;5;240m  │[0m             ╰── Opened here
+ [38;5;240m  │[0m 
+ [38;5;246m9 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mtype[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m        ──┬─  
+ [38;5;240m  │[0m          ╰─── `,` or `}` expected
+[38;5;246m───╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/store.ts
+11:43:37 AM [vite] (client) Pre-transform error: Transform failed with 2 errors:
+
+[31m[PARSE_ERROR] [0mIdentifier expected. 'import' is a reserved word that cannot be used here.
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:1 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m9 │[0m import[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m ───┬──  
+ [38;5;240m  │[0m    ╰──── 
+[38;5;246m───╯[0m
+
+[31m[PARSE_ERROR] [0mExpected `,` or `}` but found `type`
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:8 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m4 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m{
+ [38;5;240m  │[0m             ┬  
+ [38;5;240m  │[0m             ╰── Opened here
+ [38;5;240m  │[0m 
+ [38;5;246m9 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mtype[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m        ──┬─  
+ [38;5;240m  │[0m          ╰─── `,` or `}` expected
+[38;5;246m───╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/store.ts
+11:43:37 AM [vite] (client) Pre-transform error: Transform failed with 2 errors:
+
+[31m[PARSE_ERROR] [0mIdentifier expected. 'import' is a reserved word that cannot be used here.
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:1 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m9 │[0m import[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m ───┬──  
+ [38;5;240m  │[0m    ╰──── 
+[38;5;246m───╯[0m
+
+[31m[PARSE_ERROR] [0mExpected `,` or `}` but found `type`
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:8 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m4 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m{
+ [38;5;240m  │[0m             ┬  
+ [38;5;240m  │[0m             ╰── Opened here
+ [38;5;240m  │[0m 
+ [38;5;246m9 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mtype[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m        ──┬─  
+ [38;5;240m  │[0m          ╰─── `,` or `}` expected
+[38;5;246m───╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/store.ts
+11:43:37 AM [vite] (client) Pre-transform error: Transform failed with 2 errors:
+
+[31m[PARSE_ERROR] [0mIdentifier expected. 'import' is a reserved word that cannot be used here.
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:1 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m9 │[0m import[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m ───┬──  
+ [38;5;240m  │[0m    ╰──── 
+[38;5;246m───╯[0m
+
+[31m[PARSE_ERROR] [0mExpected `,` or `}` but found `type`
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:8 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m4 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m{
+ [38;5;240m  │[0m             ┬  
+ [38;5;240m  │[0m             ╰── Opened here
+ [38;5;240m  │[0m 
+ [38;5;246m9 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mtype[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m        ──┬─  
+ [38;5;240m  │[0m          ╰─── `,` or `}` expected
+[38;5;246m───╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/store.ts
+11:43:37 AM [vite] Internal server error: Transform failed with 2 errors:
+
+[31m[PARSE_ERROR] [0mIdentifier expected. 'import' is a reserved word that cannot be used here.
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:1 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m9 │[0m import[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m ───┬──  
+ [38;5;240m  │[0m    ╰──── 
+[38;5;246m───╯[0m
+
+[31m[PARSE_ERROR] [0mExpected `,` or `}` but found `type`
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/store.ts:9:8 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m4 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249m [0m{
+ [38;5;240m  │[0m             ┬  
+ [38;5;240m  │[0m             ╰── Opened here
+ [38;5;240m  │[0m 
+ [38;5;246m9 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mtype[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mG[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mR[0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249me[0m[38;5;249mw[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mt[0m[38;5;249my[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249ms[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  │[0m        ──┬─  
+ [38;5;240m  │[0m          ╰─── `,` or `}` expected
+[38;5;246m───╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/store.ts
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+11:43:37 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/TopicRenderer.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:43:37 AM [vite] (client) [console.error] [vite] Failed to reload /src/pages/Dashboard.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:43:37 AM [vite] (client) [console.error] [vite] Failed to reload /src/app/Sidebar.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:43:37 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/app/CompleteToggle.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:43:37 AM [vite] (client) [console.error] [vite] Failed to reload /src/app/AppShell.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:43:37 AM [vite] (client) [console.error] [vite] Failed to reload /src/pages/Todos.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:43:55 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx, /src/components/content/TopicRenderer.tsx, /src/components/app/CompleteToggle.tsx, /src/pages/Dashboard.tsx, /src/pages/Todos.tsx, /src/styles/globals.css
+11:44:53 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/AppShell.tsx, /src/app/Sidebar.tsx, /src/components/content/TopicRenderer.tsx, /src/components/app/CompleteToggle.tsx, /src/pages/Dashboard.tsx, /src/pages/Todos.tsx
+11:44:53 AM [vite] (client) Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mExpected `:` but found `Identifier`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/srs.ts:104:11 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m104 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mintervalDays[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249mM[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249mh[0m[38;5;249m.[0m[38;5;249mm[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249m([0m
+ [38;5;240m    │[0m           ──────┬─────  
+ [38;5;240m    │[0m                 ╰─────── `:` expected
+[38;5;246m─────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/srs.ts
+11:44:53 AM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mExpected `:` but found `Identifier`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/lib/srs.ts:104:11 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m104 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mintervalDays[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249mM[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249mh[0m[38;5;249m.[0m[38;5;249mm[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249m([0m
+ [38;5;240m    │[0m           ──────┬─────  
+ [38;5;240m    │[0m                 ╰─────── `:` expected
+[38;5;246m─────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/lib/srs.ts
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+11:44:53 AM [vite] (client) [console.error] [vite] Failed to reload /src/app/AppShell.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:44:53 AM [vite] (client) [console.error] [vite] Failed to reload /src/pages/Todos.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:44:53 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/app/CompleteToggle.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:44:53 AM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/TopicRenderer.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:44:53 AM [vite] (client) [console.error] [vite] Failed to reload /src/app/Sidebar.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:44:53 AM [vite] (client) [console.error] [vite] Failed to reload /src/pages/Dashboard.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:45:24 AM [vite] (client) hmr update /src/styles/globals.css, /src/app/AppShell.tsx, /src/app/Sidebar.tsx, /src/components/content/TopicRenderer.tsx, /src/components/app/CompleteToggle.tsx, /src/pages/Dashboard.tsx, /src/pages/Todos.tsx
+11:47:04 AM [vite] (client) hmr update /src/pages/Flashcards.tsx, /src/styles/globals.css
+11:47:18 AM [vite] (client) hmr update /src/pages/Flashcards.tsx, /src/styles/globals.css
+11:47:18 AM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/pages/Flashcards.tsx:28:5 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m28 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0mconst[38;5;249m [0m[38;5;249mc[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249ms[0m[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249mu[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mM[0m[38;5;249me[0m[38;5;249mm[0m[38;5;249mo[0m[38;5;249m([0m[38;5;249m([0m[38;5;249m)[0m[38;5;249m [0m[38;5;249m=[0m[38;5;249m>[0m[38;5;249m [0m[38;5;249m{[0m
+ [38;5;240m   │[0m     ──┬──  
+ [38;5;240m   │[0m       ╰──── 
+[38;5;246m────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/pages/Flashcards.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+11:47:18 AM [vite] (client) [console.error] [vite] Failed to reload /src/pages/Flashcards.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+11:47:31 AM [vite] (client) hmr update /src/pages/Flashcards.tsx, /src/styles/globals.css
+11:47:38 AM [vite] (client) hmr update /src/pages/Flashcards.tsx, /src/styles/globals.css
+11:47:56 AM [vite] (client) hmr update /src/styles/globals.css
+11:48:03 AM [vite] (client) hmr update /src/components/ui/button.tsx, /src/styles/globals.css
+11:48:03 AM [vite] (client) hmr invalidate /src/components/ui/button.tsx Could not Fast Refresh ("buttonVariants" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:48:03 AM [vite] (client) hmr update /src/components/ui/sidebar.tsx, /src/app/Header.tsx, /src/components/content/TopicRenderer.tsx, /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx, /src/components/content/interactive/Cells.tsx, /src/components/content/interactive/Interactive.tsx, /src/components/app/CompleteToggle.tsx, /src/pages/Dashboard.tsx, /src/pages/Todos.tsx, /src/pages/Flashcards.tsx
+11:48:03 AM [vite] (client) hmr invalidate /src/components/ui/sidebar.tsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:48:03 AM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx
+11:48:03 AM [vite] (client) hmr invalidate /src/components/content/interactive/Cells.tsx Could not Fast Refresh ("cellsFromValues" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:48:03 AM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx
+11:52:37 AM [vite] (client) hmr update /src/pages/Flashcards.tsx, /src/styles/globals.css
+12:00:31 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/RichText.tsx
+12:00:42 PM [vite] (client) hmr update /src/styles/globals.css
+12:01:57 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+12:01:57 PM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mExpected `,` or `)` but found `Identifier`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/content/TopicRenderer.tsx:596:33 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m591 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249m.[0m[38;5;249mm[0m[38;5;249ma[0m[38;5;249mp[0m[38;5;249m([0m[38;5;249m([0m[38;5;249ms[0m[38;5;249m)[0m[38;5;249m [0m[38;5;249m=[0m[38;5;249m>[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                              ┬  
+ [38;5;240m    │[0m                                              ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m596 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249ml[0m[38;5;249mi[0m[38;5;249m [0mkey[38;5;249m=[0m[38;5;249m{[0m[38;5;249ms[0m[38;5;249m.[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249mN[0m[38;5;249ma[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249mm[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mw[0m[38;5;249m-[0m[38;5;249m0[0m[38;5;249m"[0m[38;5;249m>[0m
+ [38;5;240m    │[0m                                 ─┬─  
+ [38;5;240m    │[0m                                  ╰─── `,` or `)` expected
+[38;5;246m─────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/content/TopicRenderer.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:01:57 PM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/TopicRenderer.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:02:20 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+12:09:25 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/table.tsx
+12:10:06 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+12:10:16 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/RichText.tsx
+12:10:28 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/RichText.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/app/Header.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/pages/TopicPage.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/app/StatTiles.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+12:15:03 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/TwoSum.tsx
+12:15:03 PM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx, /src/components/content/TopicRenderer.tsx, /src/components/app/CompleteToggle.tsx, /src/pages/Dashboard.tsx, /src/pages/Todos.tsx, /src/pages/Flashcards.tsx, /src/app/Header.tsx, /src/pages/TopicPage.tsx, /src/pages/Interview.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/components/ui/tooltip.tsx, /src/components/ui/spinner.tsx, /src/components/ui/button.tsx, /src/components/ui/sidebar.tsx, /src/app/Sidebar.tsx, /src/components/ui/input.tsx, /src/components/ui/sheet.tsx, /src/components/ui/skeleton.tsx, /src/components/app/PageHeader.tsx, /src/components/content/TopicRenderer.tsx, /src/components/ui/collapsible.tsx, /src/components/ui/card.tsx, /src/components/ui/tabs.tsx, /src/components/ui/badge.tsx, /src/components/ui/table.tsx and 24 more
+12:15:03 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/TopicRenderer.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/pages/Todos.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/pages/Dashboard.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/pages/Flashcards.tsx, /src/styles/globals.css
+12:15:03 PM [vite] (client) hmr update /src/pages/Interview.tsx, /src/styles/globals.css
+12:15:25 PM [vite] (client) hmr update /src/pages/Dashboard.tsx, /src/styles/globals.css
+12:15:42 PM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+12:17:20 PM [vite] (client) hmr update /src/styles/globals.css, /src/app/Sidebar.tsx
+12:38:13 PM [vite] (client) page reload index.html
+12:39:40 PM [vite] (client) hmr update /src/styles/globals.css
+12:41:05 PM [vite] (client) hmr update /src/styles/globals.css
+12:41:28 PM [vite] (client) hmr update /src/styles/globals.css
+12:42:44 PM [vite] (client) hmr update /src/styles/globals.css
+12:43:52 PM [vite] (client) hmr update /src/styles/globals.css
+12:44:50 PM [vite] (client) hmr update /src/styles/globals.css
+12:45:16 PM [vite] (client) hmr update /src/components/ui/button.tsx, /src/styles/globals.css
+12:45:16 PM [vite] (client) hmr invalidate /src/components/ui/button.tsx Could not Fast Refresh ("buttonVariants" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+12:45:16 PM [vite] (client) hmr update /src/components/ui/sidebar.tsx, /src/app/Header.tsx, /src/components/content/TopicRenderer.tsx, /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx, /src/components/content/interactive/Cells.tsx, /src/components/content/interactive/Interactive.tsx, /src/components/app/CompleteToggle.tsx, /src/pages/Dashboard.tsx, /src/pages/Todos.tsx, /src/pages/Flashcards.tsx, /src/pages/Interview.tsx
+12:45:16 PM [vite] (client) hmr invalidate /src/components/ui/sidebar.tsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+12:45:16 PM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx
+12:45:16 PM [vite] (client) hmr invalidate /src/components/content/interactive/Cells.tsx Could not Fast Refresh ("cellsFromValues" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+12:45:16 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx
+12:45:27 PM [vite] (client) hmr update /src/components/ui/button.tsx, /src/styles/globals.css
+12:45:27 PM [vite] (client) hmr invalidate /src/components/ui/button.tsx Could not Fast Refresh ("buttonVariants" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+12:45:27 PM [vite] (client) hmr update /src/components/ui/sidebar.tsx, /src/app/Header.tsx, /src/components/content/TopicRenderer.tsx, /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx, /src/components/content/interactive/Cells.tsx, /src/components/content/interactive/Interactive.tsx, /src/components/app/CompleteToggle.tsx, /src/pages/Dashboard.tsx, /src/pages/Todos.tsx, /src/pages/Flashcards.tsx, /src/pages/Interview.tsx
+12:45:27 PM [vite] (client) hmr invalidate /src/components/ui/sidebar.tsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+12:45:27 PM [vite] (client) hmr update /src/app/AppShell.tsx, /src/app/Sidebar.tsx
+12:45:27 PM [vite] (client) hmr invalidate /src/components/content/interactive/Cells.tsx Could not Fast Refresh ("cellsFromValues" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+12:45:27 PM [vite] (client) hmr update /src/components/content/interactive/TwoSum.tsx, /src/components/content/interactive/Stepper.tsx
+12:45:39 PM [vite] (client) hmr update /src/pages/Interview.tsx, /src/styles/globals.css
+12:45:49 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/interactive/Stepper.tsx
+12:45:49 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+12:45:49 PM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mAdjacent JSX elements must be wrapped in an enclosing tag.
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/content/TopicRenderer.tsx:418:33 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m418 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m<[38;5;249mc[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249mN[0m[38;5;249ma[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mx[0m[38;5;249mt[0m[38;5;249m-[0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249mk[0m[38;5;249m"[0m[38;5;249m>[0m[38;5;249m{[0m[38;5;249mb[0m[38;5;249ml[0m[38;5;249mo[0m[38;5;249mc[0m[38;5;249mk[0m[38;5;249m.[0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m}[0m[38;5;249m<[0m[38;5;249m/[0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m>[0m
+ [38;5;240m    │[0m                                 ┬  
+ [38;5;240m    │[0m                                 ╰── 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Did you want a JSX fragment `<>...</>`?
+[38;5;246m─────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/content/TopicRenderer.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:45:49 PM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/TopicRenderer.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:46:16 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicRenderer.tsx
+12:46:42 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/progress.tsx
+12:46:42 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/app/PageHeader.tsx
+12:46:42 PM [vite] Internal server error: Transform failed with 3 errors:
+
+[31m[PARSE_ERROR] [0mExpected corresponding JSX closing tag for 'h1'.
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/app/PageHeader.tsx:44:15 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m38 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0mh1[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249mN[0m[38;5;249ma[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249mf[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249mt[0m[38;5;249m-[0m[38;5;249ms[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249mi[0m[38;5;249mf[0m[38;5;249m [0m[38;5;249mm[0m[38;5;249mb[0m[38;5;249m-[0m[38;5;249m1[0m[38;5;249m.[0m[38;5;249m5[0m[38;5;249m [0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mx[0m[38;5;249mt[0m[38;5;249m-[0m[38;5;249m[[0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249m([0m[38;5;249m2[0m[38;5;249m8[0m[38;5;249mp[0m[38;5;249mx[0m[38;5;249m,[0m[38;5;249m4[0m[38;5;249m.[0m[38;5;249m5[0m[38;5;249mv[0m[38;5;249mw[0m[38;5;249m,[0m[38;5;249m4[0m[38;5;249m0[0m[38;5;249mp[0m[38;5;249mx[0m[38;5;249m)[0m[38;5;249m][0m[38;5;249m [0m[38;5;249ml[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249mg[0m[38;5;249m-[0m[38;5;249m[[0m[38;5;249m1[0m[38;5;249m.[0m[38;5;249m0[0m[38;5;249m6[0m[38;5;249m][0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249mt[0m[38;5;249m-[0m[38;5;249me[0m[38;5;249mx[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mb[0m[38;5;249mo[0m[38;5;249ml[0m[38;5;249md[0m[38;5;249m [0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mk[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249mg[0m[38;5;249m-[0m[38;5;249m[[0m[38;5;249m-[0m[38;5;249m0[0m[38;5;249m.[0m[38;5;249m0[0m[38;5;249m3[0m[38;5;249me[0m[38;5;249mm[0m[38;5;249m][0m[38;5;249m"[0m[38;5;249m>[0m
+ [38;5;240m   │[0m                  ─┬  
+ [38;5;240m   │[0m                   ╰── Opened here
+ [38;5;240m   │[0m 
+ [38;5;246m44 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m/[0mdiv[38;5;249m>[0m
+ [38;5;240m   │[0m               ─┬─  
+ [38;5;240m   │[0m                ╰─── Expected `</h1>`
+[38;5;246m────╯[0m
+
+[31m[PARSE_ERROR] [0mExpected corresponding JSX closing tag for 'div'.
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/app/PageHeader.tsx:46:11 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m32 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0mdiv[38;5;249m [0m[38;5;249mc[0m[38;5;249ml[0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249ms[0m[38;5;249mN[0m[38;5;249ma[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249m=[0m[38;5;249m"[0m[38;5;249mm[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249m-[0m[38;5;249mw[0m[38;5;249m-[0m[38;5;249m0[0m[38;5;249m"[0m[38;5;249m>[0m
+ [38;5;240m   │[0m              ─┬─  
+ [38;5;240m   │[0m               ╰─── Opened here
+ [38;5;240m   │[0m 
+ [38;5;246m46 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m/[0mheader[38;5;249m>[0m
+ [38;5;240m   │[0m           ───┬──  
+ [38;5;240m   │[0m              ╰──── Expected `</div>`
+[38;5;246m────╯[0m
+
+[31m[PARSE_ERROR] [0mUnexpected token. Did you mean `{'}'}` or `&rbrace;`?
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/app/PageHeader.tsx:48:1 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m48 │[0m [38;5;249m}[0m
+ [38;5;240m   │[0m │ 
+ [38;5;240m   │[0m ╰─ 
+[38;5;246m────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/app/PageHeader.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:46:42 PM [vite] (client) [console.error] [vite] Failed to reload /src/components/app/PageHeader.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:47:05 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/app/PageHeader.tsx
+12:47:39 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/app/PageHeader.tsx
+12:47:56 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/animated/GradientText.tsx
+12:47:56 PM [vite] (client) [console.error] [vite] Failed to reload /src/components/animated/GradientText.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:48:10 PM [vite] (client) hmr update /src/styles/globals.css
+12:48:41 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/card.tsx
+12:50:05 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/hero/HeroSection.tsx
+12:50:05 PM [vite] Internal server error: Transform failed with 2 errors:
+
+[31m[PARSE_ERROR] [0mJSX expressions may not use the comma operator
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/hero/HeroSection.tsx:11:10 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m11 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m [0mCard, CardContent[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249m.[0m[38;5;249m.[0m[38;5;249m/[0m[38;5;249mu[0m[38;5;249mi[0m[38;5;249m/[0m[38;5;249mc[0m[38;5;249ma[0m[38;5;249mr[0m[38;5;249md[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m   │[0m          ────────┬────────  
+ [38;5;240m   │[0m                  ╰────────── 
+ [38;5;240m   │[0m 
+ [38;5;240m   │[0m [38;5;115mHelp[0m: Did you mean to write an array?
+[38;5;246m────╯[0m
+
+[31m[PARSE_ERROR] [0mUnexpected token
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/hero/HeroSection.tsx:17:1 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m17 │[0m }[38;5;249m:[0m[38;5;249m [0m[38;5;249m{[0m
+ [38;5;240m   │[0m ┬  
+ [38;5;240m   │[0m ╰── 
+[38;5;246m────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/hero/HeroSection.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:50:05 PM [vite] (client) [console.error] [vite] Failed to reload /src/components/hero/HeroSection.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:50:32 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/hero/HeroSection.tsx
+12:51:12 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/hero/HeroSection.tsx
+12:51:12 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/app/StatTiles.tsx
+12:51:12 PM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/app/StatTiles.tsx:43:69 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m43 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m"font-mono text-2xl font-bold tracking-tight tabular-nums"[38;5;249m,[0m
+ [38;5;240m   │[0m                                                                     ─────────────────────────────┬────────────────────────────  
+ [38;5;240m   │[0m                                                                                                  ╰────────────────────────────── 
+[38;5;246m────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/app/StatTiles.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:51:12 PM [vite] (client) [console.error] [vite] Failed to reload /src/components/app/StatTiles.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:51:12 PM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/app/StatTiles.tsx:43:69 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m43 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m"font-mono text-2xl font-bold tracking-tight tabular-nums"[38;5;249m,[0m
+ [38;5;240m   │[0m                                                                     ─────────────────────────────┬────────────────────────────  
+ [38;5;240m   │[0m                                                                                                  ╰────────────────────────────── 
+[38;5;246m────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/app/StatTiles.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:51:47 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/app/StatTiles.tsx
+12:51:47 PM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mExpected `...` but found `}`
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/app/StatTiles.tsx:53:86 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m53 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249ma[0m[38;5;249ms[0m[38;5;249m-[0m[38;5;249mi[0m[38;5;249ms[0m[38;5;249m.[0m[38;5;249m [0m[38;5;249m*[0m[38;5;249m/[0m}
+ [38;5;240m   │[0m                                                                                      ┬  
+ [38;5;240m   │[0m                                                                                      ╰── `...` expected
+[38;5;246m────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/app/StatTiles.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+12:51:47 PM [vite] (client) [console.error] [vite] Failed to reload /src/components/app/StatTiles.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+12:52:38 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/app/StatTiles.tsx
+12:54:44 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/ui/input.tsx
+1:00:12 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/Diagram.tsx
+1:00:12 PM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mUnexpected token
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/content/Diagram.tsx:92:14 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m92 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mi[0m[38;5;249mg[0m[38;5;249mu[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249mI[0m[38;5;249md[0m[38;5;249m?[0m:[38;5;249m [0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249mr[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249mg[0m[38;5;249m;[0m
+ [38;5;240m   │[0m              ┬  
+ [38;5;240m   │[0m              ╰── 
+[38;5;246m────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/content/Diagram.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:00:12 PM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/Diagram.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+1:01:15 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/Diagram.tsx
+1:02:52 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/Diagram.tsx
+1:09:27 PM [vite] (client) hmr update /src/styles/globals.css
+1:11:22 PM [vite] (client) hmr update /src/pages/TopicPage.tsx, /src/styles/globals.css
+1:12:00 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/DiagramWalk.tsx
+1:13:07 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/DiagramWalk.tsx
+1:13:58 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicDiagrams.tsx
+1:13:58 PM [vite] Internal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] [0mIdentifier expected. 'function' is a reserved word that cannot be used here.
+    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/content/TopicDiagrams.tsx:42:1 [38;5;246m][0m
+    [38;5;246m│[0m
+ [38;5;246m42 │[0m function[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249ml[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mD[0m[38;5;249mi[0m[38;5;249ma[0m[38;5;249mg[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;249mm[0m[38;5;249ms[0m[38;5;249m([0m
+ [38;5;240m   │[0m ────┬───  
+ [38;5;240m   │[0m     ╰───── 
+[38;5;246m────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/content/TopicDiagrams.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:13:58 PM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/TopicDiagrams.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+1:14:21 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicDiagrams.tsx
+1:14:46 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicDiagrams.tsx
+1:20:46 PM [vite] (client) hmr update /src/styles/globals.css
+1:21:11 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicDiagrams.tsx
+1:21:11 PM [vite] Internal server error: Transform failed with 3 errors:
+
+[31m[PARSE_ERROR] [0mExpected corresponding JSX closing tag for 'Button'.
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/content/TopicDiagrams.tsx:160:35 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m107 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0mButton
+ [38;5;240m    │[0m                  ───┬──  
+ [38;5;240m    │[0m                     ╰──── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m160 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m/[0mCollapsible[38;5;249m>[0m
+ [38;5;240m    │[0m                                   ─────┬─────  
+ [38;5;240m    │[0m                                        ╰─────── Expected `</Button>`
+[38;5;246m─────╯[0m
+
+[31m[PARSE_ERROR] [0mExpected corresponding JSX closing tag for 'div'.
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/content/TopicDiagrams.tsx:162:27 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m105 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0mdiv[38;5;249m>[0m
+ [38;5;240m    │[0m          ─┬─  
+ [38;5;240m    │[0m           ╰─── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m162 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m/[0mCardContent[38;5;249m>[0m
+ [38;5;240m    │[0m                           ─────┬─────  
+ [38;5;240m    │[0m                                ╰─────── Expected `</div>`
+[38;5;246m─────╯[0m
+
+[31m[PARSE_ERROR] [0mAdjacent JSX elements must be wrapped in an enclosing tag.
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/content/TopicDiagrams.tsx:163:21 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m163 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m<[38;5;249m/[0m[38;5;249mC[0m[38;5;249ma[0m[38;5;249mr[0m[38;5;249md[0m[38;5;249m>[0m
+ [38;5;240m    │[0m                     ┬  
+ [38;5;240m    │[0m                     ╰── 
+ [38;5;240m    │[0m 
+ [38;5;240m    │[0m [38;5;115mHelp[0m: Did you want a JSX fragment `<>...</>`?
+[38;5;246m─────╯[0m
+
+  Plugin: vite:oxc
+  File: /Users/akashkumar/workspace/personal/interview_prep/src/components/content/TopicDiagrams.tsx
+      at transformWithOxc (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7581:19)
+      at TransformPluginContext.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:7653:26)
+      at EnvironmentPluginContainer.transform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:8545:51)
+      at async loadAndTransform (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:19988:26)
+      at async viteTransformMiddleware (file:///Users/akashkumar/workspace/personal/interview_prep/node_modules/vite/dist/node/chunks/node.js:20207:20)
+1:21:11 PM [vite] (client) [console.error] [vite] Failed to reload /src/components/content/TopicDiagrams.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+1:21:34 PM [vite] (client) hmr update /src/styles/globals.css, /src/components/content/TopicDiagrams.tsx

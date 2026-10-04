@@ -202,7 +202,7 @@ function pointerPanel(lo: number, mid: number, hi: number) {
 
 export const arrayPartition: VisualizerSpec = {
     algo: "arrays",
-    title: "▶️ Partition around a pivot, step by step",
+    title: "Partition around a pivot, step by step",
     fields: [
         {
             id: "nums",

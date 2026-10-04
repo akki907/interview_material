@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>Orchestration is the control plane around model calls: what runs, in what order, with what\n" +
                 "retries, timeouts, and budgets. It is the layer where the ordinary distributed-systems concerns\n" +
@@ -24,7 +24,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧭 The four patterns",
+            title: "The four patterns",
             html:
                 "<p>Start at the top and go down. The left column is what you reach for by default; everything else\n" +
                 "is a consequence of a specific constraint — dynamic fan-out, shared state across workers, or\n" +
@@ -45,7 +45,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔁 Bounded retries, as a state machine",
+            title: "Bounded retries, as a state machine",
             html:
                 "<p>Every transition that can loop is guarded by an explicit budget, and the three\n" +
                 "<code>Exhausted</code> states are terminal by design — they are what stops a partial outage from\n" +
@@ -72,7 +72,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: the pieces teams get wrong",
+            title: "Implementation: the pieces teams get wrong",
             html:
                 "<pre><code class=\"language-javascript\">async function runNode(node, ctx) {\n" +
                 "  const policy = {\n" +
@@ -115,7 +115,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🧰 Frameworks, and what to actually take from them",
+            title: "Frameworks, and what to actually take from them",
             headers: ["Framework","Model","Take from it","Skip if"],
             rows: [
                 ["LangGraph","an explicit state graph with typed state, cycles, and checkpointing","the state-machine-plus-checkpoint model — durable resume is genuinely hard to retrofit","you want a few dozen lines of straight-line code"],
@@ -128,7 +128,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency",
+            title: "Cost and latency",
             headers: ["Quantity","Rule","Note"],
             rows: [
                 ["Sequential chain","latency is the <b>sum</b> of node latencies","add nodes only when a node's output is genuinely needed"],
@@ -142,7 +142,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to use an orchestration framework",
+            title: "When NOT to use an orchestration framework",
             html:
                 "<ul>\n" +
                 "<li><strong>A straight-line chain of three or four steps.</strong> Async functions with a\n" +
@@ -159,7 +159,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Retrying 4xx.</strong> A validation error is deterministic; three retries cost 3&times;\n" +
@@ -211,7 +211,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>One budget per run, enforced centrally.</strong> The orchestrator owns the counter, so\n" +

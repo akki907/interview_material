@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             id: "dsa-backtrack-core",
             html:
                 `
@@ -29,7 +29,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🌳 The Four-Step Loop",
+            title: "The Four-Step Loop",
             html:
                 `
         <p>Every backtracking function has the same skeleton, and the invariant is that
@@ -57,7 +57,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "🎬 Worked Trace — subsets of {1, 2, 3}",
+            title: "Worked Trace — subsets of {1, 2, 3}",
             id: "dsa-backtrack-trace",
             html:
                 `
@@ -87,7 +87,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Implementation",
+            title: "Implementation",
             language: "python",
             code:
                 `def backtrack(path, choices):
@@ -130,7 +130,7 @@ def solve_n_queens(n):
         },
         {
             kind: "card",
-            title: "🎯 N-Queens: how pruning does the real work",
+            title: "N-Queens: how pruning does the real work",
             html:
                 `
         <p>Naive N-Queens with no pruning visits roughly 15 million nodes at n = 8. Three cheap
@@ -165,7 +165,7 @@ flowchart LR
         },
         {
             kind: "card",
-            title: "🧠 Memoization — and Its Exact Precondition",
+            title: "Memoization — and Its Exact Precondition",
             html:
                 `
         <p>Backtracking has exponential time because it re-derives the same state many times. Adding a
@@ -187,7 +187,7 @@ flowchart LR
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html:
                 `
         <ul>
@@ -220,7 +220,7 @@ flowchart LR
         },
         {
             kind: "table",
-            title: "⏱️ Complexity, and What Actually Bounds It",
+            title: "Complexity, and What Actually Bounds It",
             headers: ["Variant", "Time", "Notes"],
             rows:
                                     [
@@ -263,7 +263,7 @@ flowchart LR
         },
         {
             kind: "card",
-            title: "🔥 Real-World Usage",
+            title: "Real-World Usage",
             html:
                 `
         <ul>

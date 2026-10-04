@@ -245,7 +245,7 @@ const ANSWER_STAT = (k: number) => ({
 
 export const heapTopK: VisualizerSpec = {
     algo: "heap",
-    title: "▶️ Heapify and top-k, step by step",
+    title: "Heapify and top-k, step by step",
     fields: [
         {
             id: "nums",

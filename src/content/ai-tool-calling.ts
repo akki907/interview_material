@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>Tool calling is a structured-output protocol wearing a function-calling costume. You send the\n" +
                 "model a schema describing what it may request; the model replies with a name and a JSON object\n" +
@@ -26,7 +26,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔁 The round trip",
+            title: "The round trip",
             html:
                 "<p>Note that steps 1 to 3 are your code, not the model's, and that the model is called again with\n" +
                 "the tool result appended. The dashed arrow is optional but important: telling the model that\n" +
@@ -58,7 +58,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧩 What a tool schema actually constrains",
+            title: "What a tool schema actually constrains",
             html:
                 "<p>Read it as a contract, not a prompt. <code>strict</code> plus explicit\n" +
                 "<code>additionalProperties: false</code> and every field in <code>required</code> is what makes\n" +
@@ -98,7 +98,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: tools that fail safely",
+            title: "Implementation: tools that fail safely",
             html:
                 "<pre><code class=\"language-javascript\">const getOrder = {\n" +
                 "  name: 'get_order',\n" +
@@ -136,7 +136,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚙️ Patterns",
+            title: "Patterns",
             headers: ["Pattern","Shape","Why it matters"],
             rows: [
                 ["Single call","one tool call, one result, one more generation","the simplest loop; use it unless the task genuinely needs more"],
@@ -151,7 +151,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧪 Worked example: parallel versus sequential",
+            title: "Worked example: parallel versus sequential",
             html:
                 "<p>Prompt: <em>\"What is the status of ORD-004471 and ORD-004472, and which is later?\"</em></p>\n" +
                 "<table class=\"complexity-table\">\n" +
@@ -168,7 +168,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency",
+            title: "Cost and latency",
             headers: ["Quantity","Rule","Note"],
             rows: [
                 ["Schema tokens","each tool schema is resent on every call","a 40-tool schema is thousands of tokens per turn, every turn"],
@@ -181,7 +181,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to use tool calling",
+            title: "When NOT to use tool calling",
             html:
                 "<ul>\n" +
                 "<li><strong>Output is already JSON.</strong> Structured output or a response format constraint is\n" +
@@ -198,7 +198,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Trusting the id.</strong> Model-produced identifiers are user input until you check\n" +
@@ -253,7 +253,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>Keep tool schemas byte-stable.</strong> It is the precondition for provider prompt\n" +

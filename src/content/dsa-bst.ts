@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 `
 <p>A binary search tree adds one invariant: every value in the left subtree is
@@ -21,7 +21,7 @@ and to validate / recover the invariant.</p>`,
         },
         {
             kind: "card",
-            title: "📐 The search path",
+            title: "The search path",
             html:
                 `
 <p>At each node you throw away half the tree <em>if</em> the invariant holds. Validation
@@ -47,7 +47,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "✅ Validate with a range, not a local compare",
+            title: "Validate with a range, not a local compare",
         },
         {
             kind: "diagram",
@@ -65,7 +65,7 @@ flowchart TD
         },
         {
             kind: "table",
-            title: "⚡ Common Patterns",
+            title: "Common Patterns",
             headers: ["Problem", "Idea", "Time"],
             rows:
                                     [
@@ -103,7 +103,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Example",
+            title: "Example",
             language: "python",
             code:
                 `def is_valid_bst(node, low=float("-inf"), high=float("inf")):

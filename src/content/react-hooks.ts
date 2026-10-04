@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: `
 <p>Hooks are a linked list on the fiber, not magic globals. Each call to <code>useState</code>
 or <code>useEffect</code> walks to the next slot. That is why the Rules of Hooks exist: if
@@ -19,7 +19,7 @@ runs. Functional updates exist so two updates in the same event both apply.</p>`
         },
         {
             kind: "card",
-            title: "📏 Rules of Hooks as a state machine",
+            title: "Rules of Hooks as a state machine",
             html: `
 <p>React walks this path once per component render. Branching around a hook call is the
 only way to skip a node, and skipping a node desynchronizes the list forever.</p>`,
@@ -43,7 +43,7 @@ flowchart TD
         // emitted as the following pipeline block.
         {
             kind: "card",
-            title: "🎬 useEffect Lifecycle",
+            title: "useEffect Lifecycle",
         },
         {
             kind: "pipeline",
@@ -58,7 +58,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "🔁 Effect subscribe / cleanup",
+            title: "Effect subscribe / cleanup",
             html: `
 <p>Effects run after paint. The cleanup from the previous effect runs before the next
 effect, on the same fiber, whenever a dependency changed or the component is about to
@@ -84,7 +84,7 @@ sequenceDiagram
         },
         {
             kind: "table",
-            title: "🧰 Hook cheat sheet",
+            title: "Hook cheat sheet",
             headers: ["Hook", "Stores", "When it re-runs", "Interview trap"],
             rows: [
                 [
@@ -139,7 +139,7 @@ sequenceDiagram
         },
         {
             kind: "card",
-            title: "⚠️ Common Pitfalls",
+            title: "Common Pitfalls",
             html: `
 <ul style="padding-left:20px;line-height:1.9;">
 <li>Missing dependency → stale closures. The linter is usually right.</li>
@@ -153,7 +153,7 @@ Derive instead, or gate on a real external event.</li>
         },
         {
             kind: "code",
-            title: "💻 Custom Hook Example",
+            title: "Custom Hook Example",
             language: "javascript",
             code: `function useDebounce(val, delay) {
     const [debounced, setDebounced] = useState(val);

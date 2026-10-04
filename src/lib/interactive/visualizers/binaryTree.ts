@@ -172,7 +172,7 @@ function inOrderWalk(values: number[]): InteractiveStep[] {
 
 export const binaryTreeBst: VisualizerSpec = {
     algo: "binary-tree",
-    title: "▶️ Binary search tree, step by step",
+    title: "Binary search tree, step by step",
     fields: [
         {
             id: "values",

@@ -1,5 +1,6 @@
 // src/components/content/Diagram.tsx — mermaid, themed and lazily loaded
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { MaximizeIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import type mermaidApi from "mermaid";
 
@@ -80,13 +81,26 @@ async function getMermaid(dark: boolean): Promise<MermaidApi> {
 export function Diagram({
     source,
     caption,
+    bare = false,
+    figureId,
+    onReady,
 }: {
     source: string;
     caption?: string;
+    /** Drop the figure chrome when the diagram sits inside a titled card. */
+    bare?: boolean;
+    /** Stable id on the render box, so a parent can find the rendered SVG. */
+    figureId?: string;
+    /** Called once mermaid has produced SVG (or failed), for parent tooling. */
+    onReady?: (root: HTMLElement | null) => void;
 }) {
     const [svg, setSvg] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const boxRef = useRef<HTMLDivElement>(null);
 
+    useEffect(() => {
+        onReady?.(svg || error ? boxRef.current : null);
+    }, [svg, error, onReady]);
     useEffect(() => {
         let cancelled = false;
         setSvg(null);
@@ -132,8 +146,18 @@ export function Diagram({
         );
     } else if (svg) {
         content = (
+            // Tall flowcharts would otherwise run for several screens and push
+            // every following section off the page, so the diagram gets its own
+            // scroll box with a height cap.
             <div
-                className="flex justify-center overflow-x-auto px-4 py-5"
+                id={figureId}
+                ref={boxRef}
+                className="diagram-scroll max-h-[28rem] overflow-auto px-4 py-5"
+                // A scrollable box is unreachable by keyboard unless it is
+                // focusable, so wide diagrams could not be panned without a mouse.
+                tabIndex={0}
+                role="group"
+                aria-label="Diagram, scrollable"
                 dangerouslySetInnerHTML={{ __html: svg }}
             />
         );
@@ -145,14 +169,17 @@ export function Diagram({
         );
     }
 
+    if (bare) {
+        return <div className="diagram-bare">{content}</div>;
+    }
+
     return (
-        <figure className="my-5 overflow-hidden rounded-card border border-rule bg-surface shadow-soft">
+        <figure className="my-4 overflow-hidden rounded-card border border-rule bg-surface shadow-soft">
             {content}
-            {caption && (
-                <figcaption className="border-t border-rule px-4 py-2.5 text-center text-xs text-muted">
-                    {caption}
-                </figcaption>
-            )}
+            <figcaption className="flex items-center justify-center gap-2 border-t border-rule px-4 py-2.5 text-center text-xs text-muted">
+                <MaximizeIcon className="size-3.5 shrink-0" />
+                {caption ?? "Scroll the diagram to see the full flow"}
+            </figcaption>
         </figure>
     );
 }

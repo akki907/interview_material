@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 `
 <p>An array is <b>contiguous memory plus a base address</b>. That single design choice buys
@@ -28,7 +28,7 @@ delta from O(n) per query into O(1) per query.</p>
         },
         {
             kind: "card",
-            title: "🧱 Index → address, and why that matters",
+            title: "Index → address, and why that matters",
             html:
                 `
 <p>One cache line holds several elements, which is why <code>a[i]</code> is O(1) but a
@@ -53,7 +53,7 @@ flowchart LR
         },
         {
             kind: "card",
-            title: "📏 Growing the array, and what amortized O(1) really means",
+            title: "Growing the array, and what amortized O(1) really means",
             html:
                 `
 <p><code>push</code> is <b>not</b> O(1). Most engines keep spare capacity and, when it runs
@@ -77,7 +77,7 @@ audio callback, a game frame budget), pre-size the buffer. If you are batch-proc
         },
         {
             kind: "card",
-            title: "🪄 In-place vs copy: the trade you must say out loud",
+            title: "In-place vs copy: the trade you must say out loud",
             html:
                 `
 <table class="complexity-table">
@@ -109,7 +109,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "⚡ Common Patterns",
+            title: "Common Patterns",
             html: "Prefix sum (range queries), Kadane's algorithm (max subarray), Dutch National Flag (sort 0/1/2), in-place dedupe with a slow cursor, cycle-rotate in three reversals, and the difference array for range updates in O(1) per update.",
         },
         {
@@ -120,7 +120,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Code Example",
+            title: "Code Example",
             language: "javascript",
             code:
                 `// Prefix Sum
@@ -132,7 +132,7 @@ for (let i = 0; i < nums.length; i++) {
         },
         {
             kind: "collapsible",
-            title: "🔍 Annotated implementation — prefix sums and Kadane",
+            title: "Annotated implementation — prefix sums and Kadane",
             html:
                 `
 <pre><code class="language-javascript">// Prefix sums: O(n) build, O(1) per range query.
@@ -173,7 +173,7 @@ function sort012(nums) {
         },
         {
             kind: "card",
-            title: "📊 Sorting cost table",
+            title: "Sorting cost table",
             html:
                 `
 <p>Any comparison-based sort pays at least Omega(n log n) — that is not an implementation
@@ -247,7 +247,7 @@ the comparison model.</p>
         },
         {
             kind: "table",
-            title: "⏱️ Complexity",
+            title: "Complexity",
             headers: ["Operation", "Cost", "Notes"],
             rows:
                                     [
@@ -300,7 +300,7 @@ the comparison model.</p>
         },
         {
             kind: "card",
-            title: "🪤 Pitfalls",
+            title: "Pitfalls",
             html:
                 `
 <ul>
@@ -328,7 +328,7 @@ most common accidental quadratic in JS array code.</li>
         },
         {
             kind: "card",
-            title: "🚫 Alternatives, and when NOT to use an array",
+            title: "Alternatives, and when NOT to use an array",
             html:
                 `
 <ul>
@@ -377,7 +377,7 @@ sparse array of size 10<sup>9</sup> is a memory leak with an index on it).</li>
         },
         {
             kind: "card",
-            title: "🔥 Real-World Usage",
+            title: "Real-World Usage",
             html: "Every dense numeric workload: image and audio buffers (contiguous samples are what make SIMD and cache prefetching possible), database pages, network packet reassembly, the backing store for lists, stacks and deques, and difference arrays for interval scheduling and range-update problems.",
         },
     ],

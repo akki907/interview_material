@@ -6,7 +6,7 @@ registerContent({
     title: "Agent Architecture",
     blocks: [
         {
-            // Legacy card title: "🎬 Agent Execution".
+            // Legacy card title: "Agent Execution".
             // The stages fired a toast on click; that is the only
             // interactivity dropped.
             kind: "pipeline",
@@ -22,7 +22,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>An agent is a model call inside a control loop. The model is given a goal, a set of tools, and\n" +
                 "the observations so far, and it returns either a tool call or a final answer. The <em>framework</em>\n" +
@@ -40,7 +40,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔄 The ReAct loop as a state machine",
+            title: "The ReAct loop as a state machine",
             html:
                 "<p>Follow the cycle. The two guarded transitions are the entire safety story: <code>BudgetExhausted</code>\n" +
                 "is checked before every tool execution, and <code>Failed</code> means the loop is allowed to\n" +
@@ -71,7 +71,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧭 Agent, pipeline, or router?",
+            title: "Agent, pipeline, or router?",
             html:
                 "<p>Follow it from the top; the first \"yes\" is your answer. The most common design error is\n" +
                 "answering \"agent\" to the second question without having asked the first, which is how a\n" +
@@ -91,7 +91,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧪 Worked example: one task, three turns",
+            title: "Worked example: one task, three turns",
             html:
                 "<p>Task: <em>\"Our refund rate doubled last week — find out why and draft a reply to the customer.\"</em></p>\n" +
                 "<table class=\"complexity-table\">\n" +
@@ -110,7 +110,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: the loop, with the invariants in code",
+            title: "Implementation: the loop, with the invariants in code",
             html:
                 "<pre><code class=\"language-javascript\">const MAX_STEPS = 12;\n" +
                 "const MAX_SPEND_USD = 0.50;      // 1. money, not steps, is the real budget. a single\n" +
@@ -154,7 +154,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚙️ Agent patterns",
+            title: "Agent patterns",
             headers: ["Pattern","Shape","Use when","Cost profile"],
             rows: [
                 ["ReAct","reason, act, observe, repeat","the next step genuinely depends on the last result","N model calls per task"],
@@ -168,7 +168,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency",
+            title: "Cost and latency",
             headers: ["Quantity","Rule","Note"],
             rows: [
                 ["Model calls per task","1 + number of steps","a 6-step agent is 7 calls"],
@@ -182,7 +182,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to build an agent",
+            title: "When NOT to build an agent",
             html:
                 "<ul>\n" +
                 "<li><strong>The steps are known in advance.</strong> A deterministic pipeline is faster, cheaper,\n" +
@@ -202,7 +202,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>No step or spend cap.</strong> The canonical agent failure. Always cap, and always\n" +
@@ -257,7 +257,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>Replay is a hard requirement.</strong> Store the full transcript, every tool call and\n" +

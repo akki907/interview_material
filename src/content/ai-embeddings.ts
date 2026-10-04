@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>An embedding model is a trained function from text (or image, or audio) to a fixed-length\n" +
                 "vector, trained so that texts which answer the same question land near each other. It is not a\n" +
@@ -29,7 +29,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔀 From a string to a searchable point",
+            title: "From a string to a searchable point",
             html:
                 "<p>The two encoder paths differ in one way that matters: a <b>document</b> is embedded once and\n" +
                 "reused, so you can spend heavily on it (long input, batching, offline). A <b>query</b> is\n" +
@@ -55,7 +55,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧭 Which retriever handles which failure",
+            title: "Which retriever handles which failure",
             html:
                 "<p>Read the axes as two failure pressures: moving right buys paraphrase tolerance, moving up\n" +
                 "costs noise. No point dominates the square, which is exactly why production retrieval is hybrid\n" +
@@ -79,7 +79,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔢 Worked example: computing similarity by hand",
+            title: "Worked example: computing similarity by hand",
             html:
                 "<p>Two 3-dimensional vectors, so the arithmetic is checkable:</p>\n" +
                 "<pre><code class=\"language-python\">a = [1.0, 2.0, 3.0]     # \"reset my password\"\n" +
@@ -102,7 +102,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚙️ Embedding API mechanics",
+            title: "Embedding API mechanics",
             headers: ["Choice","Effect","How to decide"],
             rows: [
                 ["Dimensionality","storage is <code>4 &times; d</code> bytes per vector, and a d-dimensional index is far more expensive than a lower one","take whatever the model emits; only shorten it if the model was trained for Matryoshka truncation"],
@@ -116,7 +116,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency",
+            title: "Cost and latency",
             headers: ["Quantity","Rule of thumb","Note"],
             rows: [
                 ["Ingest cost","proportional to total tokens, not document count","a 300-page PDF costs more than 300 one-page docs"],
@@ -130,7 +130,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to use embeddings",
+            title: "When NOT to use embeddings",
             html:
                 "<ul>\n" +
                 "<li><strong>Exact-match filtering over known fields.</strong> A SQL <code>WHERE status = 'open'</code>\n" +
@@ -148,7 +148,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Mixed models in one index.</strong> The single most damaging bug here, and it produces\n" +
@@ -201,7 +201,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>Everything in the index row.</strong> Vector, model id, dimension, source document\n" +

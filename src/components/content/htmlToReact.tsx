@@ -10,6 +10,7 @@
 // change. Converting to elements instead means React owns every node and
 // reconciliation is always consistent.
 import { createElement, type ReactNode } from "react";
+import { CodeBlock } from "./CodeBlock";
 
 /** HTML attribute names that differ from their React prop names. */
 const ATTR_ALIASES: Record<string, string> = {
@@ -116,7 +117,50 @@ function convert(node: Node, path: string): ReactNode {
     ]);
     if (VOID.has(tag)) return createElement(tag, props);
 
+    if (tag === "pre") {
+        // Code blocks get a copy affordance, so the <pre> is wrapped in a
+        // component rather than dropped: the element itself still carries the
+        // block styling and its own scroll box. The clipboard text comes from
+        // the parsed node, because highlighted markup would otherwise put tags
+        // on the clipboard instead of code.
+        return createElement(
+            CodeBlock,
+            { key: path, code: el.textContent ?? "" },
+            createElement(
+                "pre",
+                {
+                    ...props,
+                    // A code line longer than the column scrolls, and a
+                    // scroll box with no tab stop is mouse-only.
+                    tabIndex: 0,
+                    role: "group",
+                    "aria-label": "Code block, scrollable",
+                },
+                ...children,
+            ),
+        );
+    }
+
+    if (tag === "table") {
+        // Comparison tables carry several columns of prose, so they are wider
+        // than a phone. Without a scroll box they are not merely awkward —
+        // they overflow the column and the right-hand columns are silently
+        // clipped, with nothing to indicate there is more to read.
+        return createElement(
+            "div",
+            {
+                key: path,
+                className: "table-scroll",
+                tabIndex: 0,
+                role: "group",
+                "aria-label": "Table, scrollable",
+            },
+            createElement(tag, props, ...children),
+        );
+    }
+
     return createElement(tag, props, ...children);
+
 }
 
 let parser: DOMParser | null = null;

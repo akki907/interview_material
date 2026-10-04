@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 `
 <p>A greedy algorithm commits to a locally optimal choice and never revisits it. That is
@@ -19,7 +19,7 @@ both" at a position, you have left greedy and entered DP or backtracking.</p>`,
         },
         {
             kind: "card",
-            title: "🔁 Exchange argument, pictured",
+            title: "Exchange argument, pictured",
             html:
                 `
 <p>Suppose OPT does not include the greedy pick <code>g</code>. Swap the conflicting piece
@@ -44,7 +44,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "⚔️ Greedy vs DP vs backtracking",
+            title: "Greedy vs DP vs backtracking",
         },
         {
             kind: "diagram",
@@ -61,7 +61,7 @@ flowchart TD
         },
         {
             kind: "table",
-            title: "⚡ Common Patterns",
+            title: "Common Patterns",
             headers: ["Pattern", "Sort / pick rule", "Proof flavour"],
             rows:
                                     [
@@ -99,7 +99,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Interval scheduling",
+            title: "Interval scheduling",
             language: "python",
             code:
                 `def max_non_overlapping(intervals):
@@ -123,7 +123,7 @@ def merge(intervals):
         },
         {
             kind: "card",
-            title: "⚠️ When NOT to use",
+            title: "When NOT to use",
             html:
                 `
 <ul style="padding-left:20px;line-height:1.9;">

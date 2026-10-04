@@ -7,17 +7,17 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: "Nodes with pointers. Fast/slow pointer for cycle detection. Reverse in-place.",
         },
         {
             kind: "card",
-            title: "⚡ Common Patterns",
+            title: "Common Patterns",
             html: "Cycle detection (Floyd's algorithm), reverse linked list, merge two sorted lists, skip N from end.",
         },
         {
             kind: "card",
-            title: "🧠 Core idea and the invariant",
+            title: "Core idea and the invariant",
             html: `
         <p>A singly linked list is a chain of nodes, each holding a value and a pointer to the next
         node. The list is not a separate object with storage — the list <em>is</em> the head pointer,
@@ -43,7 +43,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔁 Pointer rewiring: reversal, step by step",
+            title: "Pointer rewiring: reversal, step by step",
             html: `
         <p>Reversal looks impossible at first — overwriting <code>next</code> destroys the only way to
         reach the rest of the list. The fix is to remember where you were going <em>before</em> you
@@ -75,7 +75,7 @@ flowchart LR
         },
         {
             kind: "table",
-            title: "🔍 Worked trace — reverse 1 to 2 to 3 to 4",
+            title: "Worked trace — reverse 1 to 2 to 3 to 4",
             headers: [
                 "Step",
                 "prev",
@@ -137,7 +137,7 @@ flowchart LR
         },
         {
             kind: "card",
-            title: "🎭 The dummy-node trick: deleting without case analysis",
+            title: "The dummy-node trick: deleting without case analysis",
             html: `
         <p>Deleting a node needs three cases — it is the head, it is the tail, it is in the middle — and
         the head case cannot even be handled by the person holding the node, because the head lives in a
@@ -167,7 +167,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "💻 Implementation: annotated",
+            title: "Implementation: annotated",
             html: `
 <pre><code class="language-javascript">class ListNode {
     constructor(val, next = null) { this.val = val; this.next = next; }
@@ -229,7 +229,7 @@ function hasCycle(head) {
         },
         {
             kind: "table",
-            title: "⏱️ Complexity, and where the bound degrades",
+            title: "Complexity, and where the bound degrades",
             headers: [
                 "Operation",
                 "Array (dynamic)",
@@ -290,7 +290,7 @@ function hasCycle(head) {
         },
         {
             kind: "card",
-            title: "🔀 Alternatives, and the skip list",
+            title: "Alternatives, and the skip list",
             html: `
         <p><b>When not to use a linked list:</b> almost always, in application code. An array wins on
         locality, on memory overhead, on the garbage collector, and on every operation except
@@ -316,7 +316,7 @@ function hasCycle(head) {
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html: `
         <ul>
             <li><b>Losing the rest of the list.</b> <code>cur.next = prev</code> before
@@ -375,7 +375,7 @@ function hasCycle(head) {
         },
         {
             kind: "card",
-            title: "🏭 Real-world usage",
+            title: "Real-world usage",
             html: `
         <ul>
             <li><b>LRU caches.</b> A hash map plus a doubly linked list: O(1) lookup, O(1) move-to-front,

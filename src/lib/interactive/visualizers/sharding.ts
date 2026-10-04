@@ -282,7 +282,7 @@ function keyProblem(fields: Record<string, string>): string | null {
 
 export const shardingRebalance: VisualizerSpec = {
     algo: "sharding",
-    title: "▶️ Shard rebalance, step by step",
+    title: "Shard rebalance, step by step",
     fields: [
         {
             id: "keys",

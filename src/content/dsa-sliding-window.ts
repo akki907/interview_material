@@ -10,7 +10,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>A sliding window replaces enumeration of every subarray with enumeration of only the ones " +
                 'that can win. The brute-force baseline for "longest substring without repeating characters" ' +
@@ -31,7 +31,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔁 The expand / shrink state machine",
+            title: "The expand / shrink state machine",
             html:
                 "<p>Read the two states. <code>Expand</code> runs once per element; <code>Shrink</code> may run " +
                 "zero, one, or many times per expansion — that asymmetry is exactly why the total work is O(n) " +
@@ -65,7 +65,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚡ Optimized Approach",
+            title: "Optimized Approach",
             html:
                 "<p>Expand the right pointer to include the next element. When the window violates the " +
                 "constraint, shrink from the left until it is valid again. Record the answer <em>after</em> " +
@@ -74,7 +74,7 @@ registerContent({
         },
         {
             kind: "collapsible",
-            title: "🔍 Annotated implementation — line by line",
+            title: "Annotated implementation — line by line",
             html:
                 '<pre><code class="language-javascript">function lengthOfLongestSubstring(s) {\n' +
                 "    const set = new Set();          // holds exactly s[left..right], nothing else\n" +
@@ -105,7 +105,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📏 Fixed-size vs variable-size window",
+            title: "Fixed-size vs variable-size window",
             headers: [
                 "Aspect",
                 "Fixed size (exactly <code>k</code>)",
@@ -141,7 +141,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔢 The subarray-sum variant, and where the positivity assumption breaks it",
+            title: "The subarray-sum variant, and where the positivity assumption breaks it",
             html:
                 '<p>The classic subarray variant ("smallest contiguous subarray summing to at least ' +
                 '<code>target</code>") only works on <b>non-negative</b> numbers, because removing the left ' +
@@ -193,7 +193,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚖️ When the window shrinks hard",
+            title: "When the window shrinks hard",
             headers: ["Input shape", "Shrink behaviour", "Effect"],
             rows: [
                 [
@@ -220,7 +220,7 @@ registerContent({
         },
         {
             kind: "code",
-            title: "💻 Code Example",
+            title: "Code Example",
             language: "javascript",
             code: `// Longest Substring Without Repeating Characters
 function lengthOfLongestSubstring(s) {
@@ -239,7 +239,7 @@ function lengthOfLongestSubstring(s) {
         },
         {
             kind: "table",
-            title: "⏱️ Complexity",
+            title: "Complexity",
             headers: ["Variant", "Time", "Space", "Why"],
             rows: [
                 [
@@ -282,7 +282,7 @@ function lengthOfLongestSubstring(s) {
         },
         {
             kind: "card",
-            title: "🪤 Pitfalls",
+            title: "Pitfalls",
             html:
                 "<ul>" +
                 "<li><b>Recording before the shrink.</b> You will report a window that violates the constraint. " +
@@ -304,7 +304,7 @@ function lengthOfLongestSubstring(s) {
         },
         {
             kind: "card",
-            title: "🚫 Alternatives, and when NOT to slide",
+            title: "Alternatives, and when NOT to slide",
             html:
                 "<ul>" +
                 "<li><b>Prefix sums + hash map.</b> Required once the constraint is non-monotone (signed " +
@@ -410,7 +410,7 @@ function lengthOfLongestSubstring(s) {
         },
         {
             kind: "card",
-            title: "🔥 Real-World Usage",
+            title: "Real-World Usage",
             html:
                 "Substring problems, log analysis (find the burst window in an error log), sensor data " +
                 "windows (rolling average, min/max over the last N seconds), rate limiting (per-API-key " +

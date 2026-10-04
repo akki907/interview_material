@@ -8,7 +8,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>Everything is an object. Names bind to objects. Mutable vs immutable.</p>" +
                 "<p><b>The invariant that makes almost every Python bug make sense:</b> a name is only a " +
@@ -33,7 +33,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔗 Names, objects and mutation",
+            title: "Names, objects and mutation",
             html: `<pre><code class="language-python">a = [1, 2]      # a -> object X
 b = a             # b -> the SAME object X
 b.append(3)
@@ -55,15 +55,15 @@ d = copy.deepcopy(a)   # new objects all the way down</code></pre>
         },
         {
             kind: "card",
-            title: "🆚 Built-in containers",
+            title: "Built-in containers",
             html: "<p>Pick the container that gives you the cheapest operation for the access pattern you actually have.</p>",
         },
-        // The costs table was rendered as a nested card inside "🆚 Built-in
+        // The costs table was rendered as a nested card inside "Built-in
         // containers"; nesting is not expressible as content data, so it follows
         // the lead card as its own block.
         {
             kind: "card",
-            title: "📐 Costs, and where they degrade",
+            title: "Costs, and where they degrade",
             html: `<table class="complexity-table">
 <tr><th>Container</th><th>Lookup by key</th><th>Lookup by index</th><th>Insert / remove</th><th>Best for</th></tr>
 <tr><td><code>list</code></td><td>—</td><td>O(1)</td><td>O(1) append / O(n) insert</td><td>Ordered sequence, stack</td></tr>
@@ -84,7 +84,7 @@ d = copy.deepcopy(a)   # new objects all the way down</code></pre>
         // together here.
         {
             kind: "card",
-            title: "🔍 How a name becomes a value",
+            title: "How a name becomes a value",
             html:
                 "<p>The compiler decides at compile time which of these instructions to emit; that is why " +
                 "<code>global x</code> changes the lookup and why a local shadows a global even before it is " +
@@ -108,7 +108,7 @@ d = copy.deepcopy(a)   # new objects all the way down</code></pre>
         },
         {
             kind: "code",
-            title: "💻 Example",
+            title: "Example",
             language: "python",
             code: `# List comprehension vs loop
 squares = [x**2 for x in range(10) if x % 2 == 0]
@@ -117,7 +117,7 @@ squares_gen = (x**2 for x in range(10))`,
         },
         {
             kind: "card",
-            title: "🧬 Comprehensions",
+            title: "Comprehensions",
             html: `<p>Every comprehension is secretly a loop that builds a list — except generator expressions, which build
 a generator. Writing the loop by hand costs two extra lines and is easier to debug, so the comprehension
 is a style choice, not a performance choice.</p>
@@ -142,7 +142,7 @@ enclosing function — a classic 3.0 migration bug.</p>`,
         },
         {
             kind: "card",
-            title: "🔢 Numbers, hashing and equality",
+            title: "Numbers, hashing and equality",
             html: `<pre><code class="language-python">print(10 ** 20 == int("100000000000000000000"))  # True
 print(1 / 3 * 3 == 1.0)                             # False (float)
 print(0.1 + 0.2 == 0.3)                             # False! use math.isclose
@@ -165,7 +165,7 @@ print({p, P(1)})             # one entry: equal items collapse</code></pre>
         },
         {
             kind: "card",
-            title: "🐍 Version context that matters",
+            title: "Version context that matters",
             html: `<table class="complexity-table">
 <tr><th>Release</th><th>What changed for an interview</th></tr>
 <tr><td>3.11+</td><td>Specializing adaptive interpreter, ~10-60% faster; ExceptionGroup; <code>tomllib</code>; <code>asyncio.TaskGroup</code>; <code>Self</code> typing.</td></tr>
@@ -180,7 +180,7 @@ builds."</p>`,
         },
         {
             kind: "card",
-            title: "📊 Object model and memory",
+            title: "Object model and memory",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li>Containers hold <b>references</b>. A <code>list[int]</code> of small ints stores pointers to shared " +
@@ -198,7 +198,7 @@ builds."</p>`,
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls & gotchas",
+            title: "Pitfalls & gotchas",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li><b>Mutable default argument</b> <code>def f(x, acc=[])</code> — the default is evaluated once at " +
@@ -223,7 +223,7 @@ builds."</p>`,
         },
         {
             kind: "table",
-            title: "⏱️ Complexity cheat sheet",
+            title: "Complexity cheat sheet",
             headers: ["Expression", "Time", "Notes on the bound"],
             rows: [
                 [
@@ -262,7 +262,7 @@ builds."</p>`,
             ],
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "🎤 Interview Q&A" },
+        { kind: "card", title: "Interview Q&A" },
         {
             kind: "collapsible",
             title: "Are Python lists / dicts really O(1)? What is the amortised part?",
@@ -309,7 +309,7 @@ builds."</p>`,
         },
         {
             kind: "card",
-            title: "🔥 Real-world usage",
+            title: "Real-world usage",
             html:
                 "Django/DRF views parse <code>request.query_params</code> into plain dicts, validating that clients " +
                 "cannot mutate shared state. Configuration objects are frozen dataclasses. Caching layers key on " +
@@ -318,7 +318,7 @@ builds."</p>`,
         },
         {
             kind: "card",
-            title: "🗣️ What to say out loud",
+            title: "What to say out loud",
             html:
                 'Start from "names bind to objects", show the aliasing trace on the whiteboard, then move to ' +
                 "container choice and the <code>hash</code>/<code>__eq__</code> contract. That covers roughly fifteen " +

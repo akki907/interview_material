@@ -171,7 +171,7 @@ export function Stepper({
             )}
 
             {code && (
-                <pre className="mt-3 overflow-x-auto rounded-xl bg-code p-3 text-[0.85rem] leading-relaxed text-[#e6edf7]">
+                <pre className="mt-3 overflow-x-auto rounded-xl bg-code p-3 text-[0.85rem] leading-relaxed text-code-ink">
                     <code>{code}</code>
                 </pre>
             )}

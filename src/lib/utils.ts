@@ -6,9 +6,9 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
-/** Difficulty pips (★/☆) used by the interview Q&A banks. */
+/** Difficulty pips (/) used by the interview Q&A banks. */
 export function difficultyStars(level: 1 | 2 | 3 | 4 | 5): string {
-    return "★".repeat(level) + "☆".repeat(5 - level);
+    return "".repeat(level) + "".repeat(5 - level);
 }
 
 /** Two-digit zero pad, for the interview timer. */

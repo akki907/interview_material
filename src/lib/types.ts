@@ -31,9 +31,28 @@ export interface NavEntry {
 }
 
 export interface Flashcard {
+    /** Stable across content edits; the review schedule is keyed by it. */
+    id: string;
     cat: string;
     front: string;
     back: string;
+}
+
+/** How well the learner recalled a card. Maps onto SM-2 quality. */
+export type ReviewGrade = "again" | "hard" | "good" | "easy";
+
+/** Scheduling state for one card. Absent means the card has never been seen. */
+export interface ReviewState {
+    /** SM-2 ease factor; rises for easy recalls, falls for failures. */
+    ease: number;
+    /** Days until the next review, measured from the last one. */
+    intervalDays: number;
+    /** Epoch ms at which the card next becomes due. */
+    due: number;
+    /** Consecutive successful recalls; reset to 0 by a lapse. */
+    reps: number;
+    lapses: number;
+    lastReviewed: number | null;
 }
 
 export interface InterviewQuestion {
@@ -113,6 +132,20 @@ export interface CollapsibleBlock {
     open?: boolean;
 }
 
+/**
+ * Synthetic block produced by the renderer, not authored in content modules.
+ *
+ * Several content modules were migrated from a nested layout to this flat block
+ * list, leaving behind a title-only `card` immediately before the block it used
+ * to wrap. Drawn on its own such a card renders as an empty shell. The renderer
+ * folds it into the following block(s) so the title becomes that card's header.
+ */
+export interface TitledGroupBlock {
+    kind: "titled-group";
+    title?: string;
+    items: ContentBlock[];
+}
+
 export interface TableBlock {
     kind: "table";
     title?: string;
@@ -170,6 +203,7 @@ export type ContentBlock =
     | CardBlock
     | QABlock
     | CollapsibleBlock
+    | TitledGroupBlock
     | TableBlock
     | ChipsBlock
     | DefListBlock

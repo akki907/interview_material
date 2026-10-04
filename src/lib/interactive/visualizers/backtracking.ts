@@ -278,7 +278,7 @@ function mazeProblem(maze: string): string | null {
 
 export const backtrackingMaze: VisualizerSpec = {
     algo: "backtracking",
-    title: "▶️ Backtracking, step by step",
+    title: "Backtracking, step by step",
     fields: [
         {
             id: "maze",

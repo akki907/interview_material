@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 `
 <p>A binary tree is a recursive structure: a node, a left child, a right child. Almost every
@@ -22,7 +22,7 @@ height 0 or 1 depending on the problem statement; read it).</p>`,
         },
         {
             kind: "card",
-            title: "🌲 Traversal order is a position choice",
+            title: "Traversal order is a position choice",
             html:
                 `
 <p>Preorder: process, then left, then right (copy a tree, serialize). Inorder: left, process,
@@ -44,7 +44,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "🔁 DFS recursion vs BFS queue",
+            title: "DFS recursion vs BFS queue",
         },
         {
             kind: "diagram",
@@ -68,7 +68,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Code Example",
+            title: "Code Example",
             language: "python",
             code:
                 `def inorder(node, out):
@@ -100,7 +100,7 @@ def height(node):
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html:
                 `
 <ul style="padding-left:20px;line-height:1.9;">

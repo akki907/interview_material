@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 `
 <p>A string is a sequence. Almost every interview string problem is one of four machines:
@@ -23,7 +23,7 @@ follow-up. Never mutate a string in place in these languages — build a list of
         },
         {
             kind: "card",
-            title: "🔁 Which scan?",
+            title: "Which scan?",
             html:
                 `
 <p>If the answer is a contiguous substring, you want a window. If it is a pair of
@@ -49,7 +49,7 @@ flowchart TD
         },
         {
             kind: "table",
-            title: "⚡ Common Patterns",
+            title: "Common Patterns",
             headers: ["Pattern", "Canonical problem", "Time", "Trap"],
             rows:
                                     [
@@ -93,7 +93,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "🪞 Palindrome as two pointers",
+            title: "Palindrome as two pointers",
             html:
                 `
 <p>Left and right walk inward. The invariant: everything outside <code>[L, R]</code> is
@@ -118,7 +118,7 @@ flowchart LR
         },
         {
             kind: "code",
-            title: "💻 Examples",
+            title: "Examples",
             language: "python",
             code:
                 `def is_palindrome(s: str) -> bool:
@@ -145,7 +145,7 @@ def reverse_words(s: str) -> str:
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html:
                 `
 <ul style="padding-left:20px;line-height:1.9;">

@@ -1,12 +1,20 @@
-// src/app/Header.tsx — breadcrumb, search, sidebar trigger, theme toggle
-import { useMemo, useState } from "react";
+// src/app/Header.tsx — breadcrumb, command palette, theme toggle
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { MoonIcon, SearchIcon, SunIcon } from "lucide-react";
 import { TOPIC_LABELS } from "../lib/data";
 import { NAV_INDEX, hrefFor, idFromPath } from "../lib/routes";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
+import { Button, buttonVariants } from "../components/ui/button";
+import { Command } from "../components/ui/command";
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+} from "../components/ui/breadcrumb";
+import { cn } from "../lib/utils";
 
 export function Header({
     theme,
@@ -17,31 +25,56 @@ export function Header({
     onToggleTheme: () => void;
     sidebarTrigger: React.ReactNode;
 }) {
-    const [query, setQuery] = useState("");
+    const [paletteOpen, setPaletteOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
-    const results = useMemo(() => {
-        const q = query.trim().toLowerCase();
-        if (!q) return [];
-        return NAV_INDEX.filter((t) => t.label.toLowerCase().includes(q)).slice(
-            0,
-            8,
-        );
-    }, [query]);
-
-    const go = (id: string) => {
-        setQuery("");
-        navigate(hrefFor(id));
-    };
-
-    // Breadcrumb label comes from router state, not the global location object,
-    // so it updates on client-side navigation.
+    // Breadcrumb labels come from router state, not the global location object,
+    // so they update on client-side navigation. The group is the second level:
+    // a topic lives under exactly one group in NAV.
     const topicId = idFromPath(location.pathname);
     const current = TOPIC_LABELS[topicId];
+    const group = NAV_INDEX.find((t) => t.id === topicId)?.group;
+    const crumbs =
+        current && group && group !== "Overview"
+            ? [group, current]
+            : current
+              ? [current]
+              : [];
+
+    const go = (id: string) => {
+        navigate(hrefFor(id));
+        setPaletteOpen(false);
+    };
+
+    // Cmd+K / Ctrl+K opens the palette. Bound on the document rather than the
+    // input so the shortcut works from anywhere, including a topic body.
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key.toLowerCase() === "k" && (e.metaKey || e.ctrlKey)) {
+                e.preventDefault();
+                setPaletteOpen((o) => !o);
+            }
+        };
+        document.addEventListener("keydown", onKey);
+        return () => document.removeEventListener("keydown", onKey);
+    }, []);
+
+    const commands = useMemo(
+        () =>
+            NAV_INDEX.map((t) => ({
+                id: t.id,
+                label: t.label,
+                hint: t.group,
+                onSelect: () => go(t.id),
+            })),
+        // `go` closes over navigate, which is stable for the router's lifetime.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [],
+    );
 
     return (
-        <header className="sticky top-0 z-30 shrink-0 border-b border-rule bg-paper">
+        <header className="sticky top-0 z-30 shrink-0 border-b border-rule bg-paper/85 backdrop-blur-md">
             <div className="flex h-header items-center gap-2 px-4 sm:gap-3 sm:px-8 lg:px-10">
                 {sidebarTrigger}
 
@@ -49,56 +82,20 @@ export function Header({
                     Interview OS
                 </span>
 
-                <div className="relative min-w-0 flex-1">
-                    <SearchIcon className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted" />
-                    <Input
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        onKeyDown={(e) => {
-                            if (e.key === "Escape") setQuery("");
-                            if (e.key === "Enter" && results[0])
-                                go(results[0].id);
-                        }}
-                        placeholder="Search topics…"
-                        aria-label="Search topics"
-                        className="pl-9"
-                    />
-
-                    <AnimatePresence>
-                        {results.length > 0 && (
-                            <motion.ul
-                                key="results"
-                                initial={{ opacity: 0, y: -6 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -6 }}
-                                transition={{ duration: 0.15, ease: "easeOut" }}
-                                className="absolute top-full right-0 left-0 z-40 mt-1 overflow-hidden rounded-md border border-rule bg-surface shadow-float"
-                            >
-                                {results.map((r, i) => (
-                                    <motion.li
-                                        key={r.id}
-                                        initial={{ opacity: 0, x: -4 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: i * 0.02 }}
-                                    >
-                                        <Button
-                                            variant="ghost"
-                                            onClick={() => go(r.id)}
-                                            className="h-auto w-full flex-col items-start px-3 py-2 text-left"
-                                        >
-                                            <span className="text-sm">
-                                                {r.label}
-                                            </span>
-                                            <span className="text-[11px] text-muted">
-                                                {r.group}
-                                            </span>
-                                        </Button>
-                                    </motion.li>
-                                ))}
-                            </motion.ul>
-                        )}
-                    </AnimatePresence>
-                </div>
+                <button
+                    type="button"
+                    onClick={() => setPaletteOpen(true)}
+                    className={cn(
+                        buttonVariants({ variant: "outline", size: "sm" }),
+                        "group ml-auto min-w-0 flex-1 justify-start gap-2 px-3 font-normal text-muted md:max-w-md",
+                    )}
+                >
+                    <SearchIcon className="size-4 shrink-0" />
+                    <span className="truncate">Search topics…</span>
+                    <kbd className="ml-auto hidden shrink-0 rounded border border-rule bg-neutral px-1.5 py-0.5 font-mono text-[10px] text-muted sm:inline-block">
+                       K
+                    </kbd>
+                </button>
 
                 <Button
                     variant="outline"
@@ -123,20 +120,51 @@ export function Header({
                 </Button>
             </div>
 
-            <AnimatePresence mode="wait">
-                {current && (
-                    <motion.p
-                        key={current}
-                        initial={{ opacity: 0, y: -4 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 4 }}
-                        transition={{ duration: 0.18 }}
-                        className="px-4 pb-2 text-[11px] tracking-wider text-muted uppercase sm:px-8 lg:px-10"
-                    >
-                        {current}
-                    </motion.p>
-                )}
-            </AnimatePresence>
+            {crumbs.length > 0 && (
+                <motion.div
+                    key={crumbs.join("/")}
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.18 }}
+                    className="px-4 pb-2 sm:px-8 lg:px-10"
+                >
+                    <Breadcrumb>
+                        {/* The list holds only <li> children; the route-change
+                            animation lives on this wrapper so the markup stays
+                            valid. */}
+                        <BreadcrumbList className="text-[11px] tracking-wider uppercase">
+                            {crumbs.map((crumb, i) => {
+                                const last = i === crumbs.length - 1;
+                                return (
+                                    <Fragment key={crumb}>
+                                        <BreadcrumbItem>
+                                            {last ? (
+                                                <BreadcrumbPage>
+                                                    {crumb}
+                                                </BreadcrumbPage>
+                                            ) : (
+                                                <span className="text-muted">
+                                                    {crumb}
+                                                </span>
+                                            )}
+                                        </BreadcrumbItem>
+                                        {/* The separator is itself an <li>, so it
+                                            sits beside the item rather than
+                                            inside it. */}
+                                        {!last && <BreadcrumbSeparator />}
+                                    </Fragment>
+                                );
+                            })}
+                        </BreadcrumbList>
+                    </Breadcrumb>
+                </motion.div>
+            )}
+
+            <Command
+                open={paletteOpen}
+                onOpenChange={setPaletteOpen}
+                items={commands}
+            />
         </header>
     );
 }

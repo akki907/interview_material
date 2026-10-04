@@ -324,7 +324,7 @@ const MAZE = "11110/10111/10111/10101/10011";
 
 export const graphBfs: VisualizerSpec = {
     algo: "graph",
-    title: "▶️ BFS and DFS, step by step",
+    title: "BFS and DFS, step by step",
     fields: [
         {
             id: "maze",

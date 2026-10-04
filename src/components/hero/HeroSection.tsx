@@ -1,107 +1,78 @@
-import { DotPattern } from "../../components/animated/DotPattern";
-import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card";
-import { Button } from "../../components/ui/button";
-import { PageHeader } from "../../components/app/PageHeader";
-import { StatTiles } from "../../components/app/StatTiles";
+// src/components/hero/HeroSection.tsx
+//
+// The dashboard's welcome panel. It is a Card like everything else on the page
+// — the decorative dot pattern is absolutely positioned inside this card, not
+// fixed to the viewport, so it stays clipped to the panel instead of painting
+// behind the sidebar and header.
+import type { ReactNode } from "react";
+import { Meteors } from "../animated/Meteors";
+import { GridPattern } from "../animated/GridPattern";
+import { DotPattern } from "../animated/DotPattern";
+import { Card, CardContent } from "../ui/card";
 
-/**
- * HeroSection — a full-width hero block with interactive dot-pattern
- * background (Aceternity-style), title/subtitle, stat tiles, insight
- * cards, and footer controls.
- */
-function HeroSection({
+export function HeroSection({
     title,
     subtitle,
-    primaryColor = "#3b82f6",
-    secondaryColor = "#6366f1",
-    hasAnimations = true,
-    animationType = "dots",
+    children,
 }: {
     title: string;
     subtitle: string;
-    primaryColor?: string;
-    secondaryColor?: string;
-    hasAnimations?: boolean;
-    animationType?: "dots" | "grid" | "none";
+    /** Stat tiles or any other content that belongs under the heading. */
+    children?: ReactNode;
 }) {
     return (
-        <div className="relative min-h-[600px] flex flex-col items-center justify-center p-4">
-            {/* Background pattern — three layered dot patterns for a dynamic mesh */}
-            {hasAnimations && animationType === "dots" && (
-                <>
-                    <DotPattern
-                        className="fixed inset-0 z-[-1]"
-                        gap={18}
-                        radius={1}
-                        color={primaryColor}
-                        glow="var(--focus)"
-                    />
-                    <DotPattern
-                        className="fixed inset-0 z-[-2]"
-                        gap={24}
-                        radius={0.5}
-                        color={secondaryColor}
-                        glow="var(--focus)"
-                    />
-                    <DotPattern
-                        className="fixed inset-0 z-[-3]"
-                        gap={32}
-                        radius={0.8}
-                        color="var(--rule)"
-                        glow="var(--focus)"
-                    />
-                </>
-            )}
-
-            {/* Header */}
-            <PageHeader title={title} intro={subtitle} />
-
-            {/* Stat tiles */}
-            <StatTiles
-                tiles={[
-                    { label: "Problems Solved", value: "142", tone: "text-focus" },
-                    { label: "Topics Completed", value: "89", tone: "text-c1i" },
-                    { label: "Streak", value: "14 days 🔥", tone: "text-c3i" },
-                    { label: "Learning Hours", value: "128", tone: "text-c5i" },
-                ]}
-                className="mb-8"
-            />
-
-            {/* Insights cards grid */}
-            <div className="grid gap-4 w-full max-w-4xl">
-                {[1, 2, 3].map((num) => (
-                    <Card
-                        key={num}
-                        className="rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300"
-                    >
-                        <CardHeader>
-                            <CardTitle>Quick Insight {num}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm text-muted leading-relaxed">
-                                This is a sample insight card. In a real scenario, this would display
-                                detailed information about the selected metric.
-                            </p>
-                        </CardContent>
-                    </Card>
-                ))}
+        <Card className="relative mb-6 overflow-hidden">
+            {/* The mask fades the dots out toward the panel edges so the card
+                does not end on a hard grid line. */}
+            <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-0 opacity-70"
+                style={{
+                    maskImage:
+                        "radial-gradient(120% 100% at 50% 0%, black 40%, transparent 100%)",
+                    WebkitMaskImage:
+                        "radial-gradient(120% 100% at 50% 0%, black 40%, transparent 100%)",
+                }}
+            >
+                <DotPattern
+                    className="absolute inset-0"
+                    gap={22}
+                    radius={1}
+                    color="var(--rule)"
+                    glow="var(--focus)"
+                />
             </div>
-
-            {/* Footer controls */}
-            <div className="mt-8 flex items-center justify-center gap-3">
-                <Button
-                    variant="primary"
-                    size="sm"
-                    onClick={() => console.log("Explore More clicked")}
+            {/* Meteors and the cursor-tracked grid sit behind the existing dot
+                pattern at low opacity. All three are decorative and
+                pointer-events-none, so the panel stays readable and clickable. */}
+            <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+                <Meteors count={10} className="absolute inset-0 opacity-40" />
+                <div
+                    className="absolute inset-0 opacity-60"
+                    style={{
+                        maskImage:
+                            "radial-gradient(120% 100% at 50% 0%, black 30%, transparent 100%)",
+                        WebkitMaskImage:
+                            "radial-gradient(120% 100% at 50% 0%, black 30%, transparent 100%)",
+                    }}
                 >
-                    Explore More
-                </Button>
-                <Button variant="ghost" size="icon" aria-label="Back">
-                    ← Back
-                </Button>
+                    <GridPattern
+                        className="absolute inset-0"
+                        cell={56}
+                        glowColor="var(--c2i)"
+                    />
+                </div>
             </div>
-        </div>
+
+            <CardContent className="relative z-10 px-6 py-7 sm:px-8 sm:py-8">
+                <h1 className="font-serif text-[clamp(28px,4.5vw,40px)] leading-[1.06] font-extrabold tracking-[-0.03em] text-ink">
+                    {title}
+                </h1>
+                <p className="mt-1.5 max-w-2xl leading-relaxed text-muted">
+                    {subtitle}
+                </p>
+                {children && <div className="mt-5">{children}</div>}
+            </CardContent>
+        </Card>
     );
 }
-
-export { HeroSection };

@@ -7,12 +7,12 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: "LIFO. Monotonic stack for next greater/smaller element. Parenthesis matching.",
         },
         {
             kind: "card",
-            title: "🧠 Core idea and the invariant",
+            title: "Core idea and the invariant",
             html: `
         <p>A stack is an adapter over an array or a linked list that only exposes
         <code>push</code> and <code>pop</code> at one end, the <b>top</b>. Restricting the interface
@@ -66,7 +66,7 @@ sequenceDiagram
         // monotonic-stack worked trace below.
         {
             kind: "card",
-            title: "🔁 Monotonic stack: the nearest greater element",
+            title: "Monotonic stack: the nearest greater element",
             html: `
         <p><b>The problem.</b> For every index <code>i</code>, find the first index to its right whose
         value is strictly greater. Example: <code>nums = [2, 1, 4, 6, 3, 5]</code> &rarr; answers are
@@ -109,7 +109,7 @@ flowchart TD
         },
         {
             kind: "table",
-            title: "🔍 Worked trace — next greater element of [2, 1, 4, 6, 3, 5]",
+            title: "Worked trace — next greater element of [2, 1, 4, 6, 3, 5]",
             headers: [
                 "i",
                 "x",
@@ -170,7 +170,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Implementation: annotated",
+            title: "Implementation: annotated",
             language: "javascript",
             code: `// Next greater element to the right. One pass, O(n) time, O(n) space.
 // Baseline: for each i, scan i+1..n-1 -&gt; O(n^2) on a decreasing array.
@@ -199,7 +199,7 @@ function nextGreater(nums) {
         },
         {
             kind: "code",
-            title: "💻 Code Example",
+            title: "Code Example",
             language: "javascript",
             code: `// Monotonic Increasing Stack
 const stack = [];
@@ -212,7 +212,7 @@ for (let i = 0; i < nums.length; i++) {
         },
         {
             kind: "table",
-            title: "⏱️ Complexity, and where the bound degrades",
+            title: "Complexity, and where the bound degrades",
             headers: [
                 "Operation / algorithm",
                 "Time",
@@ -272,7 +272,7 @@ for (let i = 0; i < nums.length; i++) {
         },
         {
             kind: "card",
-            title: "🚦 When a queue beats a stack",
+            title: "When a queue beats a stack",
             html: `
         <p>A stack gives you "the most recent thing". If the question you are answering is "the
         <em>first</em> thing that arrived" or "the one with the smallest key so far, where ties go
@@ -305,7 +305,7 @@ for (let i = 0; i < nums.length; i++) {
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html: `
         <ul>
             <li><b>Popping an empty stack.</b> In JS that yields <code>undefined</code> and then a
@@ -363,7 +363,7 @@ for (let i = 0; i < nums.length; i++) {
         },
         {
             kind: "card",
-            title: "🏭 Real-world usage",
+            title: "Real-world usage",
             html: `
         <ul>
             <li><b>Every programming language runtime.</b> Call frames, the mechanism behind recursion

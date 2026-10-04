@@ -32,7 +32,8 @@ const viz = () =>
 const status = () =>
     viz().locator('[role="status"][aria-live="polite"]').first();
 const btn = (name) => viz().getByRole("button", { name, exact: true });
-const tab = (name) => page.getByRole("tab", { name, exact: true });
+const tab = (name) => viz().getByRole("tab", { name, exact: true });
+const tabCount = () => viz().getByRole("tab").count();
 
 async function runToEnd(narrate) {
     for (let guard = 0; guard < 60; guard++) {
@@ -74,11 +75,7 @@ check(
 
 // ── Try it ──────────────────────────────────────────────────────
 check("aria-live region present", (await status().count()) > 0);
-check(
-    "three tabs render",
-    (await page.getByRole("tab").count()) === 3,
-    `${await page.getByRole("tab").count()} tabs`,
-);
+check("three tabs render", (await tabCount()) === 3, `${await tabCount()} tabs`);
 
 await page.getByRole("button", { name: "index 0, value 2" }).click();
 await page.getByRole("button", { name: "index 1, value 7" }).click();
@@ -267,7 +264,7 @@ await page.waitForTimeout(250);
 check(
     "recovers once the inputs are valid again",
     (await viz().locator("text=at least two numbers").count()) === 0 &&
-        (await page.getByRole("tab").count()) === 3,
+        (await tabCount()) === 3,
 );
 
 // ── Theme toggle ────────────────────────────────────────────────

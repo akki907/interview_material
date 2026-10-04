@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 How to answer Python questions",
+            title: "How to answer Python questions",
             html:
                 "<p>Every Python question is really one of four: <b>object model</b> (names, mutability, hashing), " +
                 "<b>language protocol</b> (iterators, descriptors, dunders), <b>runtime semantics</b> (scoping, " +
@@ -17,7 +17,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🎯 Core language",
+            title: "Core language",
             headers: ["Area", "Must-know"],
             rows: [
                 [
@@ -52,7 +52,7 @@ registerContent({
             ],
         },
         // The legacy card was an empty wrapper around the diagram below.
-        { kind: "card", title: "🐍 Python-specific & version-aware" },
+        { kind: "card", title: "Python-specific & version-aware" },
         {
             kind: "diagram",
             caption:
@@ -72,7 +72,7 @@ registerContent({
     V14 --> CHECK`,
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "⏱️ Performance questions" },
+        { kind: "card", title: "Performance questions" },
         {
             kind: "collapsible",
             title: "Why is my list operation slow, and how do I profile it?",
@@ -109,7 +109,7 @@ registerContent({
                 "two usually close the gap.</p>",
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "🧩 Tricky and gotcha questions" },
+        { kind: "card", title: "Tricky and gotcha questions" },
         {
             kind: "collapsible",
             title: "What is MRO in Python?",
@@ -202,7 +202,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "📌 The five answers that always land",
+            title: "The five answers that always land",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li><b>Names bind to objects</b> — assignment copies a reference, never the object.</li>" +
@@ -218,7 +218,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🗣️ Interview tactics",
+            title: "Interview tactics",
             html:
                 "Open with the one-line invariant, give the smallest runnable example, then volunteer the trap you " +
                 "have seen in production. Interviewers are listening for whether you know when the technique " +

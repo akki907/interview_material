@@ -11,7 +11,7 @@ registerContent({
             // here as text; the legacy inline styles were rewritten to the new
             // app's theme classes because styles.css is no longer loaded.
             kind: "card",
-            title: "🎬 Request Distribution",
+            title: "Request Distribution",
             html:
                 '<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">' +
                 '<div style="padding:12px 16px;border-radius:8px;background:var(--c4);color:var(--c1i);">Server 1</div>' +
@@ -22,7 +22,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p>A load balancer is a single logical entry point that decides, for every connection, " +
                 "which server actually handles it. It exists for three reasons: " +
@@ -36,7 +36,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧭 Where the Decision Happens: L4 vs L7",
+            title: "Where the Decision Happens: L4 vs L7",
             html:
                 "<p><strong>L4 (transport)</strong> balances TCP or UDP connections without reading the " +
                 "payload. It is fast, protocol-agnostic, preserves the client IP, and cannot route on " +
@@ -64,7 +64,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🩺 The Health-Check Loop",
+            title: "The Health-Check Loop",
             html:
                 "<p>Active checks probe a known endpoint; passive checks watch real traffic for failures. " +
                 "Active finds a hung process before users do. Passive finds failures that only appear " +
@@ -93,7 +93,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚡ Algorithms",
+            title: "Algorithms",
             headers: ["Algorithm", "How it picks", "Good for", "Breaks when"],
             rows: [
                 [
@@ -136,7 +136,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔗 Consistent Hashing and Sticky Sessions",
+            title: "Consistent Hashing and Sticky Sessions",
             html:
                 "<p>Sticky sessions buy cache locality at a price: when a server dies, 1/N of users " +
                 "all land on the survivors at once. Consistent hashing makes that reshuffle " +
@@ -161,7 +161,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Capacity Math and the LB Itself Is a SPOF",
+            title: "Capacity Math and the LB Itself Is a SPOF",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 [
@@ -198,7 +198,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Failure Modes and Pitfalls",
+            title: "Failure Modes and Pitfalls",
             html:
                 "<ul>" +
                 "<li><strong>Cascading failure / retry storm.</strong> When a node slows, clients " +

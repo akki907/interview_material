@@ -137,7 +137,7 @@ function summary(
 
 export const twoPointers: VisualizerSpec = {
     algo: "two-pointers",
-    title: "▶️ Two pointers, step by step",
+    title: "Two pointers, step by step",
     fields: [
         {
             id: "heights",

@@ -11,7 +11,7 @@ registerContent({
             // below; the click-to-toast interactivity has no content-data
             // equivalent.
             kind: "card",
-            title: "🎬 Cache Flow",
+            title: "Cache Flow",
             html:
                 "<p>The request path through the cache tiers: the client asks, the cache either " +
                 "answers or walks down to the database and stores on the way back. The legacy page " +
@@ -28,7 +28,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p>Caching trades freshness and memory for latency and load. You are not making the " +
                 "database faster — you are deciding how many requests the database never has to " +
@@ -44,7 +44,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏗️ The Cache Hierarchy",
+            title: "The Cache Hierarchy",
             html:
                 "<p>Layer the caches so each one absorbs the traffic of the layer below. The rule of " +
                 "thumb: put a cache as close to the requester as the data's staleness budget allows, " +
@@ -115,7 +115,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "✍️ Write Strategies",
+            title: "Write Strategies",
             html:
                 "<p>Read paths are easy to get right; write paths are where caches break. The four " +
                 "patterns differ in <em>who</em> writes the cache and <em>when</em> the source of truth " +
@@ -172,7 +172,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💥 Stampede Protection",
+            title: "Stampede Protection",
             html:
                 "<p>When one hot key expires, every concurrent request misses at the same instant and " +
                 "they all hit the database together. A 20,000-instance fleet turns a single expiry into " +
@@ -202,7 +202,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Code: read-through with single-flight and jitter",
+            title: "Code: read-through with single-flight and jitter",
             html:
                 '<pre><code class="language-javascript">const inFlight = new Map();\n' +
                 "\n" +
@@ -246,7 +246,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Capacity Math for a Cache Tier",
+            title: "Capacity Math for a Cache Tier",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 [
@@ -293,7 +293,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🧮 Eviction and Expiry Policies",
+            title: "Eviction and Expiry Policies",
             headers: ["Policy", "Idea", "Best for", "Failure mode"],
             rows: [
                 [
@@ -330,7 +330,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Failure Modes and Pitfalls",
+            title: "Failure Modes and Pitfalls",
             html:
                 "<ul>" +
                 "<li><strong>Cache stampede</strong> — mass simultaneous expiry. Single-flight plus " +

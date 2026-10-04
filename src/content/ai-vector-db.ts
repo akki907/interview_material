@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>A vector database answers <code>find the k vectors most similar to this query, among billions,\n" +
                 "in single-digit milliseconds</code>. Exact search is a full scan — O(N) distance computations per\n" +
@@ -29,7 +29,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔍 What happens on a search",
+            title: "What happens on a search",
             html:
                 "<p>Three stages, and each index type differs only in the first one. Stage 2 is cheap, stage 3 is\n" +
                 "where recall is finally decided, and stage 2 is the one people forget when tuning — searching\n" +
@@ -53,7 +53,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧭 Which index, and when",
+            title: "Which index, and when",
             html:
                 "<p>Follow the decision tree. Two rules dominate: below ~100k vectors just brute-force, and above\n" +
                 "~10M with a memory budget that cannot hold the vectors, reach for compression. Everything in\n" +
@@ -73,7 +73,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⏱️ Index comparison",
+            title: "Index comparison",
             headers: ["Index","Build","Query","Recall","Knobs that matter"],
             rows: [
                 ["Flat (brute force)","O(n) to store, nothing to build","O(n), embarrassingly parallel","<b>Exact — 100%</b>","batch size, SIMD, GPU"],
@@ -86,7 +86,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔢 Worked example: HNSW parameters against measured recall",
+            title: "Worked example: HNSW parameters against measured recall",
             html:
                 "<p>Same 1M-chunk corpus, same 200 held-out queries with a known relevant chunk, d = 1536.\n" +
                 "Latency is p99, recall is recall@10. The numbers below are the shape of a real sweep, not\n" +
@@ -108,7 +108,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: a search you can actually reason about",
+            title: "Implementation: a search you can actually reason about",
             html:
                 "<pre><code class=\"language-javascript\">const hits = await index.search({\n" +
                 "  vector: normalize(queryVec),      // 1. must be the same normalisation used at write time\n" +
@@ -134,7 +134,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency",
+            title: "Cost and latency",
             headers: ["Quantity","Rule","Why it matters"],
             rows: [
                 ["Memory","<code>n &times; (4d bytes + M &times; 2 &times; 4 bytes)</code>","at 10M vectors and d=1536 with M=16 that is roughly 80 GB — this is the number that forces a sharded or compressed design"],
@@ -148,7 +148,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to use a dedicated vector database",
+            title: "When NOT to use a dedicated vector database",
             html:
                 "<ul>\n" +
                 "<li><strong>You already run Postgres and have under a few million rows.</strong> <code>pgvector</code>\n" +
@@ -166,7 +166,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Post-filtering silently under-fills.</strong> Filter after a <code>topK=10</code>\n" +
@@ -220,7 +220,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>Most traffic never needs the vector index.</strong> Metadata-first resolution\n" +

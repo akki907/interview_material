@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: `
 <p>DP is recursion plus memory, on a DAG of subproblems. You only reach for it when
 (1) the problem has <b>optimal substructure</b> — an optimal answer is composed of
@@ -47,7 +47,7 @@ fills the DAG top-down; tabulation fills it bottom-up in an order that respects 
         },
         {
             kind: "card",
-            title: "🕸️ Overlapping subproblems are a DAG, not a tree",
+            title: "Overlapping subproblems are a DAG, not a tree",
             html: `
 <p>Fibonacci without memo is a binary tree of depth n — Θ(φⁿ) calls. With memo it is n
 nodes and n edges. That picture is the whole pitch: identify the nodes, then decide
@@ -76,7 +76,7 @@ flowchart TD
         },
         {
             kind: "table",
-            title: "⚡ Common Patterns",
+            title: "Common Patterns",
             headers: ["Pattern", "State (typical)", "Transition sketch"],
             rows: [
                 [
@@ -114,7 +114,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "🎒 0/1 knapsack decision",
+            title: "0/1 knapsack decision",
         },
         {
             kind: "diagram",
@@ -132,7 +132,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "💻 Example — coin change (unbounded)",
+            title: "Example — coin change (unbounded)",
             html: `<pre><code class="language-python">def coin_change(coins, amount):
     inf = amount + 1
     dp = [inf] * (amount + 1)
@@ -148,7 +148,7 @@ the capacity <em>downward</em> so each item is spent at most once in a rolling a
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html: `
 <ul style="padding-left:20px;line-height:1.9;">
 <li>State missing a dimension (forgot remaining capacity, or "did I use the previous house").</li>

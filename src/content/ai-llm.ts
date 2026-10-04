@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>A decoder-only LLM does exactly one thing, repeatedly: given a prefix of tokens, emit a\n" +
                 "probability distribution over the vocabulary for the token that comes next. Everything else —\n" +
@@ -34,7 +34,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔀 One request, end to end",
+            title: "One request, end to end",
             html:
                 "<p>Trace the loop. The two arrows that return to <code>Token ids</code> are the whole generation\n" +
                 "process: everything else is setup. Note that the <code>Embedding table lookup</code> is a pure\n" +
@@ -58,7 +58,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚙️ Decoding knobs",
+            title: "Decoding knobs",
             headers: ["Knob","What it changes","Failure mode","Use it when"],
             rows: [
                 ["<code>argmax</code> / T = 0","always the highest-logit token","repeats and loops; cannot escape a bad prefix","classification, extraction, tests, anything compared by string"],
@@ -72,7 +72,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: one client, the settings that matter",
+            title: "Implementation: one client, the settings that matter",
             html:
                 "<pre><code class=\"language-javascript\">const res = await llm.generate({\n" +
                 "  model: 'some-model-id',\n" +
@@ -97,7 +97,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧪 Worked example: one prompt, three temperatures",
+            title: "Worked example: one prompt, three temperatures",
             html:
                 "<p>Prompt: <code>Translate to French: \"The meeting is moved to Thursday.\"</code> Greedy picks\n" +
                 "<code>à</code> because it is the marginally likelier bigram after <em>déplacée</em>, and once\n" +
@@ -117,7 +117,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🗄️ Prefill and decode, and what the KV cache costs",
+            title: "Prefill and decode, and what the KV cache costs",
             html:
                 "<p>Follow the two lanes. Prefill touches every prompt token at once and writes a cache entry per\n" +
                 "layer per token. Decode re-reads the entire cache on every single step — which is why a 4,000\n" +
@@ -139,7 +139,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency, derived not guessed",
+            title: "Cost and latency, derived not guessed",
             headers: ["Quantity","Formula","Worked number"],
             rows: [
                 ["Prefill FLOPs","roughly <code>2 &times; params &times; prompt tokens</code>","2 &times; 7e9 &times; 3,200 &asymp; 4.5e13 FLOPs"],
@@ -154,7 +154,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to reach for an LLM",
+            title: "When NOT to reach for an LLM",
             html:
                 "<ul>\n" +
                 "<li><strong>Exact lookup over known data.</strong> \"Row for order 8812\" is a SQL query. An LLM\n" +
@@ -171,7 +171,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Tokens, not characters.</strong> Budget the context in tokens and measure with the\n" +
@@ -224,7 +224,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>Everything is a state machine around a sampling loop.</strong> Real systems add\n" +

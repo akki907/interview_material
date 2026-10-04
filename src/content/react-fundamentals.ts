@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: `
 <p>A React component is a function from <code>(props, state)</code> to a tree of
 <em>elements</em> — plain objects — not to DOM nodes. JSX is syntax for
@@ -28,7 +28,7 @@ React treats a reorder as delete-plus-insert and remounts state.</li>
         },
         {
             kind: "card",
-            title: "🔁 From JSX to pixels",
+            title: "From JSX to pixels",
             html: `
 <p>Three trees, one direction. You never write the third tree by hand; you author the first
 and React diffs the second.</p>`,
@@ -47,7 +47,7 @@ flowchart LR
         },
         {
             kind: "card",
-            title: "📋 Core Concepts",
+            title: "Core Concepts",
             html: `
 <ul style="padding-left:20px;line-height:1.9;">
 <li><strong>Components</strong> — functions that return elements. Class components still exist;
@@ -65,7 +65,7 @@ synthetic event that wraps the native one. Names are camelCase: <code>onClick</c
         },
         {
             kind: "card",
-            title: "🔑 Reconciliation in one picture",
+            title: "Reconciliation in one picture",
             html: `
 <p>Same position, same type, same key → reuse the fiber and update props. Type change →
 unmount the old subtree and mount a new one. That is why swapping <code>&lt;input&gt;</code>
@@ -88,7 +88,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Example",
+            title: "Example",
             language: "javascript",
             code: `function Counter({ initial = 0 }) {
     const [count, setCount] = useState(initial);
@@ -112,7 +112,7 @@ function Parent() {
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html: `
 <ul style="padding-left:20px;line-height:1.9;">
 <li><b>Mutating props or state</b> — <code>user.name = 'x'; setUser(user)</code> does not

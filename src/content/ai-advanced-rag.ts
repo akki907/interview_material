@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>Naive RAG embeds the query, retrieves the top k, and generates. Advanced RAG is the\n" +
                 "acknowledgement that <b>the query and the document are not the same shape</b>: a user asks a\n" +
@@ -30,7 +30,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔀 Naive vs advanced, stage by stage",
+            title: "Naive vs advanced, stage by stage",
             html:
                 "<p>Every box on the right is a decision you can make independently and measure independently. The\n" +
                 "green boxes are the ones that reliably pay for themselves; the amber ones need a specific failure\n" +
@@ -57,7 +57,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🗺️ The technique landscape",
+            title: "The technique landscape",
             html:
                 "<p>Use this as a menu against a diagnosis, not a shopping list. The branches are ordered roughly\n" +
 "by ratio of benefit to added latency and cost, within each area.</p>",
@@ -105,7 +105,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚙️ Technique trade-offs",
+            title: "Technique trade-offs",
             headers: ["Technique","Fixes","Added latency","Added cost","Verdict"],
             rows: [
                 ["Query rewriting with an LLM","vague, conversational, follow-up questions","one extra generation, 100&ndash;500 ms","one call per query","<b>high value</b> once you have history"],
@@ -121,7 +121,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: query rewriting with a hard budget",
+            title: "Implementation: query rewriting with a hard budget",
             html:
                 "<pre><code class=\"language-javascript\">const REWRITE_PROMPT =\n" +
                 "  'Rewrite the user question as a standalone search query. ' +\n" +
@@ -160,7 +160,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧪 Worked example: what each technique fixes",
+            title: "Worked example: what each technique fixes",
             html:
                 "<p>Question with conversation history: <em>\"what about the other one then?\"</em> The prior turns\n" +
                 "were about a Pro plan trial and a failed payment. Relevant corpus section: \"Downgrading from Pro\n" +
@@ -179,7 +179,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency of the advanced path",
+            title: "Cost and latency of the advanced path",
             headers: ["Added stage","Latency","Cost multiplier","Worth it when"],
             rows: [
                 ["Query rewriting","100&ndash;500 ms","+1 generation","there is conversation history, or the query is under ~5 words"],
@@ -193,7 +193,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to go advanced",
+            title: "When NOT to go advanced",
             html:
                 "<ul>\n" +
                 "<li><strong>You have not measured the naive baseline.</strong> Most \"we need advanced RAG\" requests\n" +
@@ -212,7 +212,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Rewrites that lose the entity.</strong> \"What about the refund for order 4471\" becomes\n" +
@@ -265,7 +265,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>Gate expensive stages behind a router.</strong> A cheap classifier on the query\n" +

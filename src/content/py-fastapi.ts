@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         // The legacy stages fired a toast on click; the pipeline block keeps the
         // stages but drops that click handler.
-        { kind: "card", title: "🏗️ Architecture" },
+        { kind: "card", title: "Architecture" },
         {
             kind: "pipeline",
             stages: [
@@ -20,7 +20,7 @@ registerContent({
         },
         // The legacy lifecycleSteps were a numbered list with no descriptions, so
         // the step names carry the whole content here.
-        { kind: "card", title: "🔁 Request lifecycle" },
+        { kind: "card", title: "Request lifecycle" },
         {
             kind: "pipeline",
             stages: [
@@ -35,7 +35,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧬 What happens per request",
+            title: "What happens per request",
             html:
                 "<p>Every request walks the same path. The interesting details are the two <code>async def</code> " +
                 "dependency runs (FastAPI inspects signatures at import time and caches the compiled dependant) and " +
@@ -68,7 +68,7 @@ registerContent({
         },
         {
             kind: "code",
-            title: "💻 CRUD Example",
+            title: "CRUD Example",
             language: "python",
             code: `from fastapi import FastAPI
 app = FastAPI()
@@ -83,7 +83,7 @@ async def create(item: ItemSchema):
         },
         {
             kind: "card",
-            title: "🏗️ A complete app",
+            title: "A complete app",
             html: `<pre><code class="language-python">from contextlib import asynccontextmanager
 from typing import Annotated
 
@@ -129,7 +129,7 @@ async def read_item(item_id: int, db: Db) -&gt; ItemOut:
         },
         {
             kind: "card",
-            title: "🧅 Layers, routers and versioning",
+            title: "Layers, routers and versioning",
             html: `<pre><code class="language-python"># routers/items.py
 from fastapi import APIRouter
 
@@ -150,7 +150,7 @@ app.include_router(admin.router, prefix="/v1", dependencies=[Depends(require_adm
         },
         {
             kind: "card",
-            title: "⏱️ Complexity & performance",
+            title: "Complexity & performance",
             html: `<table class="complexity-table">
 <tr><th>Aspect</th><th>Cost</th><th>Bound degrades when</th></tr>
 <tr><td>Routing</td><td>O(1) dict lookup</td><td>Thousands of routes still resolve in microseconds</td></tr>
@@ -166,7 +166,7 @@ process, GIL included.</p>`,
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls & gotchas",
+            title: "Pitfalls & gotchas",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li><b>Blocking the event loop</b> — a synchronous DB driver or <code>requests</code> call inside " +
@@ -187,7 +187,7 @@ process, GIL included.</p>`,
                 "</ul>",
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "🎤 Interview Q&A" },
+        { kind: "card", title: "Interview Q&A" },
         {
             kind: "collapsible",
             title: "Explain the FastAPI request lifecycle.",
@@ -239,7 +239,7 @@ process, GIL included.</p>`,
         },
         {
             kind: "card",
-            title: "🔥 Real-world usage",
+            title: "Real-world usage",
             html:
                 "CRUD and BFF layers in microservice architectures, streaming LLM endpoints that push tokens over " +
                 "SSE, ML inference services behind a queue, internal platform APIs generated from OpenAPI, and auth " +
@@ -248,7 +248,7 @@ process, GIL included.</p>`,
         },
         {
             kind: "card",
-            title: "🗣️ What to say out loud",
+            title: "What to say out loud",
             html:
                 "Walk the lifecycle in order, then name the three performance traps: blocking the loop, N+1 queries, " +
                 "and over-large responses. Finish by saying you would add request timing middleware before optimising " +

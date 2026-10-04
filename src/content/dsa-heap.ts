@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             id: "dsa-heap-core",
             html:
                 `
@@ -27,7 +27,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔢 Index Arithmetic — the Whole Data Structure",
+            title: "Index Arithmetic — the Whole Data Structure",
             html:
                 `
         <p>There are no pointers. Three formulas are the entire "tree":</p>
@@ -59,7 +59,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "🔁 Sift Up and Sift Down",
+            title: "Sift Up and Sift Down",
             html:
                 `
         <p>Every mutation is one of two symmetric operations, and each walks a single root-to-leaf
@@ -86,7 +86,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "🎬 Worked Example — building a min-heap bottom-up",
+            title: "Worked Example — building a min-heap bottom-up",
             id: "dsa-heap-trace",
             html:
                 `
@@ -126,7 +126,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Implementation",
+            title: "Implementation",
             language: "python",
             code:
                 `import heapq
@@ -158,7 +158,7 @@ median = (-low[0] + high[0]) / 2 if high else -low[0]`,
         },
         {
             kind: "collapsible",
-            title: "🔍 Annotated from-scratch sift-down",
+            title: "Annotated from-scratch sift-down",
             html:
                 `
         <pre><code class="language-javascript">function siftDown(a, start, end) {
@@ -196,7 +196,7 @@ function heappop(a) {
         },
         {
             kind: "table",
-            title: "⏱️ Complexity, and When the Bound Degrades",
+            title: "Complexity, and When the Bound Degrades",
             headers: ["Operation", "Time", "Notes and worst case"],
             rows:
                                     [
@@ -244,7 +244,7 @@ function heappop(a) {
         },
         {
             kind: "card",
-            title: "⚖️ Heap vs Sorted Array vs Balanced BST",
+            title: "Heap vs Sorted Array vs Balanced BST",
             html:
                 `
         <p>All three answer "give me the smallest thing". They differ in what else you get for free,
@@ -309,7 +309,7 @@ function heappop(a) {
         },
         {
             kind: "card",
-            title: "🔥 Real-World Usage",
+            title: "Real-World Usage",
             html:
                 `
         <ul>

@@ -8,7 +8,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>Threading for I/O-bound, multiprocessing for CPU-bound, asyncio for high-concurrency I/O.</p>" +
                 "<p><b>The invariant that decides the tool:</b> concurrency buys you <em>overlap of waiting</em>, " +
@@ -22,7 +22,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧭 Choose the tool",
+            title: "Choose the tool",
             html:
                 "<p>Follow the branches: the first question is whether the work spends its time waiting or " +
                 "computing, the second is how many concurrent operations there are.</p>",
@@ -43,7 +43,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚡ When to use what",
+            title: "When to use what",
             headers: ["Task Type", "Tool"],
             rows: [
                 ["I/O-bound", "asyncio / threads"],
@@ -53,7 +53,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "📊 Full comparison",
+            title: "Full comparison",
             html: `<table class="complexity-table">
 <tr><th>Dimension</th><th>threading</th><th>multiprocessing</th><th>asyncio</th></tr>
 <tr><td>Execution model</td><td>N threads, 1 process, 1 interpreter</td><td>N processes, N interpreters</td><td>N tasks, 1 thread</td></tr>
@@ -74,7 +74,7 @@ Python.</p>`,
         },
         {
             kind: "code",
-            title: "💻 Worked example — one program, three regimes",
+            title: "Worked example — one program, three regimes",
             language: "python",
             code: `import asyncio, time
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
@@ -105,7 +105,7 @@ with ThreadPoolExecutor(max_workers=16) as ex:
         },
         {
             kind: "card",
-            title: "🌍 Real-world context",
+            title: "Real-world context",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li><b>Web servers:</b> uvicorn (asyncio) for I/O, gunicorn with " +
@@ -126,7 +126,7 @@ with ThreadPoolExecutor(max_workers=16) as ex:
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls & gotchas",
+            title: "Pitfalls & gotchas",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li><b>Threads for CPU work.</b> Context switching makes it slower than serial execution. Always " +
@@ -148,7 +148,7 @@ with ThreadPoolExecutor(max_workers=16) as ex:
                 "</ul>",
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "🎤 Interview Q&A" },
+        { kind: "card", title: "Interview Q&A" },
         {
             kind: "collapsible",
             title: "You have a slow function. How do you parallelise it in Python?",

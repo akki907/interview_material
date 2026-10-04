@@ -4,11 +4,14 @@ import { persist } from "zustand/middleware";
 import type {
     CheckedMap,
     Progress,
+    ReviewGrade,
+    ReviewState,
     TodoCategory,
     TodoItem,
     TodoPriority,
 } from "./types";
 import { DEFAULT_TODOS } from "./data";
+import { applyReview } from "./srs";
 
 interface AppState {
     progress: Progress;
@@ -16,6 +19,12 @@ interface AppState {
     checked: CheckedMap;
     todos: TodoItem[];
     theme: "light" | "dark";
+
+    /** Scheduling state per flashcard id; absent means never reviewed. */
+    reviews: Record<string, ReviewState>;
+
+    /** Grade a card and return its new schedule. */
+    reviewCard: (id: string, grade: ReviewGrade) => ReviewState;
 
     toggleBookmark: (id: string) => boolean;
     toggleCheck: (id: string) => boolean;
@@ -46,6 +55,8 @@ export const useStore = create<AppState>()(
             checked: {},
             todos: DEFAULT_TODOS,
             theme: initialTheme(),
+            reviews: {},
+
 
             toggleBookmark: (id) => {
                 const on = !get().bookmarks.includes(id);
@@ -118,6 +129,13 @@ export const useStore = create<AppState>()(
 
             resetTodos: () => set({ todos: DEFAULT_TODOS }),
 
+
+            reviewCard: (id, grade) => {
+                const now = Date.now();
+                const next = applyReview(get().reviews[id], grade, now);
+                set({ reviews: { ...get().reviews, [id]: next } });
+                return next;
+            },
             setTheme: (theme) => set({ theme }),
         }),
         {
@@ -129,6 +147,7 @@ export const useStore = create<AppState>()(
                 checked: s.checked,
                 todos: s.todos,
                 theme: s.theme,
+                reviews: s.reviews,
             }),
         },
     ),

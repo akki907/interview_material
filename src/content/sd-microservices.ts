@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p>Microservices is a decision about <strong>team boundaries made " +
                 "physical</strong>. Services are split along bounded contexts so that different teams " +
@@ -21,7 +21,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚖️ Trade-offs",
+            title: "Trade-offs",
             headers: ["", "Microservices", "Monolith"],
             rows: [
                 [
@@ -78,7 +78,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚦 The Boundary and Sync-vs-Async Decision",
+            title: "The Boundary and Sync-vs-Async Decision",
             html:
                 "<p>Split on a <strong>bounded context</strong> — a region of the domain with its " +
                 "own language, rules, and data. Then, for every cross-service call, ask one question: " +
@@ -102,7 +102,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🕐 A Request Crossing Four Services",
+            title: "A Request Crossing Four Services",
             html:
                 "<p>This is what a synchronous design costs. Each hop adds RTT, and each hop adds a " +
                 "p99 that feeds the next — so the p99 of the composite is close to the <em>sum of the " +
@@ -135,7 +135,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🎭 Required Platform Patterns",
+            title: "Required Platform Patterns",
         },
         {
             kind: "table",
@@ -185,7 +185,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Code: a safe synchronous call",
+            title: "Code: a safe synchronous call",
             html:
                 '<pre><code class="language-javascript">// A call that can hang, fail, and be retried — all three must be bounded.\n' +
                 "async function reserveInventory(orderId, items, { deadlineMs = 400 } = {}) {\n" +
@@ -221,7 +221,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Capacity Math and the Distributed Tax",
+            title: "Capacity Math and the Distributed Tax",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 [
@@ -268,7 +268,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to Use Microservices",
+            title: "When NOT to Use Microservices",
             html:
                 "<ul>" +
                 "<li><strong>One team, small product.</strong> You pay the distributed-systems tax in " +
@@ -289,7 +289,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Failure Modes and Pitfalls",
+            title: "Failure Modes and Pitfalls",
             html:
                 "<ul>" +
                 "<li><strong>Cascading failure</strong> — no timeouts means one slow dependency stalls " +

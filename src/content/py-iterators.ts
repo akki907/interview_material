@@ -8,7 +8,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p><code>__iter__</code> returns iterator. Generators use <code>yield</code> to produce values " +
                 "lazily.</p>" +
@@ -21,7 +21,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔄 Protocol state machine",
+            title: "Protocol state machine",
             html:
                 "<p>Follow the state transitions: <code>for</code> asks the iterable for an iterator once, then " +
                 "repeatedly calls <code>next()</code> until <code>StopIteration</code>. The <code>else</code> branch " +
@@ -49,7 +49,7 @@ registerContent({
         },
         {
             kind: "code",
-            title: "💻 Example",
+            title: "Example",
             language: "python",
             code: `def fibonacci():
     a, b = 0, 1
@@ -59,7 +59,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧪 Worked trace",
+            title: "Worked trace",
             html: `<p>Trace <code>list(islice(fibonacci(), 3))</code> — note the generator never builds the infinite series.</p>
 <table class="complexity-table">
 <tr><th>Step</th><th>Call</th><th>Frame state at suspension</th><th>Value</th></tr>
@@ -112,7 +112,7 @@ for x in ReusableCountdown(3): pass   # works again - a new iterator each time</
         },
         {
             kind: "card",
-            title: "🧰 Generator flavours",
+            title: "Generator flavours",
             html: `<table class="complexity-table">
 <tr><th>Form</th><th>Give it</th><th>It gives you</th><th>Typical use</th></tr>
 <tr><td><code>yield</code></td><td>a function containing yield</td><td>a lazy iterator over one series</td><td>Streaming transforms, CSV rows, log tails</td></tr>
@@ -134,7 +134,7 @@ async def events():
         },
         {
             kind: "card",
-            title: "🔗 Laziness pipelines and memory",
+            title: "Laziness pipelines and memory",
             html: `<pre><code class="language-python">from itertools import chain, islice, groupby
 
 # Infinite stream, constant memory, zero work until asked
@@ -162,7 +162,7 @@ defeats the purpose — that is the one sentence to remember about generator per
         },
         {
             kind: "card",
-            title: "⏱️ Complexity",
+            title: "Complexity",
             html: `<table class="complexity-table">
 <tr><th>Aspect</th><th>Generator</th><th>List</th></tr>
 <tr><td>Time to produce n items</td><td>O(total work), interleaved</td><td>O(n) up front, then O(1) reads</td></tr>
@@ -177,7 +177,7 @@ generator is the only option that fits.</p>`,
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls & gotchas",
+            title: "Pitfalls & gotchas",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li><b>Premature finalisation.</b> If a generator holds a resource, wrap the body in " +
@@ -200,7 +200,7 @@ generator is the only option that fits.</p>`,
                 "</ul>",
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "🎤 Interview Q&A" },
+        { kind: "card", title: "Interview Q&A" },
         {
             kind: "collapsible",
             title: "What is the difference between an iterable and an iterator?",
@@ -250,7 +250,7 @@ list(Fibonacci(50))     # restarts cleanly on every iteration</code></pre>`,
         },
         {
             kind: "card",
-            title: "🔥 Real-world usage",
+            title: "Real-world usage",
             html:
                 "Reading multi-gigabyte logs line by line, CSV and Parquet streaming readers, " +
                 "<code>paginate()</code> in Django, async generators streaming SSE or WebSocket chunks, " +
@@ -260,7 +260,7 @@ list(Fibonacci(50))     # restarts cleanly on every iteration</code></pre>`,
         },
         {
             kind: "card",
-            title: "🗣️ What to say out loud",
+            title: "What to say out loud",
             html:
                 'Say "iterable has <code>__iter__</code>, iterator has <code>__next__</code> and is one-shot", ' +
                 "then walk the three-step <code>for</code> protocol. Add the one practical consequence: laziness " +

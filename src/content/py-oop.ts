@@ -8,7 +8,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>Classes, inheritance, MRO (C3 linearization), dataclasses, abstract base classes.</p>" +
                 "<p><b>The invariant that makes attribute access work:</b> <code>obj.attr</code> is never " +
@@ -21,7 +21,7 @@ registerContent({
         // sibling block now, so both paragraphs live in the card body.
         {
             kind: "card",
-            title: "🧭 Attribute lookup and the MRO",
+            title: "Attribute lookup and the MRO",
             html:
                 "<p>Every attribute read walks the method resolution order computed by the C3 linearisation " +
                 "algorithm. Descriptor precedence is what makes <code>property</code>, " +
@@ -46,7 +46,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔢 Worked example — C3 linearisation",
+            title: "Worked example — C3 linearisation",
             html: `<p>For <code>class D(B, C)</code> with <code>B(A)</code> and <code>C(A)</code>:</p>
 <table class="complexity-table">
 <tr><th>Step</th><th>Merge</th><th>Result so far</th></tr>
@@ -77,7 +77,7 @@ also needs initialising, which turns a diamond into a partially built object.</p
         },
         {
             kind: "code",
-            title: "💻 Example",
+            title: "Example",
             language: "python",
             code: `from abc import ABC, abstractmethod
 class Repository(ABC):
@@ -91,7 +91,7 @@ class PostgresRepo(Repository):
         },
         {
             kind: "card",
-            title: "🏗️ Dataclasses, ABCs and protocols",
+            title: "Dataclasses, ABCs and protocols",
             html: `<table class="complexity-table">
 <tr><th>Feature</th><th>Generates</th><th>Use it when</th><th>Cost / gotcha</th></tr>
 <tr><td><code>@dataclass</code></td><td><code>__init__</code>, <code>__repr__</code>, <code>__eq__</code></td><td>Data-carrying value objects</td><td>Boilerplate of the class <em>definition</em> only — per-instance cost is higher than <code>__slots__</code> classes without it</td></tr>
@@ -123,7 +123,7 @@ def persist(repo: SupportsSave, order: Order) -&gt; None:
         },
         {
             kind: "card",
-            title: "🔌 Descriptors & special methods",
+            title: "Descriptors & special methods",
             html: `<p>Anything that implements <code>__get__</code>, <code>__set__</code> or <code>__delete__</code> is a
 descriptor. Python's own features are built on them, which is why "just use <code>property</code>" is
 usually enough for application code and descriptors are reserved for reusable, framework-level behaviour.</p>
@@ -140,7 +140,7 @@ usually enough for application code and descriptors are reserved for reusable, f
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls & gotchas",
+            title: "Pitfalls & gotchas",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li><b>Mutable class attributes are shared by every instance.</b> <code>items = []</code> in the " +
@@ -166,7 +166,7 @@ usually enough for application code and descriptors are reserved for reusable, f
                 "</ul>",
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "🎤 Interview Q&A" },
+        { kind: "card", title: "Interview Q&A" },
         {
             kind: "collapsible",
             title: "What is the MRO and how is it computed?",
@@ -219,7 +219,7 @@ usually enough for application code and descriptors are reserved for reusable, f
         },
         {
             kind: "card",
-            title: "🔥 Real-world usage",
+            title: "Real-world usage",
             html:
                 "Dataclasses model DTOs and events everywhere (Pydantic leans on them, FastAPI generates schemas " +
                 "from annotated functions). <code>ABC</code> underpins repository interfaces in Django service " +
@@ -229,7 +229,7 @@ usually enough for application code and descriptors are reserved for reusable, f
         },
         {
             kind: "card",
-            title: "🗣️ What to say out loud",
+            title: "What to say out loud",
             html:
                 "Anchor on attribute lookup: instance dict versus descriptor is the single idea that explains " +
                 "properties, slots, cached_property and validation in one breath. Then show the MRO for a diamond " +
@@ -237,7 +237,7 @@ usually enough for application code and descriptors are reserved for reusable, f
         },
         {
             kind: "table",
-            title: "📋 Model choice matrix",
+            title: "Model choice matrix",
             headers: ["Situation", "Reach for", "Why"],
             rows: [
                 [
@@ -285,7 +285,7 @@ usually enough for application code and descriptors are reserved for reusable, f
         },
         {
             kind: "card",
-            title: "🗣️ Model choice answers",
+            title: "Model choice answers",
             html:
                 "If you freeze a dataclass and need a mutable variant later, pass " +
                 "<code>dataclasses.replace()</code> a new instance instead of mutating in place — that keeps the " +

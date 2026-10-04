@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             id: "dsa-graph-core",
             html:
                 `
@@ -26,7 +26,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📊 Adjacency List vs Adjacency Matrix",
+            title: "Adjacency List vs Adjacency Matrix",
             headers: ["Dimension", "Adjacency list", "Adjacency matrix"],
             rows:
                                     [
@@ -74,7 +74,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🌊 BFS vs DFS — What the Frontier Looks Like",
+            title: "BFS vs DFS — What the Frontier Looks Like",
             html:
                 `
         <p>Both traverse the same graph and both reach every reachable vertex. They differ in
@@ -106,7 +106,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "🎬 Worked Trace — BFS and DFS on one graph",
+            title: "Worked Trace — BFS and DFS on one graph",
             html:
                 `
         <p>Graph with edges A&ndash;B, A&ndash;C, B&ndash;D, C&ndash;D, C&ndash;E, D&ndash;F, E&ndash;F.
@@ -132,7 +132,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Implementation",
+            title: "Implementation",
             language: "python",
             code:
                 `from collections import deque
@@ -175,7 +175,7 @@ def topological_sort(graph, indegree):
         },
         {
             kind: "card",
-            title: "🧭 Which Shortest-Path Algorithm",
+            title: "Which Shortest-Path Algorithm",
             html:
                 `
         <p>Shortest path is not one algorithm, it is three, selected by the properties of the
@@ -228,7 +228,7 @@ def topological_sort(graph, indegree):
         },
         {
             kind: "card",
-            title: "🎯 Dijkstra — the relaxation trace",
+            title: "Dijkstra — the relaxation trace",
             id: "dsa-graph-dijkstra",
             html:
                 `
@@ -252,7 +252,7 @@ def topological_sort(graph, indegree):
         },
         {
             kind: "card",
-            title: "🕸️ Cycle Detection, Union-Find, and Topological Sort",
+            title: "Cycle Detection, Union-Find, and Topological Sort",
             html:
                 `
         <p>These three share one setup step: <strong>indegree</strong> for directed graphs, or a
@@ -276,7 +276,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html:
                 `
         <ul>
@@ -301,7 +301,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "🔥 Real-World Usage",
+            title: "Real-World Usage",
             html:
                 `
         <ul>

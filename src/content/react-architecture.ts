@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: `
 <p>Architecture in React is mostly about <em>where code runs</em> and <em>who owns state</em>.
 Composition (children, slots, compound components) replaces inheritance. Custom hooks replace
@@ -16,7 +16,7 @@ heavy dependencies to the server so the client bundle only contains interactive 
         },
         {
             kind: "card",
-            title: "🧱 A typical app, layered",
+            title: "A typical app, layered",
             html: `
 <p>Keep the arrows one-way. Feature modules import from UI primitives, not the other way
 around. Server components import clients; clients never import servers.</p>`,
@@ -35,7 +35,7 @@ flowchart TB
         },
         {
             kind: "table",
-            title: "⚡ Patterns",
+            title: "Patterns",
             headers: ["Pattern", "What it solves", "When it hurts"],
             rows: [
                 [
@@ -67,7 +67,7 @@ flowchart TB
         },
         {
             kind: "card",
-            title: "🌐 Server Components vs Client Components",
+            title: "Server Components vs Client Components",
             html: `
 <p>RSC cannot use hooks or browser APIs. They can <code>await</code> a database directly and
 send serialized UI to the client. A file with <code>'use client'</code> is a boundary: that
@@ -88,7 +88,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Compound component sketch",
+            title: "Compound component sketch",
             language: "javascript",
             code: `const TabsContext = createContext(null);
 

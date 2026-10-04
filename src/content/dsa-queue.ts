@@ -7,12 +7,12 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: "FIFO. Use for BFS, level-order traversal, rate limiting.",
         },
         {
             kind: "card",
-            title: "🧠 Core idea and the invariant",
+            title: "Core idea and the invariant",
             html:
                 `
         <p>A queue keeps the <b>first element in</b> as the <b>first element out</b>: <code>enqueue</code>
@@ -35,7 +35,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔁 The circular buffer: why tail wraps",
+            title: "The circular buffer: why tail wraps",
             html:
                 `
         <p>A ring buffer is a fixed array plus two indices. <code>head</code> marks the front element,
@@ -60,7 +60,7 @@ flowchart LR
         },
         {
             kind: "table",
-            title: "🔍 Worked trace — capacity 5, tail = head + size mod 5",
+            title: "Worked trace — capacity 5, tail = head + size mod 5",
             headers:
                                     [
                         "Step",
@@ -149,7 +149,7 @@ flowchart LR
         },
         {
             kind: "card",
-            title: "💻 Implementation: annotated",
+            title: "Implementation: annotated",
             html:
                 `
 <pre><code class="language-javascript">// Fixed-capacity ring buffer. Every operation is O(1) with no reallocation.
@@ -194,7 +194,7 @@ class RingQueue {
         },
         {
             kind: "table",
-            title: "📚 Deque operations side by side",
+            title: "Deque operations side by side",
             headers:
                                     [
                         "Operation",
@@ -262,7 +262,7 @@ class RingQueue {
         },
         {
             kind: "card",
-            title: "🌊 BFS, and why the queue is the proof",
+            title: "BFS, and why the queue is the proof",
             html:
                 `
         <p>BFS is not "a traversal that happens to use a queue". The queue <em>is</em> the correctness
@@ -286,7 +286,7 @@ class RingQueue {
         },
         {
             kind: "card",
-            title: "🔒 Thread-safe and bounded queues",
+            title: "Thread-safe and bounded queues",
             html:
                 `
         <p>A plain queue is not thread-safe: <code>size++</code> is read-modify-write, so two threads can
@@ -339,7 +339,7 @@ sequenceDiagram
         },
         {
             kind: "table",
-            title: "⏱️ Complexity, and where the bound degrades",
+            title: "Complexity, and where the bound degrades",
             headers: ["Operation / algorithm", "Time", "Space", "Worst case that hurts"],
             rows:
                                     [
@@ -389,7 +389,7 @@ sequenceDiagram
         },
         {
             kind: "card",
-            title: "🚫 When NOT to use a queue",
+            title: "When NOT to use a queue",
             html:
                 `
         <ul>
@@ -412,7 +412,7 @@ sequenceDiagram
         },
         {
             kind: "code",
-            title: "💻 Code Example",
+            title: "Code Example",
             language: "javascript",
             code:
                 `// Deque (double-ended queue)
@@ -424,7 +424,7 @@ dq.pop();    // remove last`,
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html:
                 `
         <ul>
@@ -485,7 +485,7 @@ dq.pop();    // remove last`,
         },
         {
             kind: "card",
-            title: "🏭 Real-world usage",
+            title: "Real-world usage",
             html:
                 `
         <ul>

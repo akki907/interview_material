@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: `
 <p>The expensive part is rarely "React is slow". It is "this state lived too high, so a
 keystroke re-rendered a table of 5,000 rows". Measure with the Profiler, then apply the
@@ -19,7 +19,7 @@ everything in them adds comparison cost plus memory. Profile first.</p>`,
         },
         {
             kind: "card",
-            title: "📣 Render fan-out",
+            title: "Render fan-out",
             html: `
 <p>A state update re-renders the component that owns the state <em>and every descendant</em>,
 unless a descendant is memoized and its props are unchanged. That is the default, and it is
@@ -41,13 +41,13 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "🎬 Before / After",
+            title: "Before / After",
             html: `
 <div class="two-col">
-<div class="card"><h4>❌ Before</h4>
+<div class="card"><h4>Before</h4>
 <p>Search query lives in the page. Typing re-renders the whole table. Rows are not memoized.
 A 2 MB chart library is in the main bundle. Images are 4x the display size.</p></div>
-<div class="card"><h4>✅ After</h4>
+<div class="card"><h4>After</h4>
 <p>Query state is local to the input. <code>ResultsTable</code> is <code>memo</code>'d and
 virtualized. Chart loads via <code>lazy()</code> + <code>Suspense</code>. Images use
 <code>srcset</code>.</p></div>
@@ -55,7 +55,7 @@ virtualized. Chart loads via <code>lazy()</code> + <code>Suspense</code>. Images
         },
         {
             kind: "card",
-            title: "🧮 When memoization actually pays",
+            title: "When memoization actually pays",
             html: `
 <p>Memoize a child when (1) it is heavy to render, (2) the parent re-renders often, and
 (3) you can keep its props stable. If you pass an inline <code>onClick={() =&gt; ...}</code>,
@@ -76,7 +76,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Memo Example",
+            title: "Memo Example",
             language: "javascript",
             code: `const Row = React.memo(function Row({ item, onSelect }) {
     return <li onClick={() => onSelect(item.id)}>{item.name}</li>;
@@ -102,7 +102,7 @@ function Page() {
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls",
+            title: "Pitfalls",
             html: `
 <ul style="padding-left:20px;line-height:1.9;">
 <li>Memoizing everything. Comparisons are not free; most components are cheap.</li>

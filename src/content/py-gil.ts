@@ -8,7 +8,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🎬 GIL Visualization",
+            title: "GIL Visualization",
             // The legacy page injected this static markup from a setTimeout into a
             // viz-area div; it is inlined verbatim as the card body.
             html: `            <div style="display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap;">
@@ -23,7 +23,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💡 Key Insight",
+            title: "Key Insight",
             html:
                 "<p>The GIL prevents true parallel execution of Python bytecode across threads. For CPU-bound " +
                 "work, use multiprocessing instead.</p>" +
@@ -34,7 +34,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔬 Inside the eval loop",
+            title: "Inside the eval loop",
             html:
                 "<p>CPython runs bytecode in a loop that does three things in order: execute instructions, " +
                 "maintain the reference count, and periodically check the <em>eval breaker</em> to drop the GIL. " +
@@ -58,7 +58,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧵 Why threads still help",
+            title: "Why threads still help",
             html:
                 "<p>The GIL is not " +
                 '"one thread at a time forever". It is dropped often:</p>' +
@@ -79,7 +79,7 @@ registerContent({
                 "waits on the lock.</p>",
         },
         // The legacy card was an empty wrapper around the diagram below.
-        { kind: "card", title: "🔀 Two threads, one GIL" },
+        { kind: "card", title: "Two threads, one GIL" },
         {
             kind: "diagram",
             caption:
@@ -99,7 +99,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🪄 Getting real parallelism",
+            title: "Getting real parallelism",
             html: `<table class="complexity-table">
 <tr><th>Approach</th><th>How it beats the GIL</th><th>Cost / caveat</th></tr>
 <tr><td><code>multiprocessing</code></td><td>Separate processes, separate interpreters, separate GILs</td><td>IPC cost; pickling; no shared memory by default</td></tr>
@@ -121,7 +121,7 @@ free-threading, and conflating the two is the most common mistake in this topic.
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls & gotchas",
+            title: "Pitfalls & gotchas",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 '<li><b>"The GIL makes Python threads useless" is wrong.</b> Threads are excellent for I/O and for C ' +
@@ -141,7 +141,7 @@ free-threading, and conflating the two is the most common mistake in this topic.
                 "</ul>",
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "🎤 Interview Q&A" },
+        { kind: "card", title: "Interview Q&A" },
         {
             kind: "collapsible",
             title: "What exactly does the GIL protect, and what does it not?",

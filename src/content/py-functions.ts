@@ -8,7 +8,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>First-class objects. Closures. <code>*args</code> collects positional, " +
                 "<code>**kwargs</code> collects keyword.</p>" +
@@ -20,7 +20,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🎯 Scopes, closures and the cell",
+            title: "Scopes, closures and the cell",
             html:
                 "<p>The two closure bugs below are the same mechanism: the lambda captures the loop variable itself, " +
                 "and the variable keeps being reassigned after the lambda is created.</p>",
@@ -42,7 +42,7 @@ registerContent({
         },
         {
             kind: "code",
-            title: "💻 Example",
+            title: "Example",
             language: "python",
             code: `def compose(*fns):
     def inner(x):
@@ -53,7 +53,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔑 Parameter passing",
+            title: "Parameter passing",
             html: `<table class="complexity-table">
 <tr><th>Form</th><th>Syntax</th><th>Receives</th><th>Extra cost</th></tr>
 <tr><td>Positional-or-keyword</td><td><code>def f(a, b=1)</code></td><td>One value</td><td>None</td></tr>
@@ -88,7 +88,7 @@ def push(item, bucket=None):        # correct
         },
         {
             kind: "card",
-            title: "🎛️ The callable protocol",
+            title: "The callable protocol",
             html: `<p>A "function" is really "any object implementing <code>__call__</code>". That is the difference between
 a function, a lambda, a bound method, a class, and a class instance with <code>__call__</code> — they are
 interchangeable everywhere Python accepts a callable.</p>
@@ -116,7 +116,7 @@ Counter() is Counter.__call__(Counter)</code></pre>`,
         },
         {
             kind: "table",
-            title: "⏱️ Complexity",
+            title: "Complexity",
             headers: ["Aspect", "Bound", "Notes"],
             rows: [
                 [
@@ -149,7 +149,7 @@ Counter() is Counter.__call__(Counter)</code></pre>`,
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls & gotchas",
+            title: "Pitfalls & gotchas",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li><b>Mutable default arguments</b> — evaluated once at <code>def</code> time and shared by every " +
@@ -176,7 +176,7 @@ Counter() is Counter.__call__(Counter)</code></pre>`,
                 "</ul>",
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "🎤 Interview Q&A" },
+        { kind: "card", title: "Interview Q&A" },
         {
             kind: "collapsible",
             title: "Explain closures in one example.",
@@ -235,7 +235,7 @@ mechanism: functions plus captured cells.</p>`,
         },
         {
             kind: "card",
-            title: "🔥 Real-world usage",
+            title: "Real-world usage",
             html:
                 "Django/Flask route functions and FastAPI dependencies lean on keyword-only signatures and type " +
                 "hints. <code>functools.partial</code> is how test suites inject fakes. <code>contextlib</code>, " +
@@ -245,7 +245,7 @@ mechanism: functions plus captured cells.</p>`,
         },
         {
             kind: "card",
-            title: "🗣️ What to say out loud",
+            title: "What to say out loud",
             html:
                 "Draw the cell: a closure is a function plus the cells it captured. Then the two consequences — " +
                 "late binding in loops, and the shared-mutable-default trap — and finish with the callable protocol. " +

@@ -9,11 +9,11 @@ import type {
 } from "./types";
 
 export const NAV: NavEntry[] = [
-    { id: "dashboard", label: "📊 Dashboard" },
-    { id: "todos", label: "✅ Study Todos" },
+    { id: "dashboard", label: "Dashboard" },
+    { id: "todos", label: "Study Todos" },
     {
         id: "dsa",
-        label: "🧠 Data Structures & Algorithms",
+        label: "Data Structures & Algorithms",
         children: [
             { id: "dsa-arrays", label: "Arrays" },
             { id: "dsa-strings", label: "Strings" },
@@ -34,7 +34,7 @@ export const NAV: NavEntry[] = [
     },
     {
         id: "react",
-        label: "⚛️ React",
+        label: "React",
         children: [
             { id: "react-fundamentals", label: "Fundamentals" },
             { id: "react-hooks", label: "Hooks" },
@@ -47,7 +47,7 @@ export const NAV: NavEntry[] = [
     },
     {
         id: "python",
-        label: "🐍 Python",
+        label: "Python",
         children: [
             { id: "py-fundamentals", label: "Fundamentals" },
             { id: "py-functions", label: "Functions" },
@@ -63,7 +63,7 @@ export const NAV: NavEntry[] = [
     },
     {
         id: "ai",
-        label: "🤖 AI Engineering",
+        label: "AI Engineering",
         children: [
             { id: "ai-llm", label: "LLM Fundamentals" },
             { id: "ai-embeddings", label: "Embeddings" },
@@ -81,7 +81,7 @@ export const NAV: NavEntry[] = [
     },
     {
         id: "system-design",
-        label: "🏗️ System Design",
+        label: "System Design",
         children: [
             { id: "sd-scalability", label: "Scalability" },
             { id: "sd-load-balancing", label: "Load Balancing" },
@@ -97,8 +97,8 @@ export const NAV: NavEntry[] = [
             { id: "sd-realworld", label: "Real World Designs" },
         ],
     },
-    { id: "interview", label: "🎯 Interview Mode" },
-    { id: "flashcards", label: "📇 Flashcards" },
+    { id: "interview", label: "Interview Mode" },
+    { id: "flashcards", label: "Flashcards" },
 ];
 
 export const PROGRESS: Progress = {
@@ -133,61 +133,73 @@ export const RECENTLY_STUDIED = [
 
 export const FLASHCARDS: Flashcard[] = [
     {
+        id: "dsa-binary-search",
         cat: "DSA",
         front: "What is the time complexity of binary search?",
         back: "O(log n) — each step halves the search space.",
     },
     {
+        id: "dsa-heap-vs-array",
         cat: "DSA",
         front: "When should you use a heap over a sorted array?",
         back: "When you need efficient access to min/max with O(log n) insert/delete.",
     },
     {
+        id: "react-stale-closure",
         cat: "React",
         front: "What causes a stale closure in useEffect?",
         back: "When the effect captures a state/props value from a previous render due to missing dependencies.",
     },
     {
+        id: "react-memo",
         cat: "React",
         front: "What does React.memo do?",
         back: "Memoizes a component — skips re-render if props are shallow-equal.",
     },
     {
+        id: "python-gil",
         cat: "Python",
         front: "What is the GIL?",
         back: "Global Interpreter Lock — a mutex allowing only one thread to execute Python bytecode at a time in CPython.",
     },
     {
+        id: "python-generators",
         cat: "Python",
         front: "Generator vs list comprehension?",
         back: "Generators are lazy (yield one at a time). List comprehensions build the full list in memory.",
     },
     {
+        id: "rag-dense-vs-sparse",
         cat: "RAG",
         front: "Dense vs sparse retrieval?",
         back: "Dense uses vector embeddings (semantic). Sparse uses keyword matching (BM25). Hybrid combines both.",
     },
     {
+        id: "rag-failure-modes",
         cat: "RAG",
         front: "Common RAG failure modes?",
         back: "Chunk too small → loses context. Chunk too large → noise. Poor embedding → irrelevant results.",
     },
     {
+        id: "agents-react-loop",
         cat: "Agents",
         front: "What is ReAct?",
         back: "Reason + Act — alternates between thinking (reasoning) and acting (tool calls) based on observations.",
     },
     {
+        id: "agents-memory",
         cat: "Agents",
         front: "Why is agent memory important?",
         back: "Without memory, each interaction is stateless. Memory enables context retention and multi-step reasoning.",
     },
     {
+        id: "design-cap",
         cat: "System Design",
         front: "Explain CAP theorem.",
         back: "A distributed system can only guarantee 2 of 3: Consistency, Availability, Partition Tolerance.",
     },
     {
+        id: "design-eventual-consistency",
         cat: "System Design",
         front: "What is eventual consistency?",
         back: "After a write, reads may return stale data temporarily, but all replicas eventually converge.",

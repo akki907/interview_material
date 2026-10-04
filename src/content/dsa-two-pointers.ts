@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 `
 <p>Two indices moving in a coordinated way over the same collection. The technique exists to
@@ -25,7 +25,7 @@ That is the entire proof, and it depends on sorted order.</p>
         },
         {
             kind: "card",
-            title: "🧭 Which flavour of two pointers does this problem want?",
+            title: "Which flavour of two pointers does this problem want?",
             html:
                 `
 <p>Follow the branches from the input's properties. The first question is whether the input is
@@ -55,7 +55,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Code Example",
+            title: "Code Example",
             language: "python",
             code:
                 `def two_sum_sorted(nums, target):
@@ -69,7 +69,7 @@ flowchart TD
         },
         {
             kind: "collapsible",
-            title: "🔍 Annotated implementation — the pruning argument",
+            title: "Annotated implementation — the pruning argument",
             html:
                 `
 <pre><code class="language-javascript">function twoSumSorted(nums, target) {
@@ -100,7 +100,7 @@ such index already covered every pairing of that value.</li>
         },
         {
             kind: "table",
-            title: "📐 The three flavours, side by side",
+            title: "The three flavours, side by side",
             headers: ["Flavour", "Loop shape", "Classic problem", "Pointer invariant"],
             rows:
                                     [
@@ -126,7 +126,7 @@ such index already covered every pairing of that value.</li>
         },
         {
             kind: "card",
-            title: "🔑 Why it needs sorted input — and what breaks without it",
+            title: "Why it needs sorted input — and what breaks without it",
             html:
                 `
 <p>The pruning step is a <em>monotonicity</em> argument: "if <code>nums[left] + nums[right]</code>
@@ -175,7 +175,7 @@ flowchart LR
         },
         {
             kind: "card",
-            title: "⚖️ Same problem, three implementations",
+            title: "Same problem, three implementations",
             html:
                 `
 <pre><code class="language-javascript">// A. Sorted + converging pointers — worst-case O(n), no extra space
@@ -215,7 +215,7 @@ first index back.</p>
         },
         {
             kind: "table",
-            title: "⏱️ Complexity",
+            title: "Complexity",
             headers: ["Approach", "Time", "Space", "Requires sorted?", "Worst case"],
             rows:
                                     [
@@ -265,7 +265,7 @@ first index back.</p>
         },
         {
             kind: "card",
-            title: "🪤 Pitfalls",
+            title: "Pitfalls",
             html:
                 `
 <ul>
@@ -294,7 +294,7 @@ wrong answer on inputs like <code>[1,1,1,2]</code>.</li>
         },
         {
             kind: "card",
-            title: "🚫 Alternatives, and when NOT to use two pointers",
+            title: "Alternatives, and when NOT to use two pointers",
             html:
                 `
 <ul>
@@ -343,7 +343,7 @@ steps.</li>
         },
         {
             kind: "card",
-            title: "🔥 Real-World Usage",
+            title: "Real-World Usage",
             html: "Merge-scan over sorted event streams (joining two sorted logs without materialising either), the k-way merge in a priority queue, in-place compaction of sparse buffers, deduplicating sorted input for free, Boyer–Moore majority vote on sensor readings, cycle detection in linked structures, and the \"meeting room\" style interval scan.",
         },
     ],

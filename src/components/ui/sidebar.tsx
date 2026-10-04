@@ -136,7 +136,7 @@ function Sidebar({
 
     if (collapsible === "none") {
         return (
-            <div
+            <aside
                 data-slot="sidebar"
                 className={cn(
                     "flex h-full w-(--sidebar-width) flex-col bg-surface",
@@ -145,7 +145,7 @@ function Sidebar({
                 {...props}
             >
                 {children}
-            </div>
+            </aside>
         );
     }
 
@@ -185,7 +185,7 @@ function Sidebar({
             data-collapsible={state}
             className="hidden shrink-0 md:flex"
         >
-            <div
+            <aside
                 data-slot="sidebar"
                 className={cn(
                     "flex h-svh flex-col transition-[width] duration-200 ease-linear",
@@ -200,7 +200,7 @@ function Sidebar({
                 {...props}
             >
                 {children}
-            </div>
+            </aside>
         </div>
     );
 }
@@ -312,10 +312,15 @@ function SidebarMenuButton({
     isActive?: boolean;
     render?: React.ReactElement;
 }) {
+    // The active row is the sidebar's answer to "where am I?", so it gets three
+    // signals rather than one: a tinted fill, ink text, and a left accent bar
+    // that stays visible even when the row is scrolled against the edge.
     const classes = cn(
-        "flex w-full cursor-pointer items-center gap-2 rounded-md px-2 py-1.5 text-left text-sm outline-none transition-colors",
+        "group/menu-button relative flex w-full cursor-pointer items-center gap-2 rounded-md py-1.5 pr-2 pl-2 text-left text-sm outline-none transition-colors",
         "hover:bg-neutral focus-visible:ring-[3px] focus-visible:ring-focus/30",
-        isActive ? "bg-c2 font-semibold text-c2i" : "text-muted hover:text-ink",
+        isActive
+            ? "bg-c2 font-semibold text-c2i before:absolute before:inset-y-1.5 before:left-0 before:w-0.5 before:rounded-full before:bg-c2i"
+            : "text-muted hover:text-ink",
         className,
     );
 
@@ -348,7 +353,7 @@ function SidebarMenuSub({ className, ...props }: React.ComponentProps<"ul">) {
         <ul
             data-slot="sidebar-menu-sub"
             className={cn(
-                "ml-4 flex flex-col gap-0.5 border-l border-rule px-2 py-0.5",
+                "ml-3 flex flex-col gap-0.5 border-l border-rule py-0.5 pr-0 pl-2.5",
                 className,
             )}
             {...props}
@@ -422,9 +427,9 @@ function SidebarMenuSkeleton({
     );
 }
 
-function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
+function SidebarInset({ className, ...props }: React.ComponentProps<"div">) {
     return (
-        <main
+        <div
             data-slot="sidebar-inset"
             className={cn(
                 "relative flex w-full flex-1 flex-col bg-paper",

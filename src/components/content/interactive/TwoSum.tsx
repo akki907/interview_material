@@ -183,7 +183,7 @@ export function TwoSum({
     return (
         <Card className="mb-4">
             <CardHeader>
-                <CardTitle>{title ?? "▶️ Two Sum, step by step"}</CardTitle>
+                <CardTitle>{title ?? "Two Sum, step by step"}</CardTitle>
                 <Badge variant="neutral">interactive</Badge>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">

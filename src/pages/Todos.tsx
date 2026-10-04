@@ -19,18 +19,18 @@ import { PageHeader } from "../components/app/PageHeader";
 import { StatTiles } from "../components/app/StatTiles";
 
 const CATEGORIES: Array<[TodoCategory, string]> = [
-    ["dsa", "🧠 DSA"],
-    ["react", "⚛️ React"],
-    ["python", "🐍 Python"],
-    ["ai", "🤖 AI"],
-    ["systemDesign", "🏗️ System Design"],
-    ["general", "🎯 General"],
+    ["dsa", "DSA"],
+    ["react", "React"],
+    ["python", "Python"],
+    ["ai", "AI"],
+    ["systemDesign", "System Design"],
+    ["general", "General"],
 ];
 
 const PRIORITIES: Array<[TodoPriority, string]> = [
-    ["high", "🔥 High"],
-    ["medium", "⚡ Medium"],
-    ["low", "☕ Low"],
+    ["high", "High"],
+    ["medium", "Medium"],
+    ["low", "Low"],
 ];
 
 export function Todos() {
@@ -62,7 +62,7 @@ export function Todos() {
     return (
         <div>
             <PageHeader
-                title="✅ Study Plan & Action Items"
+                title="Study Plan & Action Items"
                 intro="Track targeted interview preparation milestones across algorithms, system design, and AI engineering."
             />
 
@@ -82,7 +82,7 @@ export function Todos() {
 
             <Card className="mb-5">
                 <CardHeader>
-                    <CardTitle>🔀 A plan that survives a bad week</CardTitle>
+                    <CardTitle>A plan that survives a bad week</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <Diagram
@@ -196,7 +196,7 @@ export function Todos() {
                                             : "border-rule hover:border-focus",
                                     )}
                                 >
-                                    {t.completed ? "✓" : ""}
+                                    {t.completed ? "" : ""}
                                 </Button>
                                 <div className="min-w-0 flex-1">
                                     <p
@@ -224,7 +224,7 @@ export function Todos() {
                                         </Badge>
                                         {t.dueDate && (
                                             <Badge variant="c4">
-                                                📅 {t.dueDate}
+                                               {t.dueDate}
                                             </Badge>
                                         )}
                                     </div>
@@ -244,7 +244,7 @@ export function Todos() {
                                                     )
                                                 }
                                             >
-                                                📖 Study topic →
+                                               Study topic →
                                             </Button>
                                         )}
                                         <Button

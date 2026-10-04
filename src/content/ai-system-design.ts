@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>An AI feature is a distributed system with one unusually expensive, unusually variable, and\n" +
                 "unusually hard-to-predict component in the middle. Everything you already know about API design\n" +
@@ -25,7 +25,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏗️ Reference architecture",
+            title: "Reference architecture",
             html:
                 "<p>Follow the request left to right. The two boxes that people skip in a first draft are the\n" +
                 "<em>policy</em> box before the model and the <em>validation</em> box after it — and those are the\n" +
@@ -50,7 +50,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔁 One request, latency budgeted",
+            title: "One request, latency budgeted",
             html:
                 "<p>Read the annotations as the budget. Note the two cache hits early — a semantic or exact cache\n" +
                 "hit costs a fraction of a cent and about 10&nbsp;ms, while the model path costs dollars and\n" +
@@ -94,7 +94,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🏛️ Layer by layer",
+            title: "Layer by layer",
             headers: ["Layer","Responsibility","Failure it prevents","Key metric"],
             rows: [
                 ["Edge","auth, tenant isolation, token-based rate limits, request size caps","one tenant exhausting the budget; unbounded prompt cost","tokens per minute per tenant"],
@@ -108,7 +108,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧪 Worked example: choosing a model tier per request",
+            title: "Worked example: choosing a model tier per request",
             html:
                 "<p>Assume a support assistant: 1M requests/day, 80% are short factual lookups, 15% need the\n" +
                 "corpus, 5% are multi-step. Latency target p95 &lt; 4&nbsp;s; today everything goes to one large\n" +
@@ -129,7 +129,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: a gateway with the invariants in it",
+            title: "Implementation: a gateway with the invariants in it",
             html:
                 "<pre><code class=\"language-javascript\">const g = new ModelGateway({\n" +
                 "  routes: [\n" +
@@ -168,7 +168,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency",
+            title: "Cost and latency",
             headers: ["Quantity","Rule","Control"],
             rows: [
                 ["Input cost","proportional to input tokens, which is prefill work","prefix caching; truncate retrieved context"],
@@ -182,7 +182,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to build a full AI system",
+            title: "When NOT to build a full AI system",
             html:
                 "<ul>\n" +
                 "<li><strong>Prompt plus model is enough.</strong> If a direct call with a good prompt passes your\n" +
@@ -201,7 +201,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Floating model aliases.</strong> A provider change arrives with no deploy and no\n" +
@@ -256,7 +256,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>The gateway is the only place that calls a model.</strong> One owner for retries,\n" +

@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p>Choosing a database is choosing a data model, a consistency contract, and a scaling " +
                 "axis. There is no &quot;NoSQL is faster&quot; — there is &quot;this access pattern " +
@@ -19,7 +19,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧭 Picking the Right Data Model",
+            title: "Picking the Right Data Model",
             html:
                 "<p>Start from the guarantees you need and walk the tree. Most real systems end up " +
                 "polyglot — a relational system of record plus a cache or search index in front of " +
@@ -44,7 +44,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📊 Data Model Comparison",
+            title: "Data Model Comparison",
             headers: ["Model", "Scales by", "Strong at", "Weak at", "Examples"],
             rows: [
                 [
@@ -93,7 +93,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚡ Indexing",
+            title: "Indexing",
             html:
                 "<p>An index is a second copy of a subset of the data, ordered differently, so the " +
                 "database can find matching rows without scanning the table. Every index is a pure win " +
@@ -119,7 +119,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🗂️ Index Cheat Sheet",
+            title: "Index Cheat Sheet",
             headers: ["Index", "Serves", "Cost"],
             rows: [
                 [
@@ -157,7 +157,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Code: composite index, covering select, and read the plan",
+            title: "Code: composite index, covering select, and read the plan",
             html:
                 '<pre><code class="language-sql">-- Common mistake: two independent indexes. The planner must merge two B-trees\n' +
                 "CREATE INDEX idx_orders_customer_created\n" +
@@ -182,7 +182,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚡ Transactions",
+            title: "Transactions",
             html:
                 "<p>ACID is the contract; <strong>isolation level</strong> is how strictly the database " +
                 "honours it, and it is a performance dial. Every level except serializable is defined " +
@@ -232,7 +232,7 @@ registerContent({
             // trailing paragraph was parsed inside the code block. The tags are
             // closed here; the prose is unchanged.
             kind: "card",
-            title: "💻 Code: optimistic concurrency in one round trip",
+            title: "Code: optimistic concurrency in one round trip",
             html:
                 '<pre><code class="language-sql">UPDATE accounts\n' +
                 "   SET balance = balance - $1,\n" +
@@ -247,7 +247,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Capacity Math",
+            title: "Capacity Math",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 [
@@ -294,7 +294,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Failure Modes and Pitfalls",
+            title: "Failure Modes and Pitfalls",
             html:
                 "<ul>" +
                 "<li><strong>N+1 queries</strong> — 1 query plus 1 per row. Invisible in dev, fatal " +

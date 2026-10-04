@@ -8,7 +8,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>Functions that modify other functions. Wraps behavior without changing source.</p>" +
                 "<p><b>The invariant that makes decorators safe:</b> a decorator must return a callable that is " +
@@ -20,7 +20,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🎯 Order of application",
+            title: "Order of application",
             html: `<p>Bottom-up. The decorator closest to <code>def</code> is applied first, and the last one written on top
 is applied last — so the outermost call at runtime is the one written first, i.e. the one farthest from
 <code>def</code>.</p>
@@ -32,7 +32,7 @@ def f(): ...          # == def f(): ...
 <code>f</code>'s body.</p>`,
         },
         // The legacy card held an empty viz-area and the diagram below it.
-        { kind: "card", title: "🔁 Decoration order, visually" },
+        { kind: "card", title: "Decoration order, visually" },
         {
             kind: "diagram",
             caption: "Bottom-up decoration, top-down execution",
@@ -45,7 +45,7 @@ def f(): ...          # == def f(): ...
         },
         {
             kind: "code",
-            title: "💻 Example",
+            title: "Example",
             language: "python",
             code: `def retry(max_attempts=3):
     def decorator(fn):
@@ -60,7 +60,7 @@ def f(): ...          # == def f(): ...
         },
         {
             kind: "card",
-            title: "🔁 Decorators with parameters",
+            title: "Decorators with parameters",
             html: `<p>Because <code>@retry</code> calls <code>retry(fn)</code>, a decorator that takes arguments needs the
 extra <em>closure</em> layer: <code>retry(...)</code> returns <code>decorator</code>, which returns
 <code>wrapper</code>, which finally receives the call. That is why "parameterised decorators" are three
@@ -91,7 +91,7 @@ retry <code>ValueError</code> or <code>KeyError</code>, those will never succeed
         },
         {
             kind: "table",
-            title: "🧷 Built-in decorators",
+            title: "Built-in decorators",
             headers: ["Decorator", "What it does", "Interview angle"],
             rows: [
                 [
@@ -145,7 +145,7 @@ retry <code>ValueError</code> or <code>KeyError</code>, those will never succeed
         },
         {
             kind: "card",
-            title: "🧱 Class decorators & stacked use",
+            title: "Class decorators & stacked use",
             html: `<pre><code class="language-python">registry = {}
 
 def register(cls):
@@ -168,7 +168,7 @@ so the cache lives closest to the real work and <code>timed</code> measures both
 Order is a design decision about which layer owns which responsibility.</p>`,
         },
         // The legacy card was an empty wrapper around the anatomy diagram below.
-        { kind: "card", title: "🩺 Parameterised decorator anatomy" },
+        { kind: "card", title: "Parameterised decorator anatomy" },
         {
             kind: "diagram",
             caption:
@@ -183,7 +183,7 @@ Order is a design decision about which layer owns which responsibility.</p>`,
         },
         {
             kind: "table",
-            title: "⏱️ Cost",
+            title: "Cost",
             headers: ["Aspect", "Cost", "Degrades when"],
             rows: [
                 [
@@ -210,7 +210,7 @@ Order is a design decision about which layer owns which responsibility.</p>`,
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls & gotchas",
+            title: "Pitfalls & gotchas",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li><b>Forgetting <code>@wraps</code></b> — the function loses its name and docstring, which " +
@@ -236,7 +236,7 @@ Order is a design decision about which layer owns which responsibility.</p>`,
                 "</ul>",
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "🎤 Interview Q&A" },
+        { kind: "card", title: "Interview Q&A" },
         {
             kind: "collapsible",
             title: 'Explain decorators without using the word "wrapper".',
@@ -298,7 +298,7 @@ cancellation is cooperative and cheap there.</p>`,
         },
         {
             kind: "card",
-            title: "🔥 Real-world usage",
+            title: "Real-world usage",
             html:
                 "Every Flask/FastAPI route uses <code>@app.get</code>. Flask adds one more layer: " +
                 "<code>@app.route</code> wraps the view in <code>werkzeug</code> request context management. " +
@@ -308,7 +308,7 @@ cancellation is cooperative and cheap there.</p>`,
         },
         {
             kind: "card",
-            title: "🗣️ What to say out loud",
+            title: "What to say out loud",
             html:
                 "Say the one-liner (<code>f = d(f)</code>), then the application order and the call order, then " +
                 "show the three-level parameterised form. Name <code>@wraps</code> and the coroutine-caching trap " +

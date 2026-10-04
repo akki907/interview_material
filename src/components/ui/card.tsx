@@ -1,12 +1,28 @@
 import type * as React from "react";
+import { createElement } from "react";
 import { cn } from "../../lib/utils";
 
-function Card({ className, ...props }: React.ComponentProps<"div">) {
+/**
+ * Card is the app's content container. Every study surface — topic sections,
+ * Q&A banks, code samples, dashboard panels — is a Card so the page reads as
+ * a stack of cards rather than a wall of text.
+ *
+ * `interactive` adds a hover lift. It is opt-in so static cards (a diagram,
+ * a read-only table) stay still instead of inviting a click that does nothing.
+ */
+function Card({
+    className,
+    interactive = false,
+    ...props
+}: React.ComponentProps<"div"> & { interactive?: boolean }) {
     return (
         <div
             data-slot="card"
             className={cn(
                 "bg-surface text-ink border border-rule rounded-card shadow-soft",
+                "transition-[box-shadow,transform,border-color] duration-200 ease-out",
+                interactive &&
+                    "hover:-translate-y-0.5 hover:border-focus/40 hover:shadow-raised",
                 className,
             )}
             {...props}
@@ -27,12 +43,37 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
     );
 }
 
-function CardTitle({ className, ...props }: React.ComponentProps<"h3">) {
+function CardTitle({
+    className,
+    level = "h2",
+    ...props
+}: React.ComponentProps<"h2"> & {
+    /**
+     * Heading level for the card title. Defaults to h2 because a card is
+     * normally a top-level section under the page h1; drop to h3 when the card
+     * is an item inside an h2-headed section.
+     */
+    level?: "h2" | "h3" | "h4";
+}) {
     return (
-        <h3
-            data-slot="card-title"
+        createElement(level, {
+            "data-slot": "card-title",
+            className: cn(
+                "font-serif text-lg leading-snug font-extrabold tracking-[-0.02em] text-ink",
+                className,
+            ),
+            ...props,
+        })
+    );
+}
+
+/** Small uppercase caption that sits under a CardTitle. */
+function CardEyebrow({ className, ...props }: React.ComponentProps<"p">) {
+    return (
+        <p
+            data-slot="card-eyebrow"
             className={cn(
-                "font-serif text-base font-semibold leading-snug text-ink",
+                "text-[11px] font-semibold tracking-wider text-muted uppercase",
                 className,
             )}
             {...props}
@@ -74,6 +115,7 @@ export {
     Card,
     CardHeader,
     CardTitle,
+    CardEyebrow,
     CardDescription,
     CardContent,
     CardFooter,

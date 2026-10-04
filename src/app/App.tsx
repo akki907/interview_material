@@ -1,12 +1,7 @@
-// src/app/App.tsx — route table and topic completion toolbar
+// src/app/App.tsx — route table
 import { Suspense, lazy } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AppShell } from "./AppShell";
-import { TOPIC_IDS } from "../lib/data";
-import { idFromPath, isStandaloneRoute } from "../lib/routes";
-import { useStore } from "../lib/store";
-import { cn } from "../lib/utils";
-import { Button } from "../components/ui/button";
 import { Spinner } from "../components/ui/spinner";
 
 const Dashboard = lazy(() =>
@@ -33,45 +28,9 @@ function Loading() {
     );
 }
 
-/** Marks a study topic complete; only meaningful on /topic/:id routes. */
-function CompleteToggle({ topicId }: { topicId: string }) {
-    const done = useStore((s) => !!s.checked[topicId]);
-    const toggleCheck = useStore((s) => s.toggleCheck);
-
-    return (
-        <Button
-            variant="outline"
-            size="sm"
-            onClick={() => toggleCheck(topicId)}
-            aria-pressed={done}
-            className={cn(
-                "gap-1.5 text-xs font-semibold",
-                done
-                    ? "border-c1i bg-c1 text-c1i"
-                    : "border-rule bg-surface text-muted hover:bg-neutral",
-            )}
-        >
-            {done ? "✓ Completed" : "Mark complete"}
-        </Button>
-    );
-}
-
 export function App() {
-    const location = useLocation();
-    const topicId = idFromPath(location.pathname);
-    const isTopic =
-        location.pathname.startsWith("/topic/") &&
-        !isStandaloneRoute(topicId) &&
-        TOPIC_IDS.includes(topicId);
-
     return (
         <AppShell>
-            {isTopic && (
-                <div className="mb-5">
-                    <CompleteToggle topicId={topicId} />
-                </div>
-            )}
-
             <Suspense fallback={<Loading />}>
                 <Routes>
                     <Route
@@ -82,6 +41,9 @@ export function App() {
                     <Route path="/todos" element={<Todos />} />
                     <Route path="/flashcards" element={<Flashcards />} />
                     <Route path="/interview" element={<Interview />} />
+                    {/* TopicPage resolves the id itself and renders a "missing"
+                        state for anything unregistered, so no guard is needed
+                        here. */}
                     <Route path="/topic/:id" element={<TopicPage />} />
                     <Route
                         path="*"

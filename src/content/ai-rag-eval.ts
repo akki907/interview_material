@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "📊 Metrics",
+            title: "Metrics",
             html:
                 "<table class=\"complexity-table\">\n" +
                 "<tr><th>Metric</th><th>Measures</th></tr>\n" +
@@ -20,7 +20,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>A RAG system has three independently breakable parts, so it needs three independently\n" +
                 "measurable numbers. Retrieval quality, generation faithfulness, and end-to-end answer quality.\n" +
@@ -36,7 +36,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧪 The three layers of a RAG eval",
+            title: "The three layers of a RAG eval",
             html:
                 "<p>Follow the two decision diamonds. They are the whole point of the diagram: <b>if context\n" +
                 "recall is low, nothing downstream matters</b>, because a perfectly faithful answer to the wrong\n" +
@@ -60,7 +60,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🩺 From a user complaint to the number that moved",
+            title: "From a user complaint to the number that moved",
             html:
                 "<p>Work left to right along the branch you actually observe. The recurring mistake is jumping to\n" +
                 "the last row — a bad answer reads like a generation problem — when in practice the symptom that\n" +
@@ -86,7 +86,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 The metric set, with what each one catches",
+            title: "The metric set, with what each one catches",
             headers: ["Layer","Metric","Definition","The failure it uniquely catches"],
             rows: [
                 ["Retriever","Context recall","share of gold spans present in the retrieved context","the answer was never in the index, or the top-k was too small"],
@@ -104,7 +104,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧮 Worked example: one release, three numbers",
+            title: "Worked example: one release, three numbers",
             html:
                 "<p>Eval set: 200 real support questions with gold source spans. Before and after a release that\n" +
                 "swapped in a new chunker and added a reranker.</p>\n" +
@@ -125,7 +125,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: a judge you can defend",
+            title: "Implementation: a judge you can defend",
             html:
                 "<pre><code class=\"language-javascript\">const FAITHFULNESS_JUDGE = [\n" +
                 "  'You are grading whether an ANSWER is supported by a CONTEXT.',\n" +
@@ -161,7 +161,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🧰 Evaluation frameworks",
+            title: "Evaluation frameworks",
             headers: ["Tool","Shape","Strength","Caveat"],
             rows: [
                 ["RAGAS","library, metric-per-component","the reference decomposition into context precision/recall, faithfulness, answer relevance","LLM-judged, so it inherits judge bias; pin model and prompt versions"],
@@ -174,7 +174,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency of evaluation",
+            title: "Cost and latency of evaluation",
             headers: ["Activity","Cost","Cadence"],
             rows: [
                 ["Building the labelled set","the dominant cost: 200 human-labelled questions is days of work","once, then grow it"],
@@ -187,7 +187,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to use an LLM judge",
+            title: "When NOT to use an LLM judge",
             html:
                 "<ul>\n" +
                 "<li><strong>When the answer is a single number or exact string.</strong> Compare directly. A\n" +
@@ -205,7 +205,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Eval set that is not production traffic.</strong> A set built from questions you\n" +
@@ -258,7 +258,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>Version the eval set alongside the pipeline.</strong> Add new hard questions every\n" +

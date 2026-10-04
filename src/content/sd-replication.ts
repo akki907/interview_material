@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p>Replication keeps copies of the data so the system survives machine failure, " +
                 "serves reads from many places, and survives the loss of a whole failure domain. The " +
@@ -21,7 +21,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚡ Sync vs Async",
+            title: "Sync vs Async",
             html:
                 "<ul>" +
                 "<li><strong>Synchronous</strong> — the leader waits for a replica to acknowledge " +
@@ -40,7 +40,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📋 Replication Topologies",
+            title: "Replication Topologies",
             headers: [
                 "Topology",
                 "Who accepts writes",
@@ -88,7 +88,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🗺️ Topology Decision",
+            title: "Topology Decision",
             html:
                 "<p>Leader-follower is the default because it makes conflict resolution a non-issue. " +
                 "Reach for multi-leader only when the workload genuinely writes in several places — " +
@@ -111,7 +111,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔁 Leader Failover, Step by Step",
+            title: "Leader Failover, Step by Step",
             html:
                 "<p>The state machine below is the part that actually determines availability: " +
                 "detect, elect, catch up, serve. Total time is the detection window plus the election " +
@@ -135,7 +135,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Code: read-your-writes with a version token",
+            title: "Code: read-your-writes with a version token",
             html:
                 '<pre><code class="language-javascript">// The client sends the last version it successfully observed.\n' +
                 "async function readOrders(customerId, minVersion) {\n" +
@@ -164,7 +164,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Capacity Math and Replication Lag",
+            title: "Capacity Math and Replication Lag",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 [
@@ -211,7 +211,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Failure Modes and Pitfalls",
+            title: "Failure Modes and Pitfalls",
             html:
                 "<ul>" +
                 "<li><strong>Split brain</strong> — two leaders both accepting writes. Prevent with " +

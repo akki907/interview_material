@@ -101,14 +101,14 @@ export function Interview() {
     return (
         <div>
             <PageHeader
-                title="🎯 Mock Interview Practice"
+                title="Mock Interview Practice"
                 intro="Simulate a 30-minute senior technical interview. Receive rubric scoring, edge case analysis, and actionable feedback."
             />
 
             <Card className="mb-5">
                 <CardHeader>
                     <CardTitle>
-                        🧭 How a senior interview actually runs
+                       How a senior interview actually runs
                     </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -154,13 +154,13 @@ export function Interview() {
                             <Badge
                                 variant={secondsLeft < 300 ? "c3" : "neutral"}
                             >
-                                ⏱ {formatTime(secondsLeft)}
+                               {formatTime(secondsLeft)}
                             </Badge>
                             <Button
                                 size="sm"
                                 onClick={() => setRunning((r) => !r)}
                             >
-                                {running ? "⏸ Pause" : "▶ Start"}
+                                {running ? "Pause" : "Start"}
                             </Button>
                             <Button size="sm" variant="ghost" onClick={reset}>
                                 ↺ Reset
@@ -170,7 +170,7 @@ export function Interview() {
                     <CardContent>
                         {hint && (
                             <p className="mb-3 rounded-md bg-info px-3 py-2 text-sm">
-                                <strong>💡 Interviewer Guidance:</strong>{" "}
+                                <strong>Interviewer Guidance:</strong>{" "}
                                 {question.hint}
                             </p>
                         )}
@@ -193,7 +193,7 @@ export function Interview() {
                                     size="sm"
                                     onClick={() => setHint((h) => !h)}
                                 >
-                                    {hint ? "🙈 Hide hint" : "💡 Hint"}
+                                    {hint ? "Hide hint" : "Hint"}
                                 </Button>
                                 <Button
                                     variant="primary"
@@ -254,7 +254,7 @@ export function Interview() {
                         <div className="grid gap-4 sm:grid-cols-2">
                             <div>
                                 <p className="mb-1.5 text-sm font-semibold text-c1i">
-                                    ✅ Key Strengths
+                                   Key Strengths
                                 </p>
                                 <ul className="list-disc pl-4 text-sm text-muted">
                                     {result.strengths.map((s, i) => (
@@ -264,7 +264,7 @@ export function Interview() {
                             </div>
                             <div>
                                 <p className="mb-1.5 text-sm font-semibold text-c3i">
-                                    ⚠️ Areas for Improvement
+                                   Areas for Improvement
                                 </p>
                                 <ul className="list-disc pl-4 text-sm text-muted">
                                     {result.improvements.map((s, i) => (
@@ -277,9 +277,9 @@ export function Interview() {
                         {result.modelAnswer && (
                             <div className="mt-4">
                                 <p className="mb-1.5 text-sm font-semibold">
-                                    💡 Senior Architect Model Solution
+                                   Senior Architect Model Solution
                                 </p>
-                                <pre className="overflow-x-auto rounded-md bg-code p-4 text-xs leading-relaxed text-[#e6edf7]">
+                                <pre className="overflow-x-auto rounded-md bg-code p-4 text-xs leading-relaxed text-code-ink">
                                     {result.modelAnswer}
                                 </pre>
                             </div>

@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p>Sharding splits one logical dataset across many physical stores so each holds a " +
                 "slice. Unlike replication, which multiplies copies of the <em>whole</em> dataset, " +
@@ -20,7 +20,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🗂️ Sharding Strategies",
+            title: "Sharding Strategies",
             headers: ["Strategy", "How keys map", "Great for", "Breaks when"],
             rows: [
                 [
@@ -57,7 +57,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔗 Consistent Hashing with Virtual Nodes",
+            title: "Consistent Hashing with Virtual Nodes",
             html:
                 "<p>Modulo hashing (<code>shard = hash(id) % N</code>) is the trap: change N and " +
                 "<em>every</em> key moves, so a resize is a full data migration and a total cache " +
@@ -90,7 +90,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔄 Online Rebalancing",
+            title: "Online Rebalancing",
             html:
                 "<p>Adding a shard is a migration, and migrations fail when done naively. The safe " +
                 "sequence is <strong>expand</strong> (create capacity, keep serving), " +
@@ -115,7 +115,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔥 Hot Shards and Hot Keys",
+            title: "Hot Shards and Hot Keys",
             html:
                 "<p>The average is a lie: with a hash of a tenant ID, one whale tenant can be " +
                 "100&times; the median shard. Detection is straightforward — shard-level QPS or disk " +
@@ -133,7 +133,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Code: shard-key-aware lookup and cross-shard fan-out",
+            title: "Code: shard-key-aware lookup and cross-shard fan-out",
             html:
                 '<pre><code class="language-javascript">// The shard key is derivable from the request, so routing needs no directory service.\n' +
                 "function shardFor(tenantId) {\n" +
@@ -168,7 +168,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Capacity Math",
+            title: "Capacity Math",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 [
@@ -215,7 +215,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Failure Modes and Pitfalls",
+            title: "Failure Modes and Pitfalls",
             html:
                 "<ul>" +
                 "<li><strong>Hot shard</strong> — one tenant or one key dominating. Monitor per-shard " +

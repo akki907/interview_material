@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html: `
 <p>State should live in the lowest common ancestor of the components that read or write it.
 That is "lifting state up". Context is not a state manager — it is a way to skip prop drilling
@@ -20,7 +20,7 @@ in Redux is how stores become a second, stale database.</p>`,
         },
         {
             kind: "card",
-            title: "📍 Where does this value live?",
+            title: "Where does this value live?",
             html: `
 <p>Walk the decision tree out loud in an interview. Most teams over-reach for a global store
 because they are tired of drilling, not because the data is actually global.</p>`,
@@ -46,7 +46,7 @@ flowchart TD
         },
         {
             kind: "card",
-            title: "⚡ Patterns",
+            title: "Patterns",
             html: `
 <ul style="padding-left:20px;line-height:1.9;">
 <li><b>Lifting state.</b> Two children need the same value → parent owns it, children get
@@ -63,7 +63,7 @@ five <code>useState</code>s that fight in effects.</li>
         },
         {
             kind: "card",
-            title: "📦 Context without accidental broadcasts",
+            title: "Context without accidental broadcasts",
             html: `
 <p>A context consumer re-renders when the provider's <code>value</code> identity changes.
 Putting <code>value={{ user, setUser }}</code> inline creates a new object every render and
@@ -83,7 +83,7 @@ flowchart TD
         },
         {
             kind: "code",
-            title: "💻 Example",
+            title: "Example",
             language: "javascript",
             code: `// Zustand: subscribe to a slice, not the whole store
 const useCart = create((set) => ({

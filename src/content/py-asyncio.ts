@@ -8,7 +8,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>Single-threaded concurrency via event loop. Coroutines yield control with await.</p>" +
                 "<p><b>The invariant that makes asyncio correct:</b> a coroutine runs to completion only between " +
@@ -22,7 +22,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔄 How the event loop schedules tasks",
+            title: "How the event loop schedules tasks",
             html:
                 "<p>Read the diagram top to bottom: one <code>Task</code> blocks at <code>await</code>, its " +
                 "continuation is parked, and the loop serves the next ready task until a selector reports I/O " +
@@ -52,7 +52,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🎬 Event Loop",
+            title: "Event Loop",
             // The legacy page injected this static markup from a setTimeout into a
             // viz-area div; it is inlined verbatim as the card body.
             html: `            <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
@@ -67,7 +67,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔬 What `await` actually does",
+            title: "What `await` actually does",
             html: `<table class="complexity-table">
 <tr><th>Expression</th><th>What is awaited</th><th>Who resumes it</th></tr>
 <tr><td><code>await sleep(1)</code></td><td>TimerHandle</td><td>The loop's <code>_run_once</code> when the monotonic clock passes the deadline</td></tr>
@@ -83,7 +83,7 @@ with ten tasks doing <code>time.sleep(1)</code> the run takes ten seconds, not o
         },
         {
             kind: "code",
-            title: "💻 Example",
+            title: "Example",
             language: "python",
             code: `import asyncio
 
@@ -98,7 +98,7 @@ async def main():
         },
         {
             kind: "card",
-            title: "🧱 Concurrent primitives (3.11+)",
+            title: "Concurrent primitives (3.11+)",
             html: `<p><b>TaskGroup</b> is the structured-concurrency answer. It owns its children: it starts them together,
 waits for all of them, and on any exception it cancels the survivors and raises an
 <code>ExceptionGroup</code>. No leaked tasks, no forgotten <code>await</code>.</p>
@@ -140,7 +140,7 @@ finally:
         // The legacy card was an empty wrapper around the diagram below.
         {
             kind: "card",
-            title: "🧭 Bounded concurrency, cancellation and timeouts",
+            title: "Bounded concurrency, cancellation and timeouts",
         },
         {
             kind: "diagram",
@@ -158,7 +158,7 @@ finally:
         },
         {
             kind: "card",
-            title: "✂️ Cancellation & timeouts",
+            title: "Cancellation & timeouts",
             html: `<p>Cancellation in asyncio is <b>cooperative</b>: <code>task.cancel()</code> raises
 <code>asyncio.CancelledError</code> at the task's next suspension point. The task then has a chance to
 clean up — which is why <code>finally</code> blocks and <code>async with</code> exits matter.</p>
@@ -189,7 +189,7 @@ bare <code>create_task</code> call with no reference kept (the task can be GC'd 
         },
         {
             kind: "card",
-            title: "⏱️ Complexity & scheduling",
+            title: "Complexity & scheduling",
             html: `<table class="complexity-table">
 <tr><th>Aspect</th><th>Bound</th><th>Notes</th></tr>
 <tr><td>Cost of one <code>await</code></td><td>~1 µs of loop work</td><td>Cheap. Awaiting a million tasks is fine; awaiting in a hot numeric loop is not.</td></tr>
@@ -204,7 +204,7 @@ it creates a fresh loop, runs the main coroutine, and cancels leftover tasks at 
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls & gotchas",
+            title: "Pitfalls & gotchas",
             html:
                 '<ul style="padding-left:20px;line-height:1.9;">' +
                 "<li><b>Blocking the loop.</b> <code>time.sleep</code>, <code>requests</code>, sync DB drivers, " +
@@ -229,7 +229,7 @@ it creates a fresh loop, runs the main coroutine, and cancels leftover tasks at 
                 "</ul>",
         },
         // The legacy card was an empty wrapper around the collapsible answers below.
-        { kind: "card", title: "🎤 Interview Q&A" },
+        { kind: "card", title: "Interview Q&A" },
         {
             kind: "collapsible",
             title: "Explain the event loop as if I have never used async.",
@@ -282,7 +282,7 @@ it creates a fresh loop, runs the main coroutine, and cancels leftover tasks at 
         },
         {
             kind: "card",
-            title: "🔥 Real-world usage",
+            title: "Real-world usage",
             html:
                 "Uvicorn/FastAPI, aiohttp, <code>asyncpg</code>, SQLAlchemy <code>create_async_engine</code>, " +
                 "Redis (<code>redis.asyncio</code>), <code>httpx</code>, Kafka clients, and every SDK that ships an " +
@@ -291,7 +291,7 @@ it creates a fresh loop, runs the main coroutine, and cancels leftover tasks at 
         },
         {
             kind: "card",
-            title: "🗣️ What to say out loud",
+            title: "What to say out loud",
             html:
                 "Draw the loop: ready queue, selector, timers, resume. Then the single killer sentence — " +
                 "<i>await suspends a task, not a thread; anything that blocks the thread blocks every task</i>. " +

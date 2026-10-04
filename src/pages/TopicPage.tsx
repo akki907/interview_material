@@ -9,8 +9,15 @@ import { hrefFor, isStandaloneRoute } from "../lib/routes";
 import type { TopicContent } from "../lib/types";
 import { TopicRenderer } from "../components/content/TopicRenderer";
 import { PageSkeleton } from "../components/ui/skeleton";
-import { Button } from "../components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { TopicDiagrams } from "../components/content/TopicDiagrams";
+import {
+    Card,
+    CardContent,
+    CardEyebrow,
+} from "../components/ui/card";
 import { PageHeader } from "../components/app/PageHeader";
+import { CompleteToggle } from "../components/app/CompleteToggle";
 
 /** Ordered ids of the navigable study topics, for prev/next paging. */
 const PAGED_IDS = TOPIC_IDS.filter((id) => !isStandaloneRoute(id));
@@ -27,40 +34,54 @@ function PrevNext({ id }: { id: string }) {
     return (
         <nav
             aria-label="Topic pagination"
-            className="mt-10 flex items-stretch justify-between gap-3 border-t border-rule pt-6"
+            className="mt-10 grid grid-cols-[1fr_auto] items-stretch gap-3 sm:grid-cols-3"
         >
             {prev ? (
-                <Button
-                    variant="outline"
-                    asChild
-                    className="max-w-45 justify-start"
+                <Link
+                    to={hrefFor(prev)}
+                    className="group min-w-0 focus-visible:outline-none"
                 >
-                    <Link to={hrefFor(prev)}>
-                        <ArrowLeftIcon className="size-4 shrink-0" />
-                        <span className="truncate">{TOPIC_LABELS[prev]}</span>
-                    </Link>
-                </Button>
+                    <Card interactive className="h-full">
+                        <CardContent className="flex h-full items-center gap-3 py-3.5">
+                            <ArrowLeftIcon className="size-4 shrink-0 text-muted transition-transform group-hover:-translate-x-0.5" />
+                            <div className="min-w-0">
+                                <CardEyebrow>Previous</CardEyebrow>
+                                <p className="truncate text-sm font-semibold">
+                                    {TOPIC_LABELS[prev]}
+                                </p>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </Link>
             ) : (
-                <span />
+                <span className="hidden sm:block" />
             )}
 
-            <span className="self-center text-xs text-muted">
-                {i + 1} / {PAGED_IDS.length}
-            </span>
+            <div className="col-span-2 flex items-center justify-center sm:col-span-1">
+                <span className="rounded-full bg-neutral px-3 py-1 text-xs tabular-nums text-muted">
+                    {i + 1} / {PAGED_IDS.length}
+                </span>
+            </div>
 
             {next ? (
-                <Button
-                    variant="outline"
-                    asChild
-                    className="max-w-45 justify-end"
+                <Link
+                    to={hrefFor(next)}
+                    className="group col-start-2 min-w-0 focus-visible:outline-none sm:col-start-3"
                 >
-                    <Link to={hrefFor(next)}>
-                        <span className="truncate">{TOPIC_LABELS[next]}</span>
-                        <ArrowRightIcon className="size-4 shrink-0" />
-                    </Link>
-                </Button>
+                    <Card interactive className="h-full">
+                        <CardContent className="flex h-full items-center justify-end gap-3 py-3.5 text-right">
+                            <div className="min-w-0">
+                                <CardEyebrow>Next</CardEyebrow>
+                                <p className="truncate text-sm font-semibold">
+                                    {TOPIC_LABELS[next]}
+                                </p>
+                            </div>
+                            <ArrowRightIcon className="size-4 shrink-0 text-muted transition-transform group-hover:translate-x-0.5" />
+                        </CardContent>
+                    </Card>
+                </Link>
             ) : (
-                <span />
+                <span className="hidden sm:block" />
             )}
         </nav>
     );
@@ -102,7 +123,11 @@ export function TopicPage() {
 
     return (
         <article>
-            <PageHeader title={title} />
+            <PageHeader
+                title={title}
+                intro={status === "ready" ? (content?.intro ?? undefined) : undefined}
+                action={<CompleteToggle topicId={id} />}
+            />
 
             {status === "loading" && (
                 <div className="mt-6">
@@ -117,15 +142,21 @@ export function TopicPage() {
             )}
 
             {status === "ready" && content && (
-                <>
-                    {content.intro && (
-                        <p className="mb-6 max-w-3xl leading-relaxed text-muted">
-                            {content.intro}
-                        </p>
-                    )}
-                    <TopicRenderer blocks={content.blocks} />
-                    <PrevNext id={id} />
-                </>
+                <Tabs defaultValue="content">
+                    <TabsList>
+                        <TabsTrigger value="content">Content</TabsTrigger>
+                        <TabsTrigger value="diagrams">Diagrams</TabsTrigger>
+                    </TabsList>
+
+                    <TabsContent value="content">
+                        <TopicRenderer blocks={content.blocks} />
+                        <PrevNext id={id} />
+                    </TabsContent>
+
+                    <TabsContent value="diagrams">
+                        <TopicDiagrams blocks={content.blocks} />
+                    </TabsContent>
+                </Tabs>
             )}
         </article>
     );

@@ -11,7 +11,7 @@ function Progress({
     tone?: "default" | "dsa" | "react" | "python" | "ai" | "design";
 }) {
     const tones: Record<string, string> = {
-        default: "bg-focus",
+        default: "bg-accent",
         dsa: "bg-c1i",
         react: "bg-c4i",
         python: "bg-c5i",

@@ -9,7 +9,7 @@ registerContent({
             // Static legacy markup; only the colours were remapped onto the new
             // app's design tokens (--bg-tertiary / --accent are gone).
             kind: "card",
-            title: "🎬 Producer/Consumer",
+            title: "Producer/Consumer",
             html:
                 '<div style="display:flex;align-items:center;justify-content:center;gap:24px;">' +
                 '<div style="padding:12px 20px;background:var(--neutral);border-radius:8px;"><strong>Producer</strong></div>' +
@@ -21,7 +21,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p>A queue decouples the rate at which work is produced from the rate at which it can " +
                 "be processed. That single property gives you load smoothing (bursts get absorbed), " +
@@ -35,7 +35,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📨 Delivery Semantics",
+            title: "Delivery Semantics",
             headers: [
                 "Semantics",
                 "What the broker promises",
@@ -65,7 +65,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔁 At-Least-Once, Made Effectively-Once",
+            title: "At-Least-Once, Made Effectively-Once",
             html:
                 "<p>&quot;Exactly-once delivery&quot; does not exist across a network. What exists is " +
                 "<em>at-least-once delivery plus an idempotent consumer</em>, which is what every real " +
@@ -97,7 +97,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Code: idempotent consumer with bounded retries",
+            title: "Code: idempotent consumer with bounded retries",
             html:
                 '<pre><code class="language-javascript">async function handle(message) {\n' +
                 "    // 1. Dedupe key lives in the same transaction as the side effect.\n" +
@@ -130,7 +130,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔀 Ordering, Partitions and Backpressure",
+            title: "Ordering, Partitions and Backpressure",
             html:
                 "<p>Ordering is a partition property, not a broker property. Two messages are only " +
                 "guaranteed to arrive in publish order <em>if they share a partition key</em> — " +
@@ -159,7 +159,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚡ Broker Options",
+            title: "Broker Options",
             headers: [
                 "Broker",
                 "Model",
@@ -207,7 +207,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Capacity Math",
+            title: "Capacity Math",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 [
@@ -254,7 +254,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Failure Modes and Pitfalls",
+            title: "Failure Modes and Pitfalls",
             html:
                 "<ul>" +
                 "<li><strong>Duplicate processing</strong> — a crash between commit and ack. " +

@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p>In event-driven architecture, services do not call each other — they publish " +
                 "facts to a broker and whoever cares subscribes. The producer knows nothing about its " +
@@ -23,7 +23,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏗️ Request Flow With a Broker and a DLQ",
+            title: "Request Flow With a Broker and a DLQ",
             html:
                 "<p>The classic flow, with the two failure paths that are always left out of the " +
                 "diagram: what happens when a consumer throws, and what happens when the database " +
@@ -49,7 +49,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🧩 Event-Driven Patterns",
+            title: "Event-Driven Patterns",
             headers: ["Pattern", "Problem it solves", "Trade-off"],
             rows: [
                 [
@@ -91,7 +91,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧵 Saga: A Distributed Transaction Without 2PC",
+            title: "Saga: A Distributed Transaction Without 2PC",
             html:
                 "<p>A saga is a sequence of local transactions, each paired with a compensating action " +
                 "that <em>semantically undoes</em> it. There is no isolation: other services observe " +
@@ -116,7 +116,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Code: the outbox pattern in full",
+            title: "Code: the outbox pattern in full",
             html:
                 '<pre><code class="language-javascript">// The bug this solves: write to the DB, then publish. If the process dies\n' +
                 "// between the two, the event is lost forever and no consumer ever hears about it.\n" +
@@ -164,7 +164,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔄 Event Sourcing and CQRS in Practice",
+            title: "Event Sourcing and CQRS in Practice",
             html:
                 "<p><strong>Event sourcing</strong> stores events as the source of truth and derives " +
                 "state by folding them. The payoff is a perfect audit trail and the ability to " +
@@ -178,7 +178,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Capacity Math and Lag Budgets",
+            title: "Capacity Math and Lag Budgets",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 [
@@ -225,7 +225,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Failure Modes and Pitfalls",
+            title: "Failure Modes and Pitfalls",
             html:
                 "<ul>" +
                 "<li><strong>The dual-write bug</strong> — DB write succeeds, publish fails, the event " +

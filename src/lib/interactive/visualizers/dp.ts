@@ -153,7 +153,7 @@ function clampSteps(n: number): number {
 
 export const dpClimbStairs: VisualizerSpec = {
     algo: "dp",
-    title: "▶️ Dynamic programming, step by step",
+    title: "Dynamic programming, step by step",
     fields: [
         {
             id: "n",

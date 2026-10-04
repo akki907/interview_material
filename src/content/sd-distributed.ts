@@ -7,7 +7,7 @@ registerContent({
     blocks: [
         {
             kind: "card",
-            title: "🧠 Core Idea",
+            title: "Core Idea",
             html:
                 "<p>A distributed system is one where &quot;the network is down&quot; and &quot;the " +
                 "server is slow&quot; are indistinguishable from the other side. Every hard problem in " +
@@ -20,7 +20,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "📐 CAP, and Why It Is Misunderstood",
+            title: "CAP, and Why It Is Misunderstood",
             html:
                 "<p>CAP is not &quot;pick two of three&quot;. It is: <strong>when a network partition " +
                 "occurs, you must choose between consistency and availability.</strong> Partition " +
@@ -45,7 +45,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🤝 Consensus: Raft Leader Election and Log Replication",
+            title: "Consensus: Raft Leader Election and Log Replication",
             html:
                 "<p>Consensus gives a replicated state machine one agreed ordering of operations even " +
                 "when machines crash, messages are lost, and delays are unbounded. Raft's core loop " +
@@ -71,7 +71,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "🧮 Quorum Arithmetic",
+            title: "Quorum Arithmetic",
             headers: ["Config", "R", "W", "Guarantee", "Cost"],
             rows: [
                 [
@@ -106,7 +106,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⏱️ Time, Ordering, and Clocks",
+            title: "Time, Ordering, and Clocks",
             html:
                 "<p>Clocks across machines drift. You cannot order events by <code>timestamp</code> " +
                 "and expect correctness — NTP keeps you within milliseconds, not microseconds, and a " +
@@ -126,7 +126,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Code: retry with full jitter and a circuit breaker",
+            title: "Code: retry with full jitter and a circuit breaker",
             html:
                 '<pre><code class="language-javascript">// 1. Exponential backoff WITH FULL JITTER. Without jitter, 10,000 clients\n' +
                 "//    retrying a 500 ms outage all retry at the same instant and keep it alive.\n" +
@@ -182,7 +182,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "📐 Capacity Math",
+            title: "Capacity Math",
             headers: ["Quantity", "Math", "Number"],
             rows: [
                 [
@@ -229,7 +229,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Failure Modes and Pitfalls",
+            title: "Failure Modes and Pitfalls",
             html:
                 "<ul>" +
                 "<li><strong>Partial failure</strong> — some operations succeed and some fail with no " +

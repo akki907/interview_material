@@ -144,7 +144,7 @@ function onePassWindow(s: string[]): InteractiveStep[] {
 
 export const slidingWindow: VisualizerSpec = {
     algo: "sliding-window",
-    title: "▶️ Sliding window, step by step",
+    title: "Sliding window, step by step",
     fields: [
         {
             id: "text",

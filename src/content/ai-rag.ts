@@ -6,7 +6,7 @@ registerContent({
     title: "RAG Pipeline",
     blocks: [
         {
-            // Legacy card title: "🎬 RAG Pipeline".
+            // Legacy card title: "RAG Pipeline".
             // The stages fired a toast on click; that is the only
             // interactivity dropped.
             kind: "pipeline",
@@ -23,7 +23,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧠 Mental Model",
+            title: "Mental Model",
             html:
                 "<p>RAG is <em>open-book generation</em>. Instead of asking a model to recall something from its\n" +
                 "weights, you retrieve the relevant text at request time, put it in the context window, and\n" +
@@ -43,7 +43,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔀 Offline ingest and online query",
+            title: "Offline ingest and online query",
             html:
                 "<p>The two lanes run on completely different schedules and failure models. Ingest is\n" +
                 "batch-friendly, idempotent, and can be retried; query is latency-bound, single-shot, and cannot\n" +
@@ -75,7 +75,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🔁 One query, as a sequence",
+            title: "One query, as a sequence",
             html:
                 "<p>Follow the numbers. The two long bars are where the latency actually goes: embedding the query\n" +
                 "on the critical path, and generating the answer. Retrieval and reranking are usually both\n" +
@@ -110,7 +110,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "✂️ Chunking: the decision with the largest hidden effect",
+            title: "Chunking: the decision with the largest hidden effect",
             html:
                 "<p>Chunking is where relevance is decided or lost. A chunk that cuts a rule away from its\n" +
                 "\"applies to\" clause produces a passage that is topically perfect and semantically incomplete; a\n" +
@@ -132,7 +132,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🧪 Worked example: why 512-token chunks lose a question",
+            title: "Worked example: why 512-token chunks lose a question",
             html:
                 "<p>One section of a runbook, split at 512 tokens:</p>\n" +
                 "<pre><code class=\"language-text\">chunk 41, heading \"API key rotation\"\n" +
@@ -161,7 +161,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "⚙️ Retrieval methods",
+            title: "Retrieval methods",
             headers: ["Method","Strength","Blind spot","Typical use"],
             rows: [
                 ["Dense / vector","paraphrase and cross-lingual tolerance","exact identifiers, rare terms, and numbers it has never seen","natural-language questions"],
@@ -175,7 +175,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "💻 Implementation: assembling the grounded prompt",
+            title: "Implementation: assembling the grounded prompt",
             html:
                 "<pre><code class=\"language-javascript\">const messages = [\n" +
                 "  { role: 'system', content:\n" +
@@ -203,7 +203,7 @@ registerContent({
         },
         {
             kind: "table",
-            title: "💰 Cost and latency, per query",
+            title: "Cost and latency, per query",
             headers: ["Stage","Latency","Cost","Lever"],
             rows: [
                 ["Query embedding","5&ndash;30 ms","small","cache repeated phrasings; batch concurrent queries"],
@@ -217,7 +217,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🚫 When NOT to build RAG",
+            title: "When NOT to build RAG",
             html:
                 "<ul>\n" +
                 "<li><strong>Freshness needs are sub-minute.</strong> Retrieval over an indexed corpus cannot beat\n" +
@@ -237,7 +237,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "⚠️ Pitfalls and gotchas",
+            title: "Pitfalls and gotchas",
             html:
                 "<ul>\n" +
                 "<li><strong>Uncited answers ship anyway.</strong> Enforce the citation rule in code, not in the\n" +
@@ -291,7 +291,7 @@ registerContent({
         },
         {
             kind: "card",
-            title: "🏭 In production",
+            title: "In production",
             html:
                 "<ul>\n" +
                 "<li><strong>Observability is the product.</strong> Log the query, the ranked candidate ids with\n" +
